@@ -1,6 +1,6 @@
 # SEI-33 Homework
 
-![General Assembly, Sydney](https://generalassemb.ly/)
+[General Assembly, Sydney](https://generalassemb.ly/)
 
 ### Homework Repository
 1. Repository Setup
@@ -25,7 +25,7 @@ You only need to do this once, not every time you're submitting homework!
  - ```git remote add upstream https://github.com/rashidabengali/sei33-homework.git```
 - ```git pull upstream master```
 
-### Do your Homework
+#### Do your Homework
 You should put each night's homework in a new folder within the appropriate directory (directory/folder of your name) inside your homework repo. So, for a day, where you have two tasks ("Calculator" and "Strings"), you might do something like this:
 
 1. Open Terminal/iTerm2;
@@ -35,7 +35,7 @@ You should put each night's homework in a new folder within the appropriate dire
 5. Create the files necessary to complete the homework in their respective directories
 6. Get to it!
 
-### Submit Your Homework
+#### Submit Your Homework
 You need to do this every time you're submitting homework.
 
 - **Commit your work to your local repository progressively**
