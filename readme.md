@@ -8,7 +8,7 @@
 3. Submit Your Homework
 
 #### Repository Setup
-You only need to do this once, not every time you're submitting homework!
+You only need to do this once, not every time you're submitting homework!!
 
 - **Fork this repository**
   - 'Forking' creates a personal, 'forked' copy of this repository on your Github account
