@@ -15,7 +15,7 @@ You only need to do this once, not every time you're submitting homework!
   - Hit the Fork button in the top right-hand corner of this page
 - **Clone your forked repository to your computer**
   - 'Cloning' takes your 'forked' repository on GitHub and creates a local copy - or 'clone' - on your computer
-  - Make sure your browser is open to your forked version of this repository on Github (eg http://github.com/{{YOUR_USERNAME}}/sei31-homework)
+  - Make sure your browser is open to your forked version of this repository on Github (eg http://github.com/{{YOUR_USERNAME}}/sei33-homework)
   - Hit the Clone or Download button in the top right-hand corner of the page and copy the URL to your clipboard
   - Open your computer's terminal to the directory in which you intend to store your homework
   - ```git clone url_of_your_fork_on_github``` (where url_of_your_fork_on_github is the URL you copied after hitting 'Clone or Download', above)
