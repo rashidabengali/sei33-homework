@@ -31,8 +31,8 @@ You should put each night's homework in a new folder within the appropriate dire
 1. Open Terminal/iTerm2;
 2. Go to your local homework repo (eg, cd ~/sei/homework): ```cd sei33-homework```
 3. From here, go to the folder matching your name within that repo, and the appropriate week (eg, taylor_swift/week_01): ``` cd taylor_swift```
-4. Create new folders for each week: ```mkdir week01``` and then ```cd week01``` for each day of the day's homework tasks: ```mkdir calculators``` and then ```cd calculators```
-5. Create the files necessary to complete the homework in their respective directories
+4. Create new folders for each week: ```mkdir week01``` and then ```cd week01``` for each day of the day's homework tasks: ```mkdir calculators``` and then ```cd calculators``` and again ```mkdir strings``` and then ```cd strings```.
+5. Create the files (follow gitbook for steps) necessary to complete the homework in their respective directories
 6. Get to it!
 
 #### Submit Your Homework
