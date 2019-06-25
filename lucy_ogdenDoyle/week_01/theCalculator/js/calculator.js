@@ -91,33 +91,20 @@ function verbing (one) {
 }
 
 function notBad (one) {
-  let array = one.split(" ");
-  let not;
-  let bad;
   let message;
-  for (let i = 0; i < array.length; i++) {
-    array[i] = array[i].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-    if (array[i] === "not" && (not > i || not == null)) {
-      not = i + 1;
-    }
-    if (array[i] == "bad" && (bad > i || bad == null)) {
-      bad = i + 1;
-    }
-  }
+  const not = one.indexOf("not");
+  const bad = one.indexOf("bad");
 
   if (not < bad) {
     //then it's in the correct order
-    array[not] = "good ";
-    for (let i = 0; i < array.length; i++) {
-      //while i is between not and bad,
-      //replace the first with good, and remove the rest
-      if ((i+1) > not && (i+1) <= bad) {
-        array[i] = "";
-      }
-    }
+    const start = one.slice(0, not);
+    const end = one.slice(bad + 3, one.length);
+    message = start + "good" + end;
   }
- message = array.join(" ");
+ else {
+   message = one;
+ }
   console.log(message);
 }
 
-notBad("This dinner is not that bad!");
+notBad("This dinner is not that bd!");
