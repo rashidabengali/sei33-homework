@@ -1,5 +1,6 @@
 console.log("woah");
 
+
 function squareNumber (num) {
   let squared = num * num;
   squared = squared.toFixed(2);
@@ -39,6 +40,7 @@ function part2 (num) {
   const percentage = percentOf(area, squared);
 }
 
+
 function drEvil (num) {
   let message;
   message = `${num} dollars`;
@@ -54,7 +56,7 @@ function mixUp (one, two) {
   oneFirst2 = one.slice(0, 2);
   oneRemainder = one.slice(2, one.length);
   twoFirst2 = two.slice(0, 2);
-  twoRemainder = two.slice(2, one.length);
+  twoRemainder = two.slice(2, two.length);
 
   mixed = twoFirst2 + oneRemainder + " " + oneFirst2 + twoRemainder;
 
@@ -107,4 +109,15 @@ function notBad (one) {
   console.log(message);
 }
 
+squareNumber(5);
+halfNumber(6);
+percentOf(5, 6);
+areaOfCircle(5);
+part2(5);
+drEvil(5);
+mixUp("dig", "glob");
+fixStart("bubble");
+verbing("wowing");
+verbing("wow");
+notBad("This dinner is not that bad!");
 notBad("This dinner is not that bd!");
