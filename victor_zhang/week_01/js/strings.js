@@ -36,6 +36,12 @@ const mixUp = function(string1, string2) {
 };
 
 const swapLastLetter = function(string, string) {
+
+  let newString = '';
+  newString = arguments[0].slice(0,arguments[0].length-1);
+  newString = newString.padEnd(arguments[0].length,arguments[1][arguments[1].length-1]);
+  return newString;
+
   // let word = '';
   // for (let i = 0; i < string1.length-1; i++) {
   //   word = word + string1[i];
@@ -44,10 +50,6 @@ const swapLastLetter = function(string, string) {
   //   };
   // };
   // return word;
-  let newString = '';
-  newString = arguments[0].slice(0,arguments[0].length-1);
-  newString = newString.padEnd(arguments[0].length,arguments[1][arguments[1].length-1]);
-  return newString;
 };
 
 // USING string.slice & string.padEnd
@@ -127,4 +129,6 @@ const notBad = function(string) {
     return newString;
   }
   return string;
-};
+}; // NOT WORKING PROPERLY
+
+notBad('this is bad');
