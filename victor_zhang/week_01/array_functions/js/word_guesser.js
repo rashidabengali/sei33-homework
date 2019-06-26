@@ -5,21 +5,28 @@
 // - Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '\_', '\_', '\_' and end with 'F', 'O', 'X').
 console.log('word_guesser.js is up and running');
 
+console.log('You are playing Hangman! \n _______________________________________________ \n'
++ '\n' + 'Guess the Hidden words!');
+
+// Initialising variables
 let wordLetters = [];
 let guessedLetters = [];
 let wrongGuesses = [];
 let maxReward = 5;
+// let numCorrectGuesses = 0;
 let reward = 0;
 let rewardAmount = 0;
 let hangmanState = 6;
 
+// Create and save an array with the word that will be guessed
 const createWordArrays = function(word) {
   for (i = 0; i < word.length; i++) {
     wordLetters.push(word.charAt(i));
   };
-  createGuessedLetters(word);
+  createGuessedLetters(word); // function call createGuessedLetters
 };
 
+// Create and save an Array with # of empty space as word to be guessed
 const createGuessedLetters = function(word) {
   for (i = 0; i< word.length; i++) {
     if (word.charAt(i) === ' ') {
@@ -33,8 +40,9 @@ const createGuessedLetters = function(word) {
 
 createWordArrays('jelly beans');
 
-console.log(guessedLetters);
+
 console.log(wordLetters);
+console.log(guessedLetters);
 
 // - Write a function called guessLetter that will:
 // - Take one argument, the guessed letter.
@@ -47,54 +55,67 @@ console.log(wordLetters);
 // - Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
 //
 
-const correctGuess = function() {
-  reward = Math.ceil( Math.random() * maxReward );
-  rewardAmount = rewardAmount + reward;
-  console.log(reward);
-  return rewardAmount;
+// call this function when a correctGuess has been made
+const correctGuess = function( i,letter ) {
+  guessedLetters[i] = letter;
+  updateReward();
+  console.log(guessedLetters);
+  console.log('Congratulations, you found another letter!');
+  // find elements in array with guessed letters
+  // redeclare those (empty) elements with guessed letter
+  // like so: guessedLetters[3] = 'e';
 }
 
+const updateReward = function() {
+  reward = Math.ceil( Math.random() * maxReward ); // reward will update to round up a random number (0-1) * maxReward
+  rewardAmount = rewardAmount + reward/* * numCorrectGuesses*/; //update current total rewardAmount
+  console.log(reward);
+  // return rewardAmount;
+}
+
+// check if player lost game, losing message
 const checkLose = function() {
   if (hangmanState === 0) {
-    console.log('Hangman died, You Lost..')
-    console.log('      _______');
-    console.log('     |/      |');
-    console.log('     |      (_)');
-    console.log('     |      \\|/');
+    console.log('Hangman died, You Lost..\n' +
+                '      _______\n' +
+                '     |/      |\n' +
+                '     |      (_)\n' +
+                '     |      \\|/\n');
     console.log('     |       |');
     console.log('     |      / \\');
     console.log('     |');
     console.log(' jgs_|___');
+
+    console.log(`You still won $${ rewardAmount } for the right guesses`);
   }
 };
 
+// call function when player enters a guessedLetters
 const guessLetter = function(letter) {
+  if (guessedLetters.includes(letter) || wrongGuesses.includes(letter)){
+    console.log(`You already guessed the letter '${ letter }'.`);
+  }
   for (i = 0; i < guessedLetters.length; i++) {
     if (hangmanState === 0) {
       console.log('You already lost');
-      console.log(`You still won $${ rewardAmount } for the right guesses`);
       return;
     }
-    else if (wordLetters[i].includes(letter)) { // wordLetters[i] === letter
-      guessedLetters[i] = letter;
-      correctGuess();
-      console.log('Congratulations, you found another letter!');
-      // find elements in array with guessed letters
-      // redeclare those (empty) elements with guessed letter
-      // like so: guessedLetters[3] = 'e';
+    else if (wordLetters[i].includes(letter) && !guessedLetters[i].includes(letter)) { // OR wordLetters[i] === letter
+      correctGuess( i,letter );
     }
   }
   if (!wrongGuesses.includes(letter) && !wordLetters.includes(letter)){
     wrongGuesses.push(letter);
-    console.log(`wrong ${ wrongGuesses }`);
+    console.log(`Wrong guess, ${ wrongGuesses } is not part of the word`);
     hangmanState = hangmanState - 1;
+    console.log(`Hangman has ${ hangmanState } limbs left`);
+    console.log(guessedLetters);
     checkLose();
   }
   else if (wordLetters.join('') === guessedLetters.join('')) {
     console.log('Congratulation, You found the whole word! You Won!')
     console.log(`You won $${ rewardAmount }`);
   };
-  console.log(`Hangman has ${ hangmanState } limbs left`);
 };
 
 //Trial Win guesses
@@ -110,25 +131,26 @@ const guessLetter = function(letter) {
 // guessLetter('s');
 
 // Trial Dead guesses
-guessLetter('a');
-guessLetter('e');
-guessLetter('y');
-guessLetter('y');
-guessLetter('l');
-guessLetter('l');
-guessLetter('t');
-guessLetter('n');
-guessLetter('s');
-guessLetter('x');
-guessLetter('z');
-guessLetter('r');
-guessLetter('f');
-guessLetter('v');
+      /**** TRY in CONSOLE for live testing! ***/
+// guessLetter('a');
+// guessLetter('e');
+// guessLetter('y');
+// guessLetter('y');
+// guessLetter('l');
+// guessLetter('l');
+// guessLetter('t');
+// guessLetter('n');
+// guessLetter('s');
+// guessLetter('x');
+// guessLetter('z');
+// guessLetter('r');
+// guessLetter('f');
+// guessLetter('v');
+//
+// guessLetter('j');
+// guessLetter('b');
 
-guessLetter('j');
-guessLetter('b');
 
-console.log(guessedLetters);
 
 
 // ## Bonus: Make it more like Wheel of Fortune:
