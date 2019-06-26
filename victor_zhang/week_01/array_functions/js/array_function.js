@@ -23,20 +23,21 @@ arguments and returns the largest of them.*/
 const maxOfThree = function ( a, b, c ) {
   let greaterNum = 0;
   greaterNum = a > b ? a : b; // conditional logical operator or ternary logical operator
-  greaterNum = b > c ? b : c;
-  return console.log(greaterNum);
+  greaterNum = greaterNum > c ? greaterNum : c; // if a > b, return biggest number and compare to c
+  console.log(greaterNum);
+  return greaterNum;
 };
 
-maxOfThree(2,3,6);
+maxOfThree(8,3,6);
 
 /* 3. Write a function that takes a character (i.e. a string of
 length 1) and returns true if it is a vowel, false otherwise.*/
 
 const isVowel = function ( char ) {
   if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' ) {
-    return true;
+    return true; // if char has any of the vowels above, return true
   }
-  return false;
+  return false; // otherwise false
 };
 
 console.log(isVowel('a'));
@@ -53,7 +54,7 @@ const numArray = [1,2,3,4];
 const sumArray = function( numbers ) {
   let result = 0;
   for (let i = 0; i < numbers.length; i++) {
-    result = result + numArray[i];
+    result = result + numArray[i]; // result will equal previous result + next number in array
   };
   console.log(result);
 };
@@ -61,7 +62,7 @@ const sumArray = function( numbers ) {
 const multiplyArray = function( numbers ) {
   let result = 1;
   for (let i = 0; i < numbers.length; i++) {
-    result = result * numArray[i];
+    result = result * numArray[i]; // result equal previous result * next number in array
   };
   console.log(result);
 };
@@ -78,8 +79,8 @@ string "ratset gaj". */
 const reverseString = function(string) {
   let newString = '';
   for (let i = string.length-1; i >= 0; i--) {
-    newString = newString + string[i];
-    // newString = string.concat(string[0], string[1], etc)
+    newString = newString + string[i]; // add every char from string starting from the last one into newString
+    /* newString = string.concat(string[0], string[1], etc) */
   };
   console.log(newString);
   return newString;
@@ -93,10 +94,10 @@ reverseString('jag testar');
 const myWords = ['Timothy','television','onomatowhatever','egg','sandal','jamaica'];
 
 const findLongestWord = function( arrayWords ) {
-  let longestWord = '';
+  let longestWord = ''; // initialise longestWord to none at the moment
   for (let i = 0; i < arrayWords.length; i ++) {
-    if (arrayWords[i].length > longestWord.length) {
-      longestWord = arrayWords[i];
+    if (arrayWords[i].length > longestWord.length) { // if currentword is longer than longestword
+      longestWord = arrayWords[i]; // then currentword is now longestword
     }
   };
   console.log(longestWord);
@@ -108,10 +109,10 @@ findLongestWord(myWords);
  and an number `i` and returns the array of words that are longer than i.*/
 
  const filterLongWords = function( arrayWords, wordLength ) {
-   let resultArray = [];
+   let resultArray = []; // create empty array
    for (i = 0; i < arrayWords.length; i++ ) {
-     if (arrayWords[i].length > wordLength) {
-       resultArray.push(arrayWords[i]);
+     if (arrayWords[i].length > wordLength) { // if currentword in original array is longer than provided number
+       resultArray.push(arrayWords[i]); // add currentword into newArray
      };
    };
    console.log(resultArray);
