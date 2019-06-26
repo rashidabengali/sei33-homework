@@ -37,10 +37,24 @@ const percentOf = function(aNumber, anotherNumber) {
 
 percentOf();
 
-const areaOfCircle(aNumber) {
-  const result = `The area for a circle with radius ${aNumber} is ${aNumber*3.141}.`
+const areaOfCircle = function(aNumber) {
+  const result = `The area for a circle with radius ${aNumber} is ${(aNumber*aNumber)*3.141}.`
   console.log(result);
     return result;
 
     areaOfCircle();
 };
+// need to add bonus later
+
+
+// Write a function that will take one argument (a number) and perform the following operations, using the functions you wrote earlier1:
+//
+// Take half of the number and store the result.
+// Square the result of #1 and store that result.
+// Calculate the area of a circle with the result of #2 as the radius.
+// Calculate what percentage that area is of the squared result (#3).
+
+
+const numberX = 8
+
+const halfNumber
