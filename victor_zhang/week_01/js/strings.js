@@ -138,4 +138,4 @@ const notBad = function(string) {
 };
 
 
-notBad('this is bad');
+console.log(notBad('this is bad'));
