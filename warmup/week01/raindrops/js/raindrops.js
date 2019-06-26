@@ -16,7 +16,7 @@ const raindrops = function (number) {
     string += "Plong";
   }
 
-  if (string.length === 0) {
+  if (string.length === "") {
     string += number;
   }
 
