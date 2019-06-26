@@ -15,6 +15,8 @@ const maxOfTwoNumbers = function( a,b ) {
   return b;
 };
 
+console.log(maxOfTwoNumbers(12,3));
+
 /* 2. Define a function `maxOfThree` that takes three numbers as
 arguments and returns the largest of them.*/
 
@@ -22,10 +24,10 @@ const maxOfThree = function ( a, b, c ) {
   let greaterNum = 0;
   greaterNum = a > b ? a : b; // conditional logical operator or ternary logical operator
   greaterNum = b > c ? b : c;
-  return greaterNum;
+  return console.log(greaterNum);
 };
 
-console.log(maxOfThree(2,3,6));
+maxOfThree(2,3,6);
 
 /* 3. Write a function that takes a character (i.e. a string of
 length 1) and returns true if it is a vowel, false otherwise.*/
@@ -53,7 +55,7 @@ const sumArray = function( numbers ) {
   for (let i = 0; i < numbers.length; i++) {
     result = result + numArray[i];
   };
-  return result;
+  console.log(result);
 };
 
 const multiplyArray = function( numbers ) {
@@ -61,11 +63,11 @@ const multiplyArray = function( numbers ) {
   for (let i = 0; i < numbers.length; i++) {
     result = result * numArray[i];
   };
-  return result;
+  console.log(result);
 };
 
-console.log(sumArray(numArray));
-console.log(multiplyArray(numArray));
+sumArray(numArray);
+multiplyArray(numArray);
 //
 // ## Bonus
 //
@@ -79,18 +81,16 @@ const reverseString = function(string) {
     newString = newString + string[i];
     // newString = string.concat(string[0], string[1], etc)
   };
+  console.log(newString);
   return newString;
 };
 
-console.log(reverseString('jag testar'));
+reverseString('jag testar');
 
 /* 6. Write a function `findLongestWord` that takes an array of words
  and returns the length of the longest one.*/
 
 const myWords = ['Timothy','television','onomatowhatever','egg','sandal','jamaica'];
-
-console.log(myWords[0].length);
-console.log(myWords[0+1].length);
 
 const findLongestWord = function( arrayWords ) {
   let longestWord = '';
