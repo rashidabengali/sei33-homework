@@ -107,3 +107,86 @@ const result = filterLongWords(["watch", "ipad", "ipod", "apple", "iphone"], 1);
 result.forEach(element => {
     console.log(element);
 });
+
+// # Homework: The Word Guesser
+
+// You'll create a simple word guessing game where the user gets infinite tries to guess the word 
+// (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
+// - Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), 
+// and one to hold the current guessed letters (e.g. it would start with '\_', '\_', '\_' and end with 'F', 'O', 'X').
+const arrLetters = ['F', 'O', 'X'];
+const arrGuessLetters = [];
+let rewards = 0;
+
+// initial value (empty) to array guess letter
+for (let index = 0; index < arrLetters.length; index++) {
+    arrGuessLetters[index] = "";
+}
+
+// ## Bonus: Make it more like Wheel of Fortune:
+// - Start with a reward amount of $0
+// - Every time a letter is guessed, generate a random amount and reward the user 
+// if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
+// - When they guess the word, log their final reward amount.
+const getRewards = function(isAddReward){
+    if (isAddReward){
+        rewards += (rewards < 1? 1: rewards) * arrGuessLetters.join("").length;
+    }else{
+        rewards = rewards - 1;
+    }
+}
+
+// - Write a function called guessLetter that will:
+// - Take one argument, the guessed letter.
+// - Iterate through the word letters and see if the guessed letter is in there.
+// - If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
+// - When it's done iterating, it should log the current guessed letters ('F__')
+// and congratulate the user if they found a new letter.
+// - It should also figure out if there are any more letters that need to be guessed,
+// and if not, it should congratulate the user for winning the game.
+// - Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
+const guessLetter = function(letter){
+    // search guess letter in array letter
+    const indexOfLetter = arrLetters.findIndex((x)=>{
+        return x === letter.toUpperCase(); 
+    });
+
+    // the guess letter exist in array letters
+    if (indexOfLetter > -1){
+        // insert the guess letters into array guess letter
+        arrGuessLetters[indexOfLetter] = letter.toUpperCase();
+        // check guess letter
+        let result = arrGuessLetters.join("");
+
+        if (result.length === arrLetters.length){
+            // guess letters and answer are match
+            console.log("You are winner!!!");
+        }else{
+            // clear result data, get answer from array guess to display on console
+            result = "";
+            for (let i = 0; i < arrGuessLetters.length; i++) {
+                result = result + (arrGuessLetters[i]===""? "_ ": arrGuessLetters[i]);
+            }
+            console.log(`Congratulation! you found a new letter: ${ letter.toUpperCase() }`);
+            console.log(`The result is ${result}`);
+        }
+    }
+
+    //get rewards
+    getRewards(indexOfLetter > -1);
+    console.log(`Your reward is ${rewards}`);
+}
+guessLetter('R');
+guessLetter('x');
+guessLetter('b');
+guessLetter('f');
+guessLetter('g');
+guessLetter('0');
+guessLetter('o');
+
+
+
+// ## Bonus: Make it like Hangman:
+// - Keep track of all the guessed letters (right and wrong) and only let the user guess a letter once. If they guess a letter twice, do nothing.
+// - Keep track of the state of the hangman as a number (starting at 0), and subtract or add to that number every time they make a wrong guess.
+// - Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
