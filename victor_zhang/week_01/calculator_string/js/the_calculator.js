@@ -48,7 +48,7 @@ the following operations, using the functions you wrote earlier1:*/
 // Calculate the area of a circle with the result of #2 as the radius.
 // Calculate what percentage that area is of the squared result (#3).
 
-const foo = function(number) {
+const calculate = function(number) {
   result1 = halfNumber(number);
   result2 = squareNumber(result1);
   result3 = areaOfCircle(result2);
