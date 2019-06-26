@@ -1,5 +1,3 @@
-console.log("wow");
-
 // Define a function maxOfTwoNumbers that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript. You'll have to remember your pre-work, or do some googling to figure this out.
 function maxOfTwoNumbers (a, b) {
   if (a > b) {
@@ -56,6 +54,3 @@ function multiplyArray (arr) {
   }
   return multiply;
 }
-
-
-console.log(multiplyArray([4, 5, 6]));
