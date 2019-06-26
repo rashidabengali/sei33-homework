@@ -123,12 +123,19 @@ just return the original sentence.*/
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
 
 const notBad = function(string) {
-  if (string.indexOf('bad') > string.indexOf('not')) {
-    let notBadDistance = string.indexOf('bad') + 3 - string.indexOf('not');
-    newString = string.replace(string.substr(string.indexOf('not'),notBadDistance),'good');
+  if (!string.includes('not') || !string.includes('bad')) {
+    return string;
+  }
+  else if (string.indexOf('bad') > string.indexOf('not')) { // if index of 'not' comes before 'bad'
+    let badString = string.indexOf('bad') + 3;
+    newString = string.replace(string.substring(string.indexOf('not'),badString),'good');
+    /* .replace(substr, newSubstr) // replace substring with a new substring
+    .substring(indexStart, lastIndex) // return part of string between two indexes
+        example: 'Hello World'.substring(2,6) --> 'llo W'*/
     return newString;
   }
   return string;
-}; // NOT WORKING PROPERLY
+};
+
 
 notBad('this is bad');
