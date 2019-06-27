@@ -162,7 +162,7 @@ const validateCreditCard = function(creditCardNum){
     var currentNumber = creditCardNum[i];
 
     // turn the digit from a string to an integer (if the digit is in face a digit and not another char)
-    currentNumber = Number.pasreInt(currentNumber);
+    currentNumber = Number.parseInt(currentNumber);
 
     // check that the digit is a number
     if( !Number.isInteger(currentNumber)) {
@@ -174,39 +174,24 @@ const validateCreditCard = function(creditCardNum){
   for (var i = 0; i < creditCardNum.length; i++) {
     obj[creditCardNum[i]] = true;
   }
-  if(Object.keys(obj)).length < 2{
-    return false;
-  }
-
-
-}
-
-  }
-
-  // The credit card number must be composed of at least two different digits (i.e. all of the digits cannot be the same)
-  var obj = {};
-  for(var i = 0; i < creditCardNum.length; i++){
-    obj[creditCardNum[i]] = true;
-  }
   if(Object.keys(obj).length < 2){
     return false;
   }
-
-  // The final digit of the credit card number must be even
-  if(creditCardNum[creditCardNum.length - 1] % 2 !== 0){
+  // The Final digit of the credit card number must be even
+  if(creditCardNum[creditCardNum.length - 1 ] % 2 !== 0){
     return false;
   }
 
   // The sum of all the digits must be greater than 16
   var sum = 0;
-  for(var i = 0; i < creditCardNum.length; i++){
+  for (var i = 0; i < creditCardNum.length; i++) {
     sum += Number(creditCardNum[i]);
   }
-  if(sum <= 16){
+  if( sum <= 16 ) {
     return false;
   }
-
   return true;
+
 };
 
 /**** tests *****/
