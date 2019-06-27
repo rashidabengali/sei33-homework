@@ -21,7 +21,7 @@ const fixStart = function (word) {
         editedWord += word[i]
       }
   }
-  console.log('word', editedWord);
+  console.log(word, editedWord);
 };
 
 fixStart('babble');
@@ -53,7 +53,7 @@ const notBad = function (sentence) {
       const afterBad = sentence.substring(badIndex+3, sentence.length);
       //console.log('afterBad', afterBad);
       const finalSentence = beforeNot + "good" + afterBad;
-      console.log('finalSentence', finalSentence);
+      console.log('finalSentence:', finalSentence);
     }
   } else {
     console.log(sentence);
