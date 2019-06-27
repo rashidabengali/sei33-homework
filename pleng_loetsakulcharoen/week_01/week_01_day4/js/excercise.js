@@ -78,19 +78,3 @@ console.log (`Your bill is $${cashRegister.total}`); // should show your bill is
 
 
 
-//method
-//validate card with many condition(if..)
-const validSum = function (num) {
-    let sum = 0;
-    sum += num;
-
-    return sum
-}
-const validateCard = function ( num ) {
-    return (num.length === 16 && num.length-1 % 2 === 0 && validSum > 16)
-
-    };
-
-
-console.log (validateCard (1234567890123456));
-//output, return true if the card is valid, return false otherwise.
