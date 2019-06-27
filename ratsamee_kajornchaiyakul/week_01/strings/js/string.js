@@ -66,7 +66,7 @@ const notBad = function(sentence){
 
     if (indexBad > 0 && indexNot > 0){
         if (indexBad > indexNot){
-            result = sentence.substring(0, indexNot-1) + " good " + sentence.substring(indexBad, sentence.length);
+            result = sentence.substring(0, indexNot-1) + " good" + sentence.substring(indexBad+3, sentence.length);
         }
     }
     console.log("notBad: " + result);
