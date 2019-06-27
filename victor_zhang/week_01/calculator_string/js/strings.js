@@ -89,6 +89,19 @@ const fixStart = function(string) {
   return newString;
 };
 
+// Rashida version
+const fixStart = function (word) {
+  let editedWord = word[0];
+  for (let i= 1; i < word.length; i++) {
+    if (word[i] === word[0]) {
+      editedWord += '*';
+    } else {
+      editedWord += word[i];
+    }
+  }
+  console.log('word', editedWord);
+}
+
 
 // Verbing
 /* Create a function called verbing. It should take a single argument, a string.
