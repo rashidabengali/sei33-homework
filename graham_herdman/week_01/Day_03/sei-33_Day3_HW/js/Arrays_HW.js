@@ -1,5 +1,5 @@
 console.log("Is this thing on?");
-
+/*
 // HomeWork: Array and Functions Bonus Material
 
 // 1) MaxOfTwoNumbers
@@ -147,7 +147,7 @@ console.log(filterLongWords(['Graham', 'cat'], 4));
 console.log(filterLongWords(['Dog'], 1));
 console.log(filterLongWords(['Break', 'me'], 6));
 
-/*
+
 // Homework: The Word Guesser
 // 1HW) You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
 // Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '_', '_', '_' and end with 'F', 'O', 'X').
@@ -196,9 +196,9 @@ const guessLetter = function (guess) {
 guessLetter('F');
 guessLetter('O');
 guessLetter('x');
-*/
 
-/*
+
+
 // Homework: Wheel of Fortune
 // 2HW) Start with a reward amount of $0
 // Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
@@ -264,11 +264,14 @@ while (lettersOfWord.length > 0){
 // Keep track of the state of the hangman as a number (starting at 0), and subtract or add to that number every time they make a wrong guess.
 // Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
 
-// TERRIBLY WRITTEN WHEEL OF FORTUNE. HONESTLY I AM EMBARRASSED TO HAVE WRITTEN CODE THIS BAD
-/*
 console.log("");
 console.log("HomeWork BONUS Hangman");
 console.log("");
+
+// check if undefined helper Function
+const isUndefined = function (element) {
+  return element === undefined;
+};
 
 // wait helper function
 function wait(ms){
@@ -333,13 +336,15 @@ numGuesses = 0;
 
 const guessLetter = function (guess) {
 
-
+  guess = guess.toUpperCase();
 
   if (!guessedLetters.includes(guess)){
     guessedLetters.push(guess);
   } else {
     numGuesses ++
     console.log(`Sorry you already chose that letter! Try again. You only have ${7 - numGuesses} left.`)
+    console.log(`Here's you getting ready to be hung`)
+    drawHangMan(numGuesses)
     return;
   }
 
@@ -347,7 +352,8 @@ const guessLetter = function (guess) {
   let found = false;
   for (let i = 0; i < lettersOfWord.length; i++) {
     if (lettersOfWord[i] === guess) {
-      correctLetters[i] = lettersOfWord.splice(i, 1);
+      correctLetters[i] = lettersOfWord[i];
+      delete lettersOfWord[i];
       found = true;
     }
   }
@@ -355,7 +361,7 @@ const guessLetter = function (guess) {
   // output for if they found a letter or if they did not
   if (found) {
     console.log(`Congratulations you found the letter ${guess}`);
-    // console.log(`you are up to ${correctLetters}`);
+    console.log(`you are up to ${correctLetters}`);
   } else {
     numGuesses ++
     console.log(`Sorry you didn't find any letters this guess. You only have ${7 - numGuesses} guesses left.`)
@@ -364,7 +370,7 @@ const guessLetter = function (guess) {
   }
 
   // winning the game
-  if (lettersOfWord.length === 0) {
+  if (lettersOfWord.every(isUndefined)) {
     console.log(`Congratulations! You have won the game and are not dead. Have fun being not dead.`);
   } else if (numGuesses >= 7){
     console.log("Sorry you lost the game (and your life)!")
@@ -372,10 +378,10 @@ const guessLetter = function (guess) {
   }
 }
 
-while (lettersOfWord.length > 0 && numGuesses < 7){
-  console.log("Please enter your guess");
+while (!lettersOfWord.every(isUndefined) && numGuesses < 7){
+  // console.log("Please enter your guess");
   let guess = prompt("Please enter your guess", "i.e. A");
+  console.log("");
   guessLetter(guess);
   wait(2000);
 }
-*/
