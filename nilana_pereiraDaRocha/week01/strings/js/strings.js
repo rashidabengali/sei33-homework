@@ -30,10 +30,22 @@ function mixUp(first, second) {
 
 // fixStart('babble'): 'ba**le'
 
-function fixStart(s) {
-    var c = s.charAt(0);
-    return c + s.slice(1).replace(new RegExp(c, 'g'), '*');
-}
+
+const fixStart = function (word) {
+    let editedWord = word[0];
+    for (let i = 1; i < word.length; i++) {
+        if (word[i] === word[0]) {
+            editedWord += '*';
+        } else {
+            editedWord += word[i];
+        }
+    }
+    console.log(editedWord)
+};
+//console.log('word ', );
+
+fixStart('babble');
+
 
 // Create a function called verbing. It should take a single argument, a string. If its length is at 
 // least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should 

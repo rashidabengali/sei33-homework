@@ -77,6 +77,7 @@ function multiplyArray(numbers) {
 console.log(sumArray([1, 2, 3, 4])); // return 10 
 console.log(multiplyArray([1, 2, 3, 4])); // return 24
 
+
 // Define a function reverseString that computes the reversal of a string. For example, 
 // reverseString("jag testar") should return the string "ratset gaj".
 
