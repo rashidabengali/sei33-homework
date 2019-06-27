@@ -60,7 +60,7 @@ cashRegister(cartForParty); // 60.55
 //
 // You're starting your own credit card business. You've come up with a new way to validate credit cards with a simple function called validateCreditCard that returns true or false.
 //
-let digitOcurrance = [];
+
 
 const calculateCardTotal = function (creditCard) {
   let total = 0;
@@ -73,12 +73,16 @@ const calculateCardTotal = function (creditCard) {
 
 const twoDigitsMinimum = function (creditCard) {
   const cardString = creditCard.toString()
+  const digitOcurrance = [];
   for (i = 0; i < 10; i++) {
     digitOcurrance[i] = 0;
-    for (j = 0; j < cardString.length; j++) {
-      if (Number(cardString[j]) === 1) {
+    for (j = 0; j < cardString.length; j++) { // something broken with code
+      if (Number(cardString[j]) === i) {
         digitOcurrance[i] = digitOcurrance[i] + 1;
       }
+    }
+    if (typeof creditCard === 'string' || digitOcurrance[i] > 15) {
+      return false;
     }
   }
   return true;
@@ -90,23 +94,33 @@ const validateCreditCard = function( creditCard ) {
   let total = 0;
   // for loop // to check if sum of all digits is greater than 16
   // maybe put this in a function and add to list of conditional if function returns true or false
-  if (calculateCardTotal(creditCard) > 16) {
-    if (twoDigitsMinimum(creditCard)) {
-      if ((Number(cardString[15]))%2 === 0) {
-        if (cardString.length === 16 && typeof creditCard === 'number') {
-          console.log(`'${ creditCard }' is a valid Credit Card Number`)     // exit conditional if crediCard does not meet rule.
-        }
-      }
-    }
+  if (calculateCardTotal(creditCard) <= 16) {
+    console.log(`'${ creditCard }' is an INVALID Credit Card Number, \n   all digits do not add up to at least 16.`)
+  }
+  else if (!twoDigitsMinimum(creditCard)) { // broken
+    console.log(`'${ creditCard }' is an INVALID Credit Card Number, \n   does not have at least two different digits.`)
+  }
+  else if ((Number(cardString[15]))%2 !== 0) { // something broken with this code
+    console.log(`'${ creditCard }' is an INVALID Credit Card Number, \n   does not end with an even digit.`)
+  }
+  else if (cardString.length !== 16 && typeof creditCard !== 'number') {
+    console.log(`'${ creditCard }' is an INVALID Credit Card Number, \n   does not have 16 numbered digits.`)
   }
   else {
-    console.log(`'${ creditCard }' is an INVALID Credit Card Number`)
+    console.log(`'${ creditCard }' is a valid Credit Card Number`)     // exit conditional if crediCard does not meet rule.
   }
 };
 
 validateCreditCard('fsdfa');
 validateCreditCard(1234567890123456);
 validateCreditCard(1111111111111111);
+validateCreditCard(9999999988880000);
+validateCreditCard(6666666666661666);
+validateCreditCard('a92332119c011112');
+validateCreditCard(4444444444444444);
+validateCreditCard(1111111111111110);
+validateCreditCard(6666666666666661);
+
 
 // Here are the rules for a valid number:
 //
