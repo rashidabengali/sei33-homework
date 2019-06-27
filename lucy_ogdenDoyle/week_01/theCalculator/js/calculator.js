@@ -97,11 +97,17 @@ function notBad (one) {
   const not = one.indexOf("not");
   const bad = one.indexOf("bad");
 
-  if (not < bad) {
+//check that not exists (index > 0)
+  if (not < bad && not > 0 && bad > 0) {
     //then it's in the correct order
     const start = one.slice(0, not);
     const end = one.slice(bad + 3, one.length);
     message = start + "good" + end;
+
+    //alternate ide:
+    //find distance between not and bad,
+    //replace from not for distance length, and
+    //replace it with not
   }
  else {
    message = one;
@@ -121,3 +127,4 @@ verbing("wowing");
 verbing("wow");
 notBad("This dinner is not that bad!");
 notBad("This dinner is not that bd!");
+notBad("This dinner is so that bad!");
