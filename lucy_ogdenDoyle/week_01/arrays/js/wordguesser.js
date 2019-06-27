@@ -30,7 +30,7 @@ for (var i = 0; i < word.length; i++) {
       else {
         let amount = reward();
         winnings += amount;
-        console.log(`Congratulations! ${guess} is correct! The current word is: ${guessed.join(" ")}, and you gained $${amount}`);
+        console.log(`Congratulations! ${guess} is correct! The current word is: ${guessed.join(" ")}, and you gained $${amount}. Your total is $${winnings}.`);
       }
       return;
       }
@@ -42,14 +42,14 @@ for (var i = 0; i < word.length; i++) {
   // When it's done iterating, it should log the current guessed letters ('F__') and congratulate the user if they found a new letter.
   let amount = reward();
   winnings -= amount;
-  console.log(`Sorry, try again. You have lost $${amount} this round.`);
+  console.log(`Sorry, try again. You have lost $${amount} this round. Your total is $${winnings}.`);
 
 }
 
 function reward () {
   let amount = Math.random()*1000;
   amount = Math.round(amount);
-  console.log(amount);
+  //console.log(amount);
   return amount;
 }
 
