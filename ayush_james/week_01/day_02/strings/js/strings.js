@@ -10,18 +10,13 @@
 //   DrEvil(1000000): 1000000 dollars (pinky)
 // ```
 
-var drEvil = function ( amount ) {
-  if ( amount === 1000000 ) {
-    return _result = `${amount} dollars (pinky)`;
+const drEvil = function (amount) {
+  if (amount === 1000000) { //Remember to include the extra === signs.
+    return amount + " dollars (pinky)";
   } else {
-    return amount +  "dollars";
+  return amount + " dollars";
   }
-}
-
-console.log (drEvil (45));
-console.log (drEvil (1000000));
-
-
+};
 
 // ## MixUp
 //
@@ -32,32 +27,38 @@ console.log (drEvil (1000000));
 // Look up the JavaScript string reference to find methods which may be useful!
 // ```
 
-var mixUp = function ( strOne, strTwo ) {
-  return strTwo.slice(0, 2) + strOne.slice(2) + " " + strOne.slice(0, 2) + strTwo.slice(2);
-
-}
-console.log (mixUp ( "Tinky", "Winky" ));  //still dont understand.
+// const mixUp = function (mango) {
+//   return mango + " please work!";
+// };
+//
+// My solution
+// const mixUp = function (thingOne, thingTwo) {
+// const = spliceThingOne get the first two characters of thingOne;
+// const = spliceThingTwo to get the first two characters of thingTwo;
+// const = spliceThingOneRest get the remaining characters of thingOne;
+// const = spliceThingTwoRest get the remaining characters of thingTwo;
+// result `${ spliceThingOne }${ spliceThingTwoRest } " " ${ spliceThingTwo }${ spliceThingOneRest };
+// };
 
 // ## FixStart
 //
 // Create a function called fixStart. It should take a single argument, a string, and return a version where all occurences of its first character have been replaced with '*', except for the first character itself. You can assume that the string is at least one character long. For example:
 // ```
-
-const fixStart = function (word) {
-  const editedWord = word[0]; // The first letter is unchanged.
-  for (let i=0; i < word.length; i++) {
-    if (word[i]===word[0]) {
-      editedWord += '*';
-    } else {
-      editedWord += word[i]
-    }
-  }
-  console.log(editedWord);
-}
-fixStart("babble");
 // fixStart('babble'): 'ba**le'
 // ```
 //
+
+// My Solution.
+// const fixStart = function (word) {
+// const firstChar = get first character
+// const replace = function {
+//   if word character 1 = firstChar {
+//     return firstChar.
+//   } else if word character remaining = firstChar {
+//     replace with "*";
+//   }
+// }
+
 // ## Verbing
 //
 // Create a function called verbing. It should take a single argument, a string. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. For example:
@@ -66,18 +67,16 @@ fixStart("babble");
 //   verbing('swimming'): 'swimmingly'
 //   verbing('go'): 'go'
 // ```
-
-const verbing = function ( word ) {
-  if (word.length >= 3) {
-    return `${word}ing.`;
-} else if (word.length[-3].endsWith ("ing") === true) {
-  return `${word}ly`;
-}
-}
-
-console.log ( verbing ("swimming"))
-
 //
+// const verbing = function (thingo) {
+//   if (thingo.length <= 3) {
+//     return thingo;
+//   }
+//   if (thingo )
+// };
+
+
+
 // ## Not Bad
 //
 // Create a function called notBad that takes a single argument, a string.
@@ -90,3 +89,4 @@ console.log ( verbing ("swimming"))
 //   notBad('This dinner is not that bad!'): 'This dinner is good!'
 //   notBad('This movie is not so bad!'): 'This movie is good!'
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
+//

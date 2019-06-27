@@ -43,12 +43,14 @@ console.log(maxOfThree( 70, 25, 90));
 
 //The following is method to sum array up
 
-const sumArray = function ( a, b) {
-  return a + b;
+const sumArray = function (array1) {
+  return array1.reduce((x,y)=>{
+    return x + y;
+  });
 } 
 const array1 = [1, 2, 3, 4]; // create array
 
-console.log(array1.reduce(sumArray));
+console.log(sumArray(array1));
 // expected output: 10
 
 const multiArray = function ( a, b ) {
