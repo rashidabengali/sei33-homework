@@ -134,72 +134,61 @@ const area = Math.sqrt(p * (p - num1) * (p - num2) * (p - num3));
 return area;
 };
 
-console.log(isArea(1,6,9));
+console.log(isArea(5,6,7));
 
 
 
 
 
-
-// Input
-const cart = {
-  chocolate: "3.25",
-  jeans: "99.99",
-  Tshirt: "25.01",
-  game: "21.99",
-  shampoo: "3.34",
-  proteinShake: "22.36"
+const cartForParty = {
+banana: "1.25",
+handkerchief: ".99",
+Tshirt: "25.01",
+apple: "0.60",
+nalgene: "10.34",
+proteinShake: "22.36"
 };
 
-
-
-function cashRegister(cart){
-  var items = Object.keys(cart); // array of items by key
-  var sum = 0;
-
-  for (var i = 0; i < items.length; i++) {
-    var itemName = items[i]; // get the name of the key for the item
-    var itemPrice = cart[itemName]; // get the price for the item
-    sum += Number.parseFloat(itemPrice); // convert the price to a float and add it to the sum
+const cashRegister = function(cart) {
+  const value = Object.values(cartForParty);
+  let result =0;
+  for(i=0; i < value.length; i++) {
+    console.log(`${value[i]} = ${parseFloat(value[i])}`);
+    result += parseFloat(value[i]);
   }
-
-  return sum;
+return result;
 }
-cashRegister(cart);
+console.log(cashRegister(cartForParty));
 
 
 
-
-
-
-
-
-const validateCreditCard = function(creditCardNr) {
-
-
-  for (var i=0; i < validateCreditCard.length, i++) {
-    const finalNum += validateCreditCard[i];
-
-currentNumber = Number.parseInt(finalNum);
-
-if ((!Number.isInteger(currentNumber)) && arguments.length !== 16 ) {
-
-
-  return false;
-}
-}
-
-  const what_I_care_about = arguments[arguments.length - 1];
-}
-
- if (what_I_care_about % 2 !== 0) {
-   return false;
- }
-
-
-}
-
-
-}
-validateCreditCard(hgjghjhhj);
-validateCreditCard("cop");
+//
+// const validateCreditCard = function(creditCardNr) {
+//
+//
+//   for (var i=0; i < validateCreditCard.length, i++) {
+//     const finalNum += validateCreditCard[i];
+//
+// currentNumber = Number.parseInt(finalNum);
+//
+// if ((!Number.isInteger(currentNumber)) && arguments.length !== 16 ) {
+//
+//
+//   return false;
+// }
+// }
+//
+//   const what_I_care_about = arguments[arguments.length - 1];
+// }
+//
+//  if (what_I_care_about % 2 !== 0) {
+//    return false;
+//  }
+//
+//
+// }
+//
+//
+// }
+// validateCreditCard(hgjghjhhj);
+// validateCreditCard("cop");
