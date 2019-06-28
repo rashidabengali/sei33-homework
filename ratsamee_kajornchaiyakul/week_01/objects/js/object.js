@@ -75,13 +75,19 @@ const shoppingCart = {
 }
 
 const cashRegister = function(cart){
-    const cartPrice = Object.values(cart);
     let total = 0;
-    if (cartPrice){
-        cartPrice.forEach(x => {
-            total += x;
-        });
+    for (const key in shoppingCart) {
+        if (shoppingCart.hasOwnProperty(key)) {
+            total += shoppingCart[key];
+        }
     }
+    // const cartPrice = Object.values(cart);
+    // let total = 0;
+    // if (cartPrice){
+    //     cartPrice.forEach(x => {
+    //         total += x;
+    //     });
+    // }
     return total;
 }
 console.log(`Total price is ${ cashRegister(shoppingCart) }`);
