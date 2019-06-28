@@ -10,7 +10,7 @@ const cartForParty = {
 };
 
 
-function cashRegister (cart) {
+function cashRegister (cart) {// 
   let values = Object.values(cart);
   let sum = 0;
   for (let i = 0; i < values.length; i++) {
