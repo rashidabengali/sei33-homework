@@ -48,9 +48,9 @@ recPerimeter(rectangleA.length, rectangleA.width); //this is calling the functio
 //
 
 const triangleA = {
-  sideA: 4,
-  sideB: 4,
-  sideC: 4
+  sideA: 5,
+  sideB: 10,
+  sideC: 14
 };
 
 //1
@@ -86,17 +86,20 @@ triArea(triangleA.sideA, triangleA.sideB, triangleA.sideC);
 
 //4
 const isObtuse = function (sideA, sideB, sideC) {
-let longestSide = Math.max(sideA, sideB, sideC); //breaking down the formula. 
-let totalOfOtherSides = (longestSide - (triangle.sideA + triangle.sideB + triangle.sideC));
-if (Math.pow(longestSide, 2) > Math.pow(totalOfOtherSides, 2)) { //formulA CALCULATION.
-    console.log(`The triangle is obtuse.`);
+createArray = [sideA, sideB, sideC]; //breaking down the formula.
+createArray.sort(function(a, b){return a - b});
+ //built in in JS to sort the array into order.
+if (Math.pow(createArray[2], 2) > (Math.pow(createArray[0], 2) + Math.pow(createArray[1], 2))) {
+//formulA CALCULATION.c^2 > a^2 + b^2.
+    console.log('The triangle is obtuse.');
   } else {
-    console.log(`The triangle is not obtuse.`);
+    console.log('The triangle is not obtuse.');
   }
 };
 isObtuse(triangleA.sideA, triangleA.sideB, triangleA.sideC);
 
 //how to prove if obtuse source: https://www.ck12.org/geometry/pythagorean-theorem-to-classify-triangles/lesson/Pythagorean-Theorem-to-Classify-Triangles-TRIG/
+//forumula for obstuse angle based on sides. c^2 > a^2 + b^2
 
 
 //
@@ -121,18 +124,20 @@ isObtuse(triangleA.sideA, triangleA.sideB, triangleA.sideC);
 // ```
 
 let cartForParty = {
-  banana: 1.25,
-  handkerchief: .99,
-  Tshirt: 25.01,
-  apple: 0.60,
-  nalgene: 10.34,
-  proteinShake: 22.36
+  banana: '1.25',
+  handkerchief: '.99',
+  Tshirt: '25.01',
+  apple: '0.60',
+  nalgene: '10.34',
+  proteinShake: '22.36' //Note I changed these to numbers hence I don't have to do the parse float thing.
 };
 
 const cashRegister = function (cartForParty) {
 const totalValues = Object.values(cartForParty); // creates an array from the values in the cart.
+let valueSum = 0;
 for (i = 0; i < totalValues.length; i++) {
-  console.log(totalValues[0]); //trying to add all the values in a loop.
+valueSum += Number(totalValues[i]); //want to use parseFloat as otherwise it would be combinding the strings. if the values above were strings instead of numbers.
 }
+console.log(`Your total comes to $${valueSum}.`); //   trying to add all the values in a loop.
 };
 cashRegister(cartForParty);
