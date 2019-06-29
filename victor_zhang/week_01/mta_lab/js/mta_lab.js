@@ -51,6 +51,9 @@ let numStops = 0;
 let stopNames = [];
 let firstTrip = true;
 let secondTrip = false;
+let enterLineIdx = 0;
+let exitLineIdx = 0;
+let swapLineIdx = exitLineIdx;
 
 
 const subwayFactory = function ( line /* stops, still undefined */) {
@@ -124,8 +127,7 @@ const getSubwayLine = function ( enterLine, exitLine ) {
       sameLine = false;
     }
     else if (subwayStation[i].subwayLine === exitLine) {
-      exitLineIdx = i;
-      swapLineIdx = i;
+      exitLineIdx = i; // 2
       sameLine = false;
     }
   }
@@ -133,9 +135,11 @@ const getSubwayLine = function ( enterLine, exitLine ) {
 
 const getDirection = function( enterStopNum, exitStopNum ) {
   if ( enterStopNum < exitStopNum ) {
+    backward = false;
     return forward = true;
   }
   else if ( enterStopNum > exitStopNum ){
+    forward = false;
     return backward = true;
   }
   // if ( !sameLine && enterStopNum < changeStopNum || changeStopNum < exitStopNum ) {
@@ -152,8 +156,8 @@ const addStops = function ( enterStopNum, exitStopNum ) {
       stopNames.push(subwayStation[enterLineIdx].stops[j+1]);
     }
   }
-  else if (backwards) {
-    for (let j = enterStopNum; j > exitStopNum; j--) {
+  else if (backward) {
+    for (let j = enterStopNum - 1; j > exitStopNum; j--) {
       stopNames.push(subwayStation[exitLineIdx].stops[j]);
     }
   }
@@ -164,7 +168,7 @@ const getAllStops = function ( enterStopNum, exitStopNum ) {
   stopNames = [];
   getDirection( enterStopNum, exitStopNum );
   addStops( enterStopNum, exitStopNum );
-  return stopNames;
+  // return stopNames;
 }
 
 const printMessage = function( enterLine, enterStop, exitLine, exitStop ) {
@@ -188,7 +192,14 @@ const printMessage = function( enterLine, enterStop, exitLine, exitStop ) {
 const checkStops = function( enterStop, exitStop, enterLineIdx, exitLineIdx, swapLineIdx, enterLine, exitLine ) {
   const enterStopNum = subwayStation[enterLineIdx].stops.indexOf(enterStop);
   const exitStopNum = subwayStation[exitLineIdx].stops.indexOf(exitStop);
-  const changeStopNum = subwayStation[swapLineIdx].stops.indexOf('Union Square'); // need to vary
+  const stopGetOffNum = subwayStation[enterLineIdx].stops.indexOf('Union Square'); // need to vary
+  const stopGetOnNum = subwayStation[exitLineIdx].stops.indexOf('Union Square'); // need to vary
+  //
+
+  // console.log(exitLineIdx);
+  // console.log(exitStop);
+  // console.log(subwayStation[exitLineIdx].stops.indexOf(exitStop));
+  // console.log(exitStopNum); // -1
 
   if (sameLine) {
     getAllStops( enterStopNum, exitStopNum );
@@ -196,16 +207,18 @@ const checkStops = function( enterStop, exitStop, enterLineIdx, exitLineIdx, swa
   }
   else if (!sameLine) { // !sameLine
     if (firstTrip) {
-      getAllStops ( enterStopNum, changeStopNum );
+      getAllStops ( enterStopNum, stopGetOffNum );
       printMessage( enterLine, enterStop, exitLine, exitStop )
       firstTrip = false;
       secondTrip = true;
       // print first part of message
     }
-    else if (secondTrip) {
-      getAllStops ( changeStopNum, exitStopNum );
+    if (secondTrip) {
+      getAllStops ( stopGetOnNum, exitStopNum ); // 4 -1
       printMessage( enterLine, enterStop, exitLine, exitStop )
       // printMessage(); or printChangeMessage();
+      firstTrip = true;
+      secondTrip = false;
     }
   }
 }
@@ -219,9 +232,6 @@ const listStopNames = function() {
 
 const planTrip = function( enterLine, enterStop, exitLine, exitStop ) {
   // take input into a function
-  let enterLineIdx = 0;
-  let exitLineIdx = 0;
-  let swapLineIdx = exitLineIdx;
   getSubwayLine( enterLine, exitLine );
   checkStops( enterStop, exitStop, enterLineIdx, exitLineIdx, swapLineIdx, enterLine, exitLine );
   // if ( enterLine !== exitLine ) {
@@ -321,6 +331,7 @@ const planTrip = function( enterLine, enterStop, exitLine, exitStop ) {
 
 planTrip('N', 'Times Square', 'N', 'Union Square'); // single subwayLine
 planTrip('N', 'Times Square', '6', '33rd'); // interchange lines
+planTrip('6', 'Astor Place', 'L', '8th'); // kind of works, print is weird
 
 //
 // ```javascript
