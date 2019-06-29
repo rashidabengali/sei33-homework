@@ -14,11 +14,11 @@ function validateCreditCard(digits) {
     if (digits.length !== 19) {
         return false;
     }
-    const batata = digits.split('-');
+    const cardNumbers = digits.split('-');
 
     let isNumber = true;
-    for (let index = 0; index < batata.length; index++) {
-        const element = batata[index];
+    for (let index = 0; index < cardNumbers.length; index++) {
+        const element = cardNumbers[index];
         if (isNaN(element) === true && isNumber === true) {
             isNumber = false;
         }
@@ -30,15 +30,15 @@ function validateCreditCard(digits) {
     // You must have at least two different digits represented 
     // (all of the digits cannot be the same)
 
-    if (batata[0] === batata[1] && batata[0] === batata[2] && batata[0] === batata[3]) {
+    if (cardNumbers[0] === cardNumbers[1] && cardNumbers[0] === cardNumbers[2] && cardNumbers[0] === cardNumbers[3]) {
         return false;
     }
     // The final digit must be even
-    if (batata[3] % 2 !== 0) {
+    if (cardNumbers[3] % 2 !== 0) {
         return false;
     }
     // The sum of all the digits must be greater than 16
-    const numbers = batata.join('').split('');
+    const numbers = cardNumbers.join('').split('');
 
     if (sumArray(numbers) < 16) {
         return false;
