@@ -69,6 +69,8 @@ getPerimeter(rectangleA);
 //   sideB: 4,
 //   sideC: 4
 // };
+
+// * isEquilateral - Returns whether the triangle is equilateral or not
 const triangleA = {
 sideA: 3,
 sideB: 4,
@@ -85,7 +87,7 @@ const isEquilateral = function(triangle){
 };
 console.log(isEquilateral(triangleA));
 
-
+// * isIsosceles - Returns whether the triangle is isosceles or not
 
 const isIsosceles = function(triangle) {
   if (triangle.sideA === triangle.sideB){
@@ -101,9 +103,10 @@ const isIsosceles = function(triangle) {
 
 console.log(isIsosceles(triangleA));
 
+// * isObtuse - Returns whether the triangle is obtuse or not
 
 const isObtuse = function(triangle) {
-  let a= Math.pow(triangle.sideA,2) + Math.pow(triangle.sideB,2);
+  let a = Math.pow(triangle.sideA,2) + Math.pow(triangle.sideB,2);
  if(Math.pow(triangle.sideC,2)> a ){
    return true;
  }
@@ -112,6 +115,18 @@ const isObtuse = function(triangle) {
  }
 };
  console.log(isObtuse (triangleA));
+
+ // * area - Returns the area of the Triangle
+
+
+ const areaOfTriangle = function (triangle) {
+   const s = (triangle.sideA + triangle.sideB + triangle.sideC)/2;
+   const area = Math.sqrt(s*((s-triangle.sideA)*(s-triangle.sideB)*(s-triangle.sideC)));
+   return area;
+ }
+
+console.log(areaOfTriangle (triangleA));
+
 
 
  // # The Cash Register
@@ -152,7 +167,7 @@ console.log(cashRegister(cartForParty));
 // # Credit Card Validation
 //
 // You're starting your own credit card business. You've come up with a new way to validate credit cards with a simple function called validateCreditCard that returns true or false.
-//
+//x`
 // Here are the rules for a valid number:
 //
 // - Number must be 16 digits, all of them must be numbers
