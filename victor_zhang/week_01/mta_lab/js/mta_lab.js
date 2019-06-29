@@ -27,7 +27,7 @@ console.log("mta_lab.js is up and running!");
 //     stops: [],
 //     createStops: function() {
 //       for (let i = 1; i < arguments.length; i++) {
-//       subway.stops.push(arguments[i]);
+//       subway.stops.push(arguments[i]); // should be able to use this.stops...
 //       }
 //     }
 //   };
@@ -42,6 +42,15 @@ console.log("mta_lab.js is up and running!");
 // ]
 //
 // subwayStation[0].createStops('N', 'T.S', '34th');
+
+let nothing = 'nothing';
+let sameLine = false;
+let forward = false;
+let backward = false;
+let numStops = 0;
+let stopNames = [];
+let firstTrip = true;
+let secondTrip = false;
 
 
 const subwayFactory = function ( line /* stops, still undefined */) {
@@ -76,18 +85,242 @@ console.log(subwayStation[0].stops);
 //   {subwayLine: '6', stops: ['T.S.','34th', etc ]}
 // ]
 
-const createSubway = function() { //hard coded subway first
-  // create subway lines and stops
+////////////////////* TO CREATE NEW SUBWAYS IN THE FUTURE, STILL doesnt work
+// const createSubway = function() { //hard coded subway first
+//   // create subway lines and stops
+//   console.log(arguments);
+//   console.log(subwayFactory(arguments));
+//   return subwayStation.push(subwayFactory(arguments));
+// } */
+
+
+console.log(subwayStation);
+// console.log(subwayStation.Object.keys());
+console.log(Object.keys(subwayStation)); // ["0", "1", "2"]
+console.log(Object.keys(subwayStation[0])); // ["subwayLine", "stops"]
+
+let testVar = subwayStation[0].stops;
+
+console.log(testVar.indexOf('34th'));
+
+console.log(subwayStation[0].stops);
+console.log(Object.keys(subwayStation[0].stops)); // ["0", "1", "2", "3", "4", "5"]
+console.log(Object.values(subwayStation[0].stops)); //["Times Square", "34th", "28th", "23rd", "Union Square", "8th"]
+console.log(Object.values(subwayStation[0].subwayLine));
+console.log(subwayStation[0].subwayLine);
+
+console.log(subwayStation[0].stops.indexOf('23rd') - subwayStation[0].stops.indexOf('34th'));
+console.log(subwayStation[0].stops.values); //
+
+const getSubwayLine = function ( enterLine, exitLine ) {
+  for (let i = 0; i < subwayStation.length; i++) {
+    if (enterLine === exitLine && subwayStation[i].subwayLine === enterLine) {
+      enterLineIdx = i;
+      exitLineIdx = i;
+      sameLine = true;
+    }
+    else if (subwayStation[i].subwayLine === enterLine) {
+      enterLineIdx = i;
+      sameLine = false;
+    }
+    else if (subwayStation[i].subwayLine === exitLine) {
+      exitLineIdx = i;
+      swapLineIdx = i;
+      sameLine = false;
+    }
+  }
 }
 
-const planTrip = function( subwayLine, stop, subwayLine, stop ) {
-  // take input into a function
-
-  //
-
+const getDirection = function( enterStopNum, exitStopNum ) {
+  if ( enterStopNum < exitStopNum ) {
+    return forward = true;
+  }
+  else if ( enterStopNum > exitStopNum ){
+    return backward = true;
+  }
+  // if ( !sameLine && enterStopNum < changeStopNum || changeStopNum < exitStopNum ) {
+  //   return forward = true;
+  // }
+  // else if ( !sameLine && enterStopNum > changeStopNum || changeStopNum > exitStopNum ) {
+  //   return backwards = true;
+  // }
 };
 
-console.log(planTrip('N', 'Times Square', '6', '33rd'));
+const addStops = function ( enterStopNum, exitStopNum ) {
+  if (forward) {
+    for (let j = enterStopNum; j < exitStopNum - 1; j++) {
+      stopNames.push(subwayStation[enterLineIdx].stops[j+1]);
+    }
+  }
+  else if (backwards) {
+    for (let j = enterStopNum; j > exitStopNum; j--) {
+      stopNames.push(subwayStation[exitLineIdx].stops[j]);
+    }
+  }
+}
+
+const getAllStops = function ( enterStopNum, exitStopNum ) {
+  numStops = Math.abs(exitStopNum - enterStopNum);
+  stopNames = [];
+  getDirection( enterStopNum, exitStopNum );
+  addStops( enterStopNum, exitStopNum );
+  return stopNames;
+}
+
+const printMessage = function( enterLine, enterStop, exitLine, exitStop ) {
+  if (!sameLine && firstTrip) {
+    console.log(`From ${ enterStop } on line ${ enterLine }, to ${ exitStop } on line ${ exitLine }.`)
+    console.log(`Stay on the train through ${ stopNames.join(', ') }.`)
+    console.log(`Get off and change trains at ${ 'Union Square' } after ${ numStops } stops.`)
+    console.log(`Get on the train to ${ exitStop } on line ${ exitLine }.`)
+  }
+  else if (!sameLine && secondTrip) {
+    console.log(`Stay on the train through ${ stopNames.join(', ') }.`)
+    console.log(`Get off at ${ exitStop } after ${ numStops } stops.`)
+  }
+  else {
+    console.log(`From ${ enterStop } on line ${ enterLine }, to ${ exitStop } on line ${ exitLine }.`)
+    console.log(`Stay on the train through ${ stopNames.join(', ') }.`)
+    console.log(`Get off at destination: ${ exitStop } after ${ numStops } stops.`)
+  }
+}
+
+const checkStops = function( enterStop, exitStop, enterLineIdx, exitLineIdx, swapLineIdx, enterLine, exitLine ) {
+  const enterStopNum = subwayStation[enterLineIdx].stops.indexOf(enterStop);
+  const exitStopNum = subwayStation[exitLineIdx].stops.indexOf(exitStop);
+  const changeStopNum = subwayStation[swapLineIdx].stops.indexOf('Union Square'); // need to vary
+
+  if (sameLine) {
+    getAllStops( enterStopNum, exitStopNum );
+    printMessage( enterLine, enterStop, exitLine, exitStop )
+  }
+  else if (!sameLine) { // !sameLine
+    if (firstTrip) {
+      getAllStops ( enterStopNum, changeStopNum );
+      printMessage( enterLine, enterStop, exitLine, exitStop )
+      firstTrip = false;
+      secondTrip = true;
+      // print first part of message
+    }
+    else if (secondTrip) {
+      getAllStops ( changeStopNum, exitStopNum );
+      printMessage( enterLine, enterStop, exitLine, exitStop )
+      // printMessage(); or printChangeMessage();
+    }
+  }
+}
+
+
+const listStopNames = function() {
+
+}
+
+
+
+const planTrip = function( enterLine, enterStop, exitLine, exitStop ) {
+  // take input into a function
+  let enterLineIdx = 0;
+  let exitLineIdx = 0;
+  let swapLineIdx = exitLineIdx;
+  getSubwayLine( enterLine, exitLine );
+  checkStops( enterStop, exitStop, enterLineIdx, exitLineIdx, swapLineIdx, enterLine, exitLine );
+  // if ( enterLine !== exitLine ) {
+  //   for (let i = 0; i < subwayStation.length; i++) {
+  //     const enterStopNum = subwayStation[i].stops.indexOf(enterStop); // need to vary
+  //     const exitStopNum = subwayStation[i].stops.indexOf('Union Square'); // need to vary
+  //     if (subwayStation[i].subwayLine === enterLine) { // need to vary
+  //       const numStops = Math.abs(exitStopNum - enterStopNum);
+  //       const stopNames = [];
+  //       for (let j = enterStopNum; j < exitStopNum - 1; j++) { // this loop needs to vary
+  //         stopNames.push(subwayStation[i].stops[j+1]);
+  //       }
+  //       // printMessage();
+  //       console.log(`From ${ enterStop } on line ${ enterLine }, to ${ exitStop } on line ${ exitLine }.`)
+  //       console.log(`Stay on the train through ${ stopNames.join(', ') }.`)
+  //       console.log(`Get off and change trains at ${ 'Union Square' } after ${ numStops } stops.`)
+  //       console.log(`Get on the train to ${ exitStop } on line ${ exitLine }.`)
+  //     }
+  //   }
+  //   for (let i = 0; i < subwayStation.length; i++) {
+  //     const enterStopNum = subwayStation[i].stops.indexOf('Union Square'); // need to vary
+  //     const exitStopNum = subwayStation[i].stops.indexOf(exitStop); // need to vary
+  //     if (subwayStation[i].subwayLine === exitLine) { // this needs to vary
+  //       const numStops = Math.abs(exitStopNum - enterStopNum);
+  //       const stopNames = [];
+  //       console.log(exitStopNum); // 1  4
+  //       console.log(enterStopNum); // 4  2
+  //       for(let j = enterStopNum - 1; j > exitStopNum; j--) { // this loop needs to vary
+  //         stopNames.push(subwayStation[i].stops[j]);
+  //       }
+  //       // printMessage(); or printChangeMessage();
+  //       console.log(`Stay on the train through ${ stopNames.join(', ') }.`)
+  //       console.log(`Get off at ${ exitStop } after ${ numStops } stops.`)
+  //     }
+  //   }
+  // }
+  // else {
+  //   for (let i = 0; i < subwayStation.length; i++) {
+  //     const enterStopNum = subwayStation[i].stops.indexOf(enterStop);
+  //     const exitStopNum = subwayStation[i].stops.indexOf(exitStop);
+  //     if (subwayStation[i].subwayLine === enterLine) {
+  //       const numStops = exitStopNum - enterStopNum;
+  //       // indexOf subwayStation[i].stops
+  //       console.log(numStops);
+  //       // two ways to show stops in cosole.log
+  //           // 1. subwayStation[i].stops.join(', '), then slice
+  //           // 2. for (let j = enterStopNum; j < exitStopNum; j++) { // if I want to retun numStops and stopNames, this needs to be outside if conditional, inside outer for statement
+  //           //  let stopNames = '';
+  //           //  stopNames = stopNames + ', ' + subwayStation[i].stops[j];
+  //
+  //       // let allStopsName = subwayStation[i].stops.join(', ');
+  //
+  //       const stopNames = [];
+  //       for (let j = enterStopNum; j < exitStopNum - 1; j++) { // need to vary
+  //         stopNames.push(subwayStation[i].stops[j+1])
+  //         console.log(stopNames);
+  //       }
+  //       // printMessage();
+  //       console.log(`From ${ enterStop } on line ${ enterLine }, to ${ exitStop } on line ${ exitLine }.`)
+  //       console.log(`Stay on the train through ${ stopNames.join(', ') }.`)
+  //       console.log(`Get off at destination: ${ exitStop } after ${ numStops } stops.`)
+  //     }
+  //     else {
+  //       console.log( `Not looking at ${ enterLine } subway Line.`)
+  //     };
+  //
+  //
+  //
+  //     // indexOf exitLine - indexOf enterLine // should return how many stops from enterstop to endstop
+  //         // example 4th stop - 0thstop (enterStop) = 4 stops
+  //     // .??? is indexOf subwayStation[i].stops the same as Object.keys(subwayStation[i].stops)
+  //           /// ?> one is a single index, the other is array of index
+  //     // after calculating stops.. return console.log
+  //     // Object.values of subwayStation[i].stops of index enterLine to exitLine
+  //     // count stops from Object.keys(subwayStation[i].stops)
+  //     // subwayStation[i].stops.values === enterStop
+  //   }
+  // }
+  //
+
+
+
+
+        // count how many stops
+          // return the keys from a stop to another and subtract to get number of stops
+        // show which stops to reach destination
+          // return values of stop object
+
+  // console.log(`You must travel through the following stops on the ${ nothing } line: ${ nothing }`);
+  // console.log(`Change at ${ nothing }`); // change at union square if necessary
+  // console.log(`Your journey continues through the following stops: ${ nothing }`);
+  // console.log(`${ nothing } stops in total, before you reach your destination ${ nothing }`);
+};
+
+
+
+
+planTrip('N', 'Times Square', 'N', 'Union Square'); // single subwayLine
+planTrip('N', 'Times Square', '6', '33rd'); // interchange lines
 
 //
 // ```javascript
