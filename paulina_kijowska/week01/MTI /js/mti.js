@@ -20,22 +20,47 @@ var planTrip = function(lineGetOn, stopGetOn, lineGetOff, stopGetOff ){
 //console.log the name of the current line we should get on at
 for (var i=0; i<=2; i++ ) {
 if (lineGetOn === lines[i].name){
-  console.log(lines[i].name);
-  //console.log where is the stop we should get on at in our array
-  console.log(lines[i].stops.indexOf(stopGetOn));
+  var a = lines[i].name;
+  //console.log name of the line
+  console.log(a);
+
+  //  //console.log nr of array we are looking at
+//var e = lines[i].stops.indexOf(stopGetOn);
+
+  //stored variable with the nr of stop we get on at
+  var b = lines[i].stops.indexOf(stopGetOn);
+  console.log(b);
+  var listOfStops = lines[b].stops;
+
+//check how many stops we need to take out from our function
+//print out the array of stops we need to take
+
+// for (var i=0; i<b; i++ ) {
+// if (b > 0) {
+// var lessStops = listOfStops.shift();
+// console.log(lessStops);
+// }
+// }
+
+
+
+//this will console.log all stops left
+  console.log(listOfStops);
 }
 
 
 //console.log which line we should get off at
 if (lineGetOff === lines[i].name){
-  console.log(lines[i].name);
+  var c = lines[i].name;
+  console.log(c);
 //console.log which stop we should get off at in our array (which number in the array?)
-  console.log(lines[i].stops.indexOf(stopGetOff));
+var d = lines[i].stops.indexOf(stopGetOff);
+  console.log(d);
   }
 
 }
 }
-planTrip('Nline', 'Times Square', 'Sline', '33rd');
+planTrip('Sline', '33rd', 'Nline', '23rd');
 //based on the name of the stop we iteriate through the loop to console.log the names of the stops we will pass
 
 
