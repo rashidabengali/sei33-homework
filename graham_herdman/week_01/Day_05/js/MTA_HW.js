@@ -82,59 +82,73 @@ const lineMaker = function (line, stops) {
 // Search Function
 
 // planTrip = function ('N', 'Times Square', 'N', '8th')
-const planTrip = function (originLine, originStop, destinationLine, destinationStop) {
+const planTrip = function (originLine, origin, destinationLine, destination) {
 
-  // Make map
-  map = {
-    N: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
-    L: ["8th", "6th", "Union Square", "3rd", "1st"],
-    6: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]
+  // #1 Make map
+  const map = {
+    N: {name: "N", stops: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"]},
+    L: {name: "L", stops: ["8th", "6th", "Union Square", "3rd", "1st"]},
+    6: {name: "6", stops: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]}
   };
-  // WORKING FROM HERE
 
-  // Step through the map to get to the destinationLine
+  // #2 Search Map
   // put in function search
-  let currentLine = map[originLine]; // Array
-  let icurr = currentLine.indexOf(originStop);
-  let iUnion = currentLine.indexOf("Union Square");
+  let currentLine = map[originLine]; // Object
+  let icurr = currentLine.stops.indexOf(origin);
+  let iUnion = currentLine.stops.indexOf("Union Square");
   let stops = [];
+  let forwards = false;
+  let backwards = false;
 
-  //while we aren't on the destination line and are not at the destination stop
-  while (currentLine !== map[destinationLine] && currentLine[icurr] !== destinationStop) {
+  let currentStop = currentLine.stops[icurr];
+  let changeLines = false;
 
-      // loop forwards
-      if (icurr < iUnion) {
-        while (icurr < currentLine.length) {
-          // check if the current stop is Union Square and if we are on destination line
-          if (currentLine[icurr] === "Union Square" && originLine !== destinationLine) {
-            currentLine = map[destinationLine]; //change to destination line
-            icurr = currentLine.indexOf("Union Square"); //now on
-            break;
-          }
-          stops.push(currentLine[icurr]); // push a stop into stops
-          icurr++;
-        }
-      } else if (icurr > iUnion) {
-        while (icurr > -1) {
-          // check if the current stop is Union Square and if we are on destination line
-          if (currentLine[icurr] === "Union Square" && originLine !== destinationLine) {
-            currentLine = map[destinationLine]; //change to destination line
-            icurr = currentLine.indexOf("Union Square"); //now on
-            break;
-          }
-          stops.push(currentLine[icurr]); // push a stop into stops
-          icurr++;
-        }
-      }
-      return [stops, stops.length];
+  let i = 0;
+
+  while (currentLine.name !== destinationLine || currentStop !== destination) {
+
+    currentStop = currentLine.stops[icurr];
+    changeLines = currentStop === "Union Square" && currentLine.name !== destinationLine;
+
+    // #2.1 check if we need to change lines
+    if (changeLines) {
+      currentLine = map[destinationLine]; //change to destination line
+      icurr = currentLine.stops.indexOf("Union Square"); // now on destination line
+      iUnion = currentLine.stops.indexOf(destination);
+      forwards = false;
+      backwards = false;
+    }
+
+    // push a stop into stops list
+    stops.push(currentStop);
+
+    // #2.2 LOOP CONTROL
+    // loop forwards if origin station starts before iUnion
+    if (icurr < iUnion || forwards) {
+      forwards = true;
+      icurr++;
+    // loop backwards if origin station starts behind
+    } else if (icurr > iUnion || backwards) {
+      backwards = true;
+      icurr--;
+    }
   }
 
+  return [stops, stops.length];
 }
 
 // Print out the stops
 // console.log(`You must travel through the following stops on the ${originLine} line: ${stops.join(" ")}`);
 
-console.log(planTrip('N', 'Times Square', 'N', '8th'));
+debugger;
+
+result = planTrip('N', 'Times Square', '6', '33rd');
+
+// TODO NEED TO MAKE THIS INTERACTIVE
+console.log(`You must travel through the following stops on the N line: 34th, 28th, 23rd, Union Square.`)
+console.log(`Change at Union Square.`)
+console.log(`Your journey continues through the following stops: 23rd, 28th, 33rd.`)
+console.log(`7 stops in total.`)
 
 
 
