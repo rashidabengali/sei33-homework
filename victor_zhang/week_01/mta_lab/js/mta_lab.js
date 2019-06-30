@@ -43,7 +43,6 @@ console.log("mta_lab.js is up and running!");
 //
 // subwayStation[0].createStops('N', 'T.S', '34th');
 
-let nothing = 'nothing';
 let sameLine = false;
 let forward = false;
 let backward = false;
@@ -133,7 +132,7 @@ const getSubwayLine = function ( enterLine, exitLine ) {
   }
 }
 
-const getDirection = function( enterStopNum, exitStopNum ) {
+const getDirection = function( enterStopNum, exitStopNum ) { // not necessary
   if ( enterStopNum < exitStopNum ) { // check which direction train is going
     backward = false;
     return forward = true;
@@ -151,12 +150,12 @@ const getDirection = function( enterStopNum, exitStopNum ) {
 };
 
 const addStops = function ( enterStopNum, exitStopNum ) {
-  if (forward) {
+  if (enterStopNum < exitStopNum) { // if (forward)
     for (let j = enterStopNum; j < exitStopNum - 1; j++) { // if going fowards, add stops
       stopNames.push(subwayStation[enterLineIdx].stops[j+1]);
     }
   }
-  else if (backward) {
+  else if (enterStopNum > exitStopNum) { // if (backward)
     for (let j = enterStopNum - 1; j > exitStopNum; j--) { // if going backwards add stops
       stopNames.push(subwayStation[exitLineIdx].stops[j]);
     }
@@ -166,7 +165,7 @@ const addStops = function ( enterStopNum, exitStopNum ) {
 const getAllStops = function ( enterStopNum, exitStopNum ) {
   numStops = Math.abs(exitStopNum - enterStopNum); // gets number of stops
   stopNames = [];
-  getDirection( enterStopNum, exitStopNum ); // checks which direction train is going
+  // getDirection( enterStopNum, exitStopNum ); // checks which direction train is going
   addStops( enterStopNum, exitStopNum ); // add stops Names to array
   // return stopNames;
 }
