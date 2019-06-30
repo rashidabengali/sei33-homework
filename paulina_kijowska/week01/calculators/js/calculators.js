@@ -54,19 +54,24 @@ const percentageSquare = percentOf(squared, finalArea);
 part2(122);
 
 
-const raindrops = function(num){
-
-
-  if (num%3 === 0 ){
-    console.log("Ping");
-  }
- if (num%5 === 0) {
-    console.log("Plang");
-  }
-  if (num%7 === 0){
-    console.log("Plong");
-  }
-  else console.log(String(num));
-}
-raindrops(10);
-raindrops(28);
+// const raindrops = function(num){
+//
+// const string ="";
+//   if (num%3 === 0 ){
+//     string = string + "Pling";
+//   }
+//  if (num%5 === 0) {
+//     string = string + "Plang";
+//   }
+//   if (num%7 === 0){
+//   string = string + "Plong");
+//   }
+//   if (string.length === "") {
+//     string += number;
+// }
+//
+// const result = `Raindrop speaks for the number ${number} as ${string}`;
+// return result;
+// }
+//
+// console.log();
