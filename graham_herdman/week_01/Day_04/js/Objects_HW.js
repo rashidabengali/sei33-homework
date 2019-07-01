@@ -272,7 +272,7 @@ const totalSumOfMoney = function () {
 const addAccount = function (currentBalance, ownersName) {
   const account = {currentBalance: currentBalance, ownersName: ownersName, deposit: deposit, withdraw: withdraw};
   accounts.push(account);
-}
+};
 
 // create a bank
 const bank = {accounts: accounts, totalSumOfMoney: totalSumOfMoney, addAccount: addAccount};
@@ -301,17 +301,17 @@ console.log(`The total balance for the account is: ${bank.totalSumOfMoney()}`);
 console.log('');
 
 // make a deposit
-console.log(`Make a deposit of $10 into Ambers account.`)
-console.log(`Ambers account before deposit: ${bank.accounts[5].currentBalance}`)
+console.log(`Make a deposit of $10 into Ambers account.`);
+console.log(`Ambers account before deposit: ${bank.accounts[5].currentBalance}`);
 bank.accounts[5].deposit(10);
-console.log(`Ambers account after deposit: ${bank.accounts[5].currentBalance}`)
+console.log(`Ambers account after deposit: ${bank.accounts[5].currentBalance}`);
 console.log('');
 
 // make a withdrawal
-console.log(`Make a withdrawl of $10 out of Ambers account.`)
-console.log(`Ambers account before withdrawl: ${bank.accounts[5].currentBalance}`)
+console.log(`Make a withdrawl of $10 out of Ambers account.`);
+console.log(`Ambers account before withdrawl: ${bank.accounts[5].currentBalance}`);
 bank.accounts[5].withdraw(10);
-console.log(`Ambers account after withdrawl: ${bank.accounts[5].currentBalance}`)
+console.log(`Ambers account after withdrawl: ${bank.accounts[5].currentBalance}`);
 
 
 /*
