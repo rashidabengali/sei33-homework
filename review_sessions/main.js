@@ -10,6 +10,7 @@
 // };
 //
 // mixMatch('mix', 'pad');
+
 //
 //
 // const fixStart = function (word) {
@@ -65,17 +66,13 @@
 
 //WORD GAME
 
-const playWord = ['L','E','A','T','H','E','R'];
-
-const guessWord = ['_','_','_','_','_','_','_'];
-
-let maxWrongGuess = 6;
-
-const guessedLetterList = [];
-
 const guessLetter = function (letter) {
 
   letter = letter.toUpperCase();
+  const playWord = ['L','E','A','T','H','E','R'];
+  const guessWord = ['_','_','_','_','_','_','_'];
+  let maxWrongGuess = 6;
+  let guessedLetterList = [];
 
   if (guessedLetterList.includes(letter)) {
     console.log('Repeated letter:', letter);
