@@ -35,20 +35,20 @@
 // c) print out the journey
 //
 
-// const trainLine =  {
+const trainLine =  {
 //   // I don't need to change the keys into a string due to keys being turned into a strings from javascript.
 //   // Extremely Important note! you must put a "," after an array!
 //
-//   n: [ ' Timesquare',' 34th',' 28 th',' 23 rd',' Union Square Platform 0',' 8 th' ],
-//   l: [' 8th',' 6th', ' Union Square Platform 1', ' 3rd', ' 1st'] ,
-//   6: [ ' Grand Centeral', ' 33rd', ' 28th', ' 23rd', ' Union Square Platform 2', ' Astor Place' ]
-// };
+  n: [ ' Timesquare',' 34th',' 28 th',' 23 rd',' Union Square Platform 0',' 8 th' ],
+  l: [' 8th',' 6th', ' Union Square Platform 1', ' 3rd', ' 1st'] ,
+  6: [ ' Grand Centeral', ' 33rd', ' 28th', ' 23rd', ' Union Square Platform 2', ' Astor Place' ]
+};
 
 //
 // for now I'm going to spit out the start and end for a single line, afterwards I'll figure out how to connect two lines.
 //
 
-// const route1 = function (start1, end1, start2, end2) {
+const route1 = function (start1, end1, start2, end2) {
 
 //
 // since i cant just ad the indexOf(trainLine.key[value]) inside the ${} on my console.log ill have to declare it a var
@@ -56,16 +56,16 @@
 // we've done enough work to make sure the values we call all work interchangably. except for the total calculation of stops.
 //
 
-//   console.log(`We're starting off at ${start1}, we'll have a total of ${ start1.indexOf(trainLine.n[0]) - end1.indexOf(trainLine.n[4])} stops before switching stations at ${end1}.
-//    From ${start2} we'll have a total of ${start2.indexOf(trainLine.l[2]) - end2.indexOf(trainLine.l[1])} stops to reach ${end2} being our final destination`)
-// }
+  console.log(`We're starting off at ${start1}, we'll have a total of ${ start1.indexOf(trainLine.n[0]) - end1.indexOf(trainLine.n[4])} stops before switching stations at ${end1}.
+   From ${start2} we'll have a total of ${start2.indexOf(trainLine.l[2]) - end2.indexOf(trainLine.l[1])} stops to reach ${end2} being our final destination`)
+}
 
 //
 //trainLine.l[2]
 //when we call the n line we must specify our start1 and our end1
 //
 
-// route1(trainLine.n[0], trainLine.n[4], trainLine.l[2], trainLine.l[1]);
+route1(trainLine.n[0], trainLine.n[4], trainLine.l[2], trainLine.l[1]);
 
 //
 // I'm making all the above commetted so I can see the difference I'm about to do for future reference. After a couple of pointers from Joel and other class mates I'm going to make some changes to my script.
@@ -85,6 +85,23 @@ const trainLine =  {
 };
 
 const route1 = function (line1, start1, line2, start2) {
+
+  let tripOne = [];
+
+  if (trainLine[line1].indexOf(start1) < trainLine[line1].indexOf(' UnionSquare')) {
+    for (let i = trainLine[line1].indexOf(start1) + 1; i <= trainLine[line1].indexOf(' UnionSquare'); i++) {
+      tripOne.push(trainLine[line1][i]);
+    }
+  } else if (trainLine[line1].indexOf(start1) > trainLine[line1].indexOf(' UnionSquare')) {
+    for (let i = trainLine[line1].indexOf(start1); i > trainLine[line1].indexOf(' UnionSquare'); i--) {
+      tripOne.push(trainLine[line1][i]);
+    }
+  }
+
+
+
+  console.log(tripOne);
+
   const line1TotalStops = (trainLine[line1].indexOf(' UnionSquare') + 1) - (trainLine[line1].indexOf(start1) + 1)
 
   const line2TotalStops = (trainLine[line2].indexOf(start2) + 1) - (trainLine[line2].indexOf(' UnionSquare') + 1)
