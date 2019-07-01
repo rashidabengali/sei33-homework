@@ -58,42 +58,75 @@ fixStart('babble'): 'ba**le'
 ```
 */
 const fixStart = function (s) {
-  const c = s.charAt(0);
-  let outputStr = '';
-// literate through the entire string pushing letters into a new string unless it is the first letter
-    for (let i = 0; i < s.length; i++) {
-  // if the letter is the first letter AND we are not checking the first letter
-    if (s[i] === c && i !== 0) {
-    outputStr += '*';
+  // let e = s[0];
+  let outputStr = s[0]
+  for (let i = 1; i < s.length; i++) {
+    if (s[i] === s[0]) {
+      outputStr += '*';
     } else {
       outputStr += s[i];
-    }
-return outputStr;
+    };
+
+}return outputStr;
 };
 s = 'babble'
 console.log(fixStart(s));
 
-/*
-## Verbing
+// ## Verbing
+//
+// Create a function called verbing. It should take a single argument, a string. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. For example:
+// ```
+//   verbing('swim'): 'swimming'
+//   verbing('swimming'): 'swimmingly'
+//   verbing('go'): 'go'
+// ```
 
-Create a function called verbing. It should take a single argument, a string. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. For example:
-```
-  verbing('swim'): 'swimming'
-  verbing('swimming'): 'swimmingly'
-  verbing('go'): 'go'
-```
+const verbing = function (verb) {
 
-## Not Bad
+  if (verb.length < 3) {
+      console.log("verbing " + verb);
+      return verb;
+  }
 
-Create a function called notBad that takes a single argument, a string.
-- It should find the first appearance of the substring 'not' and 'bad'.
-- If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring with 'good' and return the result.
-- If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
+  if (verb.endsWith("ing") === "ing") {
+    verb += "ly";
+  } else {
+    verb += "ing";
+  }
+    console.log("verbing " + verb );
 
-For example:
-```
-  notBad('This dinner is not that bad!'): 'This dinner is good!'
-  notBad('This movie is not so bad!'): 'This movie is good!'
-  notBad('This dinner is bad!'): 'This dinner is bad!'
-```
-*/
+};
+verbing("go");
+verbing("swim");
+verbing("swiming");
+
+
+// ## Not Bad
+//
+// Create a function called notBad that takes a single argument, a string.
+// - It should find the first appearance of the substring 'not' and 'bad'.
+// - If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring with 'good' and return the result.
+// - If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
+//
+// For example:
+// ```
+//   notBad('This dinner is not that bad!'): 'This dinner is good!'
+//   notBad('This movie is not so bad!'): 'This movie is good!'
+//   notBad('This dinner is bad!'): 'This dinner is bad!'
+// ```
+// */
+const notBad = function(sentence){
+    const indexNot = sentence.indexOf("not");
+    const indexBad = sentence.indexOf("bad");
+    let result = sentence;
+
+    if (indexBad > 0 && indexNot > 0){
+        if (indexBad > indexNot){
+            result = sentence.substring(0, indexNot-1) + " good " + sentence.substring(indexBad, sentence.length);
+        }
+    }
+    console.log("notBad: " + result);
+}
+notBad('This dinner is not that bad!');
+notBad('This movie is not so bad!');
+notBad('This dinner is bad!');
