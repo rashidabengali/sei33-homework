@@ -1,0 +1,45 @@
+body{
+    background-image: url("../images/bg_wrapper.png");
+    background-repeat: repeat-x;
+    width: 90%;
+}
+header{
+    padding: 20px;
+    margin: 20px 0px 0px 100px;
+}
+nav{
+    display: inline;
+    color: lightgray;
+    padding: 20px;
+    margin: 10px auto;
+    text-align: center
+}
+#main-content{
+    margin:0px 0px 0px 140px;
+    padding: 10px 0px;
+}
+.photobanner{
+    height: 370px;
+    width:960px;
+}
+.imageshadow{
+    padding: 0px;
+}
+#blurb{
+    border: 1px lightgray inset;
+    width:960px;
+    background-image: url("../images/bg_blurb.jpg");
+}
+#blurb span{
+    padding-right: 50%;
+    width: 50%;
+}
+#blurb img{
+    padding-left: 75%;
+}
+#home-boxes{
+   display: inline;
+}
+.home-box div{
+    display:inline;
+}
