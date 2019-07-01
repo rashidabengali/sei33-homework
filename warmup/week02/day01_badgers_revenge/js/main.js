@@ -76,3 +76,4 @@ const revengeOfBadger = {
 };
 
   console.log(revengeOfBadger.fridayDraw());
+*/
