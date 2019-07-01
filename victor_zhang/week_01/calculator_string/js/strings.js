@@ -29,17 +29,19 @@ least 2 characters long. For example:*/
 //   mixUp('dog', 'dinner'): 'dig donner'
 // Look up the JavaScript string reference to find methods which may be useful!
 
+//   mixUp('fire', 'arm'): 'arre fim'
+
 const mixUp = function(string1, string2) {
   word1 = swapLastLetter(string1, string2);
   word2 = swapLastLetter(string2, string1);
-  return word1 + ' ' + word2;
+  console.log (word1 + ' ' + word2);
 };
 
 const swapLastLetter = function(string, string) {
 
   let newString = '';
-  newString = arguments[0].slice(0,arguments[0].length-1);
-  newString = newString.padEnd(arguments[0].length,arguments[1][arguments[1].length-1]);
+  newString = arguments[1].slice(0,2); //slice(/*returns string from*/starting index, length)
+  newString = newString.padEnd(arguments[0].length,arguments[0].slice(2)); //padEnd(newStringLength,whatToAdd)
   return newString;
 
   // let word = '';
@@ -51,6 +53,11 @@ const swapLastLetter = function(string, string) {
   // };
   // return word;
 };
+
+mixUp('mix','pod');
+mixUp('dog','dinner');
+mixUp('fire','arm');
+mixUp('nobody','perfect');
 
 // USING string.slice & string.padEnd
 // const mixUp = function(string1, string2) {
@@ -81,6 +88,19 @@ const fixStart = function(string) {
   newString = newString.padEnd(string.length,'*');
   return newString;
 };
+
+// Rashida version
+const fixStart = function (word) {
+  let editedWord = word[0];
+  for (let i= 1; i < word.length; i++) {
+    if (word[i] === word[0]) {
+      editedWord += '*';
+    } else {
+      editedWord += word[i];
+    }
+  }
+  console.log('word', editedWord);
+}
 
 
 // Verbing
