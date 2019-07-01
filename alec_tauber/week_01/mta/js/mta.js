@@ -41,32 +41,21 @@
 //   * The N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
 //   * The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
 //   * The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
-var lineN = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
-var lineL = ['8th', '6th', 'Union Square', '3rd', '1st'];
-var line6 = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
-const l = function(totalStops, Go) {
-  //     var goodGuess = false;
-  //     var moreToGuess = false;
-  //      if (wordLetters[i] == letter) {
-  //             guessedLetters[i] = letter;
-  //             goodGuess = true;
-  //         }
-  //         if (guessedLetters[i] == '_') {
-  //             moreToGuess = true;
-  //         }
-  var lineN = false;
-  var stops = false;
-  var match = false; // Checking Stations are a match, only Union Square is compatible with itself
-  for (var i = 0; i < lineN.length; i++) {
-    if (lineN [ i ] <= 7 ){
-      lineN = true;
-    }
-    else{
-      lineN -= lineN[i];
-    }
-    return lineN;
-  }
-  if( totalStops == 7){
-    console.log()
-  }
+const line = {
+  "N": ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
+  "L": ["8th', '6th', 'Union Square', '3rd', '1st"],
+  "6": ["Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'"]
 }
+const stopCount = 0;
+const getStopString = function(line, startStop, endStop) {
+  var lineArray = lines[line];
+  var stopString = " ";
+
+  var startStationIndex = lineArray.indexOf(startStop);
+  var endstationIndex = lineArray.indexOf(endStop);
+
+  if (startStationIndex < endstationIndex ) {
+    for (var i = startStationIndex + 1; i <= endStationIndex; i++) {
+      stopString += lineArray[i] + ", ";
+    }
+  }
