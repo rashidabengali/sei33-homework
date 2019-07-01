@@ -19,10 +19,15 @@ function DrEvil(amount) {
 
 //.substrings or .slice
 
-function mixUp(first, second) {
-    return second.slice(0, 1) + first.slice(2) + " " + first.slice(0, 1) + second.slice(2);
-}
-
+const mixUp = function (first, second) {
+    if (first.length > 2 && second.length > 2) {
+        const result = second.slice(0, 2) + first.slice(2) + " " + first.slice(0, 2) + second.slice(2);
+        console.log(result);
+    } else {
+        console.log(`${first} ${second}`);
+    }
+};
+mixUp('mix', 'pad');
 // Create a function called fixStart. It should take a single argument, a string, 
 // and return a version where all occurences of its first character have been replaced with '*', 
 // except for the first character itself. You can assume that the string is at least one character long. 
