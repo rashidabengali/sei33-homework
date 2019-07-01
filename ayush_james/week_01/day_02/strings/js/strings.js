@@ -48,6 +48,18 @@ const drEvil = function (amount) {
 // ```
 //
 
+// provied solution
+// const fixStart = function (word) {
+//   let editedWord = word[0];
+//   for (let i = 1); i < word.length; i++) {
+//     if (word[i]===word[0]) {
+//       editedWord += '*';
+//     } else {
+//       editedword += word[i];
+//     }
+//   }
+// }
+
 // My Solution.
 // const fixStart = function (word) {
 // const firstChar = get first character
@@ -75,6 +87,14 @@ const drEvil = function (amount) {
 //   if (thingo )
 // };
 
+//provided solution.
+const verbing = function (verb) {
+  if (verb.length > 2) {
+    if (verb).endWith('ing')) {
+      finalVerb = verb + 'ly';
+    }
+  }
+}
 
 
 // ## Not Bad
@@ -90,3 +110,16 @@ const drEvil = function (amount) {
 //   notBad('This movie is not so bad!'): 'This movie is good!'
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
 //
+
+const notBad = function (setence){
+  if (setence.includes('not') && sentence.includes('bad')) {
+    let notIndex = sentence.indexOf('not');
+    let badIndex = sentence.indexOF('bad');
+    if (badIndex > notIndex) {
+      const beforeNot = setence.substring(0)  //substring = takes length of setence starting from )
+    }
+    else {
+      console.log(setence);
+    }
+  }
+}

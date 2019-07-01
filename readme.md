@@ -43,7 +43,7 @@ You need to do this every time you're submitting homework.
   - ```git add .```
   - ```git commit -m "YOUR_COMMIT_MESSAGE_GOES_HERE"``` (where YOUR_COMMIT_MESSAGE_GOES_HERE is your description of the work you are committing)
 - ##### Push your changes to your forked repository
-  - ```git pull upstream master``` merge changes that have been made to this repository into your own local repository.
+  - ```git pull --rebase upstream master``` rebase with changes that have been made to this repository into your own local repository.
   - ```git push origin master```
 - ##### Once you're finished, submit a pull request for me to accept your homework
   - Navigate to your forked version of this repository on Github (eg https://github.com/{{YOUR_USERNAME_HERE}}/sei33-homework).
