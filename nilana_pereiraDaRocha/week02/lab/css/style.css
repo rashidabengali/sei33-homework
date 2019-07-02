@@ -1,0 +1,98 @@
+* {
+    -moz-box-sizing: border-box;
+    /* Firexfox */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box;
+    /* IE */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+.gallery {
+    height: 450px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.default-margin {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.menu {
+    display: block;
+    width: 100%;
+    background: #3D3A37;
+    color: white;
+    height: 60px;
+    box-shadow: 0 0 12px -2px #000;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 25px;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    color: grey;
+}
+
+main img {
+    margin-top: 30px;
+    border: 3px solid grey;
+}
+
+main p {
+    margin-top: 30px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+footer {
+    display: block;
+    background: #3D3A37;
+    color: white;
+    height: 60px;
+    padding: 10px 0;
+}
+
+#about {
+    background: #EEECEB;
+}
+
+#career {
+    background: #EEECEB;
+}
+
+#life {
+    background: #EEECEB;
+    padding-bottom: 100px;
+}
