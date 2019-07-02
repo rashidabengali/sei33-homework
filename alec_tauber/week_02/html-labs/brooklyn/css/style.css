@@ -1,0 +1,29 @@
+
+body {
+  /* Basic reset */
+  font-size: 12px;
+  font-family: "Times New Roman", serif;
+  Color: #656565;
+  padding: 0;
+  margin: 50px;
+}
+.collection{
+}
+.one{
+  text-align:inherit;
+}
+
+a{
+  color: blue;
+}
+
+
+.blue{
+  color: blue;
+}
+
+
+img.press{
+  border: 3px solid grey;
+  position: relative;
+}
