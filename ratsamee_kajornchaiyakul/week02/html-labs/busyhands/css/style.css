@@ -18,6 +18,61 @@ nav{
     margin:0px 0px 0px 140px;
     padding: 10px 0px;
 }
+.logoAndSocial{
+    width: 960px;
+    display: inline-block;
+}
+.logo{
+    display: inline-block;
+    width:59%;
+    margin-top:25px;
+}
+#socialMedia{
+    display: inline-block;
+    margin-left: 135px;
+    vertical-align: top;
+}
+#socialMedia ul{
+    padding-left: 0px;
+}
+#socialMedia ul li {
+    display:inline-block;
+    width:60px;
+    height:60px;
+    background:blue;	
+    text-indent:-9999em;
+}
+
+#socialMedia ul li.linkedIn {
+   background:url(../images/socialNav.png) 0px 64px;
+}
+#socialMedia ul li.twitter {
+   background:url(../images/socialNav.png) -60px 64px; 
+}
+
+#socialMedia ul li.facebook {
+   background:url(../images/socialNav.png) -120px 64px; 
+}
+
+#socialMedia ul li.rss {
+   background:url(../images/socialNav.png) -180px 64px; 
+}
+
+#socialMedia ul li.linkedIn:hover {
+   background:url(../images/socialNav.png) 0px 0px; 
+}
+
+#socialMedia ul li.twitter:hover {
+   background:url(../images/socialNav.png) -60px 0px; 
+}
+
+#socialMedia ul li.facebook:hover {
+   background:url(../images/socialNav.png) -120px 0px; 
+}
+
+#socialMedia ul li.rss:hover {
+   background:url(../images/socialNav.png) -180px 0px; 
+}
 .photobanner{
     height: 370px;
     width:960px;
@@ -27,19 +82,24 @@ nav{
 }
 #blurb{
     border: 1px lightgray inset;
-    width:960px;
+    width: 960px;
     background-image: url("../images/bg_blurb.jpg");
+    display: inline-block;
 }
-#blurb span{
-    padding-right: 50%;
-    width: 50%;
+#blurb p {
+    display: inline-block;
+    width: 75%
 }
 #blurb img{
-    padding-left: 75%;
+    width: 24%;
 }
-#home-boxes{
-   display: inline;
+
+.home-box{
+    display:inline-block;
+    width: 320px;
+    padding: 2px;
 }
-.home-box div{
-    display:inline;
+.home-box img{
+    border: 5px lightgray solid;
 }
+
