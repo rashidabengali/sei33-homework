@@ -1,0 +1,138 @@
+/* The Pesticide plugin is a browser extention to do the same as the following  */
+/* * { border: 1px solid green; } */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+  background-color: #222;
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #ccc;
+  padding: 1em;
+  margin-left: auto;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+ul {
+  list-style: none;
+}
+nav {
+}
+nav a {
+  color: red;
+}
+nav a:hover{
+  color: yellow;
+}
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+.nav{
+  border: 1px solid #fff;
+  width: 900px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+h1 {
+  text-align: center;
+  background-color: #222;
+  color: #ccc;
+  padding: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content{
+  color: white;
+  border: 2px solid black;
+}
+.paragraph{
+  border: 2px solid blue;
+  z-index: auto;
+}
+
+
+/* Trivia Page */
+html {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+body {
+    text-align: center;
+    display: table;
+    background: black;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+canvas {display:block;}
+
+#author {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color : #0F0;
+    z-index : 1;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+span {
+    font-family: monospace;
+    font-size: 1.5em;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.form{
+  color: white;
+  text-align: center;
+}
+/*
+main img{
+  display: block;
+  margin: 0 auto;
+}
+main {
+  display: inline-block;
+  width: 75%;
+}
+
+aside {
+/*  display: inline-block; */
+  /* width: 21%; /* 75% + 21% is 100% when youre in CSS */ /*
+  vertical-align: top;
+  background-color: #cfc;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 15px #222;
+  margin-left: 400px;
+}
+aside ul {
+  padding-left: 17px;
+} */
