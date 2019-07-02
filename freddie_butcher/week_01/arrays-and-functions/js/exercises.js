@@ -82,16 +82,43 @@ console.log( reverseString("freddie") );
 //
 // Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '_', '_', '_' and end with 'F', 'O', 'X').
 
-let wordLetters = ['f', 'o', 'x'];
-let guessedLetters = ['','',''];
+const playWord = ['L', 'E', 'A', 'T', 'H', 'E', 'R'];
 
-const guessLetter = function () {
-  for ( let i = 0; i < wordLetters.length; i++ ) {
-    return wordLetters[i];
+const guessWord = ['','','','','','','',];
+
+const guessedLetterList = [];
+
+const guessLetter = function (letter) {
+
+letter = letter.toUpperCase();
+
+if (guessedLetterList.includes(letter)) {
+  console.log('Repeated letter:', letter);
+} else {
+  guessedLetterList.push(letter);
+
+if (playWord.includes(letter)) {
+  for (let w = 0; w < playWord.length; w++ ) {
+      if (playWord[w]===letter) {
+        guessWord[w]=playWord[w];
+      }
+    }
+    console.log("Bravo! You have found a new letter");
+    console.log(guessWord);
 }
+if (!guessWord.includes('_')) {
+  console.log("Congratulations! You have won this game.");
+  console.log(guessWord);
+  alert ("Congratulations you have won this game.");
+  return;
+}
+
+}
+
+
 };
 
-console.log( guessLetter ("freddie") );
+console.log( guessLetter (a) );
 
 
 

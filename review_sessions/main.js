@@ -10,6 +10,7 @@
 // };
 //
 // mixMatch('mix', 'pad');
+
 //
 //
 // const fixStart = function (word) {
@@ -64,18 +65,14 @@
 
 
 //WORD GAME
-
-const playWord = ['L','E','A','T','H','E','R'];
-
-const guessWord = ['_','_','_','_','_','_','_'];
-
-let maxWrongGuess = 6;
-
-const guessedLetterList = [];
-
+/*
 const guessLetter = function (letter) {
 
   letter = letter.toUpperCase();
+  const playWord = ['L','E','A','T','H','E','R'];
+  const guessWord = ['_','_','_','_','_','_','_'];
+  let maxWrongGuess = 6;
+  let guessedLetterList = [];
 
   if (guessedLetterList.includes(letter)) {
     console.log('Repeated letter:', letter);
@@ -114,3 +111,31 @@ const guessLetter = function (letter) {
 };
 
 guessLetter(prompt('guess letter'));
+*/
+
+// Version 3
+/*
+const scrabbleScore = {
+  letterValues: {
+    'a' : 1, 'e' : 1, 'i' : 1, 'o' : 1,
+    'u' : 1, 'l' : 1, 'n' : 1, 'r' : 1,
+    's' : 1, 't' : 1, 'd' : 2, 'g' : 2,
+    'b' : 3, 'c' : 3, 'm' : 3, 'p' : 3,
+    'f' : 4, 'h' : 4, 'v' : 4, 'w' : 4,
+    'y' : 4, 'k' : 5, 'j' : 8, 'x' : 8,
+    'q' : 10, 'z' : 10
+  },
+
+  wordScore: function (word) {
+    word = word.toLowerCase();
+    let sum = 0;
+
+    for (var i = 0; i < word.length; i++) {
+      sum += this.letterValues[word[i]];
+    }
+    return sum;
+  }
+};
+
+console.log(scrabbleScore.wordScore("caBBage"));
+*/
