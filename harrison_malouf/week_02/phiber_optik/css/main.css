@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Barriecito&display=swap');
+
+body{
+  background-image: url(https://i.imgur.com/2s4fyyf.jpg);
+  background-color: #330033;
+  padding: 0;
+  margin: 0;
+}
+
+.container  {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.Column{
+  background-color: #000000;
+  display: inline-block;
+  width: 48%;
+  margin: 5px;
+  border-radius: 0.5em;
+  box-shadow: 0em 0em 1em #8600b3
+}
+
+img {
+  padding: 3em 34%;
+  display: inline-block;
+}
+
+p{
+  color: #009900;
+  text-align: center;
+  margin: 3em;
+  letter-spacing: 1.5px;
+}
+
+nav {
+    background-color: #000000;
+    letter-spacing: .5em;
+    text-align: center;
+    border-radius: 0.5em;
+    margin: 2.4em 13em;
+    box-shadow: 0em 0em 1em #8600b3
+}
+
+nav a{
+  color: #009900;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Barriecito', cursive;
+  background-color: #000000;
+  text-align: center;
+  color: #006600;
+  margin: 1em 20%;
+  padding: 1em 0;
+  letter-spacing: .2em;
+  border-radius: 1em;
+  box-shadow: 0em 0em 1em #8600b3
+}
+
+h2 {
+  text-align: center;
+  color: #006600;
+}
