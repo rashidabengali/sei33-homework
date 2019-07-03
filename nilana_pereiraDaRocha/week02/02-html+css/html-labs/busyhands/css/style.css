@@ -1,0 +1,217 @@
+ul {
+    padding-left: 0;
+}
+
+.menu {
+    display: block;
+    background: black;
+    height: 60px;
+    color: white;
+}
+
+#main-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 50%;
+}
+
+#socialMedia {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+    margin-left: 100px;
+}
+
+#socialMedia ul li {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: blue;
+    text-indent: -9999em;
+}
+
+#socialMedia ul li.linkedIn {
+    background: url(../images/socialNav.png) 0px 64px;
+}
+
+#socialMedia ul li.twitter {
+    background: url(../images/socialNav.png) -60px 64px;
+}
+
+#socialMedia ul li.facebook {
+    background: url(../images/socialNav.png) -120px 64px;
+}
+
+#socialMedia ul li.rss {
+    background: url(../images/socialNav.png) -180px 64px;
+}
+
+#socialMedia ul li.linkedIn:hover {
+    background: url(../images/socialNav.png) 0px 0px;
+}
+
+#socialMedia ul li.twitter:hover {
+    background: url(../images/socialNav.png) -60px 0px;
+}
+
+#socialMedia ul li.facebook:hover {
+    background: url(../images/socialNav.png) -120px 0px;
+}
+
+#socialMedia ul li.rss:hover {
+    background: url(../images/socialNav.png) -180px 0px;
+}
+
+nav ul {
+    text-align: left;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 60px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background: url(/Users/nilanarocha/Projects/sei33-homework/nilana_pereiraDaRocha/02-html+css/html-labs/busyhands/images/bg_body.jpg);
+    background-repeat: repeat;
+}
+
+.default-margin {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageshadow {
+    background: url(/Users/nilanarocha/Projects/sei33-homework/nilana_pereiraDaRocha/02-html+css/html-labs/busyhands/images/shadow_slider.png);
+    height: 50px;
+}
+
+.photobanner {
+    margin-bottom: -5px;
+}
+
+#blurb {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(201, 199, 199);
+    background: url(/Users/nilanarocha/Projects/sei33-homework/nilana_pereiraDaRocha/02-html+css/html-labs/busyhands/images/bg_blurb.jpg);
+    background-repeat: repeat-x;
+}
+
+#blurb p {
+    display: inline-block;
+    width: 600px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.request-quote {
+    display: inline-block;
+    width: 300px;
+}
+
+.homebox {
+    width: 280px;
+    display: inline-block;
+    margin-left: 53px;
+}
+
+.homebox p h3 a {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.homebox a {
+    color: #87B0E5;
+}
+
+.margin-left0 {
+    margin-left: 0;
+}
+
+.homebox img {
+    border: 3px solid #999999;
+}
+
+footer {
+    background: black;
+    height: 300px;
+    color: white;
+    padding: 30px;
+    margin-top: 15px;
+}
+
+.copyright {
+    font-size: 11px;
+    font-family: 'DM Sans', sans-serif;
+    color: grey;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.companybottom {
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    color: grey;
+    text-align: right;
+}
+
+.blogroll {
+    width: 230px;
+}
+
+.blogroll h3 {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.vertical-list {
+    list-style-type: none;
+}
+
+.vertical-list li {
+    display: block;
+    height: 30px;
+    font-size: 14px;
+    border-top: 1px solid grey;
+    line-height: 30px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.vertical-list li a {
+    text-decoration: none;
+    color: white;
+}
+
+.textwidget {
+    width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.textwidget p {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.textwidget h3 {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.metawidget {
+    width: 230px;
+}
+
+.metawidget h3 {
+    font-family: 'DM Sans', sans-serif;
+}
