@@ -128,4 +128,5 @@ const planTrip = function(lineStart, stationStart, lineDestination, stationDesti
 //planTrip('6', '33rd', 'L', '3rd');
 //planTrip('L', '3rd', 'L', '33rd');
 //planTrip('n', 'Times Square', 'n', '23rd');
-planTrip('r', 'Times Square', 'n', '23rd');
+//planTrip('r', 'Times Square', 'n', '23rd');
+planTrip('N', '23rd', 'N', '23rd');

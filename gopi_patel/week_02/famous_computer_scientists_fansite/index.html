@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="css/reset.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Computer Scientists Fansite</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <a class="active" href="index.html">About</a>
+        <a href="gnu.html">GNU</a>
+        <a href="awards.html">Awards</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Richard Stallman</h1>
+      <img src="images/richard-stallmannew.jpg" alt="Richard-Stallman">
+
+
+
+
+      <p>Richard Matthew Stallman (/ˈstɔːlmən/; born March 16, 1953), often known by his initials, rms, and occasionally upper-case RMS, is an American free software movement activist and programmer. He campaigns for software to be distributed in a
+        manner such that its users receive the freedoms to use, study, distribute, and modify that software. Software that ensures these freedoms is termed free software. Stallman launched the GNU Project, founded the Free Software Foundation,
+        developed the GNU Compiler Collection and GNU Emacs, and wrote the GNU General Public License.</p>
+
+        <div id="demoMap" style="height:250px"></div>
+
+    </main>
+
+    <aside>
+      <section>
+        <h3>Quotes</h3>
+        <p>“When we speak of free software, we are referring to freedom, not price.”
+          ― Richard M. Stallman
+        </p>
+        <p>“People said I should accept the world. Bullshit! I don't accept the world.”
+          ― Richard M. Stallman
+        </p>
+        <p>"The computer industry is the only industry that is more fashion-driven than women's fashion."
+          -Richard Stallman</p>
+      </section>
+
+      <section>
+        <table>
+          <tr>
+            <th>Born:</th>
+            <td>March 16, 1953 (age 66)
+              New York City, New York, US
+            </td>
+          </tr>
+          <tr>
+            <th>Residence:</th>
+            <td>Cambridge, Massachusetts, US
+            </td>
+          </tr>
+          <tr>
+            <th>Alma mater:</th>
+            <td>Harvard University
+              Massachusetts Institute of Technology
+            </td>
+          <tr>
+            <th>Website:</th>
+            <td>stallman.org
+            </td>
+          </tr>
+        </table>
+      </section>
+    </aside>
+
+    <footer>copyleft @2019</footer>
+
+  </div>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<script>
+    map = new OpenLayers.Map("demoMap");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var lonLat = new OpenLayers.LonLat( -71.116629 ,42.380098 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var zoom=16;
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+
+        markers.addMarker(new OpenLayers.Marker(lonLat));
+
+
+    map.setCenter (lonLat, zoom);
+</script>
+
+</body>
+
+</html>
