@@ -207,8 +207,13 @@ const mustBe16Digits = function(num) {
 }
 
 const twoDifferentDigits = function(num) {
-  //TODO
-  return true;
+  let firstValue = num.charAt(0);
+  for (let i=0 ; i < num.length; i++) {
+      if(num.charAt(i)!== firstValue) {
+        return true;
+      }
+  };
+  return false;
 }
 
 const finalDigitMustBeEven = function(num) {
@@ -229,6 +234,7 @@ const validateCreditCard = function (number){
 
 // console.log(`${mustBe16Digits(number)} ${twoDifferentDigits(number)} ${finalDigitMustBeEven(number)} ${sumGreaterThan16(number)};
 // `);
+number = number.split("-").join("");
 
 return mustBe16Digits(number) &&
     twoDifferentDigits(number) &&
@@ -236,17 +242,11 @@ return mustBe16Digits(number) &&
     sumGreaterThan16(number);
 
 };
-// console.log(validateCreditCard('9999-9999-8888-0000')); //true
-// console.log(validateCreditCard('6666-6666-6666-1666')); //true
-// console.log(validateCreditCard('a923-3211-9c01-1112')); //false
-// console.log(validateCreditCard('4444-4444-4444-4444')); //false
-// console.log(validateCreditCard('4444-4444-4444-4444')); //false
-// console.log(validateCreditCard('1111-1111-1111-1110')); //false
-// console.log(validateCreditCard('6666-6666-6666-6661')); //false
-console.log(validateCreditCard('9999999988880000')); //true
-console.log(validateCreditCard('6666666666661666')); //true
-console.log(validateCreditCard('a92332119c011112')); //false
-console.log(validateCreditCard('4444444444444444')); //false
-console.log(validateCreditCard('4444444444444444')); //false
-console.log(validateCreditCard('1111111111111110')); //false
-console.log(validateCreditCard('6666666666666661')); //false
+
+console.log(validateCreditCard('9999-9999-8888-0000')); //true
+console.log(validateCreditCard('6666-6666-6666-1666')); //true
+console.log(validateCreditCard('a923-3211-9c01-1112')); //false
+console.log(validateCreditCard('4444-4444-4444-4444')); //false
+console.log(validateCreditCard('4444-4444-4444-4444')); //false
+console.log(validateCreditCard('1111-1111-1111-1110')); //false
+console.log(validateCreditCard('6666-6666-6666-6661')); //false
