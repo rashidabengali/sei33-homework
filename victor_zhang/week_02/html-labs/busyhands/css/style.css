@@ -12,10 +12,11 @@ Link Hover Color = #20222a
 */
 
 #wrapper {
+  margin: 0 auto;
+  max-width: 960px;
   background-image: url("../images/bg_wrapper.png");
   background-size: cover;
   background-position: center;
-  margin: 0;
   padding: 0;
 }
 
@@ -71,8 +72,6 @@ section {
 }
 
 #blurb {
-  width: 960px;
-  margin: 0 auto;
   border: 3px inset #d7d5d5f2;
 }
 
@@ -85,13 +84,16 @@ section {
   /* margin: auto auto; */
 }
 
-#home-boxes {
+
+/* #home-boxes {
   width: 960px;
   margin: 0 auto;
-  padding: 2em;
-  column-count: 3;
-  column-width: 50px;
-  column-gap: 4em;
+   display: inline-block;
+} */
+
+.home-box {
+  display: inline-block;
+  width: 33%;
 }
 
 .home-box img {
