@@ -1,5 +1,5 @@
 .topnav {
-    background-image: url(/Users/plengloetsakulcharoen/Project/html+Css/html-labs/busyhands/images/bg_wrapper.png);
+    background-image: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/bg_wrapper.png);
     display: cover;
     font-family: Arial, serif;
     display: block;
@@ -17,7 +17,7 @@
     line-height: 50%;
 }
 .topnav a:hover {
-    background: url(/Users/plengloetsakulcharoen/Project/html+Css/html-labs/busyhands/images/bg_nav_rollover.png) no-repeat;
+    background: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/bg_nav_rollover.png) no-repeat;
 
     background-size: 300px 150px;    
 
@@ -25,7 +25,7 @@
 
 /* done */
 .shadow {
-    background: url(/Users/plengloetsakulcharoen/Project/html+Css/html-labs/busyhands/images/shadow_slider.png);
+    background: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/shadow_slider.png);
     margin-left: 50px;
     width: 1000px;
 
@@ -34,7 +34,7 @@
 
 #textbox {
     border: 1px solid black;
-    background: url(/Users/plengloetsakulcharoen/Project/html+Css/html-labs/busyhands/images/bg_blurb.jpg);
+    background: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/bg_blurb.jpg);
     width: 960px;
     margin-left: 50px;
     padding: 20px;
@@ -65,16 +65,14 @@ body {
     padding: 0;
 }
 
-.textbox p {
+#textbox p {
     border: 2px solid black;
-    display: inline-block;
-    width: 1000px;
-    padding: 10px;
-    margin: 50px;
-    
-
+    display: inline;
 }
 
+#textbox .button {
+    display: inline;
+}
 
 
 
