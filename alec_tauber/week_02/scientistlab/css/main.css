@@ -51,63 +51,19 @@ h1 {
   color: white;
   border: 2px solid black;
 }
-.paragraph{
-  border: 2px solid blue;
-  z-index: auto;
-}
+
 
 
 /* Trivia Page */
-html {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-body {
-    text-align: center;
-    display: table;
-    background: black;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
+.trivia-container{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+  margin-left: auto;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
 
-canvas {display:block;}
-
-#author {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color : #0F0;
-    z-index : 1;
-    box-sizing: border-box;
-    vertical-align: middle;
-}
-
-span {
-    font-family: monospace;
-    font-size: 1.5em;
-}
-
-@keyframes cursor {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  border: 5px solid green;
 }
 .form{
   color: white;
@@ -136,3 +92,42 @@ aside {
 aside ul {
   padding-left: 17px;
 } */
+
+
+/* JUST FOR NAV BAR ON TOP */
+ul#navigation {
+
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    right: 200px;
+    list-style: none;
+    z-index:999999;
+}
+ul#navigation li {
+    display:inline;
+    float:left;
+    width:100px;
+    margin-left:1px;
+
+}
+ul#navigation li a {
+    display: block;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #fff;
+    float:left;
+    width: 100px;
+    height: 35px;
+    color: red;
+    background:transparent url(item.png) no-repeat bottom right;
+    text-decoration:none;
+    text-align:center;
+    padding-top:80px;
+    margin-top: -40px;
+    cursor:pointer;
+
+}
+ul#navigation li a:hover{
+
+}
