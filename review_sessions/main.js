@@ -1,3 +1,4 @@
+console.log('run');
 // const mixMatch = function (mix, match) {
 //   if (mix.length > 2 && match.length > 2) {
 //     const mixMatch1 = match.substring(0,2) + mix.substring(2);
@@ -10,6 +11,7 @@
 // };
 //
 // mixMatch('mix', 'pad');
+
 //
 //
 // const fixStart = function (word) {
@@ -65,17 +67,13 @@
 
 //WORD GAME
 
-const playWord = ['L','E','A','T','H','E','R'];
-
-const guessWord = ['_','_','_','_','_','_','_'];
-
-let maxWrongGuess = 6;
-
-const guessedLetterList = [];
-
 const guessLetter = function (letter) {
 
   letter = letter.toUpperCase();
+  const playWord = ['L','E','A','T','H','E','R'];
+  const guessWord = ['_','_','_','_','_','_','_'];
+  let maxWrongGuess = 6;
+  let guessedLetterList = [];
 
   if (guessedLetterList.includes(letter)) {
     console.log('Repeated letter:', letter);
