@@ -117,6 +117,10 @@ h2 {
   padding-top: 1em;
 }
 video {
-  margin: 1em auto; 
+  margin: 1em auto;
   display: block;
+}
+span{
+  display:inline-block;
+  transform: scale(-1, 1);
 }
