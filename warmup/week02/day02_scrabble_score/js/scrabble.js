@@ -65,7 +65,7 @@ console.log(scrabbleScore("cAbbAge"));
 */
 
 //Version 3
-
+/*
 const scrabbleScore = {
   letterValues: {
       'a' : 1, 'e' : 1, 'i' : 1, 'o' : 1,
@@ -88,3 +88,29 @@ const scrabbleScore = {
 };
 
 console.log(scrabbleScore.wordScore("cabbage"));
+*/
+
+letterValues = {
+  1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T" ],
+  2: ["D", "G"],
+  3: ["B", "C", "M", "P"],
+  4: ["F", "H", "V", "W", "Y"],
+  5: ["K"],
+  8: ["J", "X"],
+  10: ["Q", "Z"]
+  };
+
+  const invert = function (input) {
+
+    let invertedObject = {};
+
+    for (let keys in input) {
+      console.log('keys', keys);
+      console.log('values', input[keys]);
+      invertedObject[input[keys]] = keys
+      console.log('invertedObject', invertedObject);
+    }
+    //return invertedObject;
+  };
+
+  invert(letterValues);
