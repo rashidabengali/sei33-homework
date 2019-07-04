@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Alan Turing | HTML Position Game</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div class="link">
+    <a href="index.html">Go Back!</a>
+  </div>
+  <p> By <span>(1)</span> scrolling vertically, and <span>(2)</span> resizing the browser window horizontally, piece together the "BOMBE" and help the cryptologists decipher the encrypted message - Time is ticking!</p>
+
+<div class="background">
+
+  <div class="box fixed">
+    <!-- This has position: fixed. -->
+    <img src="images/shredTopRight.png" alt="BOMBE Machine Puzzle Piece 1 - Fixed" width="400px" height="317px">
+  </div>
+
+  <div class="box invisible">
+    This has the default position
+  </div>
+
+  <div class="box static">
+    <!-- This has position: static. <!-- (This is default. No need to include). -->
+    <img src="images/shredBottomLeft.png" alt="BOMBE Machine Puzzle Piece 3 - Static" width="400px" height="317px">
+  </div>
+
+  <div class="box absolute">
+    <!-- This has position: absolute. -->
+    <img src="images/shredBottomRight.png" alt="BOMBE Machine Puzzle Piece 2 - Absolute" width="400px" height="317px">
+  </div>
+
+  <div class="timer">
+<iframe width="360" height="180" src="https://vclock.com/embed/timer/#countdown=00:01:00&date=2019-07-02T23:39:26&onzero=1&theme=0&ampm=1&sound=twinkle" frameborder="0" allowfullscreen></iframe>
+
+  <div class="box invisibleTwo">
+    This has the default position
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+#container {
+	margin: 0 10%;
+}
+
+nav ul {
+	list-style-type: none;
+	height: 90px;
+	width: 900px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
+	text-align: centre;
+  }
+
+nav li {
+	  display: inline-block;
+	  height: 40px;
+	  width: 50px;
+	  margin: 1em;
+  }
+
+li a {
+	display: block;
+	width: 80px;
+	height: 120px;
+	color: white;
+	text-align: left;
+	padding: 14px 15px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #4b9fec;
+	opacity: 0.3;
+	border-top: 5px #4b9fec solid;
+}
+
+span.icon a:link,
+span.icon a:visited {
+	display: block;
+	text-indent: -9999px;
+}
+
+span.linkin a:link,
+span.linkin a:visited {
+	width: 48px;
+	height: 48px;
+	background: url(../images/socialNav.png) -8px -67px no-repeat;
+}
+
+span.twitter a:link,
+span.twitter a:visited {
+	width: 48px;
+	height: 48px;
+	background: url(../images/socialNav.png) -67px -67px no-repeat;
+}
+span.facebook a:link,
+span.facebook a:visited {
+	width: 48px;
+	height: 48px;
+	background: url(../images/socialNav.png) -126px -67px no-repeat;
+}
+span.broadcast a:link,
+span.broadcast a:visited {
+	width: 48px;
+	height: 48px;
+	background: url(../images/socialNav.png) -183px -67px no-repeat;
+}
+span.linkin a:hover {
+	background-position: -8px -7px;
+}
+
+span.twitter a:hover {
+	background-position: -67px -7px;
+}
+
+span.facebook a:hover {
+	background-position: -126px -7px;
+}
+
+span.broadcast a:hover {
+	background-position: -183px -7px;
+}
