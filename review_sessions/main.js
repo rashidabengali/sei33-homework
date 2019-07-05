@@ -66,7 +66,7 @@ console.log('run');
 
 
 //WORD GAME
-
+/*
 const guessLetter = function (letter) {
 
   letter = letter.toUpperCase();
@@ -112,3 +112,25 @@ const guessLetter = function (letter) {
 };
 
 guessLetter(prompt('guess letter'));
+*/
+
+const data = {
+  Earth: 1,
+  Mercury: 0.2408467,
+  Venus: 0.61519726,
+  Mars: 1.8808158,
+  Jupiter: 11.862615,
+  Saturn: 29.447498,
+  Uranus: 84.016846,
+  Neptune: 164.79132
+}
+
+const spaceAge = function (ageInSeconds) {
+    data.each(function(element) {
+    console.log(element);
+    });
+    //console.log(`Your age in ${keys} is ${age} ${keys} years`);
+  //}
+};
+
+spaceAge(1000000000);
