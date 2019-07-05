@@ -1,0 +1,112 @@
+/* The Pestacide plugin on google chrome does the same as the border green  */
+
+/* * {border: 1px solid green;} */
+
+* {
+  box-sizing: border-box;
+}
+
+/* import whatever font you like at the top */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #000000;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.container {
+
+  width: 687px;
+  height: 917px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #D62503;
+
+}
+
+.inner-container {
+
+  width: 617px;
+  height: 846px;
+
+  padding: 1em;
+
+  background: url("../img/JVNHeadShot.jpg");
+  background-size: cover;
+
+  border: solid;
+  border-color: white;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+title {
+
+  width: 575px;
+  height: 100px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  font-size: 35px;
+  font-family: cursive;
+
+  color: white;
+
+}
+
+img {
+  max-width: 500px;
+  max-height: 300px;
+
+  display: flex;
+  flex-direction: center;
+}
+
+p {
+
+  width: 575px;
+  height: 100px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  font-size: 30px;
+  font-family: cursive;
+
+}
+
+.navigation {
+  /* text-align: right; */
+
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+nav a {
+  color: green;
+}

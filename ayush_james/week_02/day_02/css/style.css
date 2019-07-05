@@ -1,0 +1,273 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+::selection {
+    background: #fdc536;
+}
+
+.fadein {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* reference https://stackoverflow.com/questions/11660710/css-transition-fade-in */
+
+body {
+  background: radial-gradient(circle at right, rgba(255, 255, 255, 0) 1.2em, #fcf2d7 1.2em, #fcf2d7 1.74em, rgba(255, 255, 255, 0) 1.74em) 0 0, radial-gradient(circle at left, rgba(255, 255, 255, 0) 1.2em, #fcf2d7 1.2em, #fcf2d7 1.74em, rgba(255, 255, 255, 0) 1.74em) 0 3em, radial-gradient(circle at right, rgba(255, 255, 255, 0) 1.2em, #fdc536 1.2em, #fdc536 1.74em, rgba(255, 255, 255, 0) 1.74em) 1.56em 0, radial-gradient(circle at left, rgba(255, 255, 255, 0) 1.2em, #fdc536 1.2em, #fdc536 1.74em, rgba(255, 255, 255, 0) 1.74em) 1.56em 3em, radial-gradient(circle at right, rgba(255, 255, 255, 0) 1.2em, #e65848 1.2em, #e65848 1.74em, rgba(255, 255, 255, 0) 1.74em) 3.12em 0, radial-gradient(circle at left, rgba(255, 255, 255, 0) 1.2em, #e65848 1.2em, #e65848 1.74em, rgba(255, 255, 255, 0) 1.74em) 3.12em 3em, radial-gradient(circle at right, rgba(255, 255, 255, 0) 1.2em, #2ab69d 1.2em, #2ab69d 1.74em, rgba(255, 255, 255, 0) 1.74em) 4.68em 0, radial-gradient(circle at left, rgba(255, 255, 255, 0) 1.2em, #2ab69d 1.2em, #2ab69d 1.74em, rgba(255, 255, 255, 0) 1.74em) 4.68em 3em;
+  background-size: 6em 6em;
+  background-color: #343844;
+  background-repeat: repeat;
+  }
+
+.bio p {
+  padding-left: 20px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+li {
+  margin: 1em;
+}
+
+.quickFacts span {
+  font-weight: bold;
+  font-style: normal;
+  margin: 0;
+}
+
+.quickFacts a {
+  text-decoration: overline;
+  color: #2ab69d;
+}
+
+.interestingThings a{
+  color: #2ab69d;
+  text-decoration: none;
+}
+
+.interestingThings a:hover{
+padding-left: 0px;
+font-style: italic;
+}
+
+span {
+  margin: 0 20px;
+  font-style: italic;
+
+}
+
+h3 {
+  font-family: "Anonymous Pro", monospace;
+  text-decoration: underline;
+}
+
+/* h3 > span {
+  margin: 0;
+  font-style: italic;
+} */
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+header {
+  width: 1000px;
+  height: 90px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header > p {
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+h1 {
+  font-family: "Anonymous Pro", monospace;
+  padding-top: 12px;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  background: linear-gradient(to right, #e65848, #fdc536, #2ab69d);
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  border-bottom-right-radius: 10px;
+}
+
+main {
+  display: inline-block;
+  width: 75%;
+}
+
+main img {
+  display: block; /*the default for img is inline. */
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+
+aside {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+  position: fixed;
+  width: 250px;  /* 75% + 21% is 100% when you're in CSS. To fix this. you would want to use the box-model fix.*/
+  vertical-align: top; /*asides are by default alined by the baselines or bottom. we want to change this to top. */
+  background: #fdc536;
+  padding: 1em 1em 1em 0;
+  box-shadow: 0 8px 6px -6px black;
+  border-radius: 10px;
+}
+
+aside h3 {
+  text-align: center;
+  margin-left: 25px;
+  font-family: "Anonymous Pro", monospace;
+}
+nav a {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  font-family: "Anonymous Pro", monospace;
+  color: black;
+}
+
+a:hover {
+  background-color: white;
+  margin-left: 0;
+  padding-left: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.active {
+  background-color: white;
+  margin-left: 0;
+  padding-left: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+--------------HomePage---------------
+
+.bio  {
+  margin: 0 10px 0 10px;
+}
+
+
+
+
+
+/* _________________________________________________ */
+
+/* Trivia Stuff!  */
+
+.answer img {
+  margin: 0 auto;
+}
+
+.youTube iframe {
+  margin-left: 30px;
+}
+
+.youTube p {
+  text-align: justify;
+}
+
+.answer p {
+  text-align: justify;
+}
+
+section {
+  padding: 3px 10px 10px 20px;
+  border-bottom: .1em dashed silver;
+  /* border-right: .1em dashed silver; */
+  margin-bottom: 25px;
+}
+
+.noBorder {
+  border-bottom: 0;
+}
+/* .interesting {
+  padding-left: 20px;
+
+} */
+
+.hometownCenter {
+  margin: 20px 100px;
+  width: 530px;
+  text-align: center;
+}
+
+.hometownHeading {
+  padding: 10px 0 0 0;
+  font-family: sans-serif;
+}
+
+.map {
+  margin: 0 -25px;
+}
+
+
+
+/* _________________________________________________ */
+
+/* Trivia Stuff!  */
+
+/* .answer {
+  background-image: url(../images/bombe.jpg);
+  background-size: 400px auto;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  line-height: 15px;
+  font-size: 14px;
+  width: 400px;
+  height: 400px;
+  border-radius: 0.5em;
+}
+
+.answer p {
+  visibility: hidden;
+  padding: 10px 40px 0 40px;
+  position:
+}
+
+/* .reveal {
+  visibility: hidden;
+} */
+
+/* .answer:hover p {
+  visibility: visible;
+} */
+
+/* .reveal:hover {
+  background-image: url(../images/cucumber.jpg);
+  visibility: visible;
+  line-height: 400px;
+  text-align: center; */
+
+}

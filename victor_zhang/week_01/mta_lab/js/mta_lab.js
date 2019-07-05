@@ -43,7 +43,6 @@ console.log("mta_lab.js is up and running!");
 //
 // subwayStation[0].createStops('N', 'T.S', '34th');
 
-let nothing = 'nothing';
 let sameLine = false;
 let forward = false;
 let backward = false;
@@ -133,12 +132,12 @@ const getSubwayLine = function ( enterLine, exitLine ) {
   }
 }
 
-const getDirection = function( enterStopNum, exitStopNum ) {
-  if ( enterStopNum < exitStopNum ) {
+const getDirection = function( enterStopNum, exitStopNum ) { // not necessary
+  if ( enterStopNum < exitStopNum ) { // check which direction train is going
     backward = false;
     return forward = true;
   }
-  else if ( enterStopNum > exitStopNum ){
+  else if ( enterStopNum > exitStopNum ) { // check which direction train is going
     forward = false;
     return backward = true;
   }
@@ -151,23 +150,23 @@ const getDirection = function( enterStopNum, exitStopNum ) {
 };
 
 const addStops = function ( enterStopNum, exitStopNum ) {
-  if (forward) {
-    for (let j = enterStopNum; j < exitStopNum - 1; j++) {
+  if (enterStopNum < exitStopNum) { // if (forward)
+    for (let j = enterStopNum; j < exitStopNum - 1; j++) { // if going fowards, add stops
       stopNames.push(subwayStation[enterLineIdx].stops[j+1]);
     }
   }
-  else if (backward) {
-    for (let j = enterStopNum - 1; j > exitStopNum; j--) {
+  else if (enterStopNum > exitStopNum) { // if (backward)
+    for (let j = enterStopNum - 1; j > exitStopNum; j--) { // if going backwards add stops
       stopNames.push(subwayStation[exitLineIdx].stops[j]);
     }
   }
 }
 
 const getAllStops = function ( enterStopNum, exitStopNum ) {
-  numStops = Math.abs(exitStopNum - enterStopNum);
+  numStops = Math.abs(exitStopNum - enterStopNum); // gets number of stops
   stopNames = [];
-  getDirection( enterStopNum, exitStopNum );
-  addStops( enterStopNum, exitStopNum );
+  // getDirection( enterStopNum, exitStopNum ); // checks which direction train is going
+  addStops( enterStopNum, exitStopNum ); // add stops Names to array
   // return stopNames;
 }
 
@@ -202,8 +201,8 @@ const checkStops = function( enterStop, exitStop, enterLineIdx, exitLineIdx, swa
   // console.log(exitStopNum); // -1
 
   if (sameLine) {
-    getAllStops( enterStopNum, exitStopNum );
-    printMessage( enterLine, enterStop, exitLine, exitStop )
+    getAllStops( enterStopNum, exitStopNum ); // gets the stops and add them to an array
+    printMessage( enterLine, enterStop, exitLine, exitStop ) // prints message
   }
   else if (!sameLine) { // !sameLine
     if (firstTrip) {
@@ -223,17 +222,13 @@ const checkStops = function( enterStop, exitStop, enterLineIdx, exitLineIdx, swa
   }
 }
 
-
-const listStopNames = function() {
-
-}
-
-
+// need to know trainLine, startStop, destinationStop, which stops, will it change lines?, how many stops, which direction
 
 const planTrip = function( enterLine, enterStop, exitLine, exitStop ) {
   // take input into a function
-  getSubwayLine( enterLine, exitLine );
+  getSubwayLine( enterLine, exitLine ); // this will return the index from subway Objects and if trip is in same Line or not
   checkStops( enterStop, exitStop, enterLineIdx, exitLineIdx, swapLineIdx, enterLine, exitLine );
+  // this will check which stops will be going through.
   // if ( enterLine !== exitLine ) {
   //   for (let i = 0; i < subwayStation.length; i++) {
   //     const enterStopNum = subwayStation[i].stops.indexOf(enterStop); // need to vary
