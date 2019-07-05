@@ -70,7 +70,7 @@ const planTrip = function (startLine, startStation, finalLine, finalStation) {
     };
 
 let run = function () {
-    let promprom= true;
+    let promprom= false;
     if (promprom){
         planTrip(prompt(`starting train line.`), prompt('starting station'), prompt('destination train line'), prompt('destination station'));
     }else{
