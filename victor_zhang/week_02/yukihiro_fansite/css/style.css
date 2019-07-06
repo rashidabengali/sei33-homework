@@ -19,8 +19,13 @@ body {
   padding: 0;
 }
 
-header, footer {
-  background-color: #476880;
+header {
+  background-color: rgba(71,104,128,0.7);
+  text-align: center;
+}
+
+footer {
+  background-color: rgba(71,104,128,0.5);
   text-align: center;
 }
 
