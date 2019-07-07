@@ -1,3 +1,4 @@
+console.log('run');
 // const mixMatch = function (mix, match) {
 //   if (mix.length > 2 && match.length > 2) {
 //     const mixMatch1 = match.substring(0,2) + mix.substring(2);
@@ -113,29 +114,23 @@ const guessLetter = function (letter) {
 guessLetter(prompt('guess letter'));
 */
 
-// Version 3
-/*
-const scrabbleScore = {
-  letterValues: {
-    'a' : 1, 'e' : 1, 'i' : 1, 'o' : 1,
-    'u' : 1, 'l' : 1, 'n' : 1, 'r' : 1,
-    's' : 1, 't' : 1, 'd' : 2, 'g' : 2,
-    'b' : 3, 'c' : 3, 'm' : 3, 'p' : 3,
-    'f' : 4, 'h' : 4, 'v' : 4, 'w' : 4,
-    'y' : 4, 'k' : 5, 'j' : 8, 'x' : 8,
-    'q' : 10, 'z' : 10
-  },
+const data = {
+  Earth: 1,
+  Mercury: 0.2408467,
+  Venus: 0.61519726,
+  Mars: 1.8808158,
+  Jupiter: 11.862615,
+  Saturn: 29.447498,
+  Uranus: 84.016846,
+  Neptune: 164.79132
+}
 
-  wordScore: function (word) {
-    word = word.toLowerCase();
-    let sum = 0;
-
-    for (var i = 0; i < word.length; i++) {
-      sum += this.letterValues[word[i]];
-    }
-    return sum;
-  }
+const spaceAge = function (ageInSeconds) {
+    data.each(function(element) {
+    console.log(element);
+    });
+    //console.log(`Your age in ${keys} is ${age} ${keys} years`);
+  //}
 };
 
-console.log(scrabbleScore.wordScore("caBBage"));
-*/
+spaceAge(1000000000);

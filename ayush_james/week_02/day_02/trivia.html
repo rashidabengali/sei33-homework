@@ -1,0 +1,105 @@
+<!-- # Lab: Famous computer scientists fansite
+
+## Research one (or more) of the following:
+- jwz
+- esr
+- mendax
+- phiber optik
+- Great Quux
+- Damian Conway
+- Ada Lovelace
+- Alan Turing
+- John von Neumann
+- Norbert Wiener
+- Frances E. Allen
+- Claude Shannon
+- Grace Hopper
+- H. Marshall Mcluhan
+- Donald Knuth
+- Richard M. Stallman
+- Larry Wall
+- Yukihiro Matsumoto
+- Sophie Wilson
+- Jenn Schiffer
+- Margaret Hamilton
+- Linus Torvalds
+
+## Requirements
+- At least 3 pages (example: biography, trivia, hometown)
+- At least 1 Google Font
+- Whatever HTML and CSS you desire
+- Keep your code clean and DRY
+- Start working with semantic elements: http://html5doctor.com/lets-talk-about-semantics/
+- No Javascript! Even if you know how to use jQuery, see how far you can push this with pure HTML + CSS
+- Don't worry about responsiveness -- desktop resolution is fine
+
+## Your research should aim to reveal at least two things about each person:
+- Why Joel admires them
+- Something Joel doesn't already know about them
+
+## Optional extras
+- Experiment with http://fortawesome.github.io/Font-Awesome/
+- Record and embed a short podcast or vlog about your favourite scientist
+- Try embedding other media (YouTube or Vimeo video, Soundcloud)
+- Try embedding a Google map (for their hometown and/or alma mater) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Alan Turing | 3 Cool Things</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Alan Turing</h1>
+      <p class="fadein"><span>Mathematician</span><span>logician</span><span>cryptanalyst</span></p>
+    </header>
+
+    <main class="interestingThings">
+      <h2>3 Cool Things</h2>
+
+      <!-- <p class="interesting">Some interesting things from his life. Hover over the image to see what they are.</p> -->
+
+      <section>
+        <h3>1. Role in World War II</h3>
+        <div class="answer">
+          <p>Along with colleague Gordon Welchman, he produced the The BOMBE, a codebreaking machine. Its greatest achievement was cracking the Enigma (an encryption device used by the Nazi military) - It is believed that this might have helped shorten the war by years! The biography <a href="https://www.penguin.com.au/books/alan-turing-the-enigma-9781784700089?utm_expid=.nIywxqyASHCa5KpnTueQsQ.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F" target="_blank">Alan Turing: The Enigma</a> and the 2014 film, <a href="https://www.youtube.com/watch?v=FwsIY7Uq8hY" target="_blank">The Imitation Game</a> is primiarly based around his work in cryptography.</p>
+          <img src="images/bombe.jpg" alt="" width="400px">
+          <br />
+        </div>
+      </section>
+
+      <section>
+        <h3>2. Turing Test</h3>
+        <div class="youTube">
+        <p>Turing proposed an experiment to find out if a machine was “intelligent”. The idea was that a computer could be said to “think” if a human interrogator could not tell it apart, through conversation, from a human being. CAPTCHA (Completely Automated Public Turing Test to Tell Computers and Humans Apart) is an example of such a test in reverse. The test is now called the Turing test. In modern day it is used to test A.I. It really opens your mind into thinking about what makes human unique. See the example below from Google I/O'18 - Notice how "it" tries to imitate intonation and fillers. </p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/pKVppdt_-B4?start=26" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <br />
+      </section>
+
+      <section class=noBorder>
+        <h3>3. Father of Modern Computer Science</h3>
+        <div class="answer">
+          <p>Turing essentially pioneered the idea of computer memory. In 1936, Turing published a seminal paper - <a href ="https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf" target="_blank">"On Computable Numbers” [PDF]</a>. He hypothesized that one day, we could build machines that could compute any problem that a human could, using 0s and 1s. Turing proposed a “universal computer” would be able to tackle any kind of problem by utilising instructional code that could be stored in the computer’s memory. </p>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <h3>Navigation</h3>
+      <nav>
+        <a href="index.html">Facts</a>
+        <!-- <a href="hometown.html">Hometown</a> -->
+        <a class="active" href="trivia.html">Interesting</a>
+        <a href="game.html">Game</a>
+      </nav>
+    </aside>
+  </div>
+</body>
+</html>
