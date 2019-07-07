@@ -96,57 +96,6 @@
 
 $(document).ready( function() {
   // object to store balance amount for savings account and checking account
-  const bank = {
-    // balance: { savings: 100, checking: 50 },
-
-    savingsBalance: 0,
-
-    checkingBalance: 0,
-
-    withdraw: function () {
-      $acc = $(this).parent().attr('id')
-      accBalance = $acc + 'Balance';
-      $amount = '#' + $acc + '-amount'
-      amount = parseFloat($($amount).val());
-      // acc = acc.toLowerCase() + 'Balance';
-      if (bank[accBalance] >= amount) {
-        bank[accBalance] = bank[accBalance] - amount;
-      }
-      else if (bank[accBalance] < amount) {
-        if (accBalance === 'savingsBalance') {
-          if ((bank.checkingBalance + bank[accBalance]) >= amount){
-            bank.checkingBalance = bank.checkingBalance - amount + bank[accBalance];
-            bank[accBalance] = bank[accBalance] - bank[accBalance];
-            console.log(bank[accBalance],bank.checkingBalance);
-          }
-        }
-        else if (accBalance === 'checkingBalance') {
-          if ((bank.savingsBalance + bank[accBalance]) >= amount) {
-            bank.savingsBalance = bank.savingsBalance - amount + bank[accBalance];
-            bank[accBalance] = bank[accBalance] - bank[accBalance];
-            console.log(bank[accBalance],bank.savingsBalance);
-          }
-        }
-      }
-      updateBalance();
-      $($amount).val('');
-    },
-
-    deposit: function () {
-      $acc = $(this).parent().attr('id')
-      accBalance = $acc + 'Balance';
-      $amount = '#' + $acc + '-amount'
-      amount = parseFloat($($amount).val());
-      if (amount > 0) {
-        if (accBalance === 'checkingBalance' || accBalance === 'savingsBalance') {
-          bank[accBalance] = bank[accBalance] + amount;
-        }
-      }
-      updateBalance();
-      $($amount).val('');
-    },
-
-  }
 
   const updateBalance = function() {
     $('#checking-balance').html(`$${ bank.checkingBalance }`);
@@ -165,6 +114,61 @@ $(document).ready( function() {
     };
   }
 
+  const bank = {
+    // balance: { savings: 100, checking: 50 },
+
+    savingsBalance: 0,
+
+    checkingBalance: 0,
+
+    withdraw: function () {
+      /* parent div of either savings/checking account button that was clicked */
+      const $acc = $(this).parent().attr('id') // variable for parent div of clicked button
+      const accBalance = $acc + 'Balance'; // variable to access balance from bank object
+      const $amount = '#' + $acc + '-amount' // $variable for input amount returned as string
+      const amount = parseFloat($($amount).val()); // parse float string to numbers
+      // acc = acc.toLowerCase() + 'Balance';
+      if (bank[accBalance] >= amount) { // if current account has enough money, withdraw
+        bank[accBalance] = bank[accBalance] - amount;
+      }
+      else if (bank[accBalance] < amount) { // if current account NOT enough money
+        if (accBalance === 'savingsBalance') {
+          if ((bank.checkingBalance + bank[accBalance]) >= amount){ // check other account
+            bank.checkingBalance = bank.checkingBalance - amount + bank[accBalance];
+            bank[accBalance] = bank[accBalance] - bank[accBalance];
+            console.log(bank[accBalance],bank.checkingBalance);
+          }
+        }
+        else if (accBalance === 'checkingBalance') {
+          if ((bank.savingsBalance + bank[accBalance]) >= amount) {
+            bank.savingsBalance = bank.savingsBalance - amount + bank[accBalance];
+            bank[accBalance] = bank[accBalance] - bank[accBalance];
+            console.log(bank[accBalance],bank.savingsBalance);
+          }
+        }
+      }
+      updateBalance();
+      $($amount).val('');
+    },
+
+    deposit: function () {
+      const $acc = $(this).parent().attr('id')
+      const accBalance = $acc + 'Balance';
+      const $amount = '#' + $acc + '-amount'
+      const amount = parseFloat($($amount).val());
+      if (amount > 0) {
+        if (accBalance === 'checkingBalance' || accBalance === 'savingsBalance') {
+          bank[accBalance] = bank[accBalance] + amount;
+        }
+      }
+      updateBalance();
+      $($amount).val('');
+    },
+
+  }
+
+
+
   // starting balance
   bank.savingsBalance = 70
   bank.checkingBalance = 50
@@ -179,6 +183,7 @@ $(document).ready( function() {
   // bank.withdraw('checking', 20);
   // bank.deposit('checking', 200);
   // bank.withdraw('fksah',200);
+
 
 
 })
