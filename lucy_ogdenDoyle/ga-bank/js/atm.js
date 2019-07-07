@@ -3,6 +3,7 @@ const checkingBal = account("checking", "#checking-balance");
 const savingBal = account("saving", "#savings-balance");
 $("#error").hide();
 
+
 //make an account with name n
 function account (n, id) {
   return acc = {
@@ -11,6 +12,19 @@ function account (n, id) {
     obj: $(id)
   }
 }
+
+function zero (account) {
+  if (account.balance === 0) {
+    account.obj.addClass("zero");
+  }
+
+  else {
+    account.obj.removeClass("zero");
+  }
+}
+zero(checkingBal);
+zero(savingBal);
+
 
 function deposit (amount, to) {
   $("#error").hide();
@@ -40,8 +54,7 @@ function withdraw (amount, from) {
     //check the other account, and withdraw the remaining
     //from that one
 
-    if ((parseFloat(checkingBal.balance) +      parseFloat(savingBal.balance)) >= amount &&
-    from.balance != 0) {
+    if ((parseFloat(checkingBal.balance) +      parseFloat(savingBal.balance)) >= amount) {
       const withdrawn = from.balance;
       const overdraft = amount - withdrawn;
       from.balance = 0;
@@ -58,7 +71,7 @@ function withdraw (amount, from) {
     }
     else {
       console.log("else");
-      $("#error").show();
+      $("#error").text("Sorry, insufficient funds").show();
     }
   }
 
@@ -78,38 +91,30 @@ function updateUI (amount, account) {
 
 //add listener to checking input
 
-$("#checking-deposit").on("click", function () {
-  const val = $("#checking-amount").val();
-  if (val != "") {
-    deposit(val, checkingBal);
-  }
+function addClick (idButton, idAmount, obj, type) {
+  $(idButton).on("click", function () {
+    const val = $(idAmount).val();
+    if (val != "" && val > 0) {
+      if (type === "deposit") {
+        deposit(val, obj);
+      }
+      else if (type === "withdraw") {
+        withdraw(val, obj);
+      }
 
-});
+    }
+    if (val < 0) {
+      $("#error").text("Sorry, cannot withdraw negative funds").show();
+    }
+    else if (isNaN(val)) {
+      $("#error").text("Sorry, invalid data").show();
+    }
 
-$("#checking-withdraw").on("click", function () {
-  const val = $("#checking-amount").val();
-  if (val != "") {
-    withdraw(val, checkingBal);
-  }
-});
-
-$("#savings-deposit").on("click", function () {
-  const val = $("#savings-amount").val();
-  if (val != "") {
-    deposit(val, savingBal);
-  }
-});
-
-$("#savings-withdraw").on("click", function () {
-  const val = $("#savings-amount").val();
-  if (val != "") {
-    withdraw(val, savingBal);
-  }
-});
-
-//if deposit clicked, run deposit functions
-//if withdraw is clicked, run withdraw function
+  });
+}
 
 
-
-//TODO add an error message
+addClick("#checking-deposit", "#checking-amount", checkingBal, "deposit");
+addClick("#checking-withdraw", "#checking-amount", checkingBal, "withdraw");
+addClick("#savings-deposit", "#savings-amount", savingBal, "deposit");
+addClick("#savings-withdraw", "#savings-amount", savingBal, "withdraw");
