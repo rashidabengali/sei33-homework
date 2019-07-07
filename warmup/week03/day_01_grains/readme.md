@@ -7,5 +7,5 @@ There are 64 squares on a chessboard.
 
 Write a program that shows:
 
-how many grains were on each square, and
-the total number of grains
+- how many grains were on each square, and
+- the total number of grains
