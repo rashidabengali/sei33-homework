@@ -1,0 +1,100 @@
+.topnav {
+    background-image: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/bg_wrapper.png);
+    display: cover;
+    font-family: Arial, serif;
+    display: block;
+    height: 20px;
+    font-size: 15px;
+    padding: 17px;
+
+}
+
+.topnav a{
+    color: white;
+    text-decoration: none;    
+    padding: 20px 20px;
+    margin: 20px 0 20px 20px;
+    line-height: 50%;
+}
+.topnav a:hover {
+    background: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/bg_nav_rollover.png) no-repeat;
+
+    background-size: 300px 150px;    
+
+}
+
+/* done */
+.shadow {
+    background: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/shadow_slider.png);
+    margin-left: 50px;
+    width: 1000px;
+
+
+}
+
+#textbox {
+    border: 1px solid black;
+    background: url(/Users/plengloetsakulcharoen/Project/sei33-homework/pleng_loetsakulcharoen/week_02_day1_hw/busyhands/images/bg_blurb.jpg);
+    width: 960px;
+    margin-left: 50px;
+    padding: 20px;
+    height: 50px;
+}
+
+
+.content {
+    margin-left: 50px;
+    
+
+   
+}
+
+.content img {
+    
+    height: 350px;
+    width: 1000px;
+}
+
+.logo {
+    padding: 20px;
+    margin-left: 30px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#textbox p {
+    border: 2px solid black;
+    display: inline;
+}
+
+#textbox .button {
+    display: inline;
+}
+
+
+
+
+/* done */
+.box1, .box2, .box3 {
+    margin-left: 50px;
+    width: 300px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+
+}
+
+.box1 p a, .box2 p a, .box3 p a {
+    color: rgb(35, 147, 223);
+    text-decoration: none;
+}
+
+.box1 img, .box2 img, .box3 img {
+    width: 280px;
+    border: 7px solid rgb(211, 208, 208);
+    padding: 3.5px;
+}
+/* done */
