@@ -1,0 +1,66 @@
+body {
+  background-image: url("../images/bg_wrapper.png");
+  background-repeat: repeat-x;
+  margin: 0;
+}
+
+.navigation {
+  margin: 30px 50px 37px 50px;
+}
+
+.navigation a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.header {
+  display: inline-block;
+  width: 800px;
+}
+
+.socialMedia {
+  display: inline-block;
+  margin-left: 100px;
+}
+.banner {
+  margin-bottom: s0;
+}
+.shadow {
+  margin-top: 0;
+}
+.header {
+  margin: 70px auto;
+}
+
+.navigation a:hover  {
+  background-image: url("images/bg_nav_rollover.png");
+}
+
+.box1 {
+  display: inline;
+  width: 200px;
+}
+
+.box2 {
+  display: inline;
+  width: 200px;
+}
+
+.homeBoxes p {
+  width: 275px;
+}
+
+.footer {
+  background-color: black;
+  color: grey;
+}
+
+.footer h3 {
+  color: white;
+}
+
+.footer ul {
+  list-style-type: none;
+  text-align: left;
+}

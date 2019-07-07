@@ -1,0 +1,133 @@
+/* The Pesticide plugin is a browser extention to do the same as the following  */
+/* * { border: 1px solid green; } */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+  background-color: #222;
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #ccc;
+  padding: 1em;
+  margin-left: auto;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+ul {
+  list-style: none;
+}
+nav {
+}
+nav a {
+  color: red;
+}
+nav a:hover{
+  color: yellow;
+}
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+.nav{
+  border: 1px solid #fff;
+  width: 900px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+h1 {
+  text-align: center;
+  background-color: #222;
+  color: #ccc;
+  padding: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content{
+  color: white;
+  border: 2px solid black;
+}
+
+
+
+/* Trivia Page */
+.trivia-container{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+  margin-left: auto;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+  border: 5px solid green;
+}
+.form{
+  color: white;
+  text-align: center;
+}
+/*
+main img{
+  display: block;
+  margin: 0 auto;
+}
+main {
+  display: inline-block;
+  width: 75%;
+}
+
+aside {
+/*  display: inline-block; */
+  /* width: 21%; /* 75% + 21% is 100% when youre in CSS */ /*
+  vertical-align: top;
+  background-color: #cfc;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 15px #222;
+  margin-left: 400px;
+}
+aside ul {
+  padding-left: 17px;
+} */
+
+
+/* JUST FOR NAV BAR ON TOP */
+ul#navigation {
+
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    right: 200px;
+    list-style: none;
+    z-index:999999;
+}
+ul#navigation li {
+    display:inline;
+    float:left;
+    width:100px;
+    margin-left:1px;
+
+}
+ul#navigation li a {
+    display: block;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #fff;
+    float:left;
+    width: 100px;
+    height: 35px;
+    color: red;
+    background:transparent url(item.png) no-repeat bottom right;
+    text-decoration:none;
+    text-align:center;
+    padding-top:80px;
+    margin-top: -40px;
+    cursor:pointer;
+
+}
+ul#navigation li a:hover{
+
+}
