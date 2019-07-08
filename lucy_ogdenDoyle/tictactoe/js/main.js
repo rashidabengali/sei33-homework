@@ -1,0 +1,111 @@
+
+//begin the game with a prompt saying it is X's turn
+const game = {
+  user1: "X",
+  user2: "O",
+  currentUser: "X",
+
+  gameState: ["", "", "", "", "", "", "", "", ""],
+
+  turn: function (place) {
+    place = Number(place) - 1
+    //when a place is clicked, add the X (or O)
+    if (this.gameState[place] != "") {
+      //already taken
+      console.log("error: place already taken");
+    }
+    else {
+      this.gameState[place] = this.currentUser;
+      this.checker();
+    }
+  },
+
+  matchCheck: function (one, two, three) {
+    one = Number(one) - 1;
+    two = Number(two) - 1;
+    three = Number(three) - 1;
+    console.log(one);
+    // check where that turn was placed, and check for any rows
+    if (this.gameState[one] === this.gameState[two]
+        && this.gameState[two] === this.gameState[three]
+        && this.gameState[one] != "" && this.gameState[two] != "" && this.gameState[three] != "" ) {
+          $('body').append("<div id='winner'></div>");
+          $('#winner').text(`the winner is ${this.gameState[one]}`);
+          return true;
+        }
+    else if ("x" == "x") {
+      //TODO check if board is full
+    }
+    else {
+      return false;
+
+    }
+  },
+
+  checker: function () {
+    //horizontal match
+    if (this.matchCheck(1, 2, 3) ||
+    this.matchCheck(4, 5, 6)||
+    this.matchCheck(7, 8, 9)||
+    //vertical match
+    this.matchCheck(1, 4, 7)||
+    this.matchCheck(2, 5, 8)||
+    this.matchCheck(3, 6, 9)||
+    //diagonal match
+    this.matchCheck(1, 5, 9)||
+    this.matchCheck(3, 5, 7)) {
+      this.match();
+    }
+    else {
+      this.nextTurn();
+    }
+  },
+
+  nextTurn: function () {
+    //switch the current user for next turn
+    if (this.currentUser === this.user1) {
+      this.currentUser = this.user2;
+    } else if (this.currentUser === this.user2) {
+      this.currentUser = this.user1;
+    }
+  },
+
+  match: function () {
+    for (let i=0; i < 9; i++) {
+      this.gameState[i] = "";
+      render();
+    }
+  }
+};
+
+function addClicker (place, n) {
+  $(place).on("click", function () {
+    game.turn(n);
+    render();
+  });
+}
+
+addClicker(".one", "1");
+addClicker(".two", "2");
+addClicker(".three", "3");
+addClicker(".four", "4");
+addClicker(".five", "5");
+addClicker(".six", "6");
+addClicker(".seven", "7");
+addClicker(".eight", "8");
+addClicker(".nine", "9");
+
+render();
+
+function render () {
+  //render the board
+  $(".one").text(game.gameState[0]);
+  $(".two").text(game.gameState[1]);
+  $(".three").text(game.gameState[2]);
+  $(".four").text(game.gameState[3]);
+  $(".five").text(game.gameState[4]);
+  $(".six").text(game.gameState[5]);
+  $(".seven").text(game.gameState[6]);
+  $(".eight").text(game.gameState[7]);
+  $(".nine").text(game.gameState[8]);
+}
