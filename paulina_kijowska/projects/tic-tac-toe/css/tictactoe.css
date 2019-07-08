@@ -1,0 +1,105 @@
+
+table {
+
+margin-left: 150px;
+margin-top: 50px;
+}
+
+td {
+width: 200px;
+height: 200px;
+border: 3px solid #6F90BE;
+}
+
+.border-top {
+border-top: none;
+}
+
+.border-right {
+border-right: none;
+}
+
+.border-left {
+border-left: none;
+}
+
+.border-bottom {
+border-bottom: none;
+}
+
+img {
+width: 200px;
+height: 200px;
+
+}
+
+/* .left {
+height: 500px;
+border-left: 5px solid green;
+margin-left: 200px
+}
+
+.right {
+height: 500px;
+border-left: 5px solid green;
+margin-left:600px;
+} */
+
+
+
+/* .top {
+height: 500px;
+border-left: 5px solid green;
+margin-left:600px;
+} */
+
+
+/* @import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+@import url(http://fonts.googleapis.com/css?family=Ruluko);
+
+#content {
+  margin: 0 auto;
+  text-align: center;
+  width: 700px;
+}
+
+#nav {
+  margin: 50px 0px;
+}
+
+#title {
+  color: #F52F4F;
+  font-family: 'Oleo Script', cursive;
+  font-size: 50px;
+}
+
+#checking {
+  float: left;
+}
+
+#savings {
+  float: right;
+}
+
+.account {
+  background-color: #6C9A74;
+  border: 1px solid #295A33;
+  padding: 10px;
+}
+
+.balance {
+  background-color: #E3E3E3;
+  border: 1px solid #676767;
+  font-family: 'Ruluko', sans-serif;
+  font-size: 50px;
+  padding: 25px 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.zero {
+  background-color: #F52F4F;
+  color: #FFF;
+} */
