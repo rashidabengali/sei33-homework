@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -15,6 +16,8 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: #b8e1e5;
+  color: white;
 }
 
 .wrapper {
@@ -23,15 +26,39 @@ body {
 }
 
 .board {
-  background-color: skyblue;
   width: 600px;
   height: 600px;
   position: relative;
 }
 
-.line {
-  background-color: black;
+h1 {
+  text-align: center;
+  font-size: 45px;
+  letter-spacing: 2px;
+}
+
+#win {
+  font-size: 40px;
+  text-align: center;
+  display: block;
+}
+
+#win button {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.line,
+.stroke {
+  background-color: #252533;
   position: absolute;
+  box-shadow: 3px 3px rgba(100, 100, 100, 0.2);
+  border-radius: 2px;
 }
 
 .horizontal1 {
@@ -62,14 +89,85 @@ body {
   height: 100%;
 }
 
+.strokeVert {
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #e6b5c8;
+}
+
+.strokeHoriz {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #e6b5c8;
+}
+
+.winHorizontal1 {
+  top: calc(33% / 2);
+
+}
+
+.winHorizontal2 {
+  top: calc(66% - (33% / 2));
+}
+
+.winHorizontal3 {
+  top: calc(100% - (33% / 2));
+}
+
+.winVertical1 {
+  left: calc(33% / 2);
+}
+
+.winVertical2 {
+  left: calc(66% - (33% / 2));
+}
+
+.winVertical3 {
+  left: calc(100% - (33% / 2));
+}
+
+.winDiagonal1 {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #e6b5c8;
+  transform: rotate(45deg);
+}
+
+.winDiagonal2 {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #e6b5c8;
+  transform: rotate(-45deg);
+}
+
+
 .place {
   position: absolute;
-  font-size: 90px;
+  font-size: 25vw;
   text-align: center;
-  width: calc(33% - 20px);
-  height: calc(33% - 20px);
-  padding: 10px;
+  width: 33%;
+  height: 33%;
   cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.playerone {
+  text-shadow: 4px 4px #e6b5c8;
+}
+.playertwo {
+  text-shadow: 4px 4px #e6b5c8;
 }
 
 .one {
@@ -115,6 +213,14 @@ body {
 .nine {
   top: 66%;
   left: 66%;
+}
+
+
+
+@media screen and (min-width: 909px) {
+  .place {
+    font-size: 222px;
+  }
 }
 
 @media screen and (max-width: 610px) {
