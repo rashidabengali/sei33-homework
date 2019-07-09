@@ -94,24 +94,35 @@
 // }
 
 
+
+
 $(document).ready( function() {
   // object to store balance amount for savings account and checking account
+
+
+
+
 
   const updateBalance = function() {
     $('#checking-balance').html(`$${ bank.checkingBalance }`);
     $('#savings-balance').html(`$${ bank.savingsBalance }`);
-    if (bank.checkingBalance === 0) {
+    // remove zero class and reapply if following is true;
+    $('.zero').removeClass('zero');
+
+    // checking for zero
+    if (bank.checkingBalance <= 0) {
       $('#checking-balance').addClass('zero');
     }
-    else if (bank.savingsBalance === 0) {
+
+    if (bank.savingsBalance <= 0) {
       $('#savings-balance').addClass('zero');
     }
-    else if (bank.checkingBalance !== 0) {
-      $('#checking-balance').removeClass('zero');
-    }
-    else if (bank.savingsBalance !== 0) {
-      $('#savings-balance').removeClass('zero');
-    };
+    // else if (bank.checkingBalance > 0) {
+    //   $('#checking-balance').removeClass('zero');
+    // }
+    // else if (bank.savingsBalance > 0) {
+    //   $('#savings-balance').removeClass('zero');
+    // };
   }
 
   const bank = {
@@ -124,7 +135,10 @@ $(document).ready( function() {
     withdraw: function () {
       /* parent div of either savings/checking account button that was clicked */
       const $acc = $(this).parent().attr('id') // variable for parent div of clicked button
+
       const accBalance = $acc + 'Balance'; // variable to access balance from bank object
+      // const accBalance = +$('#checking-balance').text().slice(1);
+
       const $amount = '#' + $acc + '-amount' // $variable for input amount returned as string
       const amount = parseFloat($($amount).val()); // parse float string to numbers
       // acc = acc.toLowerCase() + 'Balance';
