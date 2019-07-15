@@ -1,0 +1,71 @@
+
+* {border: 1px solid green;}
+
+body {
+
+  display: flex;
+  flex-direction: row;
+
+}
+
+.memoryProcessor {
+
+  width: 700px;
+  height: 800px;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.memory {
+
+  width: 50%;
+  height: 50%;
+
+}
+
+.processor {
+
+  width: 50%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: row;
+
+}
+
+.controlUnit {
+
+  width: 40%;
+  height: 40%;
+
+}
+
+.arithmeticLogic {
+
+  width: 40%;
+  height: 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.accumulator {
+
+  width: 100px;
+  height: 100px;
+
+}
+
+.io {
+
+  width: 50%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+}
