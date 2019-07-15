@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Display Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <header>
+        <h1 class="rainbow-text">All About Jenn Schiffer</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="glitch.html">Glitch</a></li>
+            <li><a href="art.html">Art</a></li>
+          </ul>
+        </nav>
+
+      </header>
+
+
+    <main>
+      <h2>About</h2>
+      <figure><img src="images/art_01.jpg" alt="Art by Jenn Schiffer">
+      <figcaption>Art by Jenn Schiffer</figcaption>
+      </figure>
+
+      <p>Jenn Schiffer is a software engineer and artist, who's notable role is the Director of Community Engineering at Glitch. </p>
+
+      <figure><img src="images/art_04.png" alt="Art by Jenn Schiffer">
+      <figcaption>Art by Jenn Schiffer</figcaption>
+      </figure>
+
+      <p>She is from New Jersey.</p>
+
+
+<!--
+//Google maps
+      <!--The div element for the map --><!--
+          <div id="map"></div>
+          <script>
+                // Initialize and add the map
+                function initMap() {
+                  // The location of Uluru
+                  var uluru = {lat: 39.833851, lng: -74.871826};
+                  // The map, centered at Uluru
+                  var map = new google.maps.Map(
+                      document.getElementById('map'), {zoom: 8, center: uluru});
+                  // The marker, positioned at Uluru
+                  var marker = new google.maps.Marker({position: uluru, map: map});
+                }
+          </script>
+          <!--Load the API from the specified URL
+          * The async attribute allows the browser to render the page while the API loads
+          * The key parameter will contain your own API key (which is not needed for this tutorial)
+          * The callback parameter executes the initMap() function
+          --><!--
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbDC6LZ6TsCrEEd6C2SmqBJu2LLipLVwY&callback=initMap">
+          </script>
+-->
+<iframe class="map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-76.45355701446535%2C38.083128678139495%2C-72.71820545196535%2C40.681061109536785&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=8/39.394/-74.586">View Larger Map</a></small>
+
+
+
+
+
+    </main>
+
+    <aside>
+      <h3>Why Joel Admires her:</h3>
+      <p>She has created a platform that encourages all to engage with programming. Notably she doesnt take peoples money.</p>
+
+      <h3>Something Joel doesn't know about her:</h3>
+      <p>She tweeted this funny tweet:</p>
+      <p><i>i have to write my "bio" today and honestly it's going better than i anticipated</i></p>
+      <figure><a href="images/twitter.png" target="_blank"><img src="images/twitter.png"></a><figcaption>Tweet</figcaption></figure>
+
+
+      <h3>Interesting Links</h3>
+        <li><a href="https://glitch.com/" target="_blank">Glitch</a></li>
+        <li><a href="https://www.linkedin.com/in/jennschiffer/" target="_blank">LinkedIn</a></li>
+        <li><a href="http://jennmoney.biz/" target="_blank">Website</a></li>
+        <li><a href="https://twitter.com/jennschiffer" target="_blank">Twitter</a></li>
+    </aside>
+
+    </div><!--container-->
+    <footer>
+      <p>copyright 2019</p>
+    </footer>
+
+
+  </body>
+</html>

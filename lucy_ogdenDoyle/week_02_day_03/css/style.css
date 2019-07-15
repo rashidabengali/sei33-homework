@@ -1,0 +1,16 @@
+#cat1 {
+  position: absolute;
+  left: 100px;
+  width: 200px;
+
+}
+
+#cat2 {
+  position: absolute;
+  left: 300px;
+  bottom: 0px;
+}
+
+.backward {
+  transform: scaleX(-1);
+}
