@@ -115,7 +115,7 @@ function subwayLine (lineName, stops) {
 
 
 
-const n = subwayLine("N", ["Times Square",
+subwayLine("N", ["Times Square",
 "34th",
 "28th",
 "23rd",

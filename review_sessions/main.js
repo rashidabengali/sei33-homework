@@ -114,23 +114,75 @@ const guessLetter = function (letter) {
 guessLetter(prompt('guess letter'));
 */
 
-const data = {
-  Earth: 1,
-  Mercury: 0.2408467,
-  Venus: 0.61519726,
-  Mars: 1.8808158,
-  Jupiter: 11.862615,
-  Saturn: 29.447498,
-  Uranus: 84.016846,
-  Neptune: 164.79132
+// Credit Card Validation
+
+const sameDigits = function (input) {
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] !== input[0]) {
+      return false
+    }
+  }
+  return true;
 }
 
-const spaceAge = function (ageInSeconds) {
-    data.each(function(element) {
-    console.log(element);
-    });
-    //console.log(`Your age in ${keys} is ${age} ${keys} years`);
-  //}
-};
+const sumOfDigits = function (input) {
+  let total = 0;
+  for (let i = 0; i < input.length; i++) {
+    total += parseInt(input[i]);
+  }
+  return total;
+}
 
-spaceAge(1000000000);
+const allDigits = function (input) {
+  return !isNaN(input);
+}
+
+const validateCreditCard = function (input) {
+  while (input.includes('-')) {
+    input = input.replace('-', '')
+  }
+  if (input.length === 16 && input[input.length-1] % 2 === 0 && sumOfDigits(input) > 16 && sameDigits(input) === false && allDigits(input) === true) {
+    return `Card is valid.`
+  }
+  return `Card is invalid.`
+}
+
+console.log(validateCreditCard('9999-9999-8888-0000'));
+console.log(validateCreditCard('a923-3211-9c01-1112'));
+
+/*
+const winningRule = [ [0, 1, 2], [3, 4, 5], [6, 7 ,8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ];
+
+//const played = ["o", "x", "o", "x", "o", "x", "o", "x", "o"]
+              // 0    1    2    3    4    5    6    7    8
+const played = ["x", "o", "x", "x", "o", "o", "x", "x", "o"];
+//const played = ["x", "x", "o", "o", "o", "x", "x", "o", "x"];
+played[this.attr(id)] = 'x'; player
+
+played[this.attr(id)] = 'o'; player
+
+     const findWinner = function (played, side) {
+        let sum;
+        let w;
+        for(let i = 0; i < winningRule.length; i++) {
+          w = winningRule[i];
+          sum = 0;
+
+          for(let b = 0; b < w.length; b++) {
+            if(played[w[b]] === side) {
+            console.log('sumbefore', sum);
+              sum++
+            }
+            console.log('sumafter', sum);
+            if(sum === 3) {
+                console.log("winner", side);
+                return;
+              }
+          }
+        }
+        console.log("draw");
+        return;
+      }
+
+findWinner(played, 'x');
+*/
