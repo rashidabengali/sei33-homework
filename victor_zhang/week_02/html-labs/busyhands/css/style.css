@@ -10,12 +10,16 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+*, body {
+  margin: 0;
+}
 
 #wrapper {
+  margin: 0 auto;
+  max-width: 960px;
   background-image: url("../images/bg_wrapper.png");
   background-size: cover;
   background-position: center;
-  margin: 0;
   padding: 0;
 }
 
@@ -24,9 +28,8 @@ Link Hover Color = #20222a
 }
 
 .topnav ul {
-  /* background-color: black; */
-  width: 960px;
-  margin: 0 auto;
+  background-color: black;
+  margin: 0;
   padding: 40px;
 }
 
@@ -34,6 +37,53 @@ Link Hover Color = #20222a
   margin: 15px;
   padding: 20px;
   display: inline;
+}
+
+/* Social media buttons */
+
+#social-media {
+	/* float: right; */
+	/* display: inline-block; */
+}
+
+#social-media ul li {
+	 display:inline-block;
+	 width:60px;
+	 height:60px;
+	 text-indent:-9999em;
+}
+
+#social-media ul li.linkedIn {
+	background:url(../images/socialNav.png) 0px 64px;
+}
+#social-media ul li.twitter {
+	background:url(../images/socialNav.png) -60px 64px;
+}
+
+#social-media ul li.facebook {
+	background:url(../images/socialNav.png) -120px 64px;
+}
+
+#social-media ul li.rss {
+	background:url(../images/socialNav.png) -180px 64px;
+}
+
+
+
+#social-media ul li.linkedIn:hover {
+	background:url(../images/socialNav.png) 0px 0px;
+}
+
+#social-media ul li.twitter:hover {
+	background:url(../images/socialNav.png) -60px 0px;
+}
+
+#social-media ul li.facebook:hover {
+	background:url(../images/socialNav.png) -120px 0px;
+}
+
+#social-media ul li.rss:hover {
+	background:url(../images/socialNav.png) -180px 0px;
 }
 
 a {
@@ -52,7 +102,7 @@ section {
 
 #main-content, #social-media {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 #main-content {
@@ -60,19 +110,19 @@ section {
 }
 
 #social-media {
-  height: 50px;
+  /* height: 50px; */
   position: absolute;
   right: 0;
-  margin-top: 33px;
+  /* margin-top: 33px; */
 }
 
 .imageshadow {
   margin: -4px auto;
 }
 
+/* Main */
+
 #blurb {
-  width: 960px;
-  margin: 0 auto;
   border: 3px inset #d7d5d5f2;
 }
 
@@ -81,32 +131,43 @@ section {
   display: inline-block;
 }
 
-.blurbImage {
-  /* margin: auto auto; */
+
+.home-box {
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
 }
 
-#home-boxes {
-  width: 960px;
-  margin: 0 auto;
-  padding: 2em;
-  column-count: 3;
-  column-width: 50px;
-  column-gap: 4em;
+.home-box p {
+  width: 274px;
+  height: 144px;
 }
 
 .home-box img {
   border: 6px solid #d3d1d1f7;
 }
 
+/* Footer  */
+
+.bottomnav {
+  padding: 0;
+}
+
 footer {
-  padding: 2em;
-  column-count: 3;
-  column-gap: 4em;
+  /* column-count: 3;
+  column-gap: 4em; */
   background-color: black;
   color: white;
 }
 
-.blogroll ul, .textwidget ul, .metawidget ul {
-  width: 960px;
-  margin: 0 auto;
+.box-footer {
+  box-sizing: border-box;
+  padding: 1em 2em;
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
+}
+
+.box-footer p {
+  width: 270px;
 }

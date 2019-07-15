@@ -1,0 +1,15 @@
+/* main {
+  display: inline-block;
+  width: 30%;
+} */
+
+body {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.home-box {
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+}

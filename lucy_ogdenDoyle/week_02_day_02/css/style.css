@@ -1,0 +1,174 @@
+/* the pesticide plugin is a browser extension to do the same as the following */
+/* * { border: 1px solid green;} */
+@import url('https://fonts.googleapis.com/css?family=Jua|Open+Sans&display=swap');
+/*
+font-family: 'Scope One', serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ddd;
+  background-image: url("../images/bg_01.png");
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  background-color: white;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 35px 30px 40px 30px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+nav li a {
+  font-family: 'Jua', sans-serif;
+  text-decoration: none;
+  color: #758eff;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  transition: 0.5s color;
+
+}
+
+a:hover {
+  color: #eb7dff;
+  transition: 0.5s color;
+}
+
+a {
+  font-family: 'Jua', sans-serif;
+  text-decoration: none;
+  color: #758eff;
+  transition: 0.5s color;
+
+}
+
+nav li a:hover {
+  color: #eb7dff;
+  transition: 0.5s color;
+}
+
+h1 {
+  font-family: 'Jua', sans-serif;
+
+  color: #525252;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-size: 40px;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, #64aaff, #94c4ff, #748eff, #eb80ff, #ffed44, #fff066);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-family: 'Jua', sans-serif;
+  font-size: 28px;
+}
+
+h3 {
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
+}
+
+
+main {
+  display: inline-block;
+  width: 70%;
+  padding-right: 30px;
+}
+
+main img,
+figure img {
+  display: inline-block;
+  width: calc(100% - 20px);
+  border: 5px solid #c5c5c5;
+  margin: 10px 10px 10px 10px;
+}
+
+figure {
+  width: 100%;
+  background-color: #eee;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+figcaption {
+  font-size: 12px;
+  font-style: italic;
+  padding: 0px 20px 20px 20px;
+
+}
+
+aside {
+  padding-top: 10px;
+  display: inline-block;
+  width: 29%;
+  vertical-align: top;
+}
+
+aside ul {
+  padding-left: -17px;
+}
+
+aside nav {
+  text-align: right;
+  display: inline-block;
+}
+
+footer {
+  color: #444;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5px 30px 20px 30px;
+}
+
+.glitchvid {
+  width: calc(100% - 20px);
+  height: 250px;
+  border: 5px solid #c5c5c5;
+  margin: 10px;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+}
