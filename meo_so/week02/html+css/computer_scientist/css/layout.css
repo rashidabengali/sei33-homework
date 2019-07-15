@@ -1,0 +1,131 @@
+* {
+    border: 1px solid yellow;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Lobster&display=swap');
+
+body{
+    /* background-image: url("../images/memphis-mini.png"); */
+    background-color: rgba(116, 206, 184, 0.7); 
+    padding: 0;
+    margin: 0;
+    font-family: 'Crimson Text', serif;;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 90px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+header {
+    background-image: url("../images/school/school.png");
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+nav {
+    display: inline-block;
+    text-align: center;
+    width: 960px;
+    height: 200px;
+}
+
+nav a {
+    display: inline-block;
+    color: black;
+    margin: 40px 20px;
+    width: 110px;
+    height: 60px;
+    text-align: center;
+    text-decoration:  none;
+    line-height: 30px;
+}
+
+a.title {
+    margin: 0 50px 0 60px;
+    width: 210px;
+    height: 170px;
+    line-height: 45px;
+    font-family: 'Lobster', cursive;
+    font-size: 46px;
+    font-weight: bold;
+    color: #f3094b;
+}
+
+main img {
+    box-shadow: 10px 10px 10px grey;
+}
+/* h1 {
+    display: inline-block;
+    top: 100px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+} */
+
+main {
+    display: inline-block;
+    width: 80%;
+}
+
+div.mainPhoto {
+    display: inline-block;
+    height: 80%;
+    width: 49%;
+    position: relative;
+    top: -40px;
+}
+
+main img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+div.mainRight{
+    display: inline-block;
+    margin-left: 10px;
+    width: 49%;
+    line-height: 20px;
+}
+
+/* aside {
+    /* display: inline-block;
+    width: 15%; /* 100% wont fit 
+    vertical-align: top;
+    background-color: rgb(166, 230, 235, 0.6);
+    border: 2px grey solid;
+    padding: 1em;
+    border-radius: 0.5em;
+ 
+} */ 
+.achievement li {
+    font-size: 16px;
+    line-height: 2em;
+}
+.mainRight .amazinggrace {
+    font-size: 16px;
+}
+.mainRight h2 {
+    margin-top: 4px;
+}
+div.footer{
+    background-color: grey;
+    text-align: center;
+    font-size: 12px;
+    height: 30px;
+}
+.fas {
+    size: 40px, 40px;
+    margin: 0;
+}

@@ -20,7 +20,8 @@ let depositSaving = function () {
     savingsBalance += savingsAmount; 
 
 	$('#savings-balance').text('$' + savingsBalance);	
-	clearInputs();
+    clearInputs();
+    warningDisplay();
 }
 
 ///////////////////////////////////////////////////////////////
@@ -34,11 +35,12 @@ const clearInputs = function() {
 
 // now the depositChecking, also as same as depositSaving//
 let depositChecking = function() {
-	let checkingAmount = parseInt($('#checking-amount').val());
+	let checkingAmount =  + ($('#checking-amount').val());
 	checkingBalance += checkingAmount;
 
 	$('#checking-balance').text('$' + checkingBalance);	
-	clearInputs(); 
+    clearInputs(); 
+    warningDisplay();
 }
 
 // withdrawSaving //
@@ -109,5 +111,11 @@ const warningDisplay = function() {
 	} else {
 		$('#checking-balance').removeClass("zero");
 	}	
+}
+
+
+// second way of doing this // business logic
+const account = {
+    
 }
 
