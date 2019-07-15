@@ -1,0 +1,127 @@
+* {
+    -moz-box-sizing: border-box;
+    /* Firexfox */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box;
+    /* IE */
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+.gallery {
+    height: 450px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.default-margin {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.menu {
+    display: block;
+    width: 100%;
+    background: #3D3A37;
+    color: white;
+    height: 60px;
+    box-shadow: 0 0 12px -2px #000;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #EEECEB;
+    font-family: 'Noto Sans HK', sans-serif;
+    letter-spacing: 0.6px;
+    font-size: 25px;
+}
+
+.fixed {
+    position: fixed;
+    display: block;
+    width: 100%;
+    background: #3D3A37;
+    color: white;
+    height: 60px;
+    box-shadow: 0 0 12px -2px #000;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    color: #3D3A37;
+    letter-spacing: 0.6px;
+}
+
+main p {
+    margin-top: 30px;
+    font-family: 'Noto Sans HK', sans-serif;
+    color: #3D3A37;
+    letter-spacing: 0.6px;
+}
+
+footer {
+    display: block;
+    background: #3D3A37;
+    color: #EEECEB;
+    height: 200px;
+    padding: 10px 0;
+    font-family: 'Noto Sans HK', sans-serif;
+    letter-spacing: 0.6px;
+}
+
+#about {
+    background: #EEECEB;
+    font-family: 'Noto Sans HK', sans-serif;
+    color: #3D3A37;
+    letter-spacing: 0.6px;
+    line-height: 1.3;
+}
+
+#career {
+    background: #EEECEB;
+    font-family: 'Noto Sans HK', sans-serif;
+    color: #3D3A37;
+    letter-spacing: 0.6px;
+    line-height: 1.3;
+}
+
+#life {
+    background: #EEECEB;
+    padding-bottom: 100px;
+    font-family: 'Noto Sans HK', sans-serif;
+    color: #3D3A37;
+    letter-spacing: 0.6px;
+    line-height: 1.3;
+}
+
+iframe {
+    margin: 30px auto;
+    display: block;
+}
