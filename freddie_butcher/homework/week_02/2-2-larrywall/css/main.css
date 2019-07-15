@@ -1,0 +1,192 @@
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+*{
+  /* border:1px solid green; */
+}
+
+
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+/* NAV WRAPPER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color:rgba(127, 127, 127, 0.7);
+  z-index: 99;
+}
+
+.topnav {
+
+  max-width: 960px;
+  margin: 0 auto;  /* i'm assuming full width */
+  height: 100px; /* change it to desired width */
+}
+
+/* LOGO IMAGE */
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+}
+
+/* //MENU ITEMS */
+.topnav > a {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    height: 100px;
+    width: 21.5%;
+    line-height: 100px;
+
+}
+
+.topnav > a:hover {
+  color: red;
+}
+
+/* HERO SECTION */
+.heroimage {
+  max-width: 100%;
+  height: auto;
+  /* opacity: 0.8; */
+  ;
+}
+
+.hero-text {
+  text-align: center;
+  /* position: absolute;
+  top: 65%;
+  left: 50%; */
+  transform: translate(69%, -256%);
+  color: white;
+  background-color: rgba(127, 127, 127, 0.7);
+  border-radius: 1em;
+  height: 120px;
+  width: 700px;
+  margin-bottom: 1em;
+}
+
+/* MAIN CONTENT */
+
+.larry {
+  margin-top: 1em;
+  border-radius: 1em;
+}
+
+.container.h1bg {
+  width: 100%;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0em;
+  border-radius: 1em;
+  text-align: center;
+  position: relative;
+}
+
+.smalltext {
+  font-size: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  color: #ccc;
+  padding: 0em;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  color: white;
+  background-color: #ccc;
+  padding: 0em;
+  border-radius: 0.5em;
+}
+
+p {
+  margin: 1em
+}
+
+span {
+  font-size: 10px;
+}
+
+main {
+  display: inline-block;
+
+  width: 100%;
+}
+
+footer {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+  padding: 0em;
+  text-align: center;
+  color: white;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 22px;
+  height: auto;
+
+}
+
+.i {
+  color: #ccc;
+  width: 30px;
+}
+
+.wrapper {
+  background-color: #ccc;
+  height: 100px;
+  vertical-align: middle;
+  list-style: none;
+}
+
+.gallery {
+      width: 20%;
+      display: inline;
+    }
+
+.admiration {
+  display: inline-inline-block;
+
+}
+
+.li {
+  font-size: 29px;
+  margin-top: 2em;
+}
+
+.footer inline-block {
+  font-size: 22px;
+}
+
+body, html {
+    height: 100%;

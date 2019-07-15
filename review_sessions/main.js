@@ -115,7 +115,7 @@ guessLetter(prompt('guess letter'));
 */
 
 // Credit Card Validation
-/*
+
 const sameDigits = function (input) {
   for (let i = 0; i < input.length; i++) {
     if (input[i] !== input[0]) {
@@ -149,43 +149,40 @@ const validateCreditCard = function (input) {
 
 console.log(validateCreditCard('9999-9999-8888-0000'));
 console.log(validateCreditCard('a923-3211-9c01-1112'));
-*/
+
 /*
-// Version 1
+const winningRule = [ [0, 1, 2], [3, 4, 5], [6, 7 ,8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ];
 
-const wheatGrain = function (numberOfSquares) {
-  let totalGrains = 0;
-  let grainsList = [];
-  for (let i = 0; i < numberOfSquares; i++) {
-    let grainsPerBox = Math.pow(2, i);
-    totalGrains += grainsPerBox;
-    grainsList.push(grainsPerBox);
-  }
-  console.log('grainsList', grainsList);
-  console.log('totalGrains', totalGrains);
-};
+//const played = ["o", "x", "o", "x", "o", "x", "o", "x", "o"]
+              // 0    1    2    3    4    5    6    7    8
+const played = ["x", "o", "x", "x", "o", "o", "x", "x", "o"];
+//const played = ["x", "x", "o", "o", "o", "x", "x", "o", "x"];
+played[this.attr(id)] = 'x'; player
 
-wheatGrain(4);
+played[this.attr(id)] = 'o'; player
+
+     const findWinner = function (played, side) {
+        let sum;
+        let w;
+        for(let i = 0; i < winningRule.length; i++) {
+          w = winningRule[i];
+          sum = 0;
+
+          for(let b = 0; b < w.length; b++) {
+            if(played[w[b]] === side) {
+            console.log('sumbefore', sum);
+              sum++
+            }
+            console.log('sumafter', sum);
+            if(sum === 3) {
+                console.log("winner", side);
+                return;
+              }
+          }
+        }
+        console.log("draw");
+        return;
+      }
+
+findWinner(played, 'x');
 */
-
-// Version 2
-
-const wheatGrain = {
-
-  totalGrains: 0,
-
-  grainsList: [],
-
-  calculateGrains: function (numberOfSquares) {
-    for (let i = 0; i < numberOfSquares; i++) {
-      let grainsPerBox = Math.pow(2, i);
-      this.totalGrains += grainsPerBox;
-      this.grainsList.push(grainsPerBox);
-    }
-    console.log('grainsList', this.grainsList);
-    console.log('totalGrains', this.totalGrains);
-  }
-
-};
-
-wheatGrain.calculateGrains(4);
