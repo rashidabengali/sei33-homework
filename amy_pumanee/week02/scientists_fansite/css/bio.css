@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono&display=swap');
+/* font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+*/
+
+body {
+  background-color: #f7eedf;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  letter-spacing: 0.3px;
+}
+#heading  {
+  padding-left: 1em;
+}
+.container {
+  max-width: 960px; /* Lazy way to make a responsive container */
+  margin: 0 auto;
+  background-color: white;
+  padding: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+nav {
+  text-align: right;
+}
+
+nav a {
+  color: green;
+}
+
+h1, h2 {
+  text-align: left;
+  font-family:'Roboto Mono', monospace;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+h1 {
+    color: #943a0c;
+}
+
+h2 {
+    color: #947562;
+}
+
+main {
+  display: inline-block;
+  width: 75%;
+}
+
+main img {
+  display: block;
+  margin: 0 auto;
+}
+
+#resize1 {
+    width: 500px;
+    height: auto;
+}
+
+#resize2 {
+    width: 200px;
+    height: auto;
+}
+
+li {
+  font-weight: bold;
+  color: #6f3219;
+  font-size: 18px;
+}
+
+p {
+  font-weight: normal;
+  color: #c57030;
+  font-size: 16px;
+}
+
+aside {
+  display: inline-block;
+  width: 21%; /* 75% + 21% is 100% when you're in CSS */
+  vertical-align: top;
+  background-color: #ffdec2;
+  padding: 1em;
+  border-radius: 0.2em;
+  box-shadow: 0 0 5px #926918;
+  margin-top: 2em;
+}
+
+aside ul {
+  padding-left: 17px;
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  color: black;
+  text-shadow: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  color: hotpink;
+  text-decoration: underline;
+}
