@@ -8,6 +8,21 @@ document.body.appendChild(img);
 return img;
 }
 
+const originalCat = document.querySelector('body img').cloneNode();
+originalCat.style.top = '200px';
+originalCat.style.left = '0px';
+document.body.appendChild(originalCat);
+
+const moveNonStop = function(img) {
+    const oldLeft = parseInt(img.style.left);
+    const newLeft = oldLeft + 5;
+    img.style.left = newLeft + 'px';
+    if (parseInt(img.style.left) > 150) {
+    img.style.left = 0;
+    };
+};
+
+
 // const img2 = document.getElementById('walkingCat2');
 // img2.style.top = '200px';
 // img2.style.left = '200px';
@@ -29,7 +44,7 @@ const newCat = function(node){
 const topRight = function(imgNode, degree) {
     const oldLeft = parseInt(imgNode.style.left);
     const oldTop = parseInt(imgNode.style.top);
-    const newLeft = oldLeft + 5;
+    const newLeft = oldLeft + 8;
     const newTop = oldTop - 7;
     imgNode.style.left = newLeft + 'px';
     imgNode.style.top = newTop + 'px';
@@ -40,8 +55,8 @@ const topRight = function(imgNode, degree) {
 const btmRight = function(imgNode, degree) {
     const oldLeft = parseInt(imgNode.style.left);
     const oldTop = parseInt(imgNode.style.top);
-    const newLeft = oldLeft + 5;
-    const newTop = oldTop + 7;
+    const newLeft = oldLeft + 4;
+    const newTop = oldTop + 6;
     imgNode.style.left = newLeft + 'px';
     imgNode.style.top = newTop + 'px';
     rotate = "rotate(" + degree + "deg)";
@@ -51,7 +66,7 @@ const btmRight = function(imgNode, degree) {
 const btmLeft = function(imgNode, degree) {
     const oldLeft = parseInt(imgNode.style.left);
     const oldTop = parseInt(imgNode.style.top);
-    const newLeft = oldLeft - 5;
+    const newLeft = oldLeft - 4;
     const newTop = oldTop + 7;
     imgNode.style.left = newLeft + 'px';
     imgNode.style.top = newTop + 'px';
@@ -62,7 +77,7 @@ const btmLeft = function(imgNode, degree) {
 const topLeft = function(imgNode, degree) {
     const oldLeft = parseInt(imgNode.style.left);
     const oldTop = parseInt(imgNode.style.top);
-    const newLeft = oldLeft - 5;
+    const newLeft = oldLeft - 6;
     const newTop = oldTop - 7;
     imgNode.style.left = newLeft + 'px';
     imgNode.style.top = newTop + 'px';
@@ -81,9 +96,9 @@ const bounce = function(id) {
     } else if (cat.direction === 'BR') {
         btmRight(cat.node, cat.degree);
     }
-    if (cat.degree === 360){
-        cat.degree += 0;
-    }else{
+    if (cat.degree >= 360){
+        cat.degree = 0;
+    } else {
         cat.degree += 30;
     }
 
@@ -115,8 +130,10 @@ const onClick = function() {
     let id = 'cat'+ids++;
     cats[id]=cat;
     
-    window.setInterval(bounce, 50, id);
+    window.setInterval(bounce, 30, id);
 }
+
+window.setInterval(moveNonStop, 30, originalCat);
 button.addEventListener('click', onClick);
 
 

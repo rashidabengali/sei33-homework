@@ -1,0 +1,96 @@
+body {
+  background-color: white;
+  font-family: "Times New Roman", serif;
+}
+
+#MenuBar {
+  background-color: black;
+  font-style: normal;
+  color: white;
+  height: 30px;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 15;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 6px 18px;
+  text-decoration: none;
+  display: inline;
+}
+
+#Heading {
+  background-color: #f1f0f0;
+  height: 500px;
+  width: 100%;
+  margin-top: 18px;
+}
+
+#busyhandLogo {
+  margin-top: 0px;
+  background-position: left;
+}
+
+/*-----------------------------------------------------------------------------
+=05 SOCIAL MEDIA
+-----------------------------------------------------------------------------*/
+
+#socialMedia {
+	display:inline-block;
+}
+
+#socialMedia ul li {
+	 display:inline-block;
+	 width:60px;
+	 height:60px;
+	 background:blue;
+	 text-indent:-9999em;
+}
+
+#socialMedia ul li.linkedIn {
+	background:url(../images/socialNav.png) 0px 64px;
+}
+#socialMedia ul li.twitter {
+	background:url(../images/socialNav.png) -60px 64px;
+}
+
+#socialMedia ul li.facebook {
+	background:url(../images/socialNav.png) -120px 64px;
+}
+
+#socialMedia ul li.rss {
+	background:url(../images/socialNav.png) -180px 64px;
+}
+
+#socialMedia ul li.linkedIn:hover {
+	background:url(../images/socialNav.png) 0px 0px;
+}
+
+#socialMedia ul li.twitter:hover {
+	background:url(../images/socialNav.png) -60px 0px;
+}
+
+#socialMedia ul li.facebook:hover {
+	background:url(../images/socialNav.png) -120px 0px;
+}
+
+#socialMedia ul li.rss:hover {
+	background:url(../images/socialNav.png) -180px 0px;
+}
+
+/*-----------------------------------------------------------------------------*/
+
+img.photobanner {
+  display: block;
+  margin: 0 auto; /* Horizontal centering */
+  padding: 5px;
+}
