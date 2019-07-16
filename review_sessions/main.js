@@ -1,3 +1,4 @@
+console.log('run');
 // const mixMatch = function (mix, match) {
 //   if (mix.length > 2 && match.length > 2) {
 //     const mixMatch1 = match.substring(0,2) + mix.substring(2);
@@ -65,7 +66,7 @@
 
 
 //WORD GAME
-
+/*
 const guessLetter = function (letter) {
 
   letter = letter.toUpperCase();
@@ -111,3 +112,80 @@ const guessLetter = function (letter) {
 };
 
 guessLetter(prompt('guess letter'));
+*/
+
+// Credit Card Validation
+/*
+const sameDigits = function (input) {
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] !== input[0]) {
+      return false
+    }
+  }
+  return true;
+}
+
+const sumOfDigits = function (input) {
+  let total = 0;
+  for (let i = 0; i < input.length; i++) {
+    total += parseInt(input[i]);
+  }
+  return total;
+}
+
+const allDigits = function (input) {
+  return !isNaN(input);
+}
+
+const validateCreditCard = function (input) {
+  while (input.includes('-')) {
+    input = input.replace('-', '')
+  }
+  if (input.length === 16 && input[input.length-1] % 2 === 0 && sumOfDigits(input) > 16 && sameDigits(input) === false && allDigits(input) === true) {
+    return `Card is valid.`
+  }
+  return `Card is invalid.`
+}
+
+console.log(validateCreditCard('9999-9999-8888-0000'));
+console.log(validateCreditCard('a923-3211-9c01-1112'));
+*/
+/*
+// Version 1
+
+const wheatGrain = function (numberOfSquares) {
+  let totalGrains = 0;
+  let grainsList = [];
+  for (let i = 0; i < numberOfSquares; i++) {
+    let grainsPerBox = Math.pow(2, i);
+    totalGrains += grainsPerBox;
+    grainsList.push(grainsPerBox);
+  }
+  console.log('grainsList', grainsList);
+  console.log('totalGrains', totalGrains);
+};
+
+wheatGrain(4);
+*/
+
+// Version 2
+
+const wheatGrain = {
+
+  totalGrains: 0,
+
+  grainsList: [],
+
+  calculateGrains: function (numberOfSquares) {
+    for (let i = 0; i < numberOfSquares; i++) {
+      let grainsPerBox = Math.pow(2, i);
+      this.totalGrains += grainsPerBox;
+      this.grainsList.push(grainsPerBox);
+    }
+    console.log('grainsList', this.grainsList);
+    console.log('totalGrains', this.totalGrains);
+  }
+
+};
+
+wheatGrain.calculateGrains(4);
