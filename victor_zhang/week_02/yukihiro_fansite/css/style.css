@@ -1,0 +1,154 @@
+/* The Pesticide plugin is a browser extension to do the same as the following */
+
+/* GOOD FOR DEBUGGING */
+/* * {
+  border: 1px solid green;
+} */
+
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Literata&display=swap');
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "DM Serif Display", sans-serif;
+  background-color: #354D5E;
+  color: #72A7CC;
+  margin: 0; /* or use normalize, reset css */
+  padding: 0;
+}
+
+header {
+  background-color: rgba(71,104,128,0.7);
+  text-align: center;
+}
+
+footer {
+  background-color: rgba(71,104,128,0.5);
+  text-align: center;
+}
+
+nav, footer {
+  font-family: "Liberata", sans-serif;
+}
+
+header h1 {
+  padding: 40px 0 15px;
+  font-size: 45px;
+}
+
+.top-nav ul, .top-nav li {
+  padding: 10px 30px 25px;
+}
+
+.top-nav li, .bottom-nav li {
+  padding: 20px 20px 25px;
+  display: inline;
+}
+
+a {
+  color: rgb(33, 179, 147);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(37, 90, 193);
+  text-decoration: overline;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 20px 0 35px;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.container {
+  font-family: "Liberata", sans-serif;
+  line-height: 22px;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #e3e7e9;
+  border: 10px inset rgba(157, 194, 208, 0.99) ;
+}
+
+.container main {
+  padding: 18px 0 60px 23px;
+  display: inline-block;
+  width: 65%;
+}
+
+.container aside {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 32.1%;
+  vertical-align: top;
+  margin-bottom: 70px;
+}
+
+aside h3 {
+  padding-bottom: 15px;
+}
+
+aside h3, aside ul {
+  margin-left: 40px;
+  padding-left: 15px;
+}
+
+aside ul {
+  line-height: 30px;
+  list-style-type: none;
+}
+
+aside img {
+  margin: 35px 20px 0 20px;
+  border: 5px inset grey;
+  width: auto;
+  height: 160px;
+}
+
+footer {
+  display: block;
+  vertical-align: bottom;
+}
+
+.footer_index {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom-nav, h3 {
+  display: inline-block;
+}
+
+.copyright {
+  margin-right: 230px;
+}
+
+h3:last-child {
+  margin-left: 250px;
+}
+
+h3 {
+  padding: 30px 20px 35px;
+}
+
+/* .container {
+  position: relative;
+  height: 900px;
+  width: 900px;
+} */
+
+#home_pic {
+  height: 100%;
+  width: auto;
+  position: fixed;
+  top: 0;
+  margin: 0 11% 0 11%;
+  z-index: -1;
+}

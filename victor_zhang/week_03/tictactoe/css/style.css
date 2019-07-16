@@ -1,0 +1,94 @@
+/* // TicTacToe ///////////////////////////////////////////////////////////// */
+
+table {
+  background-color: rgba(138, 132, 166, 0.4);
+}
+
+.top {
+  border-top: 1px solid white;
+}
+
+.bottom {
+  border-bottom: 1px solid white;
+}
+
+td:first-child {
+  border-left: 1px solid white;
+}
+
+td:last-child {
+  border-right: 1px solid white;
+}
+
+td {
+  border: 1px solid black;
+  padding: 0.5px;
+}
+
+td, a {
+  width: 60px;
+  height: 60px;
+}
+
+a {
+  display: block;
+}
+
+.blue {
+  background: blue;
+}
+
+.red {
+  background: red;
+}
+
+.gameOver {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+button {
+  visibility: hidden;
+}
+
+
+/* // Dodger //////////////////////////////////////////////////////////////// */
+
+/* .dodger {
+  height: 20px;
+  width: 15px;
+  background-color: rgb(223, 84, 148);
+  position: absolute;
+  bottom: 100px;
+  left: 500px;
+} */
+
+/* // Bomberman ///////////////////////////////////////////////////////////// */
+
+/* body {
+  margin: 40px;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.box:nth-child(even) {
+  background-color: #ccc;
+  color: #000;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(23, 50px);
+  grid-template-rows: repeat(11, 50px);
+  grid-auto-flow: column;
+}
+
+.border {
+  background-color: red;
+} */
