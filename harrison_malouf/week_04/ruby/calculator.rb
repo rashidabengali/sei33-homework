@@ -9,7 +9,8 @@ def show_menu
   puts "[t] - Times"
   puts "[d] - Divide"
   puts "[q] - Quit"
-  print "Enter your choice: "
+  print "Enter your choice:
+  "
 end
 
 def add( number_A, number_B )
