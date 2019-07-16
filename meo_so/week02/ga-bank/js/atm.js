@@ -6,11 +6,6 @@ const bank = {
         checking: 0,
         savings: 0
     },
-    acc002: {
-        name: 'Lopen Hong',
-        checking: 0,
-        savings: 0
-    },
     //function handling deposit when deposit button is clicked
     deposit: function (accName ='acc001', accType, amount) {
         bank[accName][accType] += parseFloat(amount);
@@ -39,20 +34,17 @@ const bank = {
             bank.deposit(accName, accType, amount*-1);
         };
     },
-}
+};
 // object holding DOM changing functions
 const jQueryDom = {
     //check acc bal and turn red when bal is $0
     changeColor: function () {
+        $('.zero').removeClass('zero');
         if ($('#savings-balance').html() === '$0') {
             $('#savings-balance').addClass('zero');
-        } else {
-            $('#savings-balance').removeClass('zero');
-        };
+        }; 
         if ($('#checking-balance').html() === '$0') {
             $('#checking-balance').addClass('zero');
-        } else {
-            $('#checking-balance').removeClass('zero');
         };
     },
     //trigger functions to update bank balance 
