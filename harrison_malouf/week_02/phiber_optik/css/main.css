@@ -11,6 +11,8 @@ body{
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
+  border: 1em green solid;
+  border-top-left-radius: 1em;
 }
 
 .Column{
