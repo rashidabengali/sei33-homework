@@ -1,11 +1,10 @@
-UNIONSQUARE = 'Union Square'
-def routes 
+$UNIONSQUARE = 'Union Square'
+$routes =
     {
     "N" => ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
     "L" => ["8th","6th", "Union Square", "3rd","1st"],
     "6" => ["Grand Central","33rd","28th","23rd", "Union Square","Astor Place"]
     }
-end
 
 # The result should be below
 # route = {
@@ -14,7 +13,7 @@ end
 # }
 
 def find_the_route start_line_name, start_station_name, destination_line_name, destination_station_name
-    array_line = routes[start_line_name]
+    array_line = $routes[start_line_name]
     route = []
 
     if array_line.nil?
@@ -64,12 +63,6 @@ def plan_trip start_line_name, start_station_name, destination_line_name, destin
 end
 
 def print_result route, start_line_name
-    # `puts` shows output similar to this:
-    # "You must travel through the following stops on the N line: 34th, 28th, 23rd, Union Square."
-    # "Change at Union Square."
-    # "Your journey continues through the following stops: 23rd, 28th, 33rd."
-    # "7 stops in total."
-
     first_time = true
     total = 0
     route.each do | line, stations |
@@ -94,11 +87,10 @@ def print_result route, start_line_name
     if !total.nil?
         puts "#{total} stops in total."
     end
-    # p route
 end
 
-plan_trip 'N', 'Times Square', 'N', '8th'
-puts "+-" * 40
+# plan_trip 'N', 'Times Square', 'N', '8th'
+# puts "+-" * 40
 # plan_trip 'N', 'Times Square', '6', '33rd'
 # puts "+-" * 40
 # plan_trip 'L', '1st', 'L', '6th'
@@ -108,8 +100,8 @@ puts "+-" * 40
 # plan_trip '6', '33rd', 'L', '3rd'
 # puts "+-" * 40
 # # plan_trip 'n', 'Times Square', 'n', '23rd'
-# plan_trip 'L', '6th', 'L', '6th'
-# puts "+-" * 40
+plan_trip 'L', '6th', 'L', '6th'
+puts "+-" * 40
 # plan_trip 'r', 'Times Square', 'n', '23rd'
 # puts "+-" * 40
 # plan_trip 'L', '3rd', 'L', '33rd'
