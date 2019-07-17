@@ -7,7 +7,7 @@
 }
 
 /* import whatever font you like at the top */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 
 body {
 
@@ -51,12 +51,14 @@ body {
   display: flex;
   flex-direction: column;
 
+  position: relative;
+
 }
 
 title {
 
-  width: 575px;
-  height: 100px;
+  max-width: 450px;
+  max-height: 250px;
 
   margin: 0 auto;
 
@@ -71,12 +73,15 @@ title {
 
 }
 
-img {
+#time {
+
   max-width: 500px;
   max-height: 300px;
 
-  display: flex;
-  flex-direction: center;
+  margin: 0 auto;
+
+  /* display: flex; */
+  /* flex-direction: center; */
 }
 
 p {
@@ -96,10 +101,17 @@ p {
 }
 
 .navigation {
-  /* text-align: right; */
 
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
+}
+
+nav {
 
   display: flex;
   flex-direction: column;
@@ -108,5 +120,9 @@ p {
 }
 
 nav a {
-  color: green;
+  color: white;
+  font-family: sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  text-decoration: none;
 }

@@ -2,6 +2,8 @@ console.log('run');
 
 // Version 1
 
+debugger;
+
 const studentsClapped = {
   "Alex": 1,
   "Bridget": 2,
