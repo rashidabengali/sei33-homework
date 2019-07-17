@@ -6,6 +6,8 @@ subway = {
 6 => ["Grand Central", "33rd", "28th", "23rd6", "Union Square", "Astor Place"],
 }
 
+
+
 print "Where are you getting at? "
 stationat = gets.chomp
 puts stationat
@@ -73,3 +75,13 @@ else
 #if you wanna acces it subway[:n][1]
 end
 ###if we want to access another lines
+
+#### positions of each UNION SQUARE
+# pos0n = subway[newlineat]index("Union Square")
+# pos0l = subway[:l][2]
+# pos06 = subway[6][4]
+#
+# if lineat !== lineoff
+#
+#
+# end
