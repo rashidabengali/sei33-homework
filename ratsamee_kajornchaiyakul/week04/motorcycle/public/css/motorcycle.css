@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+body {
+    background-image: url("../image/bg_motorcycle.jpg");
+    font-family: 'Roboto Mono', monospace;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    min-height: 725px;
+    background-color: rgba(0,0,0, .9);
+    color: whitesmoke;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+nav {
+    text-align: right;
+}
+
+a {
+    color: white;
+}
+
+label {
+    display: block;
+    padding-bottom: 8px;
+}
+
+input, textarea, button {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+.feature {
+    max-width: 100%;
+}
+
+button {
+    background-image: linear-gradient(-90deg, silver, whitesmoke);
+    /* linear-gradient(silver, whitesmoke); */
+}
+.link {
+    height: 25px;
+    width: 400px;
+    border: 1px lightgrey solid;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 40px;
+}
+
+.link a {
+    color: gray;
+    font-weight: bold;
+}
+
+.input_image {
+    width: 425px;
+}

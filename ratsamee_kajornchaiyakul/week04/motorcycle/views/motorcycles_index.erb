@@ -1,0 +1,8 @@
+<h2>All Motorcycles</h2>
+<% @motorcycles.each do |motorcycle|  %>
+    <p class="link">
+        <a href="/motorcycles/<%= motorcycle["id"] %>">
+        <%= "#{motorcycle["year"]} #{motorcycle["brand"]} #{motorcycle["body"]}"  %>
+        </a>
+    </p>
+<% end  %>

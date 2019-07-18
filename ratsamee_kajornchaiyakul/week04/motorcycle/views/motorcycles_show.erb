@@ -1,0 +1,14 @@
+<h2><%= "#{@motorcycle["year"]} #{@motorcycle["brand"]} #{@motorcycle["body"]}"  %></h2>
+<p>Brand: <%= @motorcycle["brand"] %></p>
+<p>Year: <%= @motorcycle["year"] %></p>
+<p>Color: <%= @motorcycle["color"] %></p>
+<p>Body: <%= @motorcycle["body"] %></p>
+<p>Price: <%= @motorcycle["price"] %></p>
+<p>Description: <span><%= @motorcycle["description"] %></span></p>
+<% unless @motorcycle["image"].nil? || @motorcycle["image"].empty?%>
+    <img class="feature" src="<%= @motorcycle["image"]%>" alt="<%= @motorcycle["brand"] %>">
+<% end  %>
+<div class="controls">
+    <a href="/motorcycles/<%= @motorcycle["id"]  %>/edit">Edit motorcycle</a>
+    <a href="/motorcycles/<%= @motorcycle["id"]  %>/delete">Delete motorcycle</a>
+</div>
