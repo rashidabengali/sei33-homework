@@ -1,0 +1,27 @@
+<h2>Write a new Post</h2>
+
+<form action="/blog_entry" method="post">
+  <label>
+    New Title:
+    <input type="text" name="title" placeholder="Blah blah" required>
+  </label>
+  <label>
+    Entry Date:
+    <input type="text" name="entry_date" placeholder="Thursday, 31 January 2019">
+  </label>
+  <label>
+    Entry:
+    <textarea name="entry" rows="10" cols="120"></textarea>
+    <!-- <input type="submit"> -->
+  </label>
+  <label>
+    Image:
+    <input type="text" name="image" placeholder="Blah blah blahh">
+  </label>
+  <label>
+    Tags:
+    <input type="text" name="tags" placeholder="JavaScript, Jquery, Ruby">
+  </label>
+
+  <button>Create Post</button>
+</form>
