@@ -1,0 +1,21 @@
+<h2>Edit style</h2>
+
+<form action="/<%= @style["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Edit style name" required value="<%= @style["name"] %>">
+  </label>
+
+  <label>
+    description:
+    <textarea name="description" placeholder="Edit style description"><%= @style["description"] %></textarea>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @style["image"] %>">
+  </label>
+
+  <button>Update style</button>
+  <a href="/">Back to the list</a>
+</form>

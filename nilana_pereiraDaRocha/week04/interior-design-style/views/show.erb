@@ -1,0 +1,12 @@
+<h2><%= @style["name"] %></h2>
+<p>description: <%= @style["description"] %></p>
+
+<% unless @style["image"].nil? || @style["image"].empty? %>
+  <img class="feature" src="<%= @style["image"] %>" alt="<%= @style["name"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/<%= @style["id"] %>/edit">Edit style</a>
+  <a href="/<%= @style["id"] %>/delete">Delete style</a>
+  <a href="/">Back to the list</a>
+</div>

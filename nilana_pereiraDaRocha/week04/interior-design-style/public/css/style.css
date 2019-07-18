@@ -1,0 +1,13 @@
+.style-item-img {
+    height: 150px;
+}
+
+.style-item {
+    width: 300px;
+    display: inline-block;
+    border: 1px solid grey;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+}
