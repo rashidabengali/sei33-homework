@@ -1,0 +1,14 @@
+* {
+  font-family: sans-serif;
+}
+
+
+.body {
+margin: 0 auto;
+padding-left: 10px;
+background-color: white;
+}
+
+body {
+  background-color: black;
+}
