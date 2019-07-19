@@ -3,11 +3,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 body {
-  background-color: #222;
+  background-color: black;
   padding: 0;
   margin: 0;
 }
+.profile{
 
+}
+canvas{
+  width: 960px;
+  height: 1000px;
+}
 .container{
   max-width: 960px;
   margin: 0 auto;
@@ -23,7 +29,7 @@ ul {
 nav {
 }
 nav a {
-  color: red;
+  color: green;
 }
 nav a:hover{
   color: yellow;
@@ -41,14 +47,15 @@ nav a:hover{
 }
 h1 {
   text-align: center;
-  background-color: #222;
+  background-color: black;
+  /* border: 2px solid red; */
   color: #ccc;
   padding: 1em;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 .content{
-  color: white;
+  color: green;
   border: 2px solid black;
 }
 
@@ -66,8 +73,10 @@ h1 {
   border: 5px solid green;
 }
 .form{
+  display: block;
   color: white;
   text-align: center;
+  background-color: #cdc;
 }
 /*
 main img{
@@ -93,39 +102,35 @@ aside ul {
   padding-left: 17px;
 } */
 
-
-/* JUST FOR NAV BAR ON TOP */
+/*
+JUST FOR NAV BAR ON TOP */
 ul#navigation {
-
     position: fixed;
     margin: 0px;
     padding: 0px;
     top: 0px;
     right: 200px;
     list-style: none;
-    z-index:999999;
 }
 ul#navigation li {
     display:inline;
     float:left;
     width:100px;
     margin-left:1px;
-
 }
 ul#navigation li a {
     display: block;
     font-weight:bold;
-    text-shadow:1px 1px 1px #fff;
+    text-shadow: 1px 1px 1px #fff;
     float:left;
     width: 100px;
     height: 35px;
-    color: red;
-    background:transparent url(item.png) no-repeat bottom right;
+    color: green;
     text-decoration:none;
-    text-align:center;
-    padding-top:80px;
-    margin-top: -40px;
-    cursor:pointer;
+    text-align: center;
+    /* padding-top: 80px;
+    margin-top: -40px; */
+    margin-top: 30px;
 
 }
 ul#navigation li a:hover{
