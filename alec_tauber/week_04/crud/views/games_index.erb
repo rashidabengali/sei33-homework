@@ -1,0 +1,11 @@
+<!-- Database -->
+<h2>All Games</h2>
+
+<% games.each do |game|%>
+<% @butterflies.each do |butterfly| %>
+  <p>
+    <a href="/butterflies/<%= butterfly["id"] %>">
+      <%= butterfly["name"] %>
+    </a>
+  </p>
+<% end %>
