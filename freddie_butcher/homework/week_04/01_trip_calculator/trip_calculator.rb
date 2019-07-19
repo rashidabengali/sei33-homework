@@ -2,15 +2,14 @@ require 'pry'
 
 def show_menu
   puts "--" *40 # El cheapo horizontal divide
-  puts "Calculator" #TODO: Use .center to make it look nice
+  puts "Trip Calculator" #TODO: Use .center to make it look nice
   puts "-=" *40 # El cheapo horizontal divide
-  puts "[add] - Addition"
-  puts "[sub] - Subtraction"
-  puts "[mul] - Multiplication"
-  puts "[div] - Division"
-  puts "[sqr] - Square Root"
-  puts "[pie] - Circle Area"
-  #TODO add other options here
+  puts "[mpg] - Miles per gallon"
+  puts "[mpg] - Miles per gallon"
+  puts "[mpg] - Miles per gallon"
+  puts "[mpg] - Miles per gallon"
+  puts "[mpg] - Miles per gallon"
+  puts "[mpg] - Miles per gallon"
   puts "--" *40
   puts "[q] - Quit"
   print "[Enter your choice:] "
@@ -22,10 +21,10 @@ menu_choice = gets.chomp.downcase
 
 until menu_choice == 'q'
   case menu_choice
-  when 'add'
-    print "What is the first number? "
-    first_number = gets.to_i
-    print "What is the second number? "
+  when 'trp'
+    print "How many KM have you travelled? "
+    distance = gets.to_i
+    print "? "
     second_number = gets.to_i
     puts "The result is #{first_number + second_number}."
     puts "--" *40
