@@ -1,7 +1,12 @@
 * {
   font-family: sans-serif;
+  color: white;
 }
 
 h2, h3 {
   color: red;
+}
+
+body {
+  background-color: white;
 }
