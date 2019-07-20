@@ -1,0 +1,11 @@
+<h2><%= @footballer["name"] %></h2>
+<h3>Position: <%= @footballer["position"] %></h3>
+
+<% unless @footballer["image"].nil? || @footballer["image"].empty? %>
+  <img class="feature" src="<%= @footballer["image"] %>" alt="<%= @footballer["name"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/footballers/<%= @footballer["id"] %>/edit">Edit footballer</a>
+  <a href="/footballers/<%= @footballer["id"] %>/delete">Delete footballer</a>
+</div>
