@@ -8,6 +8,21 @@
   </div>
 
   <div class="form-item">
+    <label for="interior_design_style_id" class="form-item-label">Interior Design Style</label>
+      <select name="interior_design_style_id" id="interior_design_style_id">
+        <% @styles.each do |style| %>
+        <% unless @furniture["interior_design_style_id"] == style["id"] %>
+          <option value="<%= style["id"]%>"><%= style["name"]%></option>
+        <% end %>
+        <% if @furniture["interior_design_style_id"] == style["id"] %>
+          <option value="<%= style["id"]%>" selected ><%= style["name"]%></option>
+        <% end %>
+
+        <% end %>
+      </select>
+  </div>
+
+  <div class="form-item">
     <label class="form-item-label" for="image">Image:</label>
     <input type="url" name="image" placeholder="http://..." value="<%= @furniture["image"] %>">
   </div>
@@ -18,8 +33,8 @@
   </div>
 
   <div class="form-item">
-    <button type="submit">Create furniture</button>
-    <a href="/furnitures">Back to the list</a>
+    <button type="submit">Update furniture</button>
+    <a class="controls-link" href="/furnitures">Back to the list</a>
   </div>
 
 </form>

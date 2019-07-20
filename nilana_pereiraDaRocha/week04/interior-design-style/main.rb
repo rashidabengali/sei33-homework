@@ -13,8 +13,10 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
 class InteriorDesignStyle < ActiveRecord::Base
+  has_many :furnitures, dependent: :destroy
 end
 class Furniture < ActiveRecord::Base
+  belongs_to :interior_design_style, foreign_key: "interior_design_style_id"
 end
 
 ######################################################################################
@@ -82,6 +84,8 @@ end
 
  #new okay 
 get '/furnitures/new' do
+  @styles = InteriorDesignStyle.all
+
   erb :"furnitures/new"
 end
 
@@ -90,17 +94,22 @@ post '/furnitures' do
   furniture.name = params[:name]
   furniture.description = params[:description]
   furniture.image = params[:image]
+  furniture.interior_design_style_id = params[:interior_design_style_id]
   furniture.save
   redirect to("/furnitures/#{furniture.id}") 
 end
 
 get '/furnitures/:id' do
-  @furniture = Furniture.find params[:id] 
+  @furniture = Furniture.find params[:id]
+  @interior_design_style_name = @furniture.interior_design_style.name
+
   erb :"furnitures/show"
 end
 
 get '/furnitures/:id/edit' do
   @furniture = Furniture.find params[:id] 
+  @styles = InteriorDesignStyle.all
+  @interior_design_style_id = @furniture.interior_design_style.id
   erb :"furnitures/edit"
 end
 
@@ -109,6 +118,7 @@ post '/furnitures/:id' do
   furniture.name = params[:name]
   furniture.description = params[:description]
   furniture.image = params[:image]
+  furniture.interior_design_style_id = params[:interior_design_style_id]
   furniture.save
   redirect to("/furnitures/#{ params[:id] }")
 end

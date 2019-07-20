@@ -1,5 +1,7 @@
 <h2><%= @furniture["name"] %></h2>
-<p>description: <%= @furniture["description"] %></p>
+
+<p>Furniture style: <%= @interior_design_style_name %></p>
+<p>Description: <%= @furniture["description"] %></p>
 
 <% unless @furniture["image"].nil? || @furniture["image"].empty? %>
   <img class="feature" src="<%= @furniture["image"] %>" alt="<%= @furniture["name"] %>">

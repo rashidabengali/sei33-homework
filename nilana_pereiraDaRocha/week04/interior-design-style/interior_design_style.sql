@@ -9,6 +9,7 @@ CREATE TABLE furnitures (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   description TEXT,
+  interior_design_style_id INTEGER,
   image TEXT -- URL for a photo of a style
 );
 
@@ -22,7 +23,7 @@ VALUES
 
 
 INSERT INTO furnitures
-  (name, image, description)
+  (name, interior_design_style_id, image, description)
 VALUES
-  ('Chair 1', 'https://cdn.shopify.com/s/files/1/0042/2782/products/chairs-marcel-breuer-wassily-chair-1_large.jpeg?v=1546005546', 'Marcel Breuers Wassily Chair (1925) is one of the most famous products of the Bauhaus School. It is a club armchair with all the stuffing taken out, leaving a behind a skeletal framework and stretched seat, back, and arms.'),
-  ('Chair 2', 'https://ae01.alicdn.com/kf/HTB1QYIkPFXXXXXvXFXXq6xXFXXXG/minimalist-style-Lounge-Chair-Plywood-Designer-Living-Room-furniture-Chair-High-Quality-modern-Wood-Color-wood.jpg_640x640.jpg', ' the most famous products of the Ba');
+  ('Chair 1', '1', 'https://cdn.shopify.com/s/files/1/0042/2782/products/chairs-marcel-breuer-wassily-chair-1_large.jpeg?v=1546005546', 'Marcel Breuers Wassily Chair (1925) is one of the most famous products of the Bauhaus School. It is a club armchair with all the stuffing taken out, leaving a behind a skeletal framework and stretched seat, back, and arms.'),
+  ('Chair 2', '1', 'https://ae01.alicdn.com/kf/HTB1QYIkPFXXXXXvXFXXq6xXFXXXG/minimalist-style-Lounge-Chair-Plywood-Designer-Living-Room-furniture-Chair-High-Quality-modern-Wood-Color-wood.jpg_640x640.jpg', ' the most famous products of the Ba');
