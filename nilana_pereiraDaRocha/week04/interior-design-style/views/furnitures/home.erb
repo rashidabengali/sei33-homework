@@ -1,10 +1,10 @@
 
-<h2>Interior Design Style</h2>
-<p>Here are the list of trends of interior design.</p>
+<h2>Furnitures</h2>
+<p>Here are the list of trends of furnitures.</p>
 <div class="style-item-wrapper">
-  <% @interior_design_style.each do |style| %>
+  <% @furnitures.each do |style| %>
     <div class="style-item">
-      <a href="/<%= style["id"] %>">
+      <a href="/furnitures/<%= style["id"] %>">
         <% unless style["image"].nil? || style["image"].empty? %>
           <img class="style-item-img" src="<%= style["image"] %>" alt="<%= style["name"] %>">
         <% end %>

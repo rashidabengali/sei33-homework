@@ -14,51 +14,109 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 
 class InteriorDesignStyle < ActiveRecord::Base
 end
+class Furniture < ActiveRecord::Base
+end
 
-#home okay 
+######################################################################################
+# interior design style routes
+######################################################################################
+
+# #home okay 
 get '/' do
+  redirect to('/styles')
+end
+
+get '/styles' do
   @interior_design_style = InteriorDesignStyle.all
-  erb :home
+  erb :"styles/home"
 end
 
  #new okay 
-get '/new' do
-  erb :new
+get '/styles/new' do
+  erb :"styles/new"
 end
 
-post '/' do
+post '/styles' do
   interior_design_style = InteriorDesignStyle.new
   interior_design_style.name = params[:name]
   interior_design_style.description = params[:description]
   interior_design_style.image = params[:image]
   interior_design_style.save
-  redirect to("/#{interior_design_style.id}") 
+  redirect to("/styles/#{interior_design_style.id}") 
 end
 
-get '/:id' do
+get '/styles/:id' do
   @style = InteriorDesignStyle.find params[:id] 
-  erb :show
+  erb :"styles/show"
 end
 
-get '/:id/edit' do
+get '/styles/:id/edit' do
   
   @style = InteriorDesignStyle.find params[:id] 
-  erb :edit
+  erb :"styles/edit"
 end
 
-post '/:id' do
+post '/styles/:id' do
   interior_design_style = InteriorDesignStyle.find params[:id]
   interior_design_style.name = params[:name]
   interior_design_style.description = params[:description]
   interior_design_style.image = params[:image]
   interior_design_style.save
-  redirect to("/#{ params[:id] }")
+  redirect to("/styles/#{ params[:id] }")
 end
 
-get '/:id/delete' do
+get '/styles/:id/delete' do
   interior_design_style = InteriorDesignStyle.find params[:id]
   interior_design_style.destroy
-  redirect to('/')
+  redirect to('/styles')
+end
+
+######################################################################################
+# furnitures routes
+######################################################################################
+
+get '/furnitures' do
+  @furnitures = Furniture.all
+  erb :"furnitures/home"
+end
+
+ #new okay 
+get '/furnitures/new' do
+  erb :"furnitures/new"
+end
+
+post '/furnitures' do
+  furniture = Furniture.new
+  furniture.name = params[:name]
+  furniture.description = params[:description]
+  furniture.image = params[:image]
+  furniture.save
+  redirect to("/furnitures/#{furniture.id}") 
+end
+
+get '/furnitures/:id' do
+  @furniture = Furniture.find params[:id] 
+  erb :"furnitures/show"
+end
+
+get '/furnitures/:id/edit' do
+  @furniture = Furniture.find params[:id] 
+  erb :"furnitures/edit"
+end
+
+post '/furnitures/:id' do
+  furniture = Furniture.find params[:id]
+  furniture.name = params[:name]
+  furniture.description = params[:description]
+  furniture.image = params[:image]
+  furniture.save
+  redirect to("/furnitures/#{ params[:id] }")
+end
+
+get '/furnitures/:id/delete' do
+  furniture = Furniture.find params[:id]
+  furniture.destroy
+  redirect to('/furnitures')
 end
 
 after do

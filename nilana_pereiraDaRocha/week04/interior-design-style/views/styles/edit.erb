@@ -1,6 +1,6 @@
 <h2>Edit style</h2>
 
-<form action="/<%= @style["id"] %>" method="post">
+<form action="/styles/<%= @style["id"] %>" method="post">
 
   <div class="form-item">
     <label class="form-item-label" for="name">Name:</label>
@@ -19,7 +19,7 @@
 
   <div class="form-item">
     <button type="submit">Create style</button>
-    <a href="/">Back to the list</a>
+    <a href="/styles">Back to the list</a>
   </div>
 
 </form>
