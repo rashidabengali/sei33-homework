@@ -1,5 +1,5 @@
 
-CREATE TABLE interior_design_style (
+CREATE TABLE interior_design_styles (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   description TEXT,
@@ -7,7 +7,7 @@ CREATE TABLE interior_design_style (
 );
 
 -- seed data
-INSERT INTO interior_design_style
+INSERT INTO interior_design_styles
   (name, image, description)
 VALUES
   ('MODERN', 'http://www.beautifulhabitat.com/wp-content/uploads/2015/11/1_pearsondesigngroup.jpg', 'Modern is a broad design term that typically refers to a home with clean, crisp lines, a simple colour palette and the use of materials that can include metal, glass and steel. Modern design employs a sense of simplicity in every element, including furniture. A word that’s commonly used to describe modern style is sleek, and there is not a lot of clutter or accessories involved with a modern style.'),

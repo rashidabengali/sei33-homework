@@ -2,56 +2,65 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pry'
 require 'sqlite3'
+require 'active_record'
 
 
+# Rails will do this for you automatically.
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'database.sqlite3'
+)
+ActiveRecord::Base.logger = Logger.new(STDERR)
+
+class InteriorDesignStyle < ActiveRecord::Base
+end
+
+#home okay 
 get '/' do
-  @interior_design_style = query_db 'SELECT * FROM interior_design_style'
+  @interior_design_style = InteriorDesignStyle.all
   erb :home
 end
 
+ #new okay 
 get '/new' do
   erb :new
 end
 
 post '/' do
-  query = "INSERT INTO interior_design_style (name, description, image) VALUES ('#{ params[:name] }', '#{ params[:description] }', '#{ params[:image] }')"
-  query_db query
-  redirect to('/') 
+  interior_design_style = InteriorDesignStyle.new
+  interior_design_style.name = params[:name]
+  interior_design_style.description = params[:description]
+  interior_design_style.image = params[:image]
+  interior_design_style.save
+  redirect to("/#{interior_design_style.id}") 
 end
 
-
 get '/:id' do
-  @style = query_db "SELECT * FROM interior_design_style WHERE id = #{ params[:id] }"
-  @style = @style.first 
+  @style = InteriorDesignStyle.find params[:id] 
   erb :show
 end
 
-
 get '/:id/edit' do
   
-  @style = query_db "SELECT * FROM interior_design_style WHERE id = #{ params[:id] }"
-  @style = @style.first
+  @style = InteriorDesignStyle.find params[:id] 
   erb :edit
 end
 
-
 post '/:id' do
-  query = "UPDATE interior_design_style SET name='#{ params[:name] }', description='#{ params[:description] }', image='#{ params[:image] }' WHERE id = #{ params[:id] }"
-  query_db query
+  interior_design_style = InteriorDesignStyle.find params[:id]
+  interior_design_style.name = params[:name]
+  interior_design_style.description = params[:description]
+  interior_design_style.image = params[:image]
+  interior_design_style.save
   redirect to("/#{ params[:id] }")
 end
 
-
 get '/:id/delete' do
-  query_db "DELETE FROM interior_design_style WHERE id = #{ params[:id] }"
+  interior_design_style = InteriorDesignStyle.find params[:id]
+  interior_design_style.destroy
   redirect to('/')
 end
 
-def query_db(sql_statement)
-  puts sql_statement 
-  db = SQLite3::Database.new 'database.sqlite3'
-  db.results_as_hash = true
-  results = db.execute sql_statement
-  db.close
-  results
+after do
+  ActiveRecord::Base.connection.close
 end
