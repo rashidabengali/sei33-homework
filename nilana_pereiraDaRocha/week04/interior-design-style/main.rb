@@ -5,6 +5,10 @@ require 'sqlite3'
 require 'active_record'
 
 
+
+######################################################################################
+# active record configuration
+######################################################################################
 # Rails will do this for you automatically.
 ActiveRecord::Base.establish_connection(
   :adapter => 'sqlite3',
@@ -23,7 +27,6 @@ end
 # interior design style routes
 ######################################################################################
 
-# #home okay 
 get '/' do
   redirect to('/styles')
 end
@@ -33,7 +36,6 @@ get '/styles' do
   erb :"styles/home"
 end
 
- #new okay 
 get '/styles/new' do
   erb :"styles/new"
 end
@@ -81,8 +83,7 @@ get '/furnitures' do
   @furnitures = Furniture.all
   erb :"furnitures/home"
 end
-
- #new okay 
+ 
 get '/furnitures/new' do
   @styles = InteriorDesignStyle.all
 
