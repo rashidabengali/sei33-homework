@@ -1,0 +1,32 @@
+<div class="form_layout">
+<h2>Add Boardgame</h2>
+<form action="/add_boardgame" method="post">
+
+<label>
+Name:
+<input name="name" placeholder="Catan" required value="<%= @info['name'] %>">
+</label>
+
+<label>
+Minimum Player:
+<input name="min_player" placeholder="1" value="<%= @info['min_players'] %>">
+</label>
+
+<label>
+Maximum Players:
+<input name="max_player" placeholder="4" value="<%= @info['max_players'] %>">
+</label>
+
+<label>
+Publisher:
+<input name="publisher" placeholder="KOSMOS" value="<%= @info['publishers'].join(', ') %>">
+</label>
+
+<label>
+Image:
+<input type="url" name="image" placeholder="http://..." value="<%= @info['image_url'] %>">
+</label>
+
+<button>Add to Collection</button>
+</form>
+</div>
