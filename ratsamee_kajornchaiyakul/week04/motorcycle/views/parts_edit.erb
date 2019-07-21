@@ -1,0 +1,26 @@
+<h2>Edit Part</h2>
+<form action="/parts/<%= @part.id %>" method="post">
+    <label>
+        Part Number:
+        <input type="text" name="partNumber" placeholder="3PW1511507" required value="<%= @part.partNumber %>">
+    </label>
+    <label>
+        Part Name:
+        <input type="text" name="name" placeholder="STREET EVO JACKET XXXL" required value="<%= @part.name %>">
+    </label>
+    <label>
+        Price:
+        <input type="number" name="price" placeholder="100" required value="<%= @part.price %>">
+    </label>
+    <label>
+        Description:
+    </label>
+    <label>
+        <textarea name="description" cols="45" rows="3" value="<%= @part.description %>"></textarea>
+    </label>
+    <label>
+        Image:
+        <input type="url" name="image" class="input_image" placeholder="http://.." value="<%= @part.image %>">
+    </label>
+    <button>Update Part</button>
+</form>

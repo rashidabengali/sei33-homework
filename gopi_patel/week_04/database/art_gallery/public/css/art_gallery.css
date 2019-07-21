@@ -1,0 +1,20 @@
+body {
+  background-color: grey;
+
+}
+
+label {
+  display: block;
+}
+
+main{
+  background-color: white;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+section{
+  text-align: center;
+  margin-bottom: 20px;
+}

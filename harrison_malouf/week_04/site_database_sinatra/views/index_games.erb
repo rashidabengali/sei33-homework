@@ -1,0 +1,13 @@
+<h1>Games Page</h1>
+
+
+
+
+<% @games.each do |game|%>
+<p>
+  <a
+  href="/games/<%= game["id"]">
+    game["name"]
+  </a>
+</p>
+<% end %>

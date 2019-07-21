@@ -1,0 +1,9 @@
+<h2>All Games</h2>
+<%# TODO: add table to show data %>
+<% @games.each do |game|%>
+<p>
+<a href="boardgame/<%= game["id"] %>">
+<%= game["name"]%>
+</a>
+</p>
+<% end%>

@@ -1,0 +1,11 @@
+<h2><%= @games["title"] %></h2>
+<h3>Genre: <%= @games["genre"] %></h3>
+
+<% unless @games["image"].nil? || @games["image"].empty? %>
+  <img class="feature" src="<%= @games["image"] %>" alt="<%= @games["title"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/games/<%= @games["id"] %>/edit">Edit Games</a>
+  <a href="/games/<%= @games["id"] %>/delete">Delete Games</a>
+</div>

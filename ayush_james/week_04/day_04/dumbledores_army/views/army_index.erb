@@ -1,0 +1,9 @@
+<h2>Member's List</h2>
+
+<% @army.each do |member| %>
+  <p>
+    <a href="/army/<%= member["id"] %>">
+      <%= member["first_name"]%> <%= member["last_name"]%>
+    </a>
+  </p>
+<% end %>
