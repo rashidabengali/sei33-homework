@@ -1,0 +1,23 @@
+<div class="entry">
+
+  <h3><%= @entry["title"] %></h3>
+
+  <h5><%= @entry["entry_date"] %></h5>
+
+
+  <p><%= @entry["entry"] %></p>
+
+  <% unless @entry["image"].nil? || @entry["image"].empty? %>
+    <img class="feature" src="<%= @entry["image"] %>" alt="<%= @entry["title"] %>">
+  <% end %>
+
+</div>
+
+<ul>
+  <li><%= @entry["tags"] %></li>
+</ul>
+
+<div class="controls">
+  <a href="/blog_entry/<%= @entry["id"] %>/edit">Edit Post</a>
+  <a href="/blog_entry/<%= @entry["id"] %>/delete">Delete Post</a>
+</div>
