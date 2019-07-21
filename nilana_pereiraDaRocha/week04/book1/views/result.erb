@@ -1,0 +1,15 @@
+<h2>
+  The result is of "<%= @title %>"
+</h2>
+
+<div class="result">
+  <% @books.each do |book| %>
+  <div class="content">
+    <a href="<%= book["volumeInfo"]["infoLink"]%>" class="content-link">
+      <p class="content-title"><%= book["volumeInfo"]["title"]%></p>
+      <p class="content-description"><%= book["volumeInfo"]["description"]%></p>
+      <img src="<%= book["volumeInfo"]["imageLinks"]["thumbnail"] %>" alt="<%= book["volumeInfo"]["title"]%>">
+    </a>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<h2>All Parts</h2>
+<% @parts.each do |part|  %>
+    <p class="link">
+        <a href="/parts/<%= part.id %>">
+        <%= "#{part.partNumber} #{ part.name} "  %>
+        </a>
+    </p>
+<% end  %>
