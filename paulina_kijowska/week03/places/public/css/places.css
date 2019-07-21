@@ -1,0 +1,30 @@
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://media.giphy.com/media/BlcaMoYeN6hYk/giphy.gif)
+    center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 50%;
+  padding: 10px;
+  background-color: rgba(252, 214, 112, 1);
+  color: white;
+  font-family: 'Abel', sans-serif;
+  border-radius: 30px;
+  text-align: center;
+}
+
+
+
+label {
+  display: block;
+}
+
+nav a {
+color: white;
+
+}

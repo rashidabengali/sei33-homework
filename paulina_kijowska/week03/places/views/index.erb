@@ -1,0 +1,9 @@
+<h2> The bucket list </h2>
+
+<% @places.each do |place| %>
+<p>
+<a href="/places/<%= place["id"] %>">
+  <%= place["name"] %>
+</a>
+</p>
+<% end %>
