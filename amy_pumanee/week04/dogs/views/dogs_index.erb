@@ -1,0 +1,10 @@
+<h2>We are waiting for adopt</h2>
+<h3>Bring me to new home</h3>
+
+<% @dogs.each do |dog| %>
+  <p>
+    <a href="/dogs/<%= dog["id"] %> " >
+    <%= dog["name"] %>
+    </a>
+  </p>
+  <% end %>
