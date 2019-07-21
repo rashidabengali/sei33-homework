@@ -1,6 +1,27 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
+require 'active_record'
+
+
+# Rails will do this for you automatically.
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'database.sqlite3'
+)
+
+# Optional bonus
+ActiveRecord::Base.logger = Logger.new(STDERR)
+
+
+
+# Models
+class Place < ActiveRecord::Base
+end
+
+class Visit < ActiveRecord::Base
+end
+
 
 get '/' do
   erb :home
@@ -10,7 +31,7 @@ end
 
 
 get '/places' do
-@places = query_db 'SELECT * FROM places'
+@places = Place.all
 erb :index
 end
 
@@ -22,56 +43,95 @@ end
 
 post '/places' do
 
-  query = "INSERT INTO places (name, description, image) VALUES ( '#{ params[:name] }', '#{ params[:description] }', '#{ params[:image] }')"
-  query_db query
-  redirect to('/places')
+  place = Place.new
+  place.name = params[:name]
+  place.description = params[:description]
+  place.image = params[:image]
+  place.save
+
+  redirect to("/places/#{ place.id }")
 end
 
 get '/places/:id' do
   #fetch butterfly number ID from the Database#render the view
-places = query_db "SELECT * FROM places WHERE id=#{ params[:id] }"
-@place = places.first #Extract the single butterfly hash from the array.
+@place = Place.find params[:id]
 
 erb :places_show
   #render the view
 end
 
 get '/places/:id/edit' do
-# get the butterfly from the website
-places = query_db "SELECT * FROM places WHERE id = #{params[:id]}"
-@place = places.first
+@place = Place.find params[:id]
 erb :places_edit
 end
 
 
 
 post '/places/:id' do
-## update the butterfly details in the database with some butterfly ID from the database
 
-query = "UPDATE places SET name='#{params[:name]}', description='#{params[:description]}' WHERE id=#{params[:id].to_i}"
-query_db query
+
+place = Place.find params[:id]
+place.name = params[:name]
+place.description = params[:description]
+place.image = params[:image]
+place.save
+
 redirect to("/places/#{ params[:id] }")
-#redirect to the show page for this butterfly
+
 end
-#DESTROY -- delete the butterfly with some butterly ID from the database
+
 
 
 get '/places/:id/delete' do
-# delete the Butterfly
-query_db "DELETE FROM places WHERE id = #{ params[:id] }"
+
+
+place = Place.find params[:id]
+place.destroy
 redirect to('/places')
 #redirect to the butterflies
 end
 
+get '/visits' do
+  @visits = Visit.all
+  erb :visits_index
+end
 
-##function to repeat connecting to database
-def query_db(sql_statement)
+get '/visits/new' do
+erb :visits_new
+end
 
-# @butterflies = query_db(sql_statement)
-puts sql_statement
-db = SQLite3::Database.new 'database.sqlite3'
-db.results_as_hash = true
-results = db.execute sql_statement
-db.close
-results #implicit return
+post '/visits' do
+visit = Visit.new
+visit.name = params[:name]
+visit.image = params[:image]
+visit.save
+redirect to ("/visits/#{ visit.id }")
+end
+
+get '/visits/:id' do
+  @visit = Visit.find params[:id]
+  erb :visits_show
+end
+
+get '/visits/:id/edit' do
+  @visit = Visit.find params[:id]
+  erb :visits_edit
+end
+
+post '/visits/:id' do
+  visit = Visit.find params[:id]
+visit.name = params[:name]
+visit.image = params[:image]
+visit.save
+redirect to ("/visits/#{ visit.id }")
+end
+
+get '/visits/:id/delete' do
+  visit = Visit.find params[:id]
+  visit.destroy
+  redirect to('/visits')
+end
+
+after do
+  ActiveRecord::Base.connection.close
 end
