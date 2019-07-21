@@ -1,0 +1,10 @@
+<h2><%= @cuisine.name %></h2>
+
+<% unless @cuisine.image.nil? || @cuisine.image.empty? %>
+  <img class="feature" src="<%= @cuisine.image %>" alt="<%= @cuisine.name %>">
+<% end %>
+
+<div class="controls">
+  <a href="/cuisines/<%= @cuisine.id %>/edit">Edit cuisine</a>
+  <a href="/cuisines/<%= @cuisine.id %>/delete">Delete cuisine</a>
+</div>

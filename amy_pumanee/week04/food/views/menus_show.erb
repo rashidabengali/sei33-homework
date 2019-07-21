@@ -1,0 +1,11 @@
+
+<h2><%= @menu.name %></h2>
+
+<% unless @menu.image.nil? || @menu.image.empty? %>
+  <img class="feature" src="<%= @menu.image %>" alt="<%= @menu.name %>">
+<% end %>
+
+<div class="controls">
+  <a href="/menus/<%= @menu.id %>/edit">Edit menu</a>
+  <a href="/menus/<%= @menu.id %>/delete">Delete menu</a>
+</div>

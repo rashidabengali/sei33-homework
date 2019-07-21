@@ -1,0 +1,20 @@
+<h2>Edit Menu</h2>
+
+<form action="/menus/<%= @menu.id %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Pad Se Ew" required value="<%= @menu.name %>">
+  </label>
+
+  <label>
+    Methods:
+    <input name="methods" placeholder="Stir-frying" required value="<%= @menu.methods %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @menu.image %>">
+  </label>
+
+  <button>Edit menu</button>
+</form>
