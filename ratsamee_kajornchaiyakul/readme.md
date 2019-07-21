@@ -1,1 +1,0 @@
-# sei33-homework

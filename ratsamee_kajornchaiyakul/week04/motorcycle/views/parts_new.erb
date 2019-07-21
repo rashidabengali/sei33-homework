@@ -1,0 +1,26 @@
+<h2>New Part</h2>
+<form action="/parts" method="post">
+    <label>
+        Part Number:
+        <input type="text" name="partNumber" placeholder="3PW1511507" required>
+    </label>
+    <label>
+        Part Name:
+        <input type="text" name="name" placeholder="STREET EVO JACKET XXXL" required>
+    </label>
+    <label>
+        Price:
+        <input type="number" name="price" placeholder="100" required>
+    </label>
+    <label>
+        Description:
+    </label>
+    <label>
+        <textarea name="description" cols="45" rows="3"></textarea>
+    </label>
+    <label>
+        Image:
+        <input type="url" name="image" class="input_image" placeholder="http://..">
+    </label>
+    <button>Create Part</button>
+</form>

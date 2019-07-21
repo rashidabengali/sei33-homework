@@ -1,0 +1,13 @@
+<h1>Paintings</h1>
+
+<a class="add" href="/add_painting">Add Painting</a>
+<% @paintings.each do |painting| %>
+<section>
+  <img src="<%= painting["image"] %>" alt="">
+  <h3><%= painting["painting_name"] %></h3>
+
+  <a href="/painting/<%= painting["id"]%>/delete">Delete</a><br>
+  <a href="/painting/<%= painting["id"]%>/edit">Edit</a>
+</section>
+
+<% end %>
