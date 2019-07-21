@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Literata&display=swap');
+
+body {
+  background: url(https://theseriesregulars.com/wp-content/uploads/2019/03/book-to-tv.jpg) fixed;
+
+  color: black;
+
+
+  }
+@media all and (max-width: 1000px) and (min-width: 700px) {
+  .container {
+    margin:50px auto;
+    }
+
+}
+h1 {
+  text-align: center;
+  font-family:'Notable', sans-serif;
+  font-size: 6em;
+  text-shadow: 2px 2px #FBF4CA;
+
+}
+
+form {
+  text-align: center;
+}
+
+label {
+  font-size: 2.5em;
+  font-family: 'Literata', sans-serif;
+  font-weight:600;
+
+
+}
+input, button {
+  height: 4em;
+  width: 13em;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 200px;
+
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px rgba(48, 53, 51, 0.7);
+
+}
