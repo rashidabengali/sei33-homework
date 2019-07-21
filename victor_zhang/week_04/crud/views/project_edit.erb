@@ -1,0 +1,30 @@
+<h2>Edit Project</h2>
+
+<form action="/project/<%= @project.id %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" placeholder="Blah blah" required value="<%= @project.name %>">
+  </label>
+  <label>
+    Version:
+    <input type="text" name="version" placeholder="1.0" required value="<%= @version.version %>">
+  </label>
+  <label>
+    Entry Date:
+    <input type="text" name="entry_date" placeholder="Thursday, 31 January 2019" required value="<%= @project.entry_date %>">
+  </label>
+  <label>
+    Link:
+    <input type="text" name="link" placeholder="http://" required value="<%= @project.link %>">
+  </label>
+  <label>
+    Image:
+    <input type="text" name="image" placeholder="Blah blah blahh" value="<%= @version.image %>">
+  </label>
+  <label>
+    Tags:
+    <input type="text" name="tags" placeholder="JavaScript, Jquery, Ruby" required value="<%= @project.tags %>">
+  </label>
+
+  <button>Update Post</button>
+</form>
