@@ -1,0 +1,32 @@
+<h2>I knew you would come back! We are happy to have you.</h2>
+<p class="requiredText"><span class=requiredRed>*</span> Required</p>
+
+<form action="/army/<%= @army[:id] %>" method="post">
+  <label>
+    First Name<span class=requiredRed>*</span>::
+    <input type="text" placeholder="Harry" name="first_name" required>
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" placeholder="Potter" name="last_name">
+  </label>
+
+  <label>
+    House:
+    <input type="text" placeholder="Gryffindor" name="house">
+  </label>
+
+  <label>
+    Patronus<span class=requiredRed>*</span>::
+    <input type="text" placeholder="Stag" name="patronus" required>
+  </label>
+
+  <label>
+    Let's see your patronus:
+    <input type="text" placeholder="https://vignette.wikia.nocookie.net/harrypotter/images/..." name="image" required>
+  </label>
+
+  <button>Now I'm Ready!</button>
+
+</form>

@@ -1,0 +1,16 @@
+
+<h1>Books</h1>
+
+<% @books["items"].each do |book|  %>
+<main class="books">
+  <div class="book_info">
+    <h2> <a href="/book_info/<%= book["id"]%>"><%= book["volumeInfo"]["title"] %></a></h2>
+    <p><%= book["volumeInfo"]["authors"][0]%></p>
+    <img class="book_cover" src="<%= book["volumeInfo"]["imageLinks"]["thumbnail"]%>" alt="">
+    <p>
+      <%= book["volumeInfo"]["description"] %>
+    </p>
+  </div>
+</main>
+
+<% end %>

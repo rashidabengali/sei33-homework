@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    background-image: url("../image/bg_boardgame.jpg");
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+label {
+    display: block;
+    line-height: 2em;
+    font-size: 1.3em;
+    max-width: 40%;
+}
+nav {
+    text-align: right;
+  }
+  
+nav a {
+    color: rgb(185, 30, 30);
+}
+
+img  {
+    max-width: 80%;
+    height: auto;
+}
+
+.search {
+    display: flexbox;
+    position: absolute;
+    top: 20%;
+    max-width: 50%;
+    left: 3%;
+    background-color: rgba(243, 242, 158, 0.8)
+}
+.board_pic {
+    display: flexbox;
+    position: absolute;
+    max-width: 35%;
+    height: auto;
+    right: 5%;
+    top: 20%;
+}
