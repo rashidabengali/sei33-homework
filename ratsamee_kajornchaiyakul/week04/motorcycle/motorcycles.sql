@@ -1,15 +1,15 @@
-CREATE TABLE motorcycle(
+CREATE TABLE motorcycles(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    brand varchar(50),
+    brand TEXT,
     year INTEGER,
-    color VARCHAR(30),
-    body VARCHAR(50),
+    color TEXT,
+    body TEXT,
     price MONEY,
     image Text,
     description TEXT
 );
 
-INSERT INTO motorcycle(brand, year, color, body, price, image, description) 
+INSERT INTO motorcycles(brand, year, color, body, price, image, description) 
 VALUES ('Harley-Davidson', 2013, 'Black', 'Cruiser', 19995, 
 'https://bikesales.pxcrush.net/bikes/private/swoqxoe6gjanwkq8zqcew3od.jpg?pxc_method=gravityfill&pxc_size=720,480&pxc_bgtype=self',
 '2013 FXDWG DYNA WIDEGLIDE VIVID BLACK FLAMED
