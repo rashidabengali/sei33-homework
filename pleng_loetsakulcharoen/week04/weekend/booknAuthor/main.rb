@@ -112,6 +112,7 @@ get '/authors/:id' do
   erb :authors_show
 end
 
+
 # EDIT
 get '/authors/:id/edit' do
   @author = Author.find params[:id]
