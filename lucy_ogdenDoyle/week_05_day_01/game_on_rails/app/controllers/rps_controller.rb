@@ -5,7 +5,7 @@ class RpsController < ApplicationController
   def result
     options = ["rock", "paper", "scissors"]
     user_throw = params[:throw]
-    app_throw = options[rand(1..options.length)]
+    app_throw = options[rand(0..(options.length - 1))]
     if user_throw == "rock"
       if app_throw == "paper"
         win = "l";
