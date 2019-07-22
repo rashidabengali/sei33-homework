@@ -1,0 +1,15 @@
+<div class="show">
+<h2>My name is <%= @dog["name"] %></h2>
+<h4>I am <%= @dog["breed"] %></h4>
+
+<p>"<%= @dog["intro"] %>"</p>
+</div>
+
+<img class="feature"  src="<%= @dog["image"] %> ">
+
+
+<div class="control">
+  <a href="/dogs/<%= @dog["id"] %>/edit"> Update Dog Info</a>
+  <a href="/dogs/<%= @dog["id"] %>/delete"> Dog has been adopted</a>
+
+</div>

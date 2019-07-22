@@ -1,0 +1,33 @@
+<h2>Edit Painting</h2>
+
+<form action= "/painting/<%= @painting["id"] %>" method="post">
+  <label>
+    Painting Name:
+    <input name="painting_name" placeholder="Mona Lisa" required value = "<%= @painting["painting_name"] %>">
+  </label>
+  <label>
+    Artist Name:
+    <input name="artist_name" placeholder="Leonardo da Vinci" value="<%= @painting["artist_name"] %>">
+  </label>
+  <label>
+    Year:
+    <input name="year" placeholder="1554" value="<%= @painting["year"] %>">
+  </label>
+  <label>
+    Location:
+    <input name="location" placeholder="Paris" value="<%= @painting["location"] %>" >
+  </label>
+  <label>
+    Dimension:
+    <input name="dimension" placeholder="77cm * 53cm" value="<%= @painting["dimention"] %>">
+  </label>
+  <label>
+    Medium:
+    <input name="medium" placeholder="oil"value="<%= @painting["medium"] %>">
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image"placeholder="http://...." value="<%= @painting["image"] %>">
+  </label>
+<button>Create New Painting</button>
+</form>
