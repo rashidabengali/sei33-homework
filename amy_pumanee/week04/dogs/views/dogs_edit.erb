@@ -1,0 +1,25 @@
+<h2>Edit Dog Infomation</h2>
+
+<form action="/dogs/<%= @dog["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Dakoda" required value="<%= @dog["name"] %>">
+  </label>
+
+  <label>
+    Breed:
+    <input name="breed" placeholder="Border Collie x Kelpie Dog" required value="<%= @dog["breed"] %>">
+  </label>
+
+  <label>
+    intro:
+    <input name="intro" placeholder="Playful and active" required value="<%= @dog["intro"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." required value="<%= @dog["image"] %>">
+  </label>
+
+  <button>Update Dog Info</button>
+</form>

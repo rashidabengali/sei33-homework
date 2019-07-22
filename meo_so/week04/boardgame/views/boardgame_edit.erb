@@ -1,0 +1,32 @@
+<div class="form_layout">
+<h2>Edit Boardgame</h2>
+<form action="/edit_boardgame/<%= @game['id'] %>" method="post">
+
+<label>
+Name:
+<input name="name" placeholder="Catan" required value="<%= @game['name'] %>">
+</label>
+
+<label>
+Minimum Player:
+<input name="min_player" placeholder="1" value="<%= @game['min_player'] %>">
+</label>
+
+<label>
+Maximum Players:
+<input name="max_player" placeholder="4" value="<%= @game['max_player'] %>">
+</label>
+
+<label>
+Publisher:
+<input name="publisher" placeholder="KOSMOS" value="<%= @game['publisher'] %>">
+</label>
+
+<label>
+Image:
+<input type="url" name="image" placeholder="http://..." value="<%= @game['image'] %>">
+</label>
+
+<button>Update Detail</button>
+</form>
+</div>

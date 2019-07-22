@@ -1,0 +1,41 @@
+body {
+  background-color: rgb(2, 221, 184, 0.5);
+  background-image: url("https://i.pinimg.com/236x/e3/42/0d/e3420d96c7b3ae359dc18699d52f9f22--cute-backgrounds-cute-wallpapers.jpg");
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: rbg(0, 0, 0, 0.5)
+}
+
+nav {
+  text-align: right;
+}
+
+nav a {
+  color: DarkBlue;
+  text-decoration: none;
+  font-weight: bold;
+
+}
+
+label {
+  display: block;
+
+}
+.show {
+  text-align: center;
+  display: block;
+}
+
+.feature {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.control {
+  color: hotpink;
+  text-align: center;
+}
