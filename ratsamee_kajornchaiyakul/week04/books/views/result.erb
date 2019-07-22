@@ -1,0 +1,18 @@
+<div class="grid">
+    <div>
+        <p>Title: <span><%= @book.title %></span></p>
+        <p>Author: <span><%= @book.authors %></span></p>
+        <p>Publisher: <span><%= @book.publisher %></span></p>
+        <p>Publish date: <span><%= @book.published_date %></span></p>
+        <p>Description: </p>
+        <span><%= @book.description %></span>
+    </div>
+    <div>
+    <a href="<%= @book.preview_link %>" target="_blank" rel="noopener noreferrer">
+        <img src="<%= @book.image_link(:zoom => 5) %>" alt="Cover">
+    </a> 
+    <p>Price: <span>$<%= @price %></span></p>
+    </div>
+</div>
+
+
