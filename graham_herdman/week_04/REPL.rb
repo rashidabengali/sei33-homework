@@ -10,10 +10,6 @@ def show_new_line
   print "> "
 end
 
-def add(a, b)
-  a + b
-end
-
 menu
 show_new_line
 menu_choice = gets.chomp

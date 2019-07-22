@@ -20,7 +20,7 @@
 
 # version 2
 
-def point_mutations (string_one, string_two)
+# def point_mutations (string_one, string_two)
 
   # list = (0...string_one.size).select do |i|
   #     string_one[i] != string_two[i]
@@ -28,8 +28,24 @@ def point_mutations (string_one, string_two)
   #
   #   p list.length
 
-  p (0...string_one.size).select { |i| string_one[i] != string_two[i] }.length
+#   p (0...string_one.size).select { |i| string_one[i] != string_two[i] }.length
+#
+# end
+#
+# point_mutations "GAGCCTACTAACGGGA", "CATCGTAATGACGGCCT"
 
-end
+# Mee's Solution
 
-point_mutations "GAGCCTACTAACGGGA", "CATCGTAATGACGGCCT"
+# def point_mutations string1, string2
+#   index = 0;
+#   hamming_distance = 0;
+#   string1Split = string1.split("")
+#   string2Split = string2.split("")
+#   until index == string1.length
+#     hamming_distance += 1 if string1Split[index] != string2Split[index]
+#     index += 1
+#   end
+#   puts hamming_distance
+# end
+#
+# point_mutations 'GAGCCTACTAACGGGAT', 'CATCGTAATGACGGCCT'
