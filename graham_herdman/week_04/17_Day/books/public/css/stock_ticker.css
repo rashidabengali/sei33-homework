@@ -1,0 +1,19 @@
+body {
+  background-color: lightgreen;
+  background-image: url(/money.png);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 1100px;
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
