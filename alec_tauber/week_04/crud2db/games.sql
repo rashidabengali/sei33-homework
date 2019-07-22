@@ -9,7 +9,3 @@ CREATE TABLE games (
 
 -- Seed data
 INSERT INTO games (id, title, genre, platform) VALUES (1, 'Halo', 'Action', 'PC');
-
-INSERT INTO games (id, title, genre, platform) VALUES (2, 'TitanFall', 'Action', 'PC');
-
-INSERT INTO games (id, title, genre, platform) VALUES (1, 'Halo', 'Strategy', 'PC');
