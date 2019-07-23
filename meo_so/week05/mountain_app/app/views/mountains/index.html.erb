@@ -1,0 +1,8 @@
+<h1>The Great Mountains</h1>
+
+<div class="showlist">
+<% @mountains.each do |mountain| %>
+<p> <%= link_to mountain.name, mountain_path(mountain.id) %>
+</p>
+<% end %>
+</div>
