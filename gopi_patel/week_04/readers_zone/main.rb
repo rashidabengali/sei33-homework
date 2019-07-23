@@ -2,6 +2,24 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'httparty'
 require 'pry'
+require 'sqlite3'
+require 'active_record'
+
+# Rails will do this for you automatically.
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'database.sqlite3'
+)
+
+# Optional bonus
+ActiveRecord::Base.logger = Logger.new(STDERR)
+
+# Models
+class User < ActiveRecord::Base
+end
+
+class Favourite < ActiveRecord::Base
+end
 
 
 get '/' do
