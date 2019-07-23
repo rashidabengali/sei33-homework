@@ -1,0 +1,19 @@
+<div class="tupperware">
+<h2><%= @author["name"] %></h2>
+<h2>Nationality: <%= @author["nationality"] %></h2>
+<!-- get source from the input image -->
+
+<%unless @author["image"].nil? || @author["image"].empty? %>
+<img class="show_image" src="<%= @author["image"] %>">
+
+<% end %>
+
+<!-- create new div just like html pattern -->
+<div class="correction">
+
+  <a href="/authors/<%= @author["id"] %>/edit"> Edit </a>
+  <a href="/authors/<%= @author["id"] %>/delete"> Delete </a>
+
+
+</div>
+</div>

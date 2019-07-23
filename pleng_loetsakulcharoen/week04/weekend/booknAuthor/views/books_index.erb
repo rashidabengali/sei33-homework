@@ -1,0 +1,20 @@
+<div class="tupperware">
+<h2>Book Collections</h2>
+
+<!-- To get this working, run the program to loop through the database -->
+<div class="box">
+<% @books.each do |book|%>
+
+    <div class="inner">
+    <a href="/books/<%= book["id"] %>">
+      <img class="cover" src="<%= book["image"] %>">
+      <p id="book_link"><%= book["title"]%></p>
+    </a>
+    </div>
+
+<% end %>
+
+</div>
+</div>
+<!-- Print the name of the book  -->
+<!-- Print the cover of the book -->

@@ -1,0 +1,258 @@
+
+:root {
+  --primary-color: purple;
+  --secondary-color: white;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  min-height: 100%;
+}
+
+.container {
+  text-align: center;
+
+}
+
+/* Home CSS */
+.feature {
+  max-width: 100%;
+
+}
+
+/* Joel's Most Hated Things CSS */
+.body_hated_things {
+  background-color: rgba(232, 236, 241, 1);
+}
+
+.body_background {
+  height: 100vh;
+  background-image: url("https://logos-download.com/wp-content/uploads/2016/02/Microsoft_box.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.hated_things_box {
+  margin: 0 auto;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: #000;
+}
+
+.heading_box_hated_things {
+  background: purple;
+  color: white;
+
+  padding: 1em;
+}
+
+.hated_things ul {
+  padding-inline-start: 0em;
+  list-style: none;
+}
+
+.hated_things ul li {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  color: #333;
+}
+
+.hated_things ul li {
+  background: var(--primary-color);
+}
+
+.hated_things ul li:hover a {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.hated_things ul li a {
+  color: rgba(232, 236, 241, 1);
+  text-decoration: none;
+}
+
+/* Add Hated thing */
+@import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+
+body {
+	margin:0;
+	font-family:arial,tahoma,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	direction:ltr;
+  background:white;
+}
+
+form {
+	margin:0 auto;
+	padding:30px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+	background:white;
+	border-radius:10px;
+}
+
+form label {
+	font-size:14px;
+	color:darkgray;
+	cursor:pointer;
+}
+
+form label,
+form input {
+	float:left;
+	clear:both;
+}
+
+form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+form input[type=text]:focus,
+form input[type="password"]:focus {
+	border-color:purple;
+}
+
+input[type=submit] {
+  margin-left: 11em;
+  margin-right: 11em;
+	padding:15px 50px;
+	width:auto;
+	background:purple;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:flex;
+	align-content: center;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+input[type=submit]:hover {
+	opacity:0.8;
+}
+
+input[type="submit"]:active {
+	opacity:0.4;
+}
+
+#logo {
+	margin:0 auto;
+	width:400px;
+	font-family:'Lily Script One', cursive;
+	font-size:60px;
+	font-weight:bold;
+	text-align:center;
+	color:lightgray;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+#logo:hover {
+	color:purple;
+}
+
+/* hated thing item */
+.background_item{
+  background-color: rgba(232, 236, 241, 1);
+}
+.item {
+  height: 100vh;
+  width: 50vh;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+/* Navigation */
+.nav ul { list-style: none }
+
+.nav ul li {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  color: #333;
+}
+
+.nav ul li:hover {
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.nav ul li:hover a {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(93.7, 93.7, 93.7, 0.5);
+  text-align: center;
+}
+
+.footer ul { list-style: none }
+
+.footer ul li {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  color: #333;
+}
+
+.footer ul li:hover {
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.footer ul li:hover a {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.footer ul li a {
+  color: #333;
+  text-decoration: none;
+}

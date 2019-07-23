@@ -5,11 +5,6 @@ require 'pry'
 
 
 get '/' do
-  erb :form
-end
-
-
-get '/books' do
   @title = params[:book_name]
   begin
     book_url = "https://www.googleapis.com/books/v1/volumes?q=title:#{@title}"
@@ -29,4 +24,12 @@ get '/book_info/:id' do
     redirect to('/')
   end
   erb :book_info
+end
+
+get '/signup' do
+  erb :signup
+end
+
+get '/login' do
+  erb :login
 end
