@@ -1,0 +1,26 @@
+<h2>Projects</h2>
+
+<form action="/project/new" method="get">
+  <button>New Project</button>
+</form>
+
+<ul class="project-list">
+  <% @projects.each_with_index do |project, index| %>
+    <li class="projects"><%= project.name %>
+      <% @versions.each_with_index do |version, index| %>
+        <% unless @versions[index].version.nil? || @versions[index].version.empty? && @projects[index].name == @versions[index].project_name %>
+          <ul class="versions">
+            <li>
+              <a href="/project/<%= project.id %>/<%= version.id %>">
+                <%= project.name %> <%= version.version %>
+              </a>
+            </li>
+          </ul>
+        <% end %>
+      <% end %>
+    </li>
+    <form class="add-version" action="/project/<%= project.id %>/update/" method="get">
+      <button>Add New Version</button>
+    </form>
+  <% end %>
+</ul>

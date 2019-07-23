@@ -1,0 +1,30 @@
+<h2>Edit Team</h2>
+
+<form action="/teams/<%=@team["id"]%>" method="post">
+
+  <label>
+    Name:
+    <input name="name" placeholder="Team Name" required value="<%= @team.name %>">
+  </label>
+
+  <label>
+    Brand:
+    <input name="brand" placeholder="Bike Brand" value="<%= @team.brand %>">
+  </label>
+
+  <label>
+    Country:
+    <input name="country" placeholder="Country" value="<%= @team.country %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="logo" placeholder="http://..." value="<%= @team.logo %>">
+  </label>
+
+  <button>
+    Update
+  </button>
+
+
+</form>

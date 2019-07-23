@@ -1,0 +1,20 @@
+
+<div class="body_inventors_index">
+
+  <div class="inventors_index_background">
+    <div class="inventors_box">
+
+      <h1 class="heading_box">INVENTIONS</h1>
+
+      <% @inventions.each do |invention| %>
+        <ul>
+          <li class="inventor"><a href="/inventions/<%= invention["id"] %>">
+            <%= invention["name"] %>
+          </a></li>
+        </ul>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
