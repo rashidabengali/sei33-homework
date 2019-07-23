@@ -1,0 +1,21 @@
+
+<div class="background_item">
+
+  <div class="item">
+
+    <h1><%= @hate["thing"] %></h1>
+
+    <h3>Why? <%= @hate["why"] %></h3>
+
+    <% unless @hate["image"].nil? || @hate["image"].empty? %>
+    <img class="feature" src="<%= @hate["image"] %>" alt="<%= @hate["why"] %>">
+    <% end %>
+
+    <div class="controls">
+      <a href="/hated_things/<%= @hate["id"] %>/edit">Edit thing</a>
+      <a href="/hated_things/<%= @hate["id"] %>/delete">Delete thing</a>
+    </div>
+
+  </div>
+
+</div>
