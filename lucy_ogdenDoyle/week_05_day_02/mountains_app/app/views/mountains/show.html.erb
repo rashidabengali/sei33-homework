@@ -1,0 +1,22 @@
+<h1><%= @mountain.name %></h1>
+
+<!-- #  id           :integer          primary key
+#  name         :text
+#  image        :text
+#  map          :text
+#  country      :text
+#  parent_range :text
+#  elevation    :integer
+# -->
+<p>Country: <%= @mountain.country %></p>
+<p>Parent Range: <%= @mountain.parent_range %></p>
+<p>Elevation: <%= @mountain.elevation %></p>
+
+<%= image_tag @mountain.map, :class => "feature" if @mountain.image.present? %>
+
+<p><%= link_to "Edit this mountain", edit_mountain_path %></p>
+<p><%= button_to "☠ Delete this mountain ☠", mountain_path(@mountain.id), :class => "delete", :method => 'delete' %></p>
+
+<p><%= link_to "Back to mountains", mountains_path %></p>
+
+<div class="background" style="background-image: url('<%= @mountain.image %>')"></div>
