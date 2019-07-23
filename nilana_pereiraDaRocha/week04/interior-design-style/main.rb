@@ -1,18 +1,18 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pry'
 require 'sqlite3'
 require 'active_record'
 
-
-
 ######################################################################################
 # active record configuration
 ######################################################################################
 # Rails will do this for you automatically.
 ActiveRecord::Base.establish_connection(
-  :adapter => 'sqlite3',
-  :database => 'database.sqlite3'
+  adapter: 'sqlite3',
+  database: 'database.sqlite3'
 )
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
@@ -20,7 +20,7 @@ class InteriorDesignStyle < ActiveRecord::Base
   has_many :furnitures, dependent: :destroy
 end
 class Furniture < ActiveRecord::Base
-  belongs_to :interior_design_style, foreign_key: "interior_design_style_id"
+  belongs_to :interior_design_style, foreign_key: 'interior_design_style_id'
 end
 
 ######################################################################################
@@ -46,17 +46,16 @@ post '/styles' do
   interior_design_style.description = params[:description]
   interior_design_style.image = params[:image]
   interior_design_style.save
-  redirect to("/styles/#{interior_design_style.id}") 
+  redirect to("/styles/#{interior_design_style.id}")
 end
 
 get '/styles/:id' do
-  @style = InteriorDesignStyle.find params[:id] 
+  @style = InteriorDesignStyle.find params[:id]
   erb :"styles/show"
 end
 
 get '/styles/:id/edit' do
-  
-  @style = InteriorDesignStyle.find params[:id] 
+  @style = InteriorDesignStyle.find params[:id]
   erb :"styles/edit"
 end
 
@@ -66,7 +65,7 @@ post '/styles/:id' do
   interior_design_style.description = params[:description]
   interior_design_style.image = params[:image]
   interior_design_style.save
-  redirect to("/styles/#{ params[:id] }")
+  redirect to("/styles/#{params[:id]}")
 end
 
 get '/styles/:id/delete' do
@@ -83,7 +82,7 @@ get '/furnitures' do
   @furnitures = Furniture.all
   erb :"furnitures/home"
 end
- 
+
 get '/furnitures/new' do
   @styles = InteriorDesignStyle.all
 
@@ -97,7 +96,7 @@ post '/furnitures' do
   furniture.image = params[:image]
   furniture.interior_design_style_id = params[:interior_design_style_id]
   furniture.save
-  redirect to("/furnitures/#{furniture.id}") 
+  redirect to("/furnitures/#{furniture.id}")
 end
 
 get '/furnitures/:id' do
@@ -108,7 +107,7 @@ get '/furnitures/:id' do
 end
 
 get '/furnitures/:id/edit' do
-  @furniture = Furniture.find params[:id] 
+  @furniture = Furniture.find params[:id]
   @styles = InteriorDesignStyle.all
   @interior_design_style_id = @furniture.interior_design_style.id
   erb :"furnitures/edit"
@@ -121,7 +120,7 @@ post '/furnitures/:id' do
   furniture.image = params[:image]
   furniture.interior_design_style_id = params[:interior_design_style_id]
   furniture.save
-  redirect to("/furnitures/#{ params[:id] }")
+  redirect to("/furnitures/#{params[:id]}")
 end
 
 get '/furnitures/:id/delete' do
