@@ -1,0 +1,21 @@
+
+<div class="background_item">
+
+  <div class="item">
+
+    <h1><%= @inventor["name"] %></h1>
+
+    <h3>Invention: <%= @inventor["invention"] %></h3>
+
+    <% unless @inventor["image"].nil? || @inventor["image"].empty? %>
+    <img class="inventor_image" src="<%= @inventor["image"] %>" alt="<%= @inventor["invention"] %>">
+    <% end %>
+
+    <div class="controls">
+      <a href="/inventors/<%= @inventor["id"] %>/edit">Edit</a>
+      <a href="/inventors/<%= @inventor["id"] %>/delete">Delete</a>
+    </div>
+
+  </div>
+
+</div>
