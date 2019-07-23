@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joel's Most Hated Things</title>
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/hated_things">Joel's Most Hated things</a></li>
+          <li><a href="/hated_things_new">Add Something Joel Hates</a></li>
+        </ul>
+      </nav>
+
+      <%= yield %>
+
+      <footer class="footer">
+        <ul>
+          <li><a class="popup-youtube" href="https://www.youtube.com/watch?v=K-dMzE-E-98">How I feel about yesterday...</a></li>
+        </ul>
+      </footer>
+
+      <script>
+      $(function() {
+        $('.popup-youtube').magnificPopup({
+          disableOn: 700,
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false
+        });
+      });
+
+      </script>
+
+    </div>
+
+  </body>
+</html>
