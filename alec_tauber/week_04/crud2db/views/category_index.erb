@@ -1,0 +1,10 @@
+<!-- Database -->
+<h2>All Categories</h2>
+
+<% @categories.each do |category|%>
+  <p>
+    <a href="/category/<%= category.id%>">
+        <%= category.title%>
+    </a>
+  </p>
+<% end %>
