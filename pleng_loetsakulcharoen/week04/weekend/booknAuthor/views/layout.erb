@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="<%= url("css/book.css")%>">
+
+    <title>Tiny Lib</title>
+    <link rel="icon" type="image/ico" href="https://cdn2.iconfinder.com/data/icons/mixed-rounded-flat-icon/512/note-512.png">
+  <body>
+    <div class="topbit">
+      <h1>Tiny Library</h1>
+      <nav>
+        <a href="/">Home</a>
+        |
+        <a href="/books">books</a>
+        <a href="/books/new">Add Books</a>
+        |
+        <a href="/authors">Authors</a>
+      <a href="/authors/new">Add Authors</a>
+      </nav>
+    </div>
+
+
+        <%= yield %>
+
+        <footer>
+          <p>Designed by Pleng Loetsakulcharoen</p>
+        </footer>
+  </body>
+  
+
+</html>

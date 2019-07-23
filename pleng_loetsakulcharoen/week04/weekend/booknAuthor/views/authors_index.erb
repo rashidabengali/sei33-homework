@@ -1,0 +1,18 @@
+<div class="tupperware">
+<h2>Authors</h2>
+
+<!-- To get this working, run the program to loop through the database -->
+<div class="box">
+<% @authors.each do |author|%>
+
+    <div class="inner">
+    <a href="/authors/<%= author["id"] %>">
+      <img class="cover" src="<%= author["image"] %>">
+      <p id="author_link"><%= author["name"]%></p>
+    </a>
+    </div>
+
+<% end %>
+
+</div>
+</div>
