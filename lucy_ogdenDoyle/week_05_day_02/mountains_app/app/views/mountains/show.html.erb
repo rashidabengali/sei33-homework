@@ -1,13 +1,5 @@
 <h1><%= @mountain.name %></h1>
 
-<!-- #  id           :integer          primary key
-#  name         :text
-#  image        :text
-#  map          :text
-#  country      :text
-#  parent_range :text
-#  elevation    :integer
-# -->
 <p>Country: <%= @mountain.country %></p>
 <p>Parent Range: <%= @mountain.parent_range %></p>
 <p>Elevation: <%= @mountain.elevation %></p>
@@ -19,4 +11,9 @@
 
 <p><%= link_to "Back to mountains", mountains_path %></p>
 
-<div class="background" style="background-image: url('<%= @mountain.image %>')"></div>
+
+<style type="text/css">
+  body {
+    background-image: url('<%= @mountain.image %>');
+  }
+</style>
