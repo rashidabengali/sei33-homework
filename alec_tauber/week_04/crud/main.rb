@@ -3,7 +3,6 @@ require 'sinatra/reloader'
 require 'pry'
 require 'sqlite3'
 
-
 # Default Page = Home Page
 get '/' do
   erb :home

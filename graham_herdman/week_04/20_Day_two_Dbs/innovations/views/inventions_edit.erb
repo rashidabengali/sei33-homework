@@ -1,0 +1,26 @@
+<h2>Edit invention</h2>
+
+<form action="/inventions/<%= @invention["id"] %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" required value="<%= @invention["name"] %>">
+  </label>
+
+  <label>
+    inventor:
+    <input name="inventor" value="<%= @invention["inventor"] %>">
+  </label>
+
+  <label>
+    invention:
+    <input name="description" value="<%= @invention["description"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @invention["image"] %>">
+  </label>
+
+  <button> Update</button>
+
+</form>

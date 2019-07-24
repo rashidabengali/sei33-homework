@@ -1,0 +1,29 @@
+
+<div class="entry">
+  <h2>
+    <% unless @project.link.nil? || @project.link.empty? %>
+      <a href="<%= @project.link %>">
+    <% end %>
+      <%= @project.name %>. Version <%= @version.version %>
+    <% unless @project.link.nil? || @project.link.empty? %>
+      </a>
+    <% end %>
+
+  </h2>
+
+  <h5><%= @project.entry_date %></h5>
+
+  <% unless @version.image.nil? || @version.image.empty? %>
+    <img class="feature" src="<%= @version.image %>" alt="<%= @version.project_name %>">
+  <% end %>
+</div>
+
+<ul>
+  <li><%= @project.tags %></li>
+</ul>
+
+
+<div class="controls">
+  <a href="/project/<%= @project.id %>/<%= @version.id %>/edit">Edit Version</a>
+  <a href="/project/<%= @project.id %>/<%= @version.id %>/delete" class="delete">Delete Version</a>
+</div>

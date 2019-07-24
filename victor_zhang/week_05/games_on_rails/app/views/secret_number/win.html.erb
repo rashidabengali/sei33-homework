@@ -1,0 +1,13 @@
+<p>You chose: <%= @selected_number %></p>
+
+<p>Secret Number was.. <%= @secret_number %></p>
+
+<h2>You Win!</h2>
+
+<form action="/secret_number/game">
+  <label>
+    <button>Play Again?</button>
+  </label>
+</form>
+
+<img class="feature" src="/assets/clown.jpg" alt="clown">

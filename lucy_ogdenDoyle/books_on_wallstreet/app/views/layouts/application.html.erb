@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BooksOnWallstreet</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/books">books</a></li>
+      <li><a href="/stocks">stocks</a></li>
+    </ul>
+    <%= yield %>
+  </body>
+</html>

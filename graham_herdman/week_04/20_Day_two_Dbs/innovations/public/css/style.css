@@ -1,0 +1,205 @@
+:root {
+  --primary-color: coral;
+  --secondary-color: white;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  min-height: 100%;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Home CSS */
+.home_background {
+  max-width: 100%;
+}
+
+/* Inventors_index CSS */
+.body_inventors_index {
+  background-color: rgba(232, 236, 241, 1);
+}
+
+.inventors_index_background {
+  height: 100vh;
+  background-image: url("https://bedanktvoordevis.files.wordpress.com/2015/06/leonardo-da-vinci-vitruvian-man.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.inventors_box {
+  margin: 0 auto;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: #000;
+}
+
+.heading_box {
+  background: coral;
+  color: white;
+
+  padding: 1em;
+}
+
+.inventor {
+  background-color: coral;
+}
+
+/* Add an Inventor */
+@import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+
+body {
+	margin:0;
+	font-family:arial,tahoma,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	direction:ltr;
+  background:white;
+}
+
+form {
+	margin:0 auto;
+	padding:30px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+	background:white;
+	border-radius:10px;
+}
+
+form label {
+	font-size:14px;
+	color:darkgray;
+	cursor:pointer;
+}
+
+form label,
+form input {
+	float:left;
+	clear:both;
+}
+
+form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+form input[type=text]:focus,
+form input[type="password"]:focus {
+	border-color:coral;
+}
+
+input[type=submit] {
+  margin-left: 11em;
+  margin-right: 11em;
+	padding:15px 50px;
+	width:auto;
+	background:coral;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:flex;
+	align-content: center;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+input[type=submit]:hover {
+	opacity:0.8;
+}
+
+input[type="submit"]:active {
+	opacity:0.4;
+}
+
+#logo {
+	margin:0 auto;
+	width:400px;
+	font-family:'Lily Script One', cursive;
+	font-size:60px;
+	font-weight:bold;
+	text-align:center;
+	color:lightgray;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+#logo:hover {
+	color:coral;
+}
+
+/* inventor_show */
+.background_item{
+  background-color: white;
+}
+
+.item {
+  height: 100vh;
+  width: 50vh;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.inventor_image {
+  max-height: 60vh;
+}
+
+/* Nav and footer CSS */
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+ul li {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  color: #333;
+}
+
+ul li:hover {
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+ul li:hover a {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+ul li a {
+  color: #333;
+  text-decoration: none;
+}

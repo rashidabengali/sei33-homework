@@ -98,3 +98,12 @@ li {
   color: black;
   text-decoration: none;
 }
+
+.add-version {
+  display: inline-block;
+  width: 66%;
+}
+
+div .delete {
+    background-color: rgba(228, 55, 55, 0.85);
+}
