@@ -49,16 +49,3 @@
 # end
 #
 # point_mutations 'GAGCCTACTAACGGGAT', 'CATCGTAATGACGGCCT'
-
-
-h = {a: 1, b: 2}
-
-p h.keys
-
-x = 7
-
-def seven (input)
-  puts x
-end
-
-seven x

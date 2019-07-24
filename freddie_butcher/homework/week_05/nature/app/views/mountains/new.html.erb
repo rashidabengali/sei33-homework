@@ -1,0 +1,34 @@
+<h2>New Mountain</h2>
+
+<form action="<%= mountains_path %>" method = "post">
+
+  <label>
+    Name:
+    <input name="name" required autofocus>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image">
+  </label>
+
+  <label>
+    Height:
+    <input type="number" name="height">
+  </label>
+
+  <label>
+    Range:
+    <input type="text" name="range">
+  </label>
+
+  <label>
+    First ascent:
+    <input type="text" name="first_ascent">
+  </label>
+
+  <button>
+    Create Mountain
+  </button>
+
+</form>
