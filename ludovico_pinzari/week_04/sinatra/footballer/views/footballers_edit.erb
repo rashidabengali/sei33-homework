@@ -1,0 +1,20 @@
+<h2>Edit Footballer</h2>
+
+<form action="/footballers/<%= @footballer["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Francesco" required value="<%= @footballer["name"] %>">
+  </label>
+
+  <label>
+    Family:
+    <input name="team" placeholder="Roma" value="<%= @footballer["team"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @footballer["image"] %>">
+  </label>
+
+  <button>Update footballer</button>
+</form>
