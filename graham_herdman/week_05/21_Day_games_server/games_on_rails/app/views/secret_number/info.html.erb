@@ -1,0 +1,9 @@
+
+
+  <%if params[:number] == @secret_number %>
+  <h1>You Win!</h1>
+  <% else %>
+  <h1>You lose!</h1>
+  <h2>The number was: <%= @secret_number %></h2>
+  <h3>Ya dickhead.</h3>
+  <% end %>
