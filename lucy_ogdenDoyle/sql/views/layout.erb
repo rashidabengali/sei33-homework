@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dino!</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/favicon_02.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/dinosaurs">All Dino</a>
+      <a href="/dinosaurs/new">New Dino</a>
+      <a href="/dinosaurs/create">Create</a>
+    </nav>
+    <div class="wrapper">
+      <div class="container">
+        <div class="grid">
+          <%= yield %>
+        </div> <!-- grid -->
+      </div> <!-- container -->
+    </div> <!-- wrapper -->
+  </body>
+
+</html>

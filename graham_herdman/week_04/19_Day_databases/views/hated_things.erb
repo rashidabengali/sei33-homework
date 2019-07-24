@@ -1,0 +1,22 @@
+
+<div class="body_hated_things">
+
+  <div class="body_background">
+    <div class="hated_things_box">
+
+      <h1 class="heading_box_hated_things">Joel's Most Hated Things</h1>
+
+      <% @hated_things.each do |hate| %>
+        <div class="hated_things">
+          <ul>
+            <li><a href="/hated_things/<%= hate["id"] %>">
+              <%= hate["thing"] %>
+            </a></li>
+          </ul>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

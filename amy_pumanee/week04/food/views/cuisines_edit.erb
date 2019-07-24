@@ -1,0 +1,15 @@
+<h2>Edit Cuisine</h2>
+
+<form action="/cuisines/<%= @cuisine.id %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Thai Cuisine" required value="<%= @cuisine.name %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @cuisine.image %>">
+  </label>
+
+  <button>Edit cuisine</button>
+</form>

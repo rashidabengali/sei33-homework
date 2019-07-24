@@ -1,0 +1,9 @@
+<h2>All Footballers</h2>
+
+<% @footballers.each do |footballer| %>
+  <p>
+    <a href="/footballers/<%= footballer["id"] %>">
+      <%= footballer["name"] %>
+    </a>
+  </p>
+<% end %>
