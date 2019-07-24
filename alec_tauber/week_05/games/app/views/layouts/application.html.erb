@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Games</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="contanier">
+      <nav>
+       <a href="/home">Home </a>
+        <a href="/magic">Magic</a>
+        <a href="/rock">Rock</a>
+        <a href="/secret">Secret</a>
+      </nav>
+    <%= yield %>
+    </div>
+  </body>
+</html>

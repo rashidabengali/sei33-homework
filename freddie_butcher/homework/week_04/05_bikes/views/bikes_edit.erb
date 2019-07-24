@@ -1,0 +1,30 @@
+<h2>Edit Bike</h2>
+
+<form action="/bikes/<%=@bike["id"]%>" method="post">
+
+  <label>
+    Brand:
+    <input name="brand" placeholder="Brand" required value="<%=@bike["brand"]%>">
+  </label>
+
+  <label>
+    Model:
+    <input name="model" placeholder="Model" value="<%=@bike["model"]%>">
+  </label>
+
+  <label>
+    Year:
+    <input name="year" placeholder="Year" value="<%=@bike["year"]%>">
+  </label>
+
+  <label>
+    Image URL:
+    <input type="url" name="image" placeholder="Image URL" value="<%=@bike["image"]%>">
+  </label>
+
+  <button>
+    Update
+  </button>
+
+
+</form>

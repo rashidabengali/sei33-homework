@@ -1,0 +1,10 @@
+
+
+<% if @rules[@computer_choice] == params[:computer_choice] %>
+<h1>You Win!</h1>
+<% elsif @computer_choice.to_s == params[:computer_choice] %>
+<h1>Draw!</h1>
+<% else %>
+<h1>You Lose!</h1>
+<% end %>
+<h2>The computer chose: <%= @computer_choice %> and you chose: <%= params[:computer_choice] %></h2>
