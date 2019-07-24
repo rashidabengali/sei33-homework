@@ -1,0 +1,10 @@
+<h1>Book Info</h1>
+<main>
+
+<h2><%= @bookinfo["volumeInfo"]["title"]%></h2>
+<p><%= @bookinfo["volumeInfo"]["authors"][0]%></p>
+<p><%= @bookinfo["volumeInfo"]["publisher"]%> <%= @bookinfo["volumeInfo"]["publishedDate"]%></p>
+<img src="<%= @bookinfo["volumeInfo"]["imageLinks"]["small"] %>" alt="">
+
+
+</main>

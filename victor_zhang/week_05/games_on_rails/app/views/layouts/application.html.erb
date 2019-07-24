@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GamesOnRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <nav>
+    <a href="/magic_ball/game">Magic 8 Ball</a> |
+    <a href="/secret_number/game">Secret Number</a> |
+    <a href="/rock_paper_scissors/game">Rock Paper Scissors</a>
+  </nav>
+
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

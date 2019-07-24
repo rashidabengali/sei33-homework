@@ -1,0 +1,33 @@
+<h2>Edit <%= @dinosaur["nickname"] %> the dinosaur: </h2>
+
+<form action="/dinosaurs/<%= @dinosaur["id"] %>" method="post">
+  <label>
+    Nickname:
+    <input name="nickname" type="text" placeholder="Bobby" value="<%= @dinosaur["nickname"] %>">
+  </label>
+  <label>
+    Genus:
+    <input name="genus" type="text" placeholder="T-Rex" value="<%= @dinosaur["genus"] %>">
+  </label>
+  <label>
+    Family:
+    <input name="family" type="text" placeholder="Tyrannosauridae" value="<%= @dinosaur["family"] %>">
+  </label>
+  <label>
+    Height:
+    <input name="height" type="text" placeholder="5.6" value="<%= @dinosaur["height"] %>">
+  </label>
+  <label>
+    Eaten by:
+    <input name="eaten_by" type="text" placeholder="Nobody" value="<%= @dinosaur["eaten_by"] %>">
+  </label>
+  <label>
+    Diet:
+    <input name="diet" type="text" placeholder="Carnivore" value="<%= @dinosaur["diet"] %>">
+  </label>
+  <label>
+    Image:
+    <input name="image" type="text" placeholder="https://"  value="<%= @dinosaur["image"] %>">
+  </label>
+  <button>Edit</button>
+</form>

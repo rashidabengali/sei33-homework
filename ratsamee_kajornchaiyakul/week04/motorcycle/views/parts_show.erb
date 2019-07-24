@@ -1,0 +1,12 @@
+<h2><%= "#{@part.partNumber} - #{ @part.name}" %></h2>
+<p>Part Number: <%= @part.partNumber %></p>
+<p>Part Name: <%= @part.name %></p>
+<p>Price: <%= @part.price %></p>
+<p>Description: <span><%= @part.description %></span></p>
+<% unless @part.image.nil? || @part.image.empty?%>
+    <img class="feature" src="<%= @part.image%>" alt="<%= @part.name %>">
+<% end  %>
+<div class="controls">
+    <a href="/parts/<%= @part["id"]  %>/edit">Edit part</a>
+    <a href="/parts/<%= @part["id"]  %>/delete">Delete part</a>
+</div>

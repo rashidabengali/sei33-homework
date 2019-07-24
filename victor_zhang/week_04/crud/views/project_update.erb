@@ -1,0 +1,23 @@
+<h2>New Project Version</h2>
+
+
+<form action="/project/<%= @project.id %>/version-update/" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" required value="<%= @project.name %>">
+  </label>
+  <label>
+    New Version:
+    <input type="text" name="version" placeholder="Blah blah" required>
+  </label>
+  <label>
+    Entry Date:
+    <input type="text" name="entry_date" placeholder="Thursday, 31 January 2019" value="<%= @project.entry_date %>">
+  </label>
+  <label>
+    Image:
+    <input type="text" name="image" placeholder="Blah blah blahh">
+  </label>
+
+  <button>Add Version Update</button>
+</form>

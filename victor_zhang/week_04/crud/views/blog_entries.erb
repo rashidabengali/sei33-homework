@@ -1,0 +1,11 @@
+<!-- List of entries, with dates, tags-->
+
+<h2>All Blog Entries</h2>
+
+<% @entries.each do |entry| %>
+  <p>
+    <a href="/blog_entry/<%= entry.id %>">
+      <%= entry.title %>
+    </a>
+  </p>
+<% end %>

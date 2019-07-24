@@ -1,0 +1,37 @@
+<h1>Search book</h1>
+<form action="/books" class="search_book">
+  <label>
+    <input name="book_name" placeholder="Book Name" required>
+  </label>
+  <button>Get book</button>
+</form>
+
+
+
+<div class="books">
+
+  <% @books["items"].each do |book|  %>
+
+
+  <section class="book">
+    <img class="book_cover" src="<%= book["volumeInfo"]["imageLinks"]["thumbnail"]%>" alt="">
+    <p><a href="/book_info/<%= book["id"]%>"><%= book["volumeInfo"]["title"] %></a></p>
+    <a class="favbook" href="#">♡</a>
+  </section>
+
+
+
+    <!-- <main class="books">
+      <div class="book_info">
+        <h2> <a href="/book_info/<%= book["id"]%>"><%= book["volumeInfo"]["title"] %></a></h2>
+        <p><%= book["volumeInfo"]["authors"][0]%></p>
+        <img class="book_cover" src="<%= book["volumeInfo"]["imageLinks"]["thumbnail"]%>" alt="">
+        <p>
+          <%= book["volumeInfo"]["description"] %>
+        </p>
+      </div>
+    </main> -->
+
+  <% end %>
+
+</div>

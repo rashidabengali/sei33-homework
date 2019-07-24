@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  background: rgb(226, 246, 169);
+}
+
+.container {
+  text-align: center;
+  margin: 7px auto 0;
+  max-width: 960px;
+  background-color: aliceblue;
+  box-shadow: 0 7px 2px  rgb(213, 230, 245);
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+nav {
+  color: aliceblue;
+  background: steelblue;
+  box-shadow: 0 7px rgb(62, 119, 167);
+  padding: 15px;
+  text-align: right;
+}
+
+nav a{
+  color: steelblue;
+  text-decoration: none;
+  background-color: aliceblue;
+  border-radius: 2px;
+  padding: 6px 8px;
+  margin: 0 20px;
+
+  position: relative;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+}
+
+nav a:hover {
+  color: rgb(62, 119, 167);
+  background-color: white;
+  box-shadow: 0 3px 0 -2px rgb(35, 93, 143);
+  top: -3px;
+  transform: scale(1.05);
+}
+
+
+.feature {
+  max-width: 70%;
+}
