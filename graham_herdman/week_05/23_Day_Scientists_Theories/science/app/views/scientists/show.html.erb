@@ -1,0 +1,22 @@
+<h1><%= @scientist.name %></h1>
+
+<%= image_tag @scientist.image, :class => 'feature' if @scientist.image.present? %>
+
+<ul>
+  <li>Name: <%= @scientist.name %></li>
+  <% if @scientist.dob.present? %>
+    <li>Date of Birth: <%= @scientist.dob.strftime '%A, %B %e, %Y' %></li>
+  <% end %>
+  <li>Fields: <%= @scientist.fields %></li>
+  <li>Known for: <%= @scientist.known_for %></li>
+  <li>Trivia: <%= @scientist.trivia %></li>
+</ul>
+
+<% @scientist.theories.each do |theory| %>
+  <%= link_to theory.name, theory %>
+<% end %>
+
+<p></p>
+
+<%= link_to "Edit Scientist", edit_scientist_path(@scientist.id) %>
+<%= button_to "Delete Scientist", @scientist, :method => 'delete', :data => {:confrim => "Are you sure you want to delete"} %>
