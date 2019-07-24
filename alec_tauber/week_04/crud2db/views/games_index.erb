@@ -1,0 +1,10 @@
+<!-- Database -->
+<h2>All Games</h2>
+
+<% @games.each do |game|%>
+  <p>
+    <a href="/games/<%= games.id%>">
+        <%= games.title%>
+    </a>
+  </p>
+<% end %>

@@ -1,0 +1,30 @@
+<h2>New Planet</h2>
+
+<form action="<%= mountains_path %>" method="post">
+  <label>
+    Name:
+    <input name="name" required autofocus>
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image">
+  </label>
+  <label>
+    Type:
+    <input type="text" name="type">
+  </label>
+  <label>
+    Diameter:
+    <input type="number" name="diameter">
+  </label>
+  <label>
+    Mass:
+    <input type="number" name="mass">
+  </label>
+  <label>
+    Moons:
+    <input type="number" name="moons">
+  </label>
+
+  <button>Create planet</button>
+</form>
