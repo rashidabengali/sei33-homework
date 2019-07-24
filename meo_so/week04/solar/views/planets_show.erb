@@ -1,0 +1,13 @@
+<h2><%= @planet.name %> </h2>
+<p>Mass: <%= @planet['mass']%> </p>
+<p>Numbers of Moon: <%= @planet.num_moons%> </p>
+
+
+<% unless @planet.image.nil? || @planet.image.empty?%>
+<img class="feature" src="<%= @planet.image %>" alt="<%= @planet.name %>">
+<% end %>
+
+<div class="controls">
+    <a href="/planets/<%= @planet["id"] %>/edit">Edit planet</a>
+    <a href="/planets/<%= @planet["id"] %>/delete">Delete planet</a>
+</div>

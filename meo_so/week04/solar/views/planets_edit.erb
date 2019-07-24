@@ -1,0 +1,25 @@
+<h2>Edit planet</h2>
+
+<form action="/planets/<%= @planet.id %>" method="post">
+    <label>
+    Name:
+    <input name="name" placeholder="Venus" required value="<%= @planet.name %>">
+    </label>
+
+    <label>
+    Mass
+    <input name="mass" placeholder="4.8675×1024 kg" value="<%= @planet.mass %>">
+    </label>
+
+    <label>
+    Number of moons
+    <input name="num_moons" placeholder="1" value="<%= @planet.num_moons %>">
+    </label>
+
+    <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @planet.image %>">
+    </label>
+
+    <button>Update planet</button>
+</form>
