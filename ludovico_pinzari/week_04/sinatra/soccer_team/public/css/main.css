@@ -1,0 +1,25 @@
+body {
+  background-color: grey;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+nav {
+  text-align: right;
+}
+
+nav a {
+  color: yellow;
+}
+
+label {
+  display: block;
+  margin: 10px;
+}
+
+.feature {
+  max-width: 100%;
+}
