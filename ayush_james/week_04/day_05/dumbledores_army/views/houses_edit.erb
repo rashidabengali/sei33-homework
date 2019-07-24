@@ -1,0 +1,15 @@
+<h2>Edit House</h2>
+<form action="/houses/<%= @house.id %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Ravenclaw" required value="<%= @house.name%>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @house.image %>">
+  </label>
+
+<button>Update house</button>
+
+</form>
