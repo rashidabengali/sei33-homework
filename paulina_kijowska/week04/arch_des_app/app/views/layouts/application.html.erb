@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ArchDesApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'All Architects', architects_path %>
+      <%= link_to 'New Architect', new_architect_path %>
+      <%= link_to 'All Houses', houses_path %>
+    <%= link_to 'New House', new_house_path %>
+    <%= yield %>
+  </body>
+</html>
