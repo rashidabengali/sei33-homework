@@ -1,0 +1,10 @@
+
+.flip {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.flip-back {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}

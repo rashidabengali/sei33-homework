@@ -1,0 +1,22 @@
+<h1>Welcome to Magic 8</h1>
+
+<p> Enter your questions to find it's truth</p>
+
+
+<%= form_for :magic, url: answers_path(@answers) do |magic| %>
+
+  <p>
+    <%= magic.label :Question %><br>
+    <%= magic.text_area :question %>
+  </p>
+
+  <p>
+    <%= magic.submit "Enter" %>
+  </p>
+
+<% end %>
+<form action="/magic/info">
+  <input type="search" name="" placeholder="Is this real life?">
+  <button>Find Magic</button>
+
+</form>

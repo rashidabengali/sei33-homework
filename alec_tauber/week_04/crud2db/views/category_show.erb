@@ -1,0 +1,10 @@
+<h2><%= @game["title"] %></h2>
+
+<% unless @game["image"].nil? || @game["image"].empty? %>
+  <img class="feature" src="<%= @game["image"] %>" alt="<%= @game["name"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/games/<%= @game["id"] %>/edit">Edit butterfly</a>
+  <a href="/games/<%= @game["id"] %>/delete">Delete butterfly</a>
+</div>

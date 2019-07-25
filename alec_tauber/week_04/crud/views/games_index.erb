@@ -1,8 +1,8 @@
 <!-- Database -->
 <h2>All Games</h2>
 
-<% games.each do |games|%>
-<% @games.each do |games| %>
+<% @games.each do |game|%>
+<% @games.each do |game| %>
   <p>
     <a href="/games/<%= butterfly["id"] %>">
       <%= game["title"] %>
