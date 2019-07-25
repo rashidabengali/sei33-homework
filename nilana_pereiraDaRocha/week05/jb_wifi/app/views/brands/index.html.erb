@@ -2,8 +2,9 @@
 <%= link_to "New brand", new_brand_path, :class => 'controls-link block' %>
 <div class="style-item-wrapper">
   <% @brands.each do |brand| %>
-    <%= link_to brand, :action => 'go' do %>
+    <%= link_to brand, :class => 'style-item-link' do %>
       <div class="style-item">
+        <%= image_tag brand.image, :class => 'style-item-img' if brand.image.present? %>
         <%= brand.name %>
       </div>
     <% end %>

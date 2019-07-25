@@ -1,9 +1,8 @@
 <h1><%= @brand.name %></h1>
-<ul>
-  <li>Name: <%= link_to @brand.name %></li>
-</ul>
+<%= image_tag @brand.image, :class => 'full-image' if @brand.image.present? %>
+<div><%= @brand.description %></div>
 <div class="controls">
-  <%= link_to "Edit brand", edit_brand_path(@brand) %>
-  <%= link_to "Delete", @brand, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
-  <%= link_to "Back to list ", brands_url %>
+  <%= link_to "Edit brand", edit_brand_path(@brand), :class => 'controls-link' %>
+  <%= link_to "Delete", @brand, :method => 'delete', :class => 'controls-link block', :data => {:confirm => 'Are you sure?'} %>
+  <%= link_to "Back to list ", brands_url, :class => 'controls-link block' %>
 </div>
