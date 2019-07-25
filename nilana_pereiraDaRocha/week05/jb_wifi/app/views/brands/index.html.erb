@@ -1,0 +1,11 @@
+<h1>All Brands</h1>
+<%= link_to "New brand", new_brand_path, :class => 'controls-link block' %>
+<div class="style-item-wrapper">
+  <% @brands.each do |brand| %>
+    <%= link_to brand, :action => 'go' do %>
+      <div class="style-item">
+        <%= brand.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
