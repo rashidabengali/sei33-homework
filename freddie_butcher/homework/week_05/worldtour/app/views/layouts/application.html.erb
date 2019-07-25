@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bikes of the Worldtour</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+  <%= link_to 'All Bikes', bikes_path %>
+  <%= link_to 'New Bike', new_bike_path %>
+  <%= link_to 'All Teams', teams_path %>
+  <%= link_to 'New Team', new_team_path %>
+</nav>
+    <%= yield %>
+  </body>
+</html>
