@@ -115,7 +115,7 @@ guessLetter(prompt('guess letter'));
 */
 
 // Credit Card Validation
-
+/*
 const sameDigits = function (input) {
   for (let i = 0; i < input.length; i++) {
     if (input[i] !== input[0]) {
@@ -149,6 +149,7 @@ const validateCreditCard = function (input) {
 
 console.log(validateCreditCard('9999-9999-8888-0000'));
 console.log(validateCreditCard('a923-3211-9c01-1112'));
+*/
 
 /*
 const winningRule = [ [0, 1, 2], [3, 4, 5], [6, 7 ,8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ];
