@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+body {
+    font-family: 'Special Elite', cursive;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 725px;
+    color: whitesmoke;
+    padding: 1em;
+    box-sizing: border-box;
+    font-family: 'Special Elite', cursive;
+    border-radius: 20px;
+}
+
+.background {
+    width: 400px;
+    height: 50px;
+    margin-left: 50px;
+    background-color:black;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.magic {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShBAO5kWZpfb3iujkDkFO3QpWg2gdqv6XXCKX8p5Ln6CDtQsAx");    
+}
+
+.background_layer {
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 100px;
+    padding-left: 130px;
+    color: whitesmoke;
+}
+.secret_number {
+    background-image: url("https://ecdn.teacherspayteachers.com/thumbitem/Learning-the-use-of-%E9%87%8C-in-Chinese-Secret-Number-Game-Board-3323343-1502347113/original-3323343-1.jpg");
+}
+
+.rock {
+    background-image: url("https://en.pimg.jp/009/625/054/1/9625054.jpg");
+}
+
+.link {
+    height: 100px;
+    width: 500px;
+    text-align: center;
+    border-radius: 40px;
+    margin: 50px 0px 10px 180px;
+    font-size: 2em;
+    padding-top: 50px;
+}
+
+.background a {
+    color:whitesmoke;
+}
+
+nav {
+    min-width: 700px;
+    text-align: right;
+}
+
+label, input, button, select {
+    font-size: 20px;
+    font-family: 'Special Elite', cursive;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}

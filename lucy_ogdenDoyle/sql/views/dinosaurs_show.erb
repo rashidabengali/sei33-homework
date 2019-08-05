@@ -1,0 +1,10 @@
+<h2>Mr. <%= @dinosaur["nickname"] %>, the <%= @dinosaur["genus"] %></h2>
+<h3>From the <%= @dinosaur["family"] %> family</h3>
+
+<p>
+<%= @dinosaur["nickname"] %> is a whopping <%= @dinosaur["height"] %>m tall and is a <%= @dinosaur["diet"] %>. They spend all their time running away from the nasty <%= @dinosaur["eaten_by"] %>.
+</p>
+
+<img src="<%= @dinosaur["image"] %>"><br>
+<a href="/dinosaurs/<%= @dinosaur["id"] %>/edit">Edit Dino</a><br>
+<a class="delete" href="/dinosaurs/<%= @dinosaur["id"] %>/delete">Delete Dino</a>

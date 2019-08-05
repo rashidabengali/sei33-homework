@@ -1,0 +1,10 @@
+<h2><%= @team["name"] %></h2>
+
+<% unless @team["logo"].nil? || @team["logo"].empty? %>
+  <img class="feature" src="<%= @team["logo"] %>" alt="<%= @team["name"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/teams/<%= @team["id"] %>/edit">Edit Team</a>
+  <a href="/teams/<%= @team["id"] %>/delete">Delete Team</a>
+</div>

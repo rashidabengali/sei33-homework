@@ -1,0 +1,24 @@
+
+
+<form action="/" class="search_book">
+  <label>
+    <input name="book_name" placeholder="Book Name" required>
+  </label>
+  <button>Get book</button>
+</form>
+
+<div class="books">
+
+  <% @books["items"].each do |book|  %>
+
+
+  <section class="book panel">
+    <img class="book_cover" src="<%= book["volumeInfo"]["imageLinks"]["thumbnail"]%>" alt="">
+    <p class="title"><a href="/book_info/<%= book["id"]%>"><%= book["volumeInfo"]["title"] %></a></p>
+    <a class="favbook" href="#">♡</a>
+  </section>
+
+
+  <% end %>
+
+</div>
