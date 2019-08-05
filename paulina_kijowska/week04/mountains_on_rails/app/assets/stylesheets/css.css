@@ -1,0 +1,22 @@
+.container {
+margin: 0 auto;
+background:url(https://media.giphy.com/media/AIGF7ljcNKZI4/giphy.gif)
+    center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  color: black;
+  font-family: 'Abel', sans-serif;
+height: 100vh;
+text-align: center;
+}
+
+nav, head {
+background-color: black;
+
+}
+
+nav a {
+  color: white;
+}

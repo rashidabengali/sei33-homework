@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TouristAttractions</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+
+  <div class="container">
+
+    <nav>
+      <div class="countries">
+        <%= link_to "Countries", countries_path %>
+        <%= link_to "New Country", new_country_path %>
+      </div>
+
+      <div class="destinations">
+        <%= link_to "Destinations", destinations_path %>
+        <%= link_to "New Destination", new_destination_path %>
+      </div>
+
+    </nav>
+
+    <body>
+      <%= yield %>
+    </body>
+
+  </div>
+
+</html>

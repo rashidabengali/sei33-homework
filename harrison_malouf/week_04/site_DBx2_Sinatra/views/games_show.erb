@@ -1,0 +1,15 @@
+<h2> <%= @game["name"] %> </h2> <%# what ever name is retried show it as a title %>
+<h3>Release: <%= @game["release"] %> </h3>
+
+<% unless @game["image"].nil? || @game["image"].empty? %> <%# if these statements are true don't execute %>
+<img class="feature"
+src="<%= @game["image"] %>"
+alt="<%=@game["name"]" %>>
+<% end %>
+
+<div class="controls">
+
+  <a href="/games/<%= @game["id"] %>/edit">Edit Game</a> <%# look for this on main and execute #>
+  <a href="/games/<%= @game["id"] %>/delete"> Delete Game</a>  <%# look for this on main and execute %>
+
+</div>

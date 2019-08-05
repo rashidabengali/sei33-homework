@@ -1,0 +1,16 @@
+<h1><%= @icon.name %></h1>
+
+<%= image_tag @icon.image, :alt => @icon.title %>
+
+<ul>
+  <% if @icon.note.present? %>
+    <li>Associated BankNote: <%= link_to @icon.note.value, @icon.note %></li>
+  <% end %>
+  <li>Occupation: <%= @icon.occupation %></li>
+  <li>Known for: <%= @icon.known %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit icon", edit_icon_path(@icon) %>
+  <%= link_to "Delete icon", @icon, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>

@@ -1,0 +1,10 @@
+<h2>MOUNTAIN TOPS!</h2>
+<div class="form">
+<p><i><strong>Check out them mountains!</strong></i></p>
+
+<% @mountains.each do |mountain| %>
+  <p class="links">
+    <%= link_to mountain.name, mountain_path(mountain.id) %>
+  </p>
+<% end %>
+</div>

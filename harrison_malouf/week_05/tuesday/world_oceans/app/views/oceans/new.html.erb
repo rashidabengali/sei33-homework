@@ -1,0 +1,41 @@
+<h2>Edit Ocean</h2>
+
+<form action="<%= oceans_path %>" method="post">
+
+  <label>
+    Name:
+    <input name="name" required autofocus>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image">
+  </label>
+
+  <label>
+    location:
+    <input type="text" name="location">
+  </label>
+
+  <label>
+    Area:
+    <input type="number" name="area">
+  </label>
+
+  <label>
+    Volume:
+    <input type="number" name="Volume">
+  </label>
+
+  <label>
+    Depth:
+    <input type="number" name="Depth">
+  </label>
+
+  <label>
+    Coastline:
+    <input type="number" name="Coastline">
+  </label>
+
+  <button>Edit Ocean</button>
+</form>

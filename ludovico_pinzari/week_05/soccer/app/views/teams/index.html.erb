@@ -1,0 +1,9 @@
+<h1>All Teams</h1>
+
+<% @teams.each do |team| %>
+  <%= image_tag team.image, :class => 'thumb' if team.image.present? %>
+  <ul>
+    <li>Name: <%= link_to team.name, team %></li>
+    <li>coach: <%= team.coach %></li>
+  </ul>
+<% end %>
