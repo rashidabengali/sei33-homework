@@ -1,0 +1,11 @@
+<% form_for @note do |f| %>
+<%= f.label :value, "Dollar value"  %>
+<%= f.text_field :value, :autofocus => true, :required => true, :placeholder => "10" %>
+<%= f.label :color  %>
+<%= f.text_field :color, :placeholder => "Blue" %>
+<%= f.label :issue  %>
+<%= f.text_field :issue, :placeholder => 'YYYY-MM-DD' %>
+<%= f.label :image  %>
+<%= f.url_field :image%>
+<%= f.submit %>
+<% end %>
