@@ -1,0 +1,26 @@
+<h2>Edit beach</h2>
+
+<form action="<%= beach_path(@beach.id) %>" method="post">
+  <label>
+    Name:
+    <input name="name" required autofocus value="<%= @beach.name %>">
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @beach.image %>">
+  </label>
+  <label>
+    Location:
+    <input type="text" name="location" value="<%= @beach.location %>">
+  </label>
+  <label>
+    Area:
+    <input type="number" name="area" value="<%= @beach.area %>">
+  </label>
+  <label>
+    Population:
+    <input type="number" name="population" value="<%= @beach.population %>">
+  </label>
+
+  <button>Edit beach</button>
+</form>
