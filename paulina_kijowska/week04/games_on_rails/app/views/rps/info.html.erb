@@ -1,0 +1,15 @@
+
+
+
+
+<h1><%=@rsp.sample%></h1>
+<h1><%=@user_opt%></h1>
+
+<% if (@user_opt == @rsp[0] && @rsp.sample == @rsp[1]) || if (@user_opt == @rsp[1] && @rsp.sample == @rsp[2]) || if (@user_opt == @rsp[2] && @rsp.sample == @rsp[0]) %> 
+
+<h2> "You won"</h2>
+<% else %>
+  <h2>"Computer won"</h2>
+<% end %>
+<% end %>
+<% end %>

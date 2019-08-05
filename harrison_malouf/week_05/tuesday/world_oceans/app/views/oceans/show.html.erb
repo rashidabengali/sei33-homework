@@ -1,0 +1,16 @@
+<h2><%= @ocean.name %></h2>
+
+<%= image_tag @ocean.image, :class => 'feature' if @ocean.image.present? %>
+
+<ul>
+  <li>Name: <%= @ocean.name %></li>
+  <li>Orbit: <%= @ocean.orbit %></li>
+  <li>Diameter: <%= @ocean.diameter %></li>
+  <li>Mass: <%= @ocean.mass %></li>
+  <li>Moons: <%= @ocean.moons %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit planet', edit_planet_path(@ocean.id) %>
+  <%= button_to 'Delete planet', planet_path(@ocean.id), :method => 'delete' %>
+</div>

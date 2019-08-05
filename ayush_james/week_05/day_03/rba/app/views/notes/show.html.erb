@@ -1,0 +1,21 @@
+<h1>New $<%= @note.value %> Banknote</h1>
+
+<%= image_tag @note.image if @note.image.present? %>
+<ul>
+  <li>Colour: <%= @note.color %> </li>
+
+  <% if @note.issue.present? %>
+    <li>Date of Issue: <%= @note.issue.strftime '%B %e, %Y' %> </li>
+  <% end %>
+  </ul>
+
+<% @note.icons.each do |icon| %>
+  <%= link_to image_tag(icon.image, :class => 'thumb'), icon %>
+<% end %>
+
+
+<div class="controls">
+  <%= link_to "Edit Banknote", edit_note_path(@note) %>
+
+  <%= link_to "Delete Banknote", @note, :method => 'delete', :data => {:confirm => 'Are you sure you want to remove this from circulation?'} %>
+</div>

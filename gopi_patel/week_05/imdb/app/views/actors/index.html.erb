@@ -1,0 +1,4 @@
+<h1>All Actors</h1>
+<% @actors.each do |actor| %>
+<%= link_to image_tag(actor.image, :class =>'thumb'), actor %>
+<% end %>

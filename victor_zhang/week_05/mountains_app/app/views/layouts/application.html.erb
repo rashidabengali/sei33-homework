@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MountainsApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <nav>
+        <%= link_to 'Mountains', mountains_path %>
+        <%= link_to 'New Mountain', new_mountain_path, :class => 'new_button' %>
+      </nav>
+
+      <main>
+        <%= yield %>
+      </main>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JbWifi</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="menu">
+      <nav class="default-margin">
+        <ul>
+          <li class="margin-left0"><a href="/brands">Brands</a></li>
+          <li><a href="/electronics">Electronics</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main container default-margin">
+      <%= yield %>
+    </div>
+    <footer>
+      <p class="default-margin">Built with ♥ by Nilana Rocha, 2019</p>
+    </footer>
+  </body>
+</html>

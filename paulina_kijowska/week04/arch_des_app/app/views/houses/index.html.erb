@@ -1,0 +1,5 @@
+<h1>All Houses</h1>
+
+<% @houses.each do |house| %>
+  <%= link_to image_tag(house.image, :class => 'thumb'), house %>
+<% end %>
