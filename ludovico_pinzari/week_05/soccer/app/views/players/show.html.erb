@@ -1,0 +1,19 @@
+<h1><%= @player.name %></h1>
+
+<%= image_tag @player.image, :class => 'feature' if @player.image.present? %>
+<ul>
+  <li>Name: <%= @player.name %></li>
+  <li>Position: <%= @player.position %></li>
+  <% if @player.dob.present? %>
+    <li>Date of birth: <%= @player.dob.strftime '%A, %B %e, %Y' %></li>
+  <% end %>
+  <% if @player.team.present? %>
+    <li>Player: <%= link_to @player.team.name, @player.team %></li>
+  <% end %>
+
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit player", edit_player_path(@player) %>
+  <%= link_to "Delete player", @player, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>
