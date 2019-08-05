@@ -1,0 +1,22 @@
+<h1><%= @architect.name %></h1>
+
+<%= image_tag @architect.image, :class => 'feature' if @architect.image.present? %>
+<ul>
+  <li>Name: <%= @architect.name %></li>
+  <li>Nationality: <%= @architect.nationality %></li>
+  <li>The most famous: <%= @architect.famous %></li>
+  <% if @architect.dob.present? %>
+    <li>Date of birth: <%= @architect.dob.strftime '%A, %B %e, %Y' %></li>
+  <% end %>
+
+</ul>
+
+<% @architect.houses.each do |house| %>
+  <%= link_to image_tag(house.image, :class => 'thumb'), house %>
+<% end %>
+
+
+<div class="controls">
+  <%= link_to "Edit architect", edit_architect_path(@architect) %>
+  <%= link_to "Delete architect", @artist, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>

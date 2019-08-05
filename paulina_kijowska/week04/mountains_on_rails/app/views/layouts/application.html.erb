@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MountainsOnRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<div class="container">
+  <nav>
+
+
+
+  <%= link_to 'All Mountains', mountains_path %>
+  <%= link_to 'New Mountain', new_mountain_path %>
+
+
+</nav>
+  <body>
+
+
+    <%= yield %>
+
+</div>
+  </body>
+</html>
