@@ -4,8 +4,8 @@
 
 <% @entries.each do |entry| %>
   <p>
-    <a href="/blog_entry/<%= entry["id"] %>">
-      <%= entry["title"] %>
+    <a href="/blog_entry/<%= entry.id %>">
+      <%= entry.title %>
     </a>
   </p>
 <% end %>

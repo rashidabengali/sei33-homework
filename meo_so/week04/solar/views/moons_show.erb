@@ -1,0 +1,11 @@
+<h2><%= @moon.name %> </h2>
+<p>Mass: <%= @moon['mass']%> </p>
+
+<% unless @moon.image.nil? || @moon.image.empty?%>
+<img class="feature" src="<%= @moon.image %>" alt="<%= @moon.name %>">
+<% end %>
+
+<div class="controls">
+    <a href="/moons/<%= @moon["id"] %>/edit">Edit moon</a>
+    <a href="/moons/<%= @moon["id"] %>/delete">Delete moon</a>
+</div>

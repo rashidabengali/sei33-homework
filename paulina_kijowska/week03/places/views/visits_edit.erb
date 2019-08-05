@@ -1,0 +1,18 @@
+<h2>Edit a visit</h2>
+
+<form action="/visits/<%= @visit.id %>" method="post">
+<label>
+Name:
+<input name="name" placeholder="Lantana" value = "<%= @visit.name %>">
+
+
+
+<label>
+Image:
+<input type="url" name="image" placeholder="http\\"   value="<%= @visit.image %>" >
+
+</label>
+
+<button>Update a visit</button>
+
+</form>

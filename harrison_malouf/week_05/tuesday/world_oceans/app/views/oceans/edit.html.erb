@@ -1,0 +1,41 @@
+<h2>Edit Ocean</h2>
+
+<form action="<%= ocean_path(@oceans_id) %>" method="post">
+
+  <label>
+    Name:
+    <input name="name" required autofocus value="<%= @ocean.name %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @ocean.image %>">
+  </label>
+
+  <label>
+    location:
+    <input type="text" name="location" value="<%= @ocean.location %>">
+  </label>
+
+  <label>
+    Area:
+    <input type="number" name="area" value="<%= @ocean.area %>">
+  </label>
+
+  <label>
+    Volume:
+    <input type="number" name="Volume" value="<%= @ocean.volume %>">
+  </label>
+
+  <label>
+    Depth:
+    <input type="number" name="Depth">
+  </label>
+
+  <label>
+    Coastline:
+    <input type="number" name="Coastline" value="<%= @ocean.coastline %>">
+  </label>
+
+  <button>Create Ocean</button>
+</form>

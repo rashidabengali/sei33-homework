@@ -1,0 +1,12 @@
+<%= form_for @house do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+  <%= f.label :image %>
+  <%= f.url_field :image, :required => true %>
+
+  <%= f.submit %>
+<% end %>

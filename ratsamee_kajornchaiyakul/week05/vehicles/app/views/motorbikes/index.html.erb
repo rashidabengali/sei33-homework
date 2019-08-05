@@ -1,0 +1,4 @@
+<h1>All Motorbikes</h1>
+<% @motorbikes.each do | motorbike |  %>
+    <%= link_to image_tag(motorbike.image, :class => 'thumb'), motorbike  %>
+<% end %>

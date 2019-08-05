@@ -1,0 +1,10 @@
+<h2> Woah! <%= @army["first_name"] %>, your <%= @member["patronus"]%> patronus is quite splendid, indeed! </h2>
+
+<% unless @member["image"].nil? || @member["image"].empty? %> <!-- Note non echoing! -->
+  <img class="feature" src="<%= @member["image"] %>" alt="<%= @member["first_name"] %>">
+<% end %>
+<p></p>
+<div class="controls">
+  <a href="/army/<%= @member["id"] %>/edit">Edit your details</a>
+  <a href="/army/<%= @member["id"] %>/delete">Leave D.A</a>
+</div>

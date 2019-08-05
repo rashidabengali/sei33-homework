@@ -1,0 +1,21 @@
+<h1><%= @country.name %></h1>
+
+<h3>Some Info</h3>
+
+<ul>
+  <li><%= @country.continent %></li>
+  <li>Population: <%= number_to_human @country.population %></li>
+  <li>Spoken Language: <%= @country.language %></li>
+  <li>Currency: <%= @country.currency %></li>
+</ul>
+
+<p>Destinations</p>
+<% @country.destinations.each do |destination| %>
+  <%= link_to image_tag(destination.image, :class => 'thumb_destinations'), destination %>
+<% end %>
+
+
+<div class="controls">
+  <%= link_to "Edit Country", edit_country_path(@country) %>
+  <%= button_to "Delete Country", @country, :method => 'delete', :data => {:confirm => 'Why? Are you sure?'} %>
+</div>

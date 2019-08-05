@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- META: POPUP -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  -->
+
+    <!-- CSS -->
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- POPUP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <!-- END CSS -->
+
+    <!-- JAVASCRIPT: -->
+    <!-- EXTERNAL LIBRARIES -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <!--  -->
+
+    <title>Inventors and Their Inventions</title>
+
+  </head>
+  <body>
+
+    <div class="container">
+
+    <nav class="nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        |
+        <li><a href="/inventors">inventors</a></li>
+        <li><a href="/inventors/new">Add an Inventor</a></li>
+        |
+        <li><a href="/inventions">inventions</a></li>
+        <li><a href="/inventions/new">Add an invention</a></li>
+
+      </ul>
+
+    </nav>
+
+      <%= yield %>
+
+    <footer>
+      <ul>
+        <li><a href="#">footer</a></li>
+      </ul>
+    </footer>
+
+    </div>
+
+  </body>
+</html>

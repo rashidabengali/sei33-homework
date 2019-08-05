@@ -1,0 +1,21 @@
+<h2>Edit Hated Thing</h2>
+
+<form action="/hated_things/<%= @hate["id"] %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="thing" placeholder="Mark Zuckerberg" required value<%= @hate["thing"] %>>
+  </label>
+
+  <label>
+    why:
+    <input name="why" placeholder="Envy" value<%= @hate["why"] %>>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value<%= @hate["image"] %>>
+  </label>
+
+  <button> Update</button>
+
+</form>

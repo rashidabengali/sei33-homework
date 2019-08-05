@@ -1,0 +1,21 @@
+<h2>Edit Inventor</h2>
+
+<form action="/inventors/<%= @inventor["id"] %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" required value="<%= @inventor["name"] %>">
+  </label>
+
+  <label>
+    invention:
+    <input name="invention" placeholder="Analytical Engine" value="<%= @inventor["invention"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @inventor["image"] %>">
+  </label>
+
+  <button> Update</button>
+
+</form>

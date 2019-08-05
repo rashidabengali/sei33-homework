@@ -1,0 +1,19 @@
+<h1><%= @comic.name %></h1>
+
+<% if @comic.image.present? %>
+<%= image_tag @comic.image, :alt => @comic.name, :class => 'feature' %>
+<% end %>
+<ul>
+<li>Title: <%= @comic.name %></li>
+<% if @comic.author.present? %>
+    <li>Artist: <%= link_to @comic.author.name, @comic.author %></li>
+<% end %>
+
+<li>Publish Year: <%= @comic.publish_year %></li>
+<li>Ended: <%= @comic.ended.yesno %> </li>
+</ul>
+
+<div class="control">
+<%= link_to "Edit comic", edit_comic_path(@comic) %>
+<%= link_to "Delete comic", @comic, :method => "delete", :data => { :confirm => "Are you sure?" } %>
+</div>

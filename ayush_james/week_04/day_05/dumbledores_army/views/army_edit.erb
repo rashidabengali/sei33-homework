@@ -1,0 +1,27 @@
+<h2>I knew you would come back! We are happy to have you.</h2>
+<p class="requiredText"><span class=requiredRed>*</span> Required</p>
+
+<form action="/army/<%= @member[:id] %>" method="post">
+  <label>
+    First Name<span class=requiredRed>*</span>::
+    <input type="text" placeholder="Harry" name="first_name" required value="<%= @member["first_name"] %>">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" placeholder="Potter" name="last_name" value="<%= @member["last_name"] %>">
+  </label>
+
+  <label>
+    Patronus<span class=requiredRed>*</span>::
+    <input type="text" placeholder="Stag" name="patronus" required value="<%= @member["patronus"] %>">
+  </label>
+
+  <label>
+    Let's see your patronus:
+    <input type="text" placeholder="https://vignette.wikia.nocookie.net/harrypotter/images/..." name="image" required value="<%= @member["image"] %>">
+  </label>
+
+  <button>Now I'm Ready!</button>
+
+</form>

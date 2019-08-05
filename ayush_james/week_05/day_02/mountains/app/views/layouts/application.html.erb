@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mountain Peak!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="fixed">
+    <h1><%= @mountain.name if @mountain.name.present? %> PEAK!</h1>
+    <nav>
+      <%= link_to 'Mountain Tops', mountains_path %>
+    |
+      <%= link_to 'New Mountain', new_mountain_path %>
+    </nav>
+    </div>
+
+    <div class="container">
+    <%= yield %>
+    </div>
+
+  </body>
+</html>

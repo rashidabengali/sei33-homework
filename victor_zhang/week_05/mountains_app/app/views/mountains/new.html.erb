@@ -1,0 +1,28 @@
+<h2>Add new Mountain</h2>
+
+<form action="<%= mountains_path %>" method='post'>
+  <label>
+    Mountain Name:
+    <input type="text" name="name" required autofocus>
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image">
+  </label>
+  <label>
+    Mountain Height:
+    <input type="number" name="height">
+  </label>
+  <label>
+    Location:
+    <input type="text" name="location">
+  </label>
+  <label>
+    Interesting Fact:
+    <input type="text" name="fact">
+  </label>
+
+  <button>
+    Add Mountain
+  </button>
+</form>

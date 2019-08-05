@@ -1,0 +1,6 @@
+
+
+<div class="controls">
+  <a href="/project/<%= @project.id %>/edit">Edit Post</a>
+  <a href="/project/<%= @project.id %>/delete">Delete Post</a>
+</div>
