@@ -1,0 +1,9 @@
+
+
+<h1>Exciting Destinations</h1>
+
+<div class="thumbnails">
+  <% @destinations.each do |destination| %>
+  <%= link_to image_tag(destination.image, :title => destination.name, :class => 'thumb_destinations'), destination %>
+  <% end %>
+</div>

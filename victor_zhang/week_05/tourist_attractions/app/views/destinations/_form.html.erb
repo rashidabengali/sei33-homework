@@ -1,0 +1,19 @@
+<%= form_for @destination do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :map %>
+  <%= f.text_field :map %>
+  <%= f.label :features %>
+  <%= f.text_field :features %>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+  <%= f.label :image %>
+  <%= f.url_field :image, :required => true %>
+  <%= f.label :country_id %>
+  <%= f.select :country_id, Country.pluck(:name, :id), :include_blank => true %>
+
+  <%= f.submit :class => 'input'%>
+<% end %>
