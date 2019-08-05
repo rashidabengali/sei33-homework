@@ -1,0 +1,5 @@
+<h1><%= @brand.name %></h1>
+<p><%= @brand.country %></p>
+
+<%= link_to 'Edit brand', edit_brand_path(@brand) %>
+<%= link_to 'Delete brand', @brand, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
