@@ -1,0 +1,127 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+body{
+  background-color: #d9d9d9;
+font-size: 14px;
+ font-family: "Times New Roman", serif;
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.greypic {
+width: 33%;
+height: 20%;
+position: relative;
+
+
+}
+
+.logo {
+
+  display: block;
+  top: 120px;
+  left: 507px;
+position: absolute;
+
+}
+
+.container {
+  background: white;
+  position: relative;
+ padding: 20px;
+
+}
+main {
+  left: 260px;
+  position: relative;
+  top: 190px;
+  width: 550px;
+  height: auto;
+}
+
+
+.containerpic {
+width: 90%;
+height: 50%;
+
+
+
+
+}
+
+
+aside {
+
+  width: 200px;
+  height: auto;
+
+  left: 838px;
+  bottom: 389px;
+  font-weight: 600;
+  font-size: 12px;
+   line-height: 80%;
+}
+
+p {
+width:470px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  display: inline-block;
+text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: grey;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: grey;
+  color: white;
+}

@@ -1,0 +1,45 @@
+
+
+body {
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/img/2668547614_ecebaef22a_z.jpg)
+ center no-repeat fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -ms-background-size: cover;
+   background-size: cover;
+   color: white;
+}
+
+.container {
+
+background-color: rgba(186, 94, 94, 0.76);
+width: 300px;
+height: 300px;
+position: absolute;
+top:0;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+border-radius: 30px;
+
+}
+
+
+h1 {
+  text-align: center;
+}
+
+form {
+display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+img {
+  position: relative;
+
+  left: 31%;
+  bottom: 49%
+
+}

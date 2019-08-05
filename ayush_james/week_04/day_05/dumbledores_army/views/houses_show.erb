@@ -1,0 +1,11 @@
+<h2> <%= @house.name %> </h2>
+
+
+<% unless @house.image.nil? || @house.image.empty? %> <!-- Note non echoing! -->
+  <img class="feature" src="<%= @house.image %>" alt="<%= @house.name %>">
+<% end %>
+
+<div class="controls">
+  <a href="/houses/<%= @house.id %>/edit"> Edit house </a>
+  <a href="/houses/<%= @house.id %>/delete"> Delete house </a>
+</div>

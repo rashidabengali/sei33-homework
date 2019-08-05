@@ -1,0 +1,20 @@
+<h2>Edit moon</h2>
+
+<form action="/moons/<%= @moon.id %>" method="post">
+    <label>
+    Name:
+    <input name="name" placeholder="Venus" required value="<%= @moon.name %>">
+    </label>
+
+    <label>
+    Mass
+    <input name="mass" placeholder="4.8675×1024 kg" value="<%= @moon.mass %>">
+    </label>
+
+    <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @moon.image %>">
+    </label>
+
+    <button>Update moon</button>
+</form>

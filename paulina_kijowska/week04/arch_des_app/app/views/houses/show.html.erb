@@ -1,0 +1,18 @@
+
+<h1><%= @house.title %></h1>
+
+<%= image_tag @house.image, :alt => @house.title, :class => 'feature' %>
+
+<ul>
+<li>Title: <%= @house.title %></li>
+<% if @house.architect.present? %>
+<li>Artist: <%= link_to @house.architect.name, @house.architect %></li>
+<% end %>
+<li>Year: <%= @house.year %></li>
+<li>Country: <%= @house.country %></li>
+</ul>
+
+<div class="controls">
+<%= link_to "Edit house", edit_house_path(@house) %>
+<%= link_to "Delete house", @house, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>

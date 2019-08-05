@@ -1,0 +1,27 @@
+<h2>Edit Mountain</h2>
+
+<form action="<%= mountains_path %>" method="post">
+  <label>
+    Name:
+    <input name="name" required autofocus value="<%= @mountain.name %>">
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image" value="<%= @mountain.image %>">
+  </label>
+  <label>
+    Height:
+    <input type="number" name="height" value="<%= @mountain.height %>" >
+  </label>
+  <label>
+    Type:
+    <input type="text" name="type" value=" <%= @mountain.type %>">
+  </label>
+  <label>
+    Country:
+    <input type="text" name="country" value="<%= @mountain.country %>">
+  </label>
+
+
+  <button>Edit Mountain</button>
+</form>

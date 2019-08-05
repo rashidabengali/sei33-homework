@@ -1,0 +1,17 @@
+<%= form_for @motorbike do |f| %>
+    <%= f.label :year %>
+    <%= f.text_field :year, :placehold => "YYYY" %>
+    <%= f.label :brand_id %>
+    <%= f.select :brand_id, Brand.pluck(:name, :id), :include_blank => true %>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+    <%= f.label "Description" %>
+    <%= f.text_field :descriptions  %>
+    <%= f.submit %>
+<% end %>

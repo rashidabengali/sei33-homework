@@ -1,0 +1,11 @@
+<%= form_for @electronic do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :class => 'form-item-label' %>
+  <%= f.label :description %>
+  <%= f.text_field :description, :required => true, :class => 'form-item-label' %>
+  <%= f.label :price %>
+  <%= f.text_field :price, :required => true, :class => 'form-item-label' %>
+  <%= f.label :brand_id %>
+  <%= f.select :brand_id, Brand.pluck(:name, :id), :include_blank => true %>
+  <%= f.submit 'Apply',:class => 'margin-top40 controls-link' %>
+<% end %>

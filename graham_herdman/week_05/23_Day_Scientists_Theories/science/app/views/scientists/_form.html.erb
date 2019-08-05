@@ -1,0 +1,16 @@
+
+<%= form_for @scientist do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+  <%= f.label :dob, "Date of Birth" %>
+  <%= f.text_field :dob, :placeholder => 'YYYY-MM-DD' %>
+  <%= f.label :fields %>
+  <%= f.text_field :fields %>
+  <%= f.label :known_for %>
+  <%= f.text_field :known_for %>
+  <%= f.label :trivia %>
+  <%= f.text_field :trivia %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+  <%= f.submit %>
+<% end %>

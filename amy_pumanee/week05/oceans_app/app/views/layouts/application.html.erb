@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OceansApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <nav>
+      <li class="nav"><%= link_to 'All beach', beaches_path %></li>
+      <li class="nav"><%= link_to 'New beach', new_beach_path %></li>
+    </nav>
+
+    <div class="containers">
+    <%= yield %>
+    </div>
+  </body>
+</html>

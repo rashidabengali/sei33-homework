@@ -1,0 +1,15 @@
+<h2>
+<%= @visit.name %>
+</h2>
+
+<% unless @visit.image.nil? || @visit.image.empty? %>
+<img class="feature" src="<%= @visit.image %>" alt="<%= @visit.name %>">
+
+
+
+<% end %>
+
+<div class="controls">
+  <a href="/visits/<%= @visit.id %>/edit"> Edit visit</a>
+<a href="/visits/<%= @visit.id %>/delete"> Delete visit</a>
+</div>

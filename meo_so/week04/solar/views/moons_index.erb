@@ -1,0 +1,9 @@
+<h2>All moons</h2>
+
+<% @moons.each do |moon|%>
+    <p>
+    <a href="/moons/<%= moon.id %>">
+    <%= moon.name %>
+    </a>
+    </p>
+    <% end %>

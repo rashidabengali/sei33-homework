@@ -1,0 +1,12 @@
+<h1>All Electronics</h1>
+<%= link_to "New electronic", new_electronic_path, :class => 'controls-link block' %>
+<div class="style-item-wrapper">
+  <% @electronics.each do |electronic| %>
+    <%= link_to electronic, :class => 'style-item-link' do %>
+      <div class="style-item">
+        <%= image_tag electronic.image, :class => 'style-item-img' if electronic.image.present? %>
+        <p><%= electronic.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
