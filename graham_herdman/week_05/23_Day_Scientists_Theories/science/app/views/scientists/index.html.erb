@@ -1,0 +1,5 @@
+<h1>All Scientists</h1>
+
+<% @scientists.each do |scientist| %>
+  <h3><%= link_to scientist.name, scientist%></h3>
+<% end %>

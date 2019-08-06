@@ -1,0 +1,9 @@
+<%= form_for @team do |t| %>
+  <%= t.label :name %>
+  <%= t.text_field :name, :autofocus => true, :required => true %>
+  <%= t.label :coach %>
+  <%= t.text_field :coach %>
+  <%= t.label :image %>
+  <%= t.url_field :image %>
+  <%= t.submit %>
+<% end %>

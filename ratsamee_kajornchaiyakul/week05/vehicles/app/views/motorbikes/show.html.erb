@@ -1,0 +1,23 @@
+<%= image_tag @motorbike.image, :class => 'feature' %>
+<p>
+    Year: <%= @motorbike.year %>
+</p>
+<% if @motorbike.brand.present?  %>
+    <p>
+        Brand: <%= link_to @motorbike.brand.name, @motorbike.brand %>
+    </p>
+<% end %>
+<p>
+    Color: <%= @motorbike.color %>
+</p>
+<p>
+    Body: <%= @motorbike.body %>
+</p>
+<p>
+    Price: <%= number_to_currency @motorbike.price %>
+</p>
+<p>
+    Description: <%= @motorbike.descriptions %>
+</p>
+<%= link_to 'Edit motorbike', edit_motorbike_path(@motorbike) %>
+<%= link_to 'Delete motorbike', @motorbike, :method => 'delete', :data => {:confirm => "Are you sure?"} %>

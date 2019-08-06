@@ -1,0 +1,21 @@
+<%= image_tag @destination.image, :class => 'bg' if @destination.image.present? %>
+
+<div class="show_wrapper">
+  <h1><%= @destination.name %></h1>
+
+  <ul>
+    <% unless @destination.country.nil? %>
+      <li>Country: <%= link_to @destination.country.name, @destination.country  %></li>
+    <% end %>
+    <li>Location: <%= @destination.location %></li>
+    <li><%= @destination.map %></li>
+    <li>Reasons to go: <%= @destination.features %></li>
+    <li>Rating: <%= @destination.rating %></li>
+    <li></li>
+  </ul>
+
+  <div class="controls">
+    <%= link_to "Edit Destination", edit_destination_path(@destination) %>
+    <%= button_to "Delete Destination", @destination, :method => 'delete', :data => {:confirm => 'Why? Are you sure?'} %>
+  </div>
+</div>

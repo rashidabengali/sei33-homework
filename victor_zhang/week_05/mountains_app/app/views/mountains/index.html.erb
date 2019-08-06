@@ -1,0 +1,15 @@
+<h2>Welcome to Top 10 Most Badass Mountains</h2>
+
+<h5>Copied from territorysupply.com</h5>
+
+<div class="list">
+  <% countdown = 10 %>
+
+  <% @mountains.each do |mountain| %>
+    <p>
+      <%= countdown %>.
+      <%= link_to mountain.name, mountain_path(mountain.id) %>
+    </p>
+    <% countdown -= 1 %>
+  <% end %>
+</div>

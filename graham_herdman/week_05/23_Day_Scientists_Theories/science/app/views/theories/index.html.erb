@@ -1,0 +1,5 @@
+<h1>All Theories</h1>
+
+<% @theories.each do |theory| %>
+  <h3><%= link_to theory.name, theory%></h3>
+<% end %>

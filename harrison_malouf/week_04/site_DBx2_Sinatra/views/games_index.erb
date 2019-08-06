@@ -1,0 +1,13 @@
+<h2>GAMMMMMMMESSS, ALL THE GAMES</h2>
+
+<% @games.each do |game| %> <%# this is how we forloop through all the data stored, also no equals sign after the percent because we don't wanna show it%>
+
+  <p> <%# we need to put all of our data we're listing in some type of container %>
+
+    <a href="/games/<%= game["id"]%>"> <%# on this specific line we're accessing the games.sql (I think) and retriving the id's%>
+
+      <%= game["name"] %> <%# we're asking to display the name of the game %>
+
+    </a> <%# we're now closing the anchor tag, note the name display vs the id is on sperate lines for a reason %>
+  </p>
+ <% end %> <%# this is where the forloop ends %>

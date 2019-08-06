@@ -1,0 +1,19 @@
+<h2>Edit Games</h2>
+
+<form  action="/games"<%# Look for this name on main%> method="post"<%# we look for this method on main%>>
+  <label>
+    Name:
+    <input  name="name" placeholder="no minecraft" required value="<%= @game["name"] %>">
+  </label>
+
+  <label>
+    Release:
+    <input type="interger" name="release year" placeholder="2019" value="<%= @game["release"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @game["image"] %>">
+  </label>
+  <button> Update Game </button>
+</form>
