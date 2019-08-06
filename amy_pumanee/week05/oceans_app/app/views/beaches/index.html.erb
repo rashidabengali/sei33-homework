@@ -1,0 +1,7 @@
+<h2>All beaches</h2>
+
+<% @beaches.each do |beach| %>
+<p>
+  <%= link_to beach.name, beach_path(beach.id) %>
+</p>
+<% end %>

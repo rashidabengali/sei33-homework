@@ -1,0 +1,33 @@
+<h2>EDIT MOUNTAIN!</h2>
+<div class="form">
+<p><i><strong>You Had One Job!</strong></i></p>
+
+<form action="<%= mountain_path(@mountain.id) %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" required autofocus value="<%= @mountain.name %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="text" name="image" value="<%= @mountain.image %>">
+  </label>
+
+  <label>
+    Height (metres):
+    <input type="number" name="height" value="<%= @mountain.height %>">
+  </label>
+
+  <label>
+    First Ascent (year):
+    <input type="number" name="ascent" value="<%= @mountain.ascent %>">
+  </label>
+
+  <label>
+    Country:
+    <input type="text" name="country" value="<%= @mountain.country %>">
+  </label>
+
+  <button><strong>UPDATE!</strong></button>
+</form>
+</div>

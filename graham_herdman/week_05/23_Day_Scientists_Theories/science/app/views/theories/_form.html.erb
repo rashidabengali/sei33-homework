@@ -1,0 +1,12 @@
+
+<%= form_for @theory do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+  <%= f.label :scientist %>
+  <%= f.select :scientist_id, Scientist.pluck(:name, :id), :include_blank => true %>
+  <%= f.submit %>
+<% end %>

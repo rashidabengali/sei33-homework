@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basics</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+<nav>
+  {
+  <a href="/home"> Home Page </a>
+}{
+  <a href=""> Magic 8 Ball </a>
+}{
+  <a href=""> Secret Number </a>
+}{
+  <a href=""> Rock Paper Scissors </a>
+  }
+</nav>
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<h1><%= @electronic.name %></h1>
+<%= image_tag @electronic.image, :class => 'full-image' if @electronic.image.present? %>
+<div><%= @electronic.description %></div>
+<div class="controls">
+  <%= link_to "Edit electronic", edit_electronic_path(@electronic), :class => 'controls-link' %>
+  <%= link_to "Delete", @electronic, :method => 'delete', :class => 'controls-link block', :data => {:confirm => 'Are you sure?'} %>
+  <%= link_to "Back to list ", electronics_url, :class => 'controls-link block' %>
+</div>

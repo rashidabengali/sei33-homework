@@ -1,0 +1,5 @@
+<%= form_for @brand do |f| %>
+  <%= f.label :name, :class => 'form-item-label' %>
+  <%= f.text_field :name, :required => true %>
+  <%= f.submit 'Apply', :class => 'margin-top40 controls-link' %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>All Comics</h1>
+
+<% @comics.each do |comic| %>
+<p><%= comic.name %></p>
+<%= link_to image_tag(comic.image, :class => "thumb"), comic %>
+<% end %>
