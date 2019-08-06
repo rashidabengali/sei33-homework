@@ -7,7 +7,7 @@ const fetchWeatherByCity = function (city) {
     .done(function (response) {
       // enabling click in button for next search
       $('.button').attr('disabled', false);
-      $('.weather').text(`${response.data[0].city_name}, ${response.data[0].weather.description}`);
+      $('.weather').text(`${response.data[0].city_name}, ${response.data[0].weather.description}, ${response.data[0].temp}`);
     });
 };
 
