@@ -187,3 +187,90 @@ played[this.attr(id)] = 'o'; player
 
 findWinner(played, 'x');
 */
+/*
+const isPrime = function (number) {
+  console.log(number);
+  for (let i = 0; i < Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false
+    }
+  }
+  return true
+}
+
+// console.log(isPrime(3));
+
+const noSieve = function (number) {
+  let range = []; // hold a range of numbers to check
+  let primes = []; // hold the list of primes we will return
+  for (let i = 0; i <= number; i++) {
+    range.push(i);
+  }
+
+  while (range.length > 0) {
+    let digit = range.shift()
+    if (isPrime(digit)) {
+      primes.push(digit)
+
+      // range = range.filter(function (num) {
+      //   return (num % digit !== 0)
+      // })
+    }
+  }
+  console.log(primes);
+}
+
+noSieve(20)
+*/
+
+const sieve = {
+
+  list: [],
+  //counter: 0,
+
+  calculate_primes: function( max ){
+
+    // Initialise our range of primes; setting their value to true means we assume they're all
+    // primes before we start testing them
+    for (let i = 2; i < max; i++) {
+      this.list[i] = true;
+    }
+
+    for (let i = 2; i < this.list.length; i++) {
+
+      // 'currentNum' is a bit clearer than 'i'
+      let currentNum = i;
+
+      // Now loop through all the remaining numbers, testing whether they're divisible
+      // by currentNum
+      for (let j = currentNum + 1; j < this.list.length; j++) {
+
+        //this.counter++;
+
+        if ( this.list[j] === true && j % currentNum === 0 ){
+          // If the number is divisible (i.e. remainder of 0) it's not a prime
+          this.list[j] = false;
+       }
+
+      } // inner for
+    } // outer for
+
+
+    // Print our final list of primes
+    for (let i = 0; i < this.list.length; i++) {
+      if( this.list[i] === true ){
+        console.log(i);
+      }
+    }
+
+    // Note the number of iterations involved; it grows exponentially as the range of numbers
+    // gets larger (this is a common pattern when nested loops are involved); is there a more
+    // efficient way to implement this sieve algorithm?
+    //console.log('iterations: ', this.counter);
+
+  }
+};
+
+sieve.calculate_primes(30);
+
+//console.log(( ["Hello", ["World", 42] ] ).flat());
