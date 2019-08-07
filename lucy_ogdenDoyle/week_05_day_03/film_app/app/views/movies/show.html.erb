@@ -1,0 +1,16 @@
+<h1><%= @movie.title %></h1>
+
+
+<%= image_tag @movie.image, :class => "feature" unless @movie.image.nil? %>
+
+<p>Year Released: <%= @movie.year_released %></p>
+<%= "Characters in movie: " unless @movie.characters.empty?%>
+<% @movie.characters.each do |c| %>
+ <%= link_to c.name, c %>
+<% end %>
+
+
+<div id="controls">
+<%= link_to "Edit Movie", edit_movie_path(@movie.id) %>
+<%= button_to "DELETE", @movie, :method => "delete", :data => {:confirm => "Are you sure?"} %>
+</div>
