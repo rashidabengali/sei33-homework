@@ -14,34 +14,21 @@ $(document).ready(function () {
         //loop through the array
         const todayNews = data.articles
         todayNews.forEach((article)=>{
-          const title = document.createElement('h4');
-          title.innerHTML = article.title;
+          const title = $('<h4></h4>').text(article.title); //document.createElement('h4');
+          // title.innerHTML = article.title;
 
-          const description = document.createElement('p');
-          description.innerHTML = (article.description)?article.description:"No content";
+          const description = $('<p></p>').text(article.description)?article.description:"No content"; //document.createElement('p');
+          // description.innerHTML = (article.description)?article.description:"No content";
 
           $("body").append(title).append(description);
         });
 
       } else {
-        const noNews = document.createElement('h4');
-        noNews.innerHTML = `No news for ${news} today!`
+        const noNews = $('<h4></h4>').text(`No news for ${news} today!`)//document.createElement('h4');
+        // noNews.innerHTML = `No news for ${news} today!`
         $("body").append(noNews);
       };
 
     });
-
-    // this ajax lines replaced whatever we wrote for the homework.
-    // this is the historic way of writing AJAX with jQuery.
-
-    // $.ajax(url, {
-    //   success: function (data) {
-    //     const cover = data.items[0].volumeInfo.imageLinks.thumbnail;
-    //     $('#cover').attr('src', cover);
-    //   }
-    // });
-
-
-
   });
 });
