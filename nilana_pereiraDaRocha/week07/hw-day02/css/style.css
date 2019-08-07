@@ -1,0 +1,50 @@
+.background-image {
+  background: url("https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/science/weather-forecast-background.jpg/weather-forecast-background.jpg/metofficegovuk%3AheroMedium");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+}
+
+.wrapper {
+  margin: -100px auto 0 auto;
+  width: 80%;
+  padding: 5%;
+  background: white;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.search {
+  height: 80px;
+  padding: 5px;
+  width: 70%;
+  margin-right: 10px;
+  font-size: 30px;
+  color: rgb(127, 128, 131);
+  border: 1px solid rgb(127, 128, 131);
+  border-radius: 5px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.button {
+  background-color: #424242;
+  color: white;
+  font-weight: bold;
+  height: 80px;
+  padding: 5px;
+  width: 20%;
+  font-size: 30px;
+  border: 1px solid rgb(127, 128, 131);
+  border-radius: 5px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+img {
+  width: 250px;
+  margin: 10px;
+}
+
+.weather {
+  margin-top: 80px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>City weather search</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <h1>City weather search</h1>
+
+  <form id="search">
+    <label>
+       City:
+       <input type="search" id="city_name" placeholder="Sydney, au">
+    </label>
+
+    <button>Search</button>
+  </form>
+  <div>
+    <div id="description"></div>
+    <div id="icon_description"></div>
+    <h1 id="temp"></h1>
+    <div id="location"></div>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/search.js"></script>
+
+</body>
+</html>

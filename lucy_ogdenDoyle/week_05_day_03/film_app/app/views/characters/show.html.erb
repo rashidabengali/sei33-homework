@@ -1,0 +1,15 @@
+<h1><%= @character.name %></h1>
+
+
+<%= image_tag @character.image, :class => "feature" unless @character.image.nil?%>
+
+<p>Voice actor: <%= @character.voice_actor %></p>
+<% if @character.movie.present? %>
+<p>Movie from: <%= link_to @character.movie.title, @character.movie %></p>
+<% end %>
+
+
+<div id="controls">
+<%= link_to "Edit Character", edit_character_path(@character.id) %>
+<%= button_to "DELETE", @character, :method => "delete", :data => {:confirm => "Are you sure?"} %>
+</div>

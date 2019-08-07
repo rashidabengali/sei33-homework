@@ -1,0 +1,21 @@
+<h1>All Resorts</h1>
+
+<%= @resorts.each do |resort| %>
+  <%= image_tag(resort.image, :class => 'thumb') %>
+  <ul>
+    <li>Name: <%= link_to resort.name, resort_path(resort.id) %></li>
+    <li>Country: <%= </li>
+    <li></li>
+    <li></li>
+  </ul>
+  <% end %>
+
+    <ul>
+      <li>Name: <%= link_to artist.name, artist_path(artist.id) %></li>
+      <li>Nationality: <%= artist.nationality %></li>
+      <% if artist.dob.present? %>
+        <li>Date of Birth: <%= artist.dob.strftime '%A, %B %e, %Y' %></li>
+      <% end %>
+      <li>Period: <%= artist.period %></li>
+    </ul>
+  <% end %>

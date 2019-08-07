@@ -1,0 +1,17 @@
+<%= form_for @resort do |f| %>
+  <%= f.label :name, :autofocus => true, :required => true %>
+  <%= f.text_field :name %>
+
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+
+
+  <%= f.label :runs %>
+  <%= f.text_field :runs %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.submit %>
+
+<% end %>
