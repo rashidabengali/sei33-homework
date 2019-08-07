@@ -1,0 +1,19 @@
+<h1><%= @mountain.name %></h1>
+
+<p>Country: <%= @mountain.country %></p>
+<p>Parent Range: <%= @mountain.parent_range %></p>
+<p>Elevation: <%= @mountain.elevation %></p>
+
+<%= image_tag @mountain.map, :class => "feature" if @mountain.image.present? %>
+
+<p><%= link_to "Edit this mountain", edit_mountain_path %></p>
+<p><%= button_to "☠ Delete this mountain ☠", mountain_path(@mountain.id), :class => "delete", :method => 'delete' %></p>
+
+<p><%= link_to "Back to mountains", mountains_path %></p>
+
+
+<style type="text/css">
+  body {
+    background-image: url('<%= @mountain.image %>');
+  }
+</style>
