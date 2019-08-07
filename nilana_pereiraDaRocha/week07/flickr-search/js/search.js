@@ -1,6 +1,14 @@
+// this is the pagination for the API
+let page = 1;
+
 const showImages = function (results) {
+
+  if (results.photos.pages > page) {
+    page += 1;
+  }
+
   // enabling click in button for next search
-  $('#search').attr('disabled', false);
+  $('#click').attr('disabled', false);
   // Nested helper function
   const generateURL = function (p) {
     return [
@@ -39,15 +47,18 @@ const searchFlickr = function (terms) {
     method: 'flickr.photos.search',
     api_key: '2f5ac274ecfac5a455f38745704ad084',// This is not a secret key.
     text: terms,
-    format: 'json'
+    format: 'json',
+    page: page
   }).done(showImages)
+
 };
+
 $(document).ready(function () {
   const onClick = function (event) {
     event.preventDefault(); //Stay on this page
 
     // disabling multiple clicks
-    $('#search').attr('disabled', true);
+    $('#click').attr('disabled', true);
 
     const query = $('#query').val();
     searchFlickr(query);
@@ -55,14 +66,12 @@ $(document).ready(function () {
   };
 
   var lazyOnClick = _.debounce(onClick, 500);
-  $('#search').on('click', lazyOnClick);
+  $('#click').on('click', lazyOnClick);
 });
 
 
-
-
 //Extremely twitchy
-$(window).on('scroll', function () {
+$(window).on('scroll', _.debounce(function () {
   console.log('scroll');
   // calculate the scrollbottom
   const scrollbottom = $(document).height() - $(window).height() - $(window).scrollTop();
@@ -73,7 +82,7 @@ $(window).on('scroll', function () {
     searchFlickr(query);
   }
   //print a message 
-});
+}, 500));
 
 
 
