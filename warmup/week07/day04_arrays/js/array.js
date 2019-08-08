@@ -14,9 +14,9 @@ const reverseArray = function (array) {
   //   reverse.unshift(array[i])
   // }
   //
-  // console.log(reverse);
+  // console.log('reverse', reverse);
 
-  console.log(array.reverse());
+  console.log('reverse', array.reverse());
 };
 
 reverseArray(array1);
@@ -44,8 +44,8 @@ const flattenArray = function (array) {
     // }
 
   // }
-  // console.log(flatten);
-  console.log(array.flat());
+  // console.log('flatten', flatten);
+  console.log('flatten', array.flat());
 };
 
 flattenArray(array2)
