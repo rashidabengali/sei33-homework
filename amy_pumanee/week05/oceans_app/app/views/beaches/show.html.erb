@@ -1,0 +1,15 @@
+<h2> <%= @beach.name %> </h2>
+
+<%= image_tag @beach.image, :class => 'feature' if @beach.image.present? %>
+
+<ul>
+  <li>Name: <%= @beach.name %></li>
+  <li>Location: <%= @beach.location %></li>
+  <li>Area: <%= @beach.area%>  square-kilometre</li>
+  <li>Population: <%= number_to_human @beach.population%> </li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit beach', edit_beach_path(@beach.id) %>
+  <%= button_to 'Delete beach', beach_path(@beach.id), :method => 'delete'  %>
+</div>

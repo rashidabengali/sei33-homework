@@ -1,0 +1,10 @@
+<h1>Travel Bucket List</h1>
+
+<% @countries.each do |country| %>
+  <h3>
+    <ul>
+      <li><%= link_to country.name, country, :title => country.name %></li>
+    </ul>
+  </h3>
+
+<% end %>

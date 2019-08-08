@@ -1,0 +1,38 @@
+a {
+  font-family: sans-serif;
+  color: gold;
+}
+
+h1 {
+  font-family: cursive;
+}
+
+body {
+  background-color: black;
+}
+
+label {
+  display: block inline;
+  margin: 0 auto;
+}
+
+input {
+  color: black;
+}
+
+.requiredRed {
+  color: red;
+}
+
+.requiredText {
+  font-style: italic;
+}
+
+.feature {
+max-width: 25%; /*means it will fit into the container.*/
+}
+
+.container {
+  color: white;
+  font-family: sans-serif;
+}

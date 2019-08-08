@@ -1,0 +1,17 @@
+<div class="showimage">
+  <%= image_tag @mountain.image, :class => 'bg' if @mountain.image.present? %>
+</div>
+
+<div class="show">
+<ul>
+  <li>Height: <%= number_with_delimiter(@mountain.height) %> metres </li>
+  <li>First Ascent: <%= @mountain.ascent %> </li>
+  <li>Country: <%= @mountain.country %> </li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit mountain', edit_mountain_path(@mountain.id), :class => 'editlink' %>
+  -
+  <%= button_to 'Delete mountain', mountain_path(@mountain.id), :method => 'delete', :class => 'deletebutton' %>
+</div>
+</div>

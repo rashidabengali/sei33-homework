@@ -115,7 +115,7 @@ guessLetter(prompt('guess letter'));
 */
 
 // Credit Card Validation
-
+/*
 const sameDigits = function (input) {
   for (let i = 0; i < input.length; i++) {
     if (input[i] !== input[0]) {
@@ -149,6 +149,7 @@ const validateCreditCard = function (input) {
 
 console.log(validateCreditCard('9999-9999-8888-0000'));
 console.log(validateCreditCard('a923-3211-9c01-1112'));
+*/
 
 /*
 const winningRule = [ [0, 1, 2], [3, 4, 5], [6, 7 ,8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ];
@@ -186,3 +187,46 @@ played[this.attr(id)] = 'o'; player
 
 findWinner(played, 'x');
 */
+
+const array1 = ["one", "two", "three", "four"]
+
+const reverseArray = function (array) {
+  let reverse = [];
+  // for (let i = array.length-1; i >= 0; i--) {
+  //   reverse.push(array[i]);
+  // }
+  // for (let i = 0; i < array.length; i++) {
+  //   reverse.unshift(array[i]);
+  // }
+  // console.log(reverse);
+  console.log(array.reverse());
+}
+
+reverseArray(array1);
+
+const array2 = ["one", "two", ["three", "four"]];
+
+const flattenArray = function (array) {
+  let flatten = [];
+  //for (let i = 0; i < array.length; i++) {
+
+    // if (array[i] instanceof Array) {
+    //   for (let j = 0; j < array[i].length; j++) {
+    //     flatten.push(array[i][j])
+    //   }
+    // } else {
+    //   flatten.push(array[i])
+    // }
+
+    // if (Array.isArray(array[i])) {
+    //   flatten = flatten.concat(array[i])
+    // } else {
+    //   flatten.push(array[i])
+    // }
+
+  //}
+  //console.log(flatten);
+  console.log(array.flat());
+}
+
+flattenArray(array2);

@@ -32,7 +32,7 @@ console.log(maxOfThree(20342,343,51435));
 const vowel = function(char) {
 
 
-      if (char === 'a'||'e'||'i'||'o'||'u') {
+      if (char === 'a'|| char === 'e'|| char === 'i'|| char === 'o'|| char === 'u') {
           return "The character is a Vowel";
       }
       else {
@@ -40,7 +40,7 @@ const vowel = function(char) {
       }
   }
 
-  console.log(vowel("y"));
+  console.log(vowel("o"));
   console.log(vowel("k"));
 
 
@@ -141,3 +141,61 @@ filterLongWords(["late", "mystery", "whyamIhere"], 5);
 // }
 //
 // }
+
+const word = ["m","u","m"];
+const curguess = ["", "", ""];
+
+const hanger = function (letter) {
+// let goodGuess = false;
+// var moreToGuess = true;
+for (var i=0; i < word.length; i++) {
+  if (letter === word[i]) {
+curguess[i]=letter;
+console.log(curguess);
+  }
+else {
+
+  console.log("_");
+}
+if (curguess[i] == [""]) {
+  console.log("keep on going");
+} else { console.log("You finished")
+}
+}
+}
+hanger("m");
+hanger("u");
+
+hanger("m");
+hanger("x");
+// var wordLetters     = ['G', 'O', 'A', 'T'];
+// var guessedLetters  = ['_', '_', '_', '_'];
+//
+// function guessLetter(letter) {
+//     var goodGuess = false;
+//     var moreToGuess = false;
+//     for (var i = 0; i < wordLetters.length; i++) {
+//         if (wordLetters[i] == letter) {
+//             guessedLetters[i] = letter;
+//             goodGuess = true;
+//         }
+//         if (guessedLetters[i] == '_') {
+//             moreToGuess = true;
+//         }
+//     }
+//     if (goodGuess) {
+//         console.log('Yay, you found a letter!');
+//         console.log(guessedLetters.join(''));
+//         if (!moreToGuess) {
+//             console.log('YOU WON!');
+//         }
+//     } else {
+//         console.log('Oh noes, thats not right!');
+//     }
+// }
+//
+// guessLetter('G');
+// guessLetter('I');
+// guessLetter('O');
+// guessLetter('A');
+// guessLetter('T');

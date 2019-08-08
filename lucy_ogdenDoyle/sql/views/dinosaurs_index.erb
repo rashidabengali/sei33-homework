@@ -1,0 +1,7 @@
+<h2>Dinosaur List</h2>
+
+<div class="box">
+<% @dinosaurs.each do |d| %>
+  <div class="index"><a href="/dinosaurs/<%= d["id"] %>">🦕  <%= d["nickname"] %></a></div>
+<% end %>
+</div>

@@ -1,0 +1,19 @@
+body {
+    background-color: azure;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.bookcover {
+
+    width: 40%;
+    height: auto;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+}

@@ -1,0 +1,34 @@
+<h2>Edit Motorcycle</h2>
+<form action="/motorcycles/<%= @motorcycle.id %>" method="post">
+    <label>
+        Brand:
+        <input type="text" name="brand" placeholder="Harley" required value="<%= @motorcycle.brand %>">
+    </label>
+    <label>
+        Year:
+        <input type="number" name="year" placeholder="2019" required value="<%= @motorcycle.year %>">
+    </label>
+    <label>
+        Color:
+        <input type="text" name="color" placeholder="Black" required value="<%= @motorcycle.color %>">
+    </label>
+    <label>
+        Body:
+        <input type="text" name="body" placeholder="Cruiser" value="<%= @motorcycle.body %>">
+    </label>
+    <label>
+        Price:
+        <input type="number" name="price" placeholder="1000" value="<%= @motorcycle.price %>">
+    </label>
+    <label>
+        Description:
+    </label>
+    <label>
+        <textarea name="description" cols="45" rows="3"><%= @motorcycle.description %></textarea>
+    </label>
+    <label>
+        Image:
+        <input type="url" name="image" class="input_image" placeholder="http://.." value="<%= @motorcycle.image %>">
+    </label>
+    <button>Update Motorcycle</button>
+</form>

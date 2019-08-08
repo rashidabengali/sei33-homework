@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Book_Search</title>
+  <link rel="stylesheet" href="/css/book.css">
+</head>
+<body>
+<header>
+  <div class="header container">
+    <h1>
+      <img src="/images/book-logo.png" alt="Readers Zone Logo">
+      <a href="/">
+      Readers Zone</a></h1>
+    <nav>
+      <a class="links" href="/login">Login</a>
+      <a class="links" href="/signup">Sign-up</a>
+
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <%= yield %>
+</main>
+<footer>
+  Copyright &copy; Readers Zone
+</footer>
+</body>
+</html>

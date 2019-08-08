@@ -1,0 +1,13 @@
+<%= form_for @movie do |f| %>
+  <%= f.label :title, :autofocus => true, :required => true %>
+  <%= f.text_field :title %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.label :year_released %>
+  <%= f.text_field :year_released %>
+
+  <%= f.submit %>
+
+<% end %>

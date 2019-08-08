@@ -1,0 +1,19 @@
+<h2>New Games</h2>
+
+<form  action="/games"<%# Look for this name on main%> method="post"<%# we look for this method on main%>>
+  <label>
+    Name:
+    <input  name="name" placeholder="no minecraft" required>
+  </label>
+
+  <label>
+    Release:
+    <input type="interger" name="release year" placeholder="2019" required>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." required>
+  </label>
+  <button> Create Game </button>
+</form>

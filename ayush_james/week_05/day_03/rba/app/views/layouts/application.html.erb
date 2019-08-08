@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RBA - Bank Notes</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "All Bank Notes", notes_path %>
+      <%= link_to "New Bank Note", new_note_path %>
+    |
+      <%= link_to "All Icons", icons_path %>
+            <%= link_to "New Icon", new_icon_path %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

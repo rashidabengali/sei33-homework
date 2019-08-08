@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans&display=swap');
+
+body {
+  width: 100%;
+  background-color: lavender;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background: url('/images/bg.png');
+  background-size: cover;
+  color: #46362f;
+}
+
+h1, h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+h1, h2 {
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container {
+  max-width: 600px;
+  width: 70vw;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 3.5em auto;
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+nav a {
+  margin: 5px 10px;
+  color: #d6b59d;
+}
+
+nav a:hover {
+  color: #906756;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #46362f;
+  transition: color 0.3s;
+  padding: 5px 10px;
+  margin: 2px;
+}
+
+a:hover {
+  color: #d3b099;
+}
+
+.delete {
+  color: red;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+label {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+}
+
+select {
+  border-radius: 5px;
+  background-color: #eee;
+  border: none;
+  height: 2em;
+}
+
+.accessory_list {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.accessory_list li {
+  display: inline-block;
+}
+
+.accessory_list label {
+  border-radius: 5px;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  margin: 2px;
+}
+
+.accessory_list input {
+  display: none;
+}
+
+.accessory_list input:checked + label {
+  background-color: #ccc;
+}
+
+.required {
+  color: red;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.featureimg {
+  height: 100%;
+  width: 100%;
+}
+
+.create {
+
+}
+
+.editDino {
+  position: relative;
+  height: 100vh;
+}
+
+.create_dino_species {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.create_dino_accessory {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  max-width: 150px;
+}
+
+.create_identity {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.player {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 200px;
+  transition: left 0.1s;
+}
+
+.player img {
+  width: 100%;
+  height: 100%;
+}
+
+.game_spawnpoint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: red;
+}
+
+.game_fruit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
