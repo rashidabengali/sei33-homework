@@ -1,0 +1,17 @@
+<%= form_for @character do |f| %>
+  <%= f.label :name, :autofocus => true, :required => true %>
+  <%= f.text_field :name %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.label :voice_actor %>
+  <%= f.text_field :voice_actor %>
+
+  <%= f.label :movie_id %>
+  <%= f.select :movie_id, Movie.pluck(:title, :id), :include_blank => true %>
+
+
+  <%= f.submit %>
+
+<% end %>

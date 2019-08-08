@@ -187,3 +187,121 @@ played[this.attr(id)] = 'o'; player
 
 findWinner(played, 'x');
 */
+/*
+const isPrime = function (number) {
+  console.log(number);
+  for (let i = 0; i < Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false
+    }
+  }
+  return true
+}
+
+// console.log(isPrime(3));
+
+const noSieve = function (number) {
+  let range = []; // hold a range of numbers to check
+  let primes = []; // hold the list of primes we will return
+  for (let i = 0; i <= number; i++) {
+    range.push(i);
+  }
+
+  while (range.length > 0) {
+    let digit = range.shift()
+    if (isPrime(digit)) {
+      primes.push(digit)
+
+      // range = range.filter(function (num) {
+      //   return (num % digit !== 0)
+      // })
+    }
+  }
+  console.log(primes);
+}
+
+noSieve(20)
+*/
+
+const sieve = {
+
+  list: [],
+  //counter: 0,
+
+  calculate_primes: function( number ) {
+
+    // Initialise our range of primes; setting their value to true means we assume they're all
+
+    // for (let i = 0; i < number; i++) {
+    //   this.list[i] = true;
+    // }
+
+    this.list = new Array(number).fill(true)
+
+    for (let i = 2; i < this.list.length; i++) {
+
+      // 'currentNum' is a bit clearer than 'i'
+      let currentNum = i;
+
+      // Now loop through all the remaining numbers, testing whether they're divisible
+      // by currentNum
+      for (let j = currentNum + 1; j < this.list.length; j++) {
+
+        //this.counter++;
+
+        if ( this.list[j] === true && j % currentNum === 0 ) {
+          // If the number is divisible (i.e. remainder of 0) it's not a prime
+          this.list[j] = false;
+       }
+      } // inner for
+    } // outer for
+
+    // Print our final list of primes
+    // for (let i = 2; i < this.list.length; i++) {
+    //   if( this.list[i] === true ){
+    //     console.log(i);
+    //   }
+    // }
+
+    // const result = this.list.filter(element => element === true);
+    // console.log(this.list.filter(element => element === true));
+
+    // console.log(this.list.findIndex(true));
+    const index = this.list.findIndex(elm => elm === true);
+
+console.log(index); // 3
+    // console.log(result);
+    //console.log('iterations: ', this.counter);
+  }
+};
+
+sieve.calculate_primes(50);
+
+//console.log(( ["Hello", ["World", 42] ] ).flat());
+
+/*
+const sieve = number => {
+  // Make array of length number and fill with true
+  const sieve = new Array(max).fill(true)
+
+  // Iterate from 2 until square root of max
+  for (let i = 2; i < Math.sqrt(max); i++) {
+    // If the number is labelled a prime then we can start at i^2 and mark every multiple of i
+    // from there as NOT a prime
+    if (sieve[i]) {
+      for (let j = Math.pow(i, 2); j < max; j += i) {
+        sieve[j] = false
+      }
+    }
+  }
+
+  // Now we can reduce our sieve to only the Prime indexes that are true
+  return sieve.reduce((primes, isPrime, i) => {
+    if (isPrime && i > 1) {
+      primes.push(i)
+    }
+
+    return primes
+  }, [])
+}
+*/
