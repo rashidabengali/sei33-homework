@@ -1,0 +1,39 @@
+<h1>This Mountain!!</h1>
+
+<!-- #  id           :integer          primary key
+#  name         :text
+#  image        :text
+#  map          :text
+#  country      :text
+#  parent_range :text
+#  elevation    :integer
+# -->
+
+<form action="<%= mountains_path %>" method="post">
+  <label>
+    Name:
+    <input name="name" type="text" required autofocus>
+  </label>
+  <label>
+    Image:
+    <input name="image" type="url">
+  </label>
+  <label>
+    Map:
+    <input name="map" type="url">
+  </label>
+  <label>
+    Country:
+    <input name="country" type="text">
+  </label>
+  <label>
+    Parent Range:
+    <input name="parent_range" type="text">
+  </label>
+  <label>
+    Elevation:
+    <input name="elevation" type="number">
+  </label>
+
+  <button>Create Mountain</button>
+</form>
