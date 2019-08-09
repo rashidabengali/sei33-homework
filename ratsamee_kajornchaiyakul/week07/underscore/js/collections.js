@@ -29,6 +29,12 @@ const collections = {
             return word.length > 3;
         });
     },
+    checkSomWordsMoreThan20 : function () {
+        // Check if some words are over twenty characters long
+        return _.some(this.words, (w) => {
+            return w.length > 20;
+        });
+    },
     getUid : function() {
         // Get an array of all of the uids in people
         return _.pluck(this.people, "uid"); 
@@ -50,4 +56,4 @@ const collections = {
     
 }
 
-// console.log(collections.getThreeRandomNumbers());
+console.log(collections.getThreeRandomNumbers());
