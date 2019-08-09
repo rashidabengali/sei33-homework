@@ -7,30 +7,23 @@ $(document).ready( function () {
     fadeOut: 2000,
     fontSize: 80,
     timeInterval: 100,
-    textColor: '#32df1d',
-    addWord: '',
-    clearWord: function () {
-      $('<p>').remove();
-    }
-  };
+    textColor: '#32df1d'
+  }
 
   const gui = new dat.GUI();
 
   gui.add(controller, 'fadeIn', 0, 5000);
   gui.add(controller, 'fadeOut', 0, 5000);
-  gui.add(controller, 'fontSize', 10, 200);
-  gui.add(controller, 'addWord');
-  gui.add(controller, 'clearWord');
+  gui.add(controller, 'fontSize', 10, 500);
 
   const timerController = gui.add(controller, 'timeInterval', 1, 1000);
 
   timerController.onFinishChange(function (value) {
-    clearInterval(timer)
+    clearInterval(timer);
     timer = setInterval(displayWord, value)
   });
 
   gui.addColor(controller, 'textColor');
-
 
   const story = $('#story').text().split(/\W+/);
   //console.log(story);
@@ -44,15 +37,7 @@ $(document).ready( function () {
 
     const randomIndex = getRandomValue(story.length);
     //console.log(randomIndex);
-
-    let word = '';
-
-    if (controller.addWord.length > 0) {
-      word = controller.addWord
-    } else {
-      word = story[randomIndex];
-    }
-    // const word = story[randomIndex];
+    const word = story[randomIndex];
     //console.log(word);
 
     const content = $('<p>').text(word);
