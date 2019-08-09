@@ -21,51 +21,49 @@ var words = [
 
 
 // Sort the people by 'uid'
-let peopleUdi = _.sortBy(people, "uid");
-console.log(peopleUdi);
 
-// okay
+console.table(_(people).sortBy('uid'));
+
+// let peopleUdi = _.sortBy(people, "uid");
+// console.log(peopleUdi);
+
 
 // Group the random words by the lower case version of their first letter
-let groupRandom = _.groupBy(words, "lowerCase");
+const groupRandom = _(words).groupBy(function (w) {
+  return w[0].toLowerCase();
+});
 console.log(groupRandom);
-
-
-
 
 // Check to see if all the words have more than 3 characters
 
-let characters = _.every(words, function () { return words > 3; });
+const characters = _(words).every(function (w) { return w.lenght > 3; });
 console.log(characters);
-
-// okay
 
 // Check if some words are over twenty characters long
 
-let someWords = _.some(words, function () { return words > 20; });
+let someWords = function (words) { return words.lenght > 20; };
+
+const over20 = _(words).lenght
 console.log(someWords);
 
-// okay
 
 // Get an array of all of the uids in people
-
-
+const uids = _(people).pluck('uid');
+console.log(uids);
 
 
 
 // Find the person with the highest uid
-const highestUid = _.max(people, function (person) { return person.uid; });
+const highestUid = _(people).max('uid');
 console.log(highestUid);
 
 
 // Return an object that says how many even numbers and how many 
 // odd numbers there are in numbers
-let numbersEvens = _.filter(numbers, function (num) { return num % 2 == 0; });
-let numbersOdds = _.filter(numbers, function (num) { return num % 2 != 0; });
+const numbersEvens = _.filter(numbers, function (num) { return num % 2 == 0; });
+const numbersOdds = _.filter(numbers, function (num) { return num % 2 != 0; });
 console.log(numbersEvens);
 console.log(numbersOdds);
-
-// okay
 
 // Get three random numbers out of numbers
 
@@ -88,21 +86,25 @@ var uncompactedArr = ["hello", false, NaN, undefined, "quantom bogo-sort"];
 var arrToTransform = [["age", "location"], [NaN, undefined]];
 
 // Create an array of every five numbers between 30 and 101
+console.log(_.range(30, 101, 5));
 
 
 // Turn bumpyArr into one flat array (no nested arrays)
+console.log(_(bumpyArr).flatten());
 
 // Remove all of the falsey elements in the uncompactedArr
-var filtered = _.filter(uncompactedArr, function (element) {
-  return element !== 0
-});
-console.log(filtered);
+console.log(_(uncompactedArr).compact());
 
 
 // Find all of the unique elements in the following arrays - [ 1, 25, 100 ], [ 1, 14, 25 ] and 24, Infinity, -0
 
+const uniques = _.unique(_.flatten[1, 25, 100], [1, 14, 25][24, Infinity, -0]);
+console.log(uniques);
 // Find the index of the first element in numbers that is over 7 and is even
-
+const firstIndex = _(numbers).findIndex(function (n) {
+  return (n > 7) && (n % 2 === 0);
+});
+console.log(firstIndex)
 // Turn arrToTransform into an object that looks like this - { age: NaN, location: undefined }
 
 
