@@ -13,8 +13,6 @@ class App extends React.Component {
 
         <Game />
 
-
-
       </div>
     );
 
