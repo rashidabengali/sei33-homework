@@ -1,0 +1,16 @@
+<%= form_for @country do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name, :autofocus => true, :required => true %>
+<%= f.label :image %>
+<%= f.url_field :image %>
+<%= f.label :continent %>
+<%= f.text_field :continent %>
+<%= f.label :population %>
+<%= f.number_field :population %>
+<%= f.label :language %>
+<%= f.text_field :language %>
+<%= f.label :currency %>
+<%= f.text_field :currency %>
+<%= f.submit :class => 'input'%>
+<% end %>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Soccer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to 'All Teams', teams_path %>
+      <%= link_to 'New Team', new_team_path %>
+      |
+      <%= link_to 'All Players', players_path %>
+      <%= link_to 'New Player', new_player_path %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

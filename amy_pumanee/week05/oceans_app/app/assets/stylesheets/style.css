@@ -1,0 +1,50 @@
+body {
+background-color: azure;
+}
+
+h2{
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.feature {
+  max-width: 100%;
+}
+
+.controls {
+  background-color: lightblue;
+  text-align: right;
+  padding: 10px;
+}
+
+nav {
+  text-align: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #048271;
+}
+
+.nav {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #54eac1;

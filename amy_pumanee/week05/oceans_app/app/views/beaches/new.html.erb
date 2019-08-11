@@ -1,0 +1,26 @@
+<h2>New beach</h2>
+
+<form action="<%= beaches_path %>" method="post">
+  <label>
+    Name:
+    <input name="name" required autofocus>
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image">
+  </label>
+  <label>
+    Location:
+    <input type="text" name="location">
+  </label>
+  <label>
+    Area:
+    <input type="number" name="area">
+  </label>
+  <label>
+    Population:
+    <input type="number" name="population">
+  </label>
+
+  <button>Create beach</button>
+</form>

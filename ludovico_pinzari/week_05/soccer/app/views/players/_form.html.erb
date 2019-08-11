@@ -1,0 +1,13 @@
+<%= form_for @player do |p| %>
+  <%= p.label :name %>
+  <%= p.text_field :name, :autofocus => true, :required => true %>
+  <%= p.label :dob, "Date of birth" %>
+  <%= p.text_field :dob, :placeholder => 'YYYY-MM-DD' %>
+  <%= p.label :position %>
+  <%= p.text_field :position %>
+  <%= p.label :image %>
+  <%= p.url_field :image %>
+  <%= p.label :team_id %>
+  <%= p.select :team_id, Team.pluck(:name, :id), :include_blank => true %>
+  <%= p.submit %>
+<% end %>
