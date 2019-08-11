@@ -28,8 +28,13 @@ const uidSorted = _(people).sortBy('uid');
 console.log(uidSorted);
 
 // - Group the random words by the lower case version of their first letter
-// const lowerCase = _(words).groupBy('first.toLowerCase');
-// console.log(lowerCase); 
+// const lowerCase = _(words).groupBy(function (word) {
+//   return word[0].toLowerCase();
+// });
+
+const lowerCase = _(words).groupBy( word => word[0].toLowerCase() );
+
+console.log(lowerCase); 
 
 // - Check to see if all the words have more than 3 characters
 const moreThanThree = _(words).every(function (word) {
@@ -52,6 +57,12 @@ console.log(highestUid);
 
 // - Return an object that says how many even numbers and how many odd numbers there are in ` numbers `
 const evenOdd = _(numbers).countBy(function (num) {
+  // if (num % 2 === 0) {
+  //   return 'even';
+  // }
+  // else {
+  //   return 'odd';
+  // }
     return num % 2 === 0 ? 'even' : 'odd';
 })
 console.log(evenOdd);
@@ -63,24 +74,3 @@ console.log(random);
 // ## Remember!
 
 // // You have the [documentation!](https://underscorejs.org/)
-
-// Log out the answers to all of the following questions!
-
-// Here is some data that you can work with.
-
-const bumpyArr = ["hello", "maytag", [[[["sigmonster"]], "swizzle"]]];
-const uncompactedArr = [ "hello", false, NaN, undefined, "quantom bogo-sort" ];
-
-const arrToTransform = [[ "age", "location" ], [ NaN, undefined ]];
-
-const arrayOfFive = function (a, b) {
-    for (let i = a; i < b, i++)
-}
-range(30,101)
-
-// Create an array of every five numbers between 30 and 101
-// Turn bumpyArr into one flat array (no nested arrays)
-// Remove all of the falsey elements in the uncompactedArr
-// Find all of the unique elements in the following arrays - [ 1, 25, 100 ], [ 1, 14, 25 ] and 24, Infinity, -0
-// Find the index of the first element in numbers that is over 7 and is even
-// Turn arrToTransform into an object that looks like this - { age: NaN, location: undefined }
