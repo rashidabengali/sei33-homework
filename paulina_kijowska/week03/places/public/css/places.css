@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+
+.container {
+/* margin: 0 auto; */
+background-color: rgba(190, 144, 212,0.3);
+  padding: 20px;
+width: 50%;
+min-height: 100%;
+  color: white;
+  text-align: center;
+  border-radius: 30px;
+  position: absolute;
+  left: 25%;
+
+}
+
+.movingInRight {
+
+  animation: moveInRight 1s ease-out;
+} */
+
+/* @keyframes moveInRight {
+0% {
+opacity: 0;
+transform: translateX(30px);
+}
+
+80% {
+transform: translateX(-10px);
+}
+100% {
+opacity: 1;
+transform: translate(0);
+} */
+
+
+label {
+  display: block;
+  padding: 10px;
+}
+
+nav a {
+color: white;
+padding-right: 30px;
+font-size: 18px;
+display: inline-block;
+
+}
+
+nav a {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  text-decoration: none;
+}
+
+a{
+  color: white;
+    font-family: 'Muli', sans-serif;
+    text-decoration: none;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://media.giphy.com/media/BlcaMoYeN6hYk/giphy.gif)
+    center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+
+
+
+}
+
+nav a:hover {
+transform: rotate(20deg);
+}
+
+.text {
+
+  margin-top: 70px;
+}
+
+h1, #text2 {
+
+  	display: inline;
+  	position: relative;
+  	font: 50px Helvetica, Sans-Serif;
+  	letter-spacing: -5px;
+  	color: rgba(102,0,102,1);
+    /* margin: 70px; */
+  }
+
+  h1:after {
+  	content: "The Bucket List";
+  	position: absolute; left: -3px; top: 2px;
+  	color: rgba(102,51,204,1);
+  }
+
+    #text2:after {
+    	content: "Already Seen:";
+    	position: absolute; left: -3px; top: 2px;
+    	color: rgba(102,51,204,1);
+  /* margin: 70px; */
+}

@@ -1,0 +1,13 @@
+<% form_for @icon do |f| %>
+  <%= f.label :name  %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+  <%= f.label :occupation  %>
+  <%= f.text_field :occupation, :placeholder => "Inventor" %>
+  <%= f.label :known, "Known for"  %>
+  <%= f.text_field :known, :placeholder => "Inventing the lighbulb"%>
+  <%= f.label :image  %>
+  <%= f.url_field :image %>
+  <%= f.label :note_id, "Associated bank note" %>
+  <%= f.select :note_id, Note.pluck(:value, :id), :include_blank => true %>
+  <%= f.submit %>
+<% end %>

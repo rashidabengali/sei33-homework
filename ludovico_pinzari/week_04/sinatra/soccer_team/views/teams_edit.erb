@@ -1,0 +1,15 @@
+<h2>Edit Team</h2>
+
+<form action="/teams/<%= @team["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="<%= @team["name"] %>" required value="<%= @team["name"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @team["image"] %>">
+  </label>
+
+  <button>Update team</button>
+</form>

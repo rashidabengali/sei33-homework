@@ -1,0 +1,14 @@
+<h1><%= @theory.name %></h1>
+
+<%= image_tag @theory.image, :class => 'feature' if @theory.image.present? %>
+
+<ul>
+  <li>Name: <%= @theory.name %></li>
+  <li>Description: <%= @theory.description %></li>
+  <% if @theory.scientist.present? %>
+    <li>Created By: <%= link_to @theory.scientist.name, @theory.scientist %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit theory", edit_theory_path(@theory.id) %>
+<%= button_to "Delete theory", @theory, :method => 'delete', :data => {:confrim => "Are you sure you want to delete"} %>

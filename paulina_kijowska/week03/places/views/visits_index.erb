@@ -1,0 +1,11 @@
+<h1 id="text2">Already Seen: </h1>
+
+<div class="fontStyle">
+<% @visits.each do |visit| %>
+<p>
+<a href="/visits/<%= visit.id %>">
+  <%= visit.name %>
+</a><i class="fas fa-check"></i>
+</p>
+<% end %>
+</div>

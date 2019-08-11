@@ -1,0 +1,14 @@
+<h1>The New Australian Bank Notes</h1>
+<p>Fun Fact: <span title='Pun Intended?'>Note*</span> how the width of each note is different! (All of them have the height of 65mm)</p>
+
+<% @notes.each do |note| %>
+  <%= image_tag note.image if note.image.present? %>
+
+  <ul>
+    <li> Dollar Value:<%= link_to note.value, note %> </li>
+    <li> Note Colour: <%= note.color %> </li>
+    <% if note.issue.present? %>
+      <li> Date of Issue: <%= note.issue.strftime '%B %e, %Y' %> </li>
+    <% end %>
+  </ul>
+<% end %>

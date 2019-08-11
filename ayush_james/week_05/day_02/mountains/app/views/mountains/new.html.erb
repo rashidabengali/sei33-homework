@@ -1,0 +1,33 @@
+<h2>NEW MOUNTAIN!</h2>
+<div class="form">
+<p><i><strong>Sick! A New Mountain!</strong></i></p>
+
+<form action="<%= mountains_path %>" method="post">
+  <label>
+    Name:
+    <input type="text" placeholder="Mount Everest" name="name" required autofocus>
+  </label>
+
+  <label>
+    Image:
+    <input type="text" placeholder="https://www.img..." name="image">
+  </label>
+
+  <label>
+    Height (metres):
+    <input type="number" placeholder="8848" name="height">
+  </label>
+
+  <label>
+    First Ascent (year):
+    <input type="number" placeholder="1953" name="ascent" max="4">
+  </label>
+
+  <label>
+    Country:
+    <input type="text" placeholder="Nepal/China" name="country">
+  </label>
+
+  <button><strong>UPLOAD!</strong></button>
+</form>
+</div>
