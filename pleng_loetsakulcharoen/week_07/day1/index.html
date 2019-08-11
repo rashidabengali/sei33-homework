@@ -3,16 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Google Books Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
 
   </head>
   <body>
-    <h1>Books Search</h1>
-    <input id="search_field" type="search" name="book-search" placeholder="search books">
-    <button id="search">search</button>
+    <h1>Book Cover Search</h1>
+    <form id="search" action="index.html" >
+      <label>
+          Book title:
+          <input type="search" id="book_title" placeholder="Jaws">
+      </label>
 
-<div id="container">
+      <button id="search">search</button>
+    </form>
 
-</div>
+    <img id="cover">
 
     <script src="js/exercise.js"></script>
   </body>
