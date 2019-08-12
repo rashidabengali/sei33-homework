@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-// async/await works with async functions 
-// e.g api requests 
 class Books extends Component {
   state = {
     books: [],
@@ -15,6 +13,8 @@ class Books extends Component {
       alert('Your should inform the book title');
       return;
     };
+    //async/await works with async functions 
+    // e.g api requests 
     const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=title:${title}`);
     this.setState({ books: response.data.items })
   };
@@ -27,9 +27,9 @@ class Books extends Component {
     const { books } = this.state;
     return (
       <div>
-        <p>Books</p>
-        <input type="search" placeholder="search by title" onInput={this.handleInput} />
-        <button type="button" onClick={this.fetchBooksByTitle}>Search</button>
+        <p className="title">Books</p>
+        <input className="search" type="search" placeholder="search by title" onInput={this.handleInput} />
+        <button className="submit" type="button" onClick={this.fetchBooksByTitle}>Search</button>
         <hr />
         {/* loop in react to add images */}
         {books.map((book) => (
