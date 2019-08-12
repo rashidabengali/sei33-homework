@@ -10,11 +10,16 @@ class Books extends Component {
   };
   fetchBooksByTitle = async () => {
     const { title } = this.state;
+    // if title is empty alert with message 'you should inform the book title'
+    if (title === '') {
+      alert('Your should inform the book title');
+      return;
+    };
     const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=title:${title}`);
     this.setState({ books: response.data.items })
   };
 
-  _handleInput = (event) => {
+  handleInput = (event) => {
     this.setState({ title: event.target.value })
   }
 
@@ -23,9 +28,10 @@ class Books extends Component {
     return (
       <div>
         <p>Books</p>
-        <input type="search" placeholder="search by title" onInput={this._handleInput} />
+        <input type="search" placeholder="search by title" onInput={this.handleInput} />
         <button type="button" onClick={this.fetchBooksByTitle}>Search</button>
         <hr />
+        {/* loop in react to add images */}
         {books.map((book) => <img src={book.volumeInfo.imageLinks.thumbnail} key={book.volumeInfo.imageLinks.thumbnail} />)}
       </div>
 
