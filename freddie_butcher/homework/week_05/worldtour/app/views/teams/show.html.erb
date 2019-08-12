@@ -1,0 +1,17 @@
+<h1><%= @team.brand %></h1>
+
+<%= image_tag @team.image, :class => 'feature' if @team.image.present? %>
+
+  <ul>
+    <li>Brand: <%= @team.brand %></li>
+    <li>Model: <%= @team.model %></li>
+    <li>Year: <%= @team.year %></li>
+    <li>Team: <%= @team.team %></li>
+  </ul>
+
+ LINK TO 2nd DB - SEE SHOWS
+
+ <div class = "controls">
+<%= link_to "Edit team", edit_team_path(@team) %>
+<%= link_to "Delete team", @team, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+ </div>
