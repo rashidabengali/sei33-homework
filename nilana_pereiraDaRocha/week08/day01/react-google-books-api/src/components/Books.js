@@ -32,15 +32,17 @@ class Books extends Component {
         <button type="button" onClick={this.fetchBooksByTitle}>Search</button>
         <hr />
         {/* loop in react to add images */}
-        {books.map((book) => <img src={book.volumeInfo.imageLinks.thumbnail} key={book.volumeInfo.imageLinks.thumbnail} />)}
+        {books.map((book) => (
+          <a href={book.volumeInfo.infoLink}>
+
+            <img src={book.volumeInfo.imageLinks.thumbnail} key={book.volumeInfo.imageLinks.thumbnail} />
+          </a>
+        ))}
       </div>
 
 
     )
   }
 }
-
-
-
 
 export default Books;
