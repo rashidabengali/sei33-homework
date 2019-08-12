@@ -1,0 +1,13 @@
+<%= form_for @bike do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand, :autofocus => true, :required => true %>
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+  <%= f.label :team %>
+  <%= f.text_field :team %>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <%= f.submit %>
+<% end %>

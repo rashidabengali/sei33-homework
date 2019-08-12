@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+
+  <link rel="stylesheet" href="css/styles.css"/>
+
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+  crossorigin=""></script>
+
+
+
+  <title>International Space Station Location</title>
+
+</head>
+<body>
+
+<h1>International Space Station Location</h1>
+
+<form id='refresh'>
+    <button id="refresh">Refresh</button>
+</form>
+
+<div>
+    <div id="longitude_data">
+        <p>Sample longitude</p>
+    </div>
+
+    <div id="latitude_data">
+        <p>Sample latitude</p>
+    </div>
+</div>
+
+<div id="mapid"></div>
+
+
+  <script src = "js/jquery.js"></script>
+  <script src = "js/space_station.js"></script>
+</body>
+</html>
