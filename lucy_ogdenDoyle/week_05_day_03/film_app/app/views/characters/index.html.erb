@@ -1,0 +1,7 @@
+<h1>All Characters</h1>
+
+<ul>
+<% @characters.each do |character| %>
+  <li><%= link_to character.name, character %></li>
+<% end %>
+</ul>

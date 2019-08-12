@@ -188,89 +188,86 @@ played[this.attr(id)] = 'o'; player
 findWinner(played, 'x');
 */
 /*
-const isPrime = function (number) {
-  console.log(number);
-  for (let i = 0; i < Math.sqrt(number); i++) {
-    if (number % i === 0) {
-      return false
-    }
-  }
-  return true
+const array1 = ["one", "two", "three", "four"]
+
+const reverseArray = function (array) {
+  let reverse = [];
+  // for (let i = array.length-1; i >= 0; i--) {
+  //   reverse.push(array[i]);
+  // }
+  // for (let i = 0; i < array.length; i++) {
+  //   reverse.unshift(array[i]);
+  // }
+  // console.log(reverse);
+  console.log(array.reverse());
 }
 
-// console.log(isPrime(3));
+reverseArray(array1);
 
-const noSieve = function (number) {
-  let range = []; // hold a range of numbers to check
-  let primes = []; // hold the list of primes we will return
-  for (let i = 0; i <= number; i++) {
-    range.push(i);
-  }
+const array2 = ["one", "two", ["three", "four"]];
 
-  while (range.length > 0) {
-    let digit = range.shift()
-    if (isPrime(digit)) {
-      primes.push(digit)
+const flattenArray = function (array) {
+  let flatten = [];
+  //for (let i = 0; i < array.length; i++) {
 
-      // range = range.filter(function (num) {
-      //   return (num % digit !== 0)
-      // })
-    }
-  }
-  console.log(primes);
+    // if (array[i] instanceof Array) {
+    //   for (let j = 0; j < array[i].length; j++) {
+    //     flatten.push(array[i][j])
+    //   }
+    // } else {
+    //   flatten.push(array[i])
+    // }
+
+    // if (Array.isArray(array[i])) {
+    //   flatten = flatten.concat(array[i])
+    // } else {
+    //   flatten.push(array[i])
+    // }
+
+  //}
+  //console.log(flatten);
+  console.log(array.flat());
 }
 
-noSieve(20)
+flattenArray(array2);
 */
 
-const sieve = {
-
-  list: [],
-  //counter: 0,
-
-  calculate_primes: function( max ){
-
-    // Initialise our range of primes; setting their value to true means we assume they're all
-    // primes before we start testing them
-    for (let i = 2; i < max; i++) {
-      this.list[i] = true;
-    }
-
-    for (let i = 2; i < this.list.length; i++) {
-
-      // 'currentNum' is a bit clearer than 'i'
-      let currentNum = i;
-
-      // Now loop through all the remaining numbers, testing whether they're divisible
-      // by currentNum
-      for (let j = currentNum + 1; j < this.list.length; j++) {
-
-        //this.counter++;
-
-        if ( this.list[j] === true && j % currentNum === 0 ){
-          // If the number is divisible (i.e. remainder of 0) it's not a prime
-          this.list[j] = false;
-       }
-
-      } // inner for
-    } // outer for
-
-
-    // Print our final list of primes
-    for (let i = 0; i < this.list.length; i++) {
-      if( this.list[i] === true ){
-        console.log(i);
+// Version 1
+const pairwise = function (array, sum) {
+  let result = 0;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i+1; j < array.length; j++) {
+      if (array[i] + array[j] === sum) {
+        result += i + j;
+        array[i] = "";
+        array[j] = "";
       }
     }
-
-    // Note the number of iterations involved; it grows exponentially as the range of numbers
-    // gets larger (this is a common pattern when nested loops are involved); is there a more
-    // efficient way to implement this sieve algorithm?
-    //console.log('iterations: ', this.counter);
-
   }
-};
+  return result;
+}
 
-sieve.calculate_primes(30);
+// pairwise([7, 9, 11, 13, 15], 20);
+// console.log(pairwise([1, 4, 2, 3, 0, 5], 7)); // => 11
+// console.log(pairwise([1, 3, 2, 4], 4)); // => 1
+// console.log(pairwise([0, 0, 0, 0, 1, 1], 1)); // => 10
 
-//console.log(( ["Hello", ["World", 42] ] ).flat());
+// Version 2
+// const pairwise = function (list, sum) {
+const pairwise = (list, sum) => {
+  // const result = list.reduce(function (total, element, index) {
+  const result = list.reduce((total, element, index) => {
+    let searchElement = sum - element;
+    if (list.indexOf(searchElement) !== -1 && list.indexOf(searchElement) !== index) {
+      total += index + list.indexOf(searchElement);
+      list.splice(index, 1, NaN);
+      list.splice(list.indexOf(searchElement), 1, NaN);
+    }
+    return total;
+  }, 0);
+
+  console.log(result);
+}
+//
+pairwise([7, 9, 11, 13, 15], 20);
+pairwise([0, 0, 0, 0, 1, 1], 1);
