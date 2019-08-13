@@ -2,7 +2,7 @@ console.log('run');
 
 /*
 // Version 1
-const pairwise = {
+const phoneNumberCheck = {
 
   cleanNumber: function (input) {
     let number = [];
@@ -41,7 +41,7 @@ console.log(pairwise.getFormattedNumber('11234567890'));
 
 //Version 2
 
-const pairwise = {
+const phoneNumberCheck = {
 
   cleanNumber (input) {
     let number = input.match(/\d/g);
