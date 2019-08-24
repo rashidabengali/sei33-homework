@@ -10,15 +10,15 @@ let companies = {};
 
 $.ajax(url).done(function (data) {
     if (data.page_count === 0) { return };
-    console.log(data);
+    // console.log(data);
     companies = data.results;
-    console.log(companies)
+    // console.log(companies)
     companies.forEach( function (company) {
         $('#companies ul').append(`<li><img src=${ company.refs.logo_image }>${ company.name }</li>`);
-        console.log(company.refs.logo_image);
-        console.log(company.name);
+        // console.log(company.refs.logo_image);
+        // console.log(company.name);
         company.industries.forEach (function (industry) {
-            console.log(industry.name);
+            // console.log(industry.name);
             if ($.inArray(industry.name, industryList) !== -1) { return };
             industryList.push(industry.name);
             $('#industry_name').append(`<option>${ industry.name }</option>`);

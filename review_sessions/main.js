@@ -187,7 +187,7 @@ played[this.attr(id)] = 'o'; player
 
 findWinner(played, 'x');
 */
-
+/*
 const array1 = ["one", "two", "three", "four"]
 
 const reverseArray = function (array) {
@@ -230,3 +230,74 @@ const flattenArray = function (array) {
 }
 
 flattenArray(array2);
+*/
+
+/*
+// Version 1
+
+const pairwise = {
+
+  cleanNumber: function (input) {
+    let number = [];
+    let numerals = "0123456789"
+
+    for (let i = 0; i < input.length; i++) {
+      if (numerals.indexOf(input[i]) !== -1) {
+        number.push(input[i])
+      }
+    }
+    return number.join("")
+  },
+
+  CheckValidation: function (input) {
+    const number = this.cleanNumber(input)
+    if (number.length === 11 & number[0] === "1") {
+      return number.substr(1)
+    } else if (number.length === 10) {
+      return number;
+    } else {
+      return "0000000000";
+    }
+  },
+
+  getFormattedNumber: function (input) {
+    const validNumber = this.CheckValidation(input)
+    const areaCode = validNumber.substr(0, 3)
+    const exchangeCode = validNumber.substr(3,3);
+    const remaining = validNumber.substr(6);
+    return `(${areaCode}) ${exchangeCode}-${remaining}`
+  }
+
+}
+
+ console.log(pairwise.getFormattedNumber('11234567890'));
+*/
+  // console.log('112aghh34567890'.match(/\d/g));
+
+// Version 2
+  const pairwise = {
+
+    cleanNumber (input) {
+      // let number = input.match(/\d/g);
+      let number = input.replace(/[^0-9]+/g, '');
+      // number = number.join("");
+
+      return (number.length === 11 && number[0] === "1") ? number.substr(1) : number
+    },
+
+    CheckValidation (input) {
+      const number = this.cleanNumber(input)
+      return (number.length !== 10) ? "0000000000" : number
+    },
+
+    getFormattedNumber (input) {
+      const validNumber = this.CheckValidation(input)
+      const areaCode = validNumber.substr(0, 3)
+      const exchangeCode = validNumber.substr(3,3);
+      const remaining = validNumber.substr(6);
+      return `(${areaCode}) ${exchangeCode}-${remaining}`
+    }
+
+  }
+
+   console.log(pairwise.getFormattedNumber('11234567890'));

@@ -10,7 +10,7 @@ $(document).ready( function () {
     textColor: '#32df1d',
     addWord: '',
     clearWord: function () {
-      $('<p>').remove()
+      $('<p>').remove();
     }
   };
 
@@ -19,6 +19,8 @@ $(document).ready( function () {
   gui.add(controller, 'fadeIn', 0, 5000);
   gui.add(controller, 'fadeOut', 0, 5000);
   gui.add(controller, 'fontSize', 10, 200);
+  gui.add(controller, 'addWord');
+  gui.add(controller, 'clearWord');
 
   const timerController = gui.add(controller, 'timeInterval', 1, 1000);
 
@@ -28,8 +30,6 @@ $(document).ready( function () {
   });
 
   gui.addColor(controller, 'textColor');
-  gui.add(controller, 'addWord');
-  gui.add(controller, 'clearWord');
 
 
   const story = $('#story').text().split(/\W+/);
@@ -44,7 +44,15 @@ $(document).ready( function () {
 
     const randomIndex = getRandomValue(story.length);
     //console.log(randomIndex);
-    const word = story[randomIndex];
+
+    let word = '';
+
+    if (controller.addWord.length > 0) {
+      word = controller.addWord
+    } else {
+      word = story[randomIndex];
+    }
+    // const word = story[randomIndex];
     //console.log(word);
 
     const content = $('<p>').text(word);
