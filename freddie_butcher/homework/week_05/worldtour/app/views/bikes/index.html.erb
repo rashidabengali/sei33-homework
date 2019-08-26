@@ -1,0 +1,11 @@
+<h1>All Bikes</h1>
+<h2>Test</h2>
+<% @bikes.each do |bike| %>
+  <%= image_tag bike.image, :class => 'thumb' if bike.image.present? %>
+  <ul>
+    <li>Brand: <%= link_to bike.brand, bike %></li>
+    <li>Model: <%= bike.model %></li>
+    <li>Year: <%= bike.year %></li>
+    <li>Team: <%= bike.team %></li>
+  </ul>
+<% end %>

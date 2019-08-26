@@ -1,0 +1,17 @@
+<h1><%= @bike.brand %></h1>
+
+<%= image_tag @bike.image, :class => 'feature' if @bike.image.present? %>
+
+  <ul>
+    <li>Brand: <%= @bike.brand %></li>
+    <li>Model: <%= @bike.model %></li>
+    <li>Year: <%= @bike.year %></li>
+    <li>Team: <%= @bike.team %></li>
+  </ul>
+
+ LINK TO 2nd DB - SEE SHOWS
+
+ <div class = "controls">
+<%= link_to "Edit bike", edit_bike_path(@bike) %>
+<%= link_to "Delete bike", @bike, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+ </div>

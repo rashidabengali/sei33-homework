@@ -1,0 +1,12 @@
+body {
+background-color: black;
+}
+
+#story {
+  display: none;
+}
+
+p {
+  display: none;
+  position: absolute;
+}
