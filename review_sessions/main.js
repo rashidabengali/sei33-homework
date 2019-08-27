@@ -232,42 +232,274 @@ const flattenArray = function (array) {
 flattenArray(array2);
 */
 
+/*
 // Version 1
-const pairwise = function (array, sum) {
-  let result = 0;
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i+1; j < array.length; j++) {
-      if (array[i] + array[j] === sum) {
-        result += i + j;
-        array[i] = "";
-        array[j] = "";
+
+const pairwise = {
+
+  cleanNumber: function (input) {
+    let number = [];
+    let numerals = "0123456789"
+
+    for (let i = 0; i < input.length; i++) {
+      if (numerals.indexOf(input[i]) !== -1) {
+        number.push(input[i])
+      }
+    }
+    return number.join("")
+  },
+
+  CheckValidation: function (input) {
+    const number = this.cleanNumber(input)
+    if (number.length === 11 & number[0] === "1") {
+      return number.substr(1)
+    } else if (number.length === 10) {
+      return number;
+    } else {
+      return "0000000000";
+    }
+  },
+
+  getFormattedNumber: function (input) {
+    const validNumber = this.CheckValidation(input)
+    const areaCode = validNumber.substr(0, 3)
+    const exchangeCode = validNumber.substr(3,3);
+    const remaining = validNumber.substr(6);
+    return `(${areaCode}) ${exchangeCode}-${remaining}`
+  }
+
+}
+
+ console.log(pairwise.getFormattedNumber('11234567890'));
+*/
+  // console.log('112aghh34567890'.match(/\d/g));
+
+// Version 2
+/*
+  const pairwise = {
+
+    cleanNumber (input) {
+      // let number = input.match(/\d/g);
+      let number = input.replace(/[^0-9]+/g, '');
+      // number = number.join("");
+
+      return (number.length === 11 && number[0] === "1") ? number.substr(1) : number
+    },
+
+    CheckValidation (input) {
+      const number = this.cleanNumber(input)
+      return (number.length !== 10) ? "0000000000" : number
+    },
+
+    getFormattedNumber (input) {
+      const validNumber = this.CheckValidation(input)
+      const areaCode = validNumber.substr(0, 3)
+      const exchangeCode = validNumber.substr(3,3);
+      const remaining = validNumber.substr(6);
+      return `(${areaCode}) ${exchangeCode}-${remaining}`
+    }
+
+  }
+
+   console.log(pairwise.getFormattedNumber('11234567890'));
+*/
+
+/*
+let list = [];
+  const max = 20;
+  for (let first = 2; first < max; first++) {
+    let found = false;
+      for (let j = 2; j <= first; j++) {
+        if (!found && (first !== j) && first % j === 0){
+          found = true;
+        } else if (!found && first===j) {
+          list.push(first)
+        }
+      }
+  }
+    console.log(list.join(", "));
+
+*/
+/*
+const findPrime = function (max) {
+
+  let list = [];
+
+  let primes = [];
+
+  // for (let i = 0; i < max; i++) {
+  //   list[i] = true;
+  // }
+
+  list = new Array(max).fill(true)
+  console.log('old', list);
+
+  for (let i = 2; i < list.length; i++) {
+    for (let j = i + 1; j < list.length; j++) {
+      if (list[j] === true & j % i === 0) {
+        list[j] = false;
       }
     }
   }
-  return result;
+  console.log('new', list);
+
+  // for (let i = 2; i < list.length; i++) {
+  //   if (list[i] === true) {
+  //     primes.push(i);
+  //   }
+  // }
+  // console.log(primes);
+
+  primes = list.reduce(function (array, element, index) {
+    if (element === true) {
+      array.push(index)
+    }
+    return array;
+  }, [])
+
+  console.log(primes);
+
+  for (let i = 0; i < array.length; i++) {
+    array[i]
+  }
 }
 
-// pairwise([7, 9, 11, 13, 15], 20);
-// console.log(pairwise([1, 4, 2, 3, 0, 5], 7)); // => 11
-// console.log(pairwise([1, 3, 2, 4], 4)); // => 1
-// console.log(pairwise([0, 0, 0, 0, 1, 1], 1)); // => 10
+findPrime(10);
+*/
+
+// Version 1
+
+// const primeFactors = function (number) {
+//
+//   let factors = [];
+//
+//   let i = 2;
+//
+//   while (number > 1) {
+//     if (number % i === 0) {
+//       factors.push(i);
+//       number = number / i;
+//     } else {
+//       i++;
+//     }
+//   }
+//   console.log(factors);
+// }
+
+// primeFactors(60);
 
 // Version 2
-// const pairwise = function (list, sum) {
-const pairwise = (list, sum) => {
-  // const result = list.reduce(function (total, element, index) {
-  const result = list.reduce((total, element, index) => {
-    let searchElement = sum - element;
-    if (list.indexOf(searchElement) !== -1 && list.indexOf(searchElement) !== index) {
-      total += index + list.indexOf(searchElement);
-      list.splice(index, 1, NaN);
-      list.splice(list.indexOf(searchElement), 1, NaN);
-    }
-    return total;
-  }, 0);
+/*
+const primeFactors = {
 
-  console.log(result);
+  range: [],
+
+  primeRange: [],
+
+  factors: [],
+
+  findRange: function (number) {
+    for (let i = 2; i <= number; i++) {
+      this.range.push(i);
+    }
+    return this.range;
+  },
+
+  findPrimeRange: function (array) {
+
+    let isPrime;
+
+    for (let i = 0; i < array.length; i++) {
+      isPrime = true;
+      // console.log('outer', array[i]);
+      for (let j = 2; j < array[i]; j++) {
+        // console.log('inner', array[i]);
+        if (array[i] % j === 0) {
+          // console.log('mod', array[i]);
+          isPrime = false;
+        }
+      }
+      if (isPrime === true) {
+        this.primeRange.push(array[i])
+      }
+    }
+    return this.primeRange;
+  },
+
+  findPrimeFactors: function (number) {
+
+    let primes = this.findPrimeRange(this.findRange(number));
+
+    for (let i = 0; i < primes.length; i++) {
+      while (number % primes[i] === 0) {
+        this.factors.push(primes[i]);
+        number = number / primes[i];
+      }
+    }
+    // return this.factors;
+    const newArray = Array.from(new Set(this.factors));
+    return newArray;
+  }
 }
-//
-pairwise([7, 9, 11, 13, 15], 20);
-pairwise([0, 0, 0, 0, 1, 1], 1);
+
+console.log(primeFactors.findPrimeFactors(60));
+*/
+
+const happyNumbers = {
+
+  happyList: [],
+
+  findSquareSum: function (digit) {
+
+    let sum = 0;
+    let stringNumber = digit.toString();
+
+    for (let i = 0; i < stringNumber.length; i++) {
+      sum += +stringNumber[i] * +stringNumber[i];
+    }
+    return sum;
+  },
+
+  happyLogic: function (digit) {
+
+    let cycle = {};
+    let squareSum = digit;
+
+    console.log('checking', digit);
+
+    while (true) {
+      squareSum = this.findSquareSum(squareSum)
+
+      console.log('calculating...');
+
+      if (squareSum === 1) {
+        console.log("found a happy number", digit);
+        return true;
+      }
+
+      if (cycle[squareSum]) {
+        console.log("repeated pattern");
+        return false;
+      }
+      cycle[squareSum] = true;
+      console.log('cycle', cycle);
+      console.log('squareSum', squareSum);
+    }
+  },
+
+  printNumbers: function (num) {
+
+    let found = 0;
+
+    for (let i = 0; found < num; i++) {
+
+      if (this.happyLogic(i)) {
+        found++
+        this.happyList.push(i)
+      }
+    }
+    console.log(this.happyList);
+  }
+}
+
+happyNumbers.printNumbers(10);
