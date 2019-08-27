@@ -444,6 +444,7 @@ const primeFactors = {
 
 console.log(primeFactors.findPrimeFactors(60));
 */
+/*
 
 const happyNumbers = {
 
@@ -503,3 +504,58 @@ const happyNumbers = {
 }
 
 happyNumbers.printNumbers(10);
+*/
+/*
+const collatz = function (number) {
+
+  let count = 0;
+  let collection = [number];
+
+  while (number > 1) {
+    if (number % 2 === 0) {
+      number = number /2;
+    } else {
+      number = (3 * number) + 1
+    }
+    count++
+    collection.push(number);
+  }
+
+  console.log('final', collection);
+  console.log('count', count);
+
+}
+
+collatz(12)
+*/
+
+const collatz = function (n, i=0) {
+
+  // let count = 0;
+  // let collection = [n];
+  console.log('FIRST', n);
+
+  if (n === 1) {
+    // console.log('collection', collection);
+    console.log('count', i);
+    return;
+  }
+
+  if (n % 2 === 0) {
+    console.log('even', n);
+    n = n / 2;
+    // count++
+    i++
+    collatz(n, i);
+  } else {
+    n = (3 * n) + 1;
+    console.log('odd', n);
+    // count++
+    // collatz(n);
+    i++
+    collatz(n, i);
+  }
+
+}
+
+collatz(12)
