@@ -13,4 +13,4 @@ The conjecture is that no matter what number you start with, you will always eve
 ## Task
 Write a program that given a number, verifies this conjecture for all positive numbers greater than one. Ideally your program will output when it has completed, how many cycles it ran for and all the steps it took to reach the end.
 
-Examples to verify your program can be found on the wikipedia page.
+Examples to verify your program can be found on the [wikipedia](https://en.wikipedia.org/wiki/Collatz_conjecture) page.
