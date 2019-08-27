@@ -1,0 +1,13 @@
+<h2>Search Result</h2>
+<div class="search">
+<h3>Boardgame: <%= @info['name'] %></h3>
+<h3>Players: <%= @info['min_players'] %> - <%= @info['max_players'] %></h3>
+<h3>Publishers: <%= @info['publishers'].join(', ') %></h3>
+<h3>Description</h3>
+<p><%= @info['description_preview']%><p>
+</div>
+<img class="board_pic" src="<%= @info['image_url']%>"> 
+
+<div class="controls">
+    <a href="/boardgame/<%= @info['name'] %>/add">Add to list</a>
+</div>
