@@ -521,41 +521,61 @@ const collatz = function (number) {
     collection.push(number);
   }
 
-  console.log('final', collection);
-  console.log('count', count);
+  console.log(`The process was ${collection.join(', ')}`);
+  console.log(`The function ran for ${count} times`);
 
 }
 
 collatz(12)
 */
 
-const collatz = function (n, i=0) {
+// const collatz = (n, i=0) => {
+//
+//   if (n === 1) {
+//     console.log(`The function ran for ${i} times`);
+//     return;
+//   }
+//
+//   if (n % 2 === 0) {
+//     n = n / 2;
+//     i++
+//     collatz(n, i);
+//   } else {
+//     n = (3 * n) + 1;
+//     i++
+//     collatz(n, i);
+//   }
+//
+// }
+//
+// collatz(27)
 
-  // let count = 0;
-  // let collection = [n];
-  console.log('FIRST', n);
+const collatz = (n) => {
 
-  if (n === 1) {
-    // console.log('collection', collection);
-    console.log('count', i);
-    return;
+  let count = 0;
+  let collection = [];
+
+  const conjecture = (n) => {
+
+    collection.push(n);
+
+    if (n===1) {
+      console.log(count);
+      console.log(collection);
+      return
+    }
+
+    if (n%2===0) {
+      n = n/2
+      count++
+      conjecture(n)
+    } else {
+      n = (3*n) + 1
+      count++
+      conjecture(n)
+    }
   }
-
-  if (n % 2 === 0) {
-    console.log('even', n);
-    n = n / 2;
-    // count++
-    i++
-    collatz(n, i);
-  } else {
-    n = (3 * n) + 1;
-    console.log('odd', n);
-    // count++
-    // collatz(n);
-    i++
-    collatz(n, i);
-  }
-
+  return conjecture(n)
 }
 
 collatz(12)
