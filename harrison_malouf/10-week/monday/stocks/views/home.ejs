@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <% include partials/head.ejs %>
+  <!-- ^^ how we use partials -->
+  <body>
+    <% include partials/nav.ejs %>
+    <h1>Stock Price Lookup</h1>
+
+    <form action="/info">
+      <label for="">
+        Stock Symbol:
+        <input type="search" name="symbol" placeholder="GOOG" require/>
+      </label>
+      <input type="submit" value="Go">
+    </form>
+  </body>
+</html>
