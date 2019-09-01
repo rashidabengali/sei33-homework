@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Search Books</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <h1>Search Books</h1>
+
+  <h2>Search Books: <%=title %></h2>
+  <form action="/">
+    <input name="title" class="search" type="search" placeholder="search by title" <%= title%> />
+    <button class="submit" type="submit">Search</button>
+  </form>
+  <hr />
+  <div class="result">
+
+    <% books.forEach((book) => { %>
+    <div class="content">
+      <a href="<%= book["volumeInfo"]["infoLink"]%>" class="content-link">
+        <p class="content-title"><%= book["volumeInfo"]["title"]%></p>
+        <p class="content-description"><%= book["volumeInfo"]["description"]%></p>
+        <img src="<%= book["volumeInfo"]["imageLinks"]["thumbnail"] %>" alt="<%= book["volumeInfo"]["title"]%>">
+      </a>
+    </div>
+    <% }) %>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
