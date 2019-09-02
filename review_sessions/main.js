@@ -549,7 +549,7 @@ collatz(12)
 // }
 //
 // collatz(27)
-
+/*
 const collatz = (n) => {
 
   let count = 0;
@@ -579,3 +579,70 @@ const collatz = (n) => {
 }
 
 collatz(12)
+*/
+//
+
+const dashatize = (input) => {
+
+  const number = Math.abs(input) // return the absolute value of a number
+
+  // console.log('num', number);
+
+  if (Number.isNaN(number)) {
+    console.log(input);
+    return;
+  }
+
+//   The Number.isNaN() method determines whether a value is NaN (Not-A-Number).
+//
+// This method returns true if the value is of the type Number, and equates to NaN. Otherwise it returns false.
+//
+// Number.isNaN() is different from the global isNaN() function. The global isNaN() function converts the tested value to a Number, then tests it.
+//
+// Number.isNaN() does not convert the values to a Number, and will not return true for any value that is not of the type Number.
+//
+// Tip: In JavaScript, the value NaN is considered a type of number.
+
+  let array = number.toString().split("");
+  // let array = (""+number).split("");
+  // console.log(array);
+  let string = "";
+
+  for (let i = 0; i < array.length; i++) {
+    if (+array[i] % 2 !== 0) {
+      string += '-' + array[i] + '-'
+    } else {
+      string += array[i]
+    }
+  }
+
+  let dashed = string.replace(/--/gi, "-")
+
+//   g modifier: global. All matches (don't return on first match)
+//
+// i modifier: insensitive. Case insensitive match (ignores case of [a-zA-Z])
+//
+// The beginning and ending / are called delimiters. They tell the interpreter where the regex begins and ends. Anything after the closing delimiter is called a "modifier," in this case g and i.
+
+  if (dashed[0] === '-') {
+    dashed = dashed.substr(1, dashed.length)
+  }
+
+  if (dashed[dashed.length-1] === '-') {
+    dashed = dashed.substr(0, dashed.length-1)
+  }
+
+  console.log(dashed);
+}
+
+
+
+dashatize(274);
+dashatize(5311);
+dashatize(5311);
+dashatize(86320);
+dashatize(974302);
+dashatize(-1);
+dashatize(-28369);
+dashatize(NaN);
+dashatize(0);
