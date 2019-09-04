@@ -2,6 +2,37 @@ $(document).ready( function () {
 
   let timer = null;
 
+  let story;
+
+  const url = new URLSearchParams(window.location.search);
+
+  // The URLSearchParams interface defines utility methods to work with the query string of a URL.
+
+  let page = url.get('page');
+
+  console.log('page', page);
+
+  $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?", {page: page})
+  .done(data => {
+
+    console.log(data);
+
+    let wikiHTML = data.parse.text["*"];
+
+    // this is the shape of the object returned by the Wikipedia API
+
+    // A trick to strip the HTML tags out of our response by setting them as the contents of a DIV tag we
+      // create on-the-fly, and then using jQuery's .text() method to get just the text, HTML tags removed.
+      // Note the errors this causes in the console, however, as the browser suddenly tries to parse all that
+      // HTML and load any image files referenced in IMG tags.
+
+    let text = $('<div>').html(wikiHTML).text();
+
+    story = text.split(/\W+/);
+
+    timer = setInterval(displayWord, 100);
+  });
+
 
   const controller = {
     fadeIn: 1000,
@@ -26,7 +57,7 @@ $(document).ready( function () {
 
   gui.addColor(controller, 'textColor');
 
-  const story = $('#story').text().split(/\W+/);
+  // const story = $('#story').text().split(/\W+/);
   //console.log(story);
 
   const getRandomValue = function (maxValue) {
@@ -60,5 +91,5 @@ $(document).ready( function () {
 
   // displayWord();
 
-  timer = setInterval(displayWord, 100);
+  // timer = setInterval(displayWord, 100);
 });
