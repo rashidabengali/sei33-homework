@@ -2,6 +2,7 @@ $(document).ready( function () {
 
   let timer = null;
 
+
   const controller = {
     fadeIn: 1000,
     fadeOut: 2000,

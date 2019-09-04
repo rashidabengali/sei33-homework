@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>ISS</title>
+    <!-- Scripts -->
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.19.0.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+    <!-- StyleSheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ISS Location</h1>
+      <div id="map-canvas" style="width:600px;height:400px"></div>
+    </div>
+  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=APIKEY&callback=initialize"></script>
+</html>

@@ -19,9 +19,9 @@ fetchWeather(w) {
   const generateURL = (p) => {
     return [
       `${}`,
-      p.city_name,
-    ]
-  }
+      p.city_name
+    ].join('');
+  };
 
 }
 
