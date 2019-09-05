@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Color Picker</title>
+  </head>
+  <body>
+    Select your favorite color:
+    <div id="hex">
+      <input id="selected" type="color" name="favcolor" value="#ff0000" />
+      <button v-on:click="selectColor">Select</button>
+    </div>
+
+    <h2>
+      Hex:
+      <span id="showHex"></span>
+    </h2>
+    <h2>
+      Rgb:
+      <span id="showRgb"></span>
+    </h2>
+    <h2>
+      Hsl:
+      <span id="showHsl"></span>
+    </h2>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MTA trip</title>
+  </head>
+  <body>
+    <h1>Plan Your Trip</h1>
+
+    <div id="tripForm">
+
+      <form action="/tripDetail" method="get">
+        <h2> Start</h2>
+        <select id="startTrainLine" name="startLine" onchange="startStationList()">
+        <option value="">--Select--</option>
+          <% for (let keys in trainLines) { if (trainLines.hasOwnProperty(keys))
+          { %>
+          <option value=<%= keys %>><%= keys %></option>
+          <% }} %>
+        </select>
+
+
+        <select name="startStation" id="startList">
+        </select>
+        <h2>Destination</h2>
+
+        <select id="endTrainLine" name="endLine" onchange="endStationList()">
+            <option value="">--Select--</option>    
+            <% for (let keys in trainLines) { if (trainLines.hasOwnProperty(keys))
+                { %>
+                <option value=<%= keys %>><%= keys %></option>
+                <% }} %>
+              </select>      
+       
+              <select name="endStation" id="endList">
+              </select>
+        <input type="submit" value="Submit" />
+
+      </form>
+    </div>
+
+    
+<script>
+function startStationList() {
+    getSelectedLine('startTrainLine', 'startList')
+}
+
+function endStationList() {
+    getSelectedLine('endTrainLine', 'endList')
+}
+
+
+
+function getSelectedLine(lineName, stationList) {
+    const line = document.getElementById(lineName);
+    const stations = document.getElementById(stationList);
+    // stations.removeChild();
+    const selectedLine = line.value;
+    if (selectedLine === "6") {
+        stations.options[0] = new Option('--Select--', '');
+        stations.options[1] = new Option('Grand Central', 'Grand Central');
+        stations.options[2] = new Option('33rd', '33rd');
+        stations.options[3] = new Option('28th', '28th');
+        stations.options[4] = new Option('23rd', '23rd');
+        stations.options[5] = new Option('Union Square', 'Union Square');
+        stations.options[6] = new Option('Astor Place', 'Astor Place');
+    } else if (selectedLine === "L") {
+        stations.options[0] = new Option('--Select--', '');
+        stations.options[1] = new Option('8th', '8th');
+        stations.options[2] = new Option('6th', '6th');
+        stations.options[3] = new Option('Union Square', 'Union Square');
+        stations.options[4] = new Option('3rd', '3rd');
+        stations.options[5] = new Option('1st', '1st');
+    } else if (selectedLine === "N") {
+        stations.options[0] = new Option('--Select--', '');
+        stations.options[1] = new Option('Times Square', 'Times Square');
+        stations.options[2] = new Option('34th', '34th');
+        stations.options[3] = new Option('28th', '28th');
+        stations.options[4] = new Option('23rd', '23rd');
+        stations.options[5] = new Option('Union Square', 'Union Square');
+        stations.options[6] = new Option('8th', '8th');
+    }
+    
+}
+
+</script>
+
+  </body>
+
+  
+</html>

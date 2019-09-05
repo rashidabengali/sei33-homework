@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include partials/head.ejs %>
+
+  <body>
+    <% include partials/nav.ejs %>
+    <h2>Book Tiltle: <%= bookDetail.items[0].volumeInfo.title %></h2>
+    <img src=<%= bookDetail.items[0].volumeInfo.imageLinks.thumbnail %> >
+  </body>
+</html>

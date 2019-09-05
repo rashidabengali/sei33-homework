@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include partials/head.ejs %>
+  <body>
+    <% include partials/nav.ejs %>
+    <h1>Welcome to Stock BOOK</h1>
+
+    <form action="/bookdetail" method="post">
+      <label for="book_name">Enter Book Name:</label>
+      <input
+        id="book_name"
+        type="text"
+        name="name_field"
+        placeholder="Harry Potter"
+        required
+      />
+      <input type="submit" value="Search" />
+    </form>
+
+    <form action="/stockprice" method="post">
+      <label for="stock_name">Enter Stock Number:</label>
+      <input
+        id="stock_name"
+        type="text"
+        name="stock_field"
+        placeholder="AAPL"
+        required
+      />
+      <input type="submit" value="search" />
+    </form>
+  </body>
+</html>
