@@ -1,0 +1,16 @@
+{
+  "name": "review_sessions",
+  "version": "1.0.0",
+  "description": "Warmup exercise of google interview question",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": ["warmup google interview"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}

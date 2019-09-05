@@ -581,7 +581,7 @@ const collatz = (n) => {
 collatz(12)
 */
 //
-
+/*
 const dashatize = (input) => {
 
   const number = Math.abs(input) // return the absolute value of a number
@@ -646,3 +646,56 @@ dashatize(-1);
 dashatize(-28369);
 dashatize(NaN);
 dashatize(0);
+*/
+
+// const findMatch = (array, sum) => {
+//
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = i+1; j < array.length; j++) {
+//       if (array[i] + array[j] === sum) {
+//         console.log(`The digits ${array[i]} and ${array[j]} equals ${sum}`);
+//         return true;
+//       }
+//     }
+//   }
+//   return false;
+// }
+//
+// const findMatch = (array, sum) => {
+//
+// // If an iterable object is passed, all of its elements will be added to the new Set. If you don't specify this parameter, or its value is null, the new Set is empty.
+//
+//   let search = new Set();
+//   search.add(sum - array[0])
+//
+//   for (let i = 1; i < array.length; i++) {
+//     let value = sum - array[i];
+//
+//     if (search.has(array[i])) {
+//       console.log(`The digits ${array[i]} and ${value} equals ${sum}`);
+//       return true;
+//     } else {
+//       search.add(value)
+//     }
+//   }
+//   return false;
+// }
+
+const findMatch = (array, sum) => {
+
+  for (let i = 0; i < array.length; i++) {
+    const difference = sum - array[i];
+    const tempArray = array.filter(element => element === difference && difference !== array[i]);
+    if (tempArray.length !== 0) {
+      return true
+    }
+  }
+  return false
+}
+
+module.exports = findMatch;
+
+// console.log(findMatch([3, 5, 1, 4], 9)); // true
+// console.log( findMatch([1, 2, 4, 6], 5) ); // true
+// console.log( findMatch([1, 3, 5, 4], 2) ); // false
+// console.log( findMatch([2, 3, 5, 8], 6) ); // false

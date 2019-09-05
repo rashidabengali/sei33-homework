@@ -12,6 +12,8 @@ $(document).ready( function () {
 
   console.log('page', page);
 
+  // found the api link from stackoverflow https://stackoverflow.com/questions/2381642/returning-data-from-wikipedia-using-ajax
+
   $.getJSON("http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?", {page: page})
   .done(data => {
 
@@ -31,6 +33,7 @@ $(document).ready( function () {
     story = text.split(/\W+/);
 
     timer = setInterval(displayWord, 100);
+    // want this function to run after the json data has been loaded
   });
 
 
@@ -59,6 +62,8 @@ $(document).ready( function () {
 
   // const story = $('#story').text().split(/\W+/);
   //console.log(story);
+
+  // commented this out as not using the id text anymore
 
   const getRandomValue = function (maxValue) {
     const random = Math.floor(Math.random() * maxValue);
@@ -92,4 +97,7 @@ $(document).ready( function () {
   // displayWord();
 
   // timer = setInterval(displayWord, 100);
+  // commented this out and moved it up as dont want the function to run as soon as the page loads
+
+  }
 });

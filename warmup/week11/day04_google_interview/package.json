@@ -1,0 +1,16 @@
+{
+  "name": "day04_google_interview",
+  "version": "1.0.0",
+  "description": "This question was asked in an interview at Google, for a Junior Engineer role.",
+  "main": "google.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
