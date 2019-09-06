@@ -7,8 +7,8 @@
     <h3 class="v-step-1" id="preventcopy" ref="heading"></h3>
     <textarea class="inputText" placeholder="start typing" v-model="test" v-on:keyup="timer" onpaste="return false" :disabled="isDisabled"/>
     <p class="message">{{message}}</p>
-    <p class="v-step-2"> Timer (Seconds) : {{stopwatch}} </p>
-    <p class="v-step-3"> Speed (WPM): {{speed}} </p>
+    <p class="v-step-2"> Timer (Seconds) : <span class="score">{{stopwatch}}</span></p>
+    <p class="v-step-3"> Speed (WPM) : <span class="score">{{speed}}</span></p>
     <button data-v-step="6" v-on:click="restart">Restart</button>
     <v-tour name="myTour" :steps="steps"></v-tour>
   </div>
@@ -101,7 +101,7 @@ export default {
 
     restart () {
       this.stopwatch = 0
-      this.speed = null
+      this.speed = 0
       this.message = ''
       this.test = ''
       this.isPlaying = false
@@ -123,6 +123,45 @@ export default {
 
   #preventcopy {
     user-select: none;
+  }
+
+  .inputText {
+    height: 60px;
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  h1, h3 {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 50px;
+    letter-spacing: 5px;
+  }
+
+  h3 {
+    font-size: 30px;
+    color: salmon;
+  }
+
+  p, button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .message {
+    color:green;
+    font-weight: bold;
+  }
+
+  .score {
+    border: 1px solid grey;
+    padding: 10px;
   }
 
 </style>

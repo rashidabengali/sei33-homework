@@ -680,7 +680,7 @@ dashatize(0);
 //   }
 //   return false;
 // }
-
+/*
 const findMatch = (array, sum) => {
 
   for (let i = 0; i < array.length; i++) {
@@ -694,8 +694,93 @@ const findMatch = (array, sum) => {
 }
 
 module.exports = findMatch;
-
+*/
 // console.log(findMatch([3, 5, 1, 4], 9)); // true
 // console.log( findMatch([1, 2, 4, 6], 5) ); // true
 // console.log( findMatch([1, 3, 5, 4], 2) ); // false
 // console.log( findMatch([2, 3, 5, 8], 6) ); // false
+/*
+const isIsogram = (word) => {
+  word = word.toLowerCase();
+  if (word.length === 0) {
+    console.log(`${word} is an isogram`);
+    return true
+  }
+  for (let i = 0; i < word.length; i++) {
+    for (let j = i+1; j < word.length; j++) {
+      if (word[i] === word[j]) {
+        console.log(`${word} is not a isogram`);
+        return false
+      }
+    }
+  }
+  console.log(`${word} is an isogram`);
+  return true
+}
+
+console.log(isIsogram("Dermatoglyphics")); //, true );
+console.log(isIsogram("isogram")); //, true );
+console.log(isIsogram("aba")); //, false, "same chars may not be adjacent" );
+console.log(isIsogram("moOse")); //, false, "same chars may not be same case" );
+console.log(isIsogram("isIsogram")); //, false );
+console.log(isIsogram("")); //, true, "an empty string is a valid isogram" );
+*/
+/*
+const isIsogram = (word) => {
+
+  if (word.length === 0) {
+    return true
+  }
+  let array = word.toLowerCase().split("")
+
+  let wordObject = array.reduce((letters, letter) => {
+    if (letter in letters) {
+      letters[letter] += 1
+    } else {
+      letters[letter] = 1
+    }
+    return letters
+  }, {})
+
+  // console.log(wordObject);
+
+  console.log(word);
+
+  // const count =
+    return Object.values(wordObject).filter(value => value > 1).length === 0 ? true : false
+  // if (count.length === 0) {
+  //   return true
+  // } else {
+  //    return false
+  // }
+}
+
+console.log(isIsogram("Dermatoglyphics")); //, true );
+console.log(isIsogram("isogram")); //, true );
+console.log(isIsogram("aba")); //, false, "same chars may not be adjacent" );
+console.log(isIsogram("moOse")); //, false, "same chars may not be same case" );
+console.log(isIsogram("isIsogram")); //, false );
+console.log(isIsogram("")); //, true, "an empty string is a valid isogram" );
+*/
+
+const isIsogram = (word) => {
+
+  // If an iterable object is passed, all of its elements will be added to the new Set. If you don't specify this parameter, or its value is null, the new Set is empty.
+
+  // let newWord = new Set(word.toLowerCase());
+  //
+  // if (newWord.size === word.length) {
+  //   console.log(true);
+  // } else {
+  //   console.log(false);
+  // }
+  console.log(word);
+  return new Set(word.toLowerCase()).size === word.length
+}
+
+console.log(isIsogram("Dermatoglyphics")); //, true );
+console.log(isIsogram("isogram")); //, true );
+console.log(isIsogram("aba")); //, false, "same chars may not be adjacent" );
+console.log(isIsogram("moOse")); //, false, "same chars may not be same case" );
+console.log(isIsogram("isIsogram")); //, false );
+console.log(isIsogram("")); //, true, "an empty string is a valid isogram" );
