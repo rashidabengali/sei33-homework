@@ -7,7 +7,7 @@ An isogram is a word which has no repeating characters anywhere in the word. For
 - The strings are case insensitive. Different Cased letters are still counted.
 
 ```js
-sIsogram("Dermatoglyphics") //, true );
+isIsogram("Dermatoglyphics") //, true );
 isIsogram("isogram") //, true );
 isIsogram("aba") //, false, "same chars may not be adjacent" );
 isIsogram("moOse") //, false, "same chars may not be same case" );
