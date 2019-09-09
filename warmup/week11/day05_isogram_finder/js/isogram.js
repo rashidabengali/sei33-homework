@@ -51,8 +51,7 @@ const isIsogram = (word) => {
 
   console.log(wordObject);
 
-  // const count =
-  return Object.values(wordObject).filter(value => value > 1).length === 0 ? true : false
+  // const count = Object.values(wordObject).filter(value => value > 1)
 
   // console.log(count);
   //
@@ -61,6 +60,8 @@ const isIsogram = (word) => {
   // } else {
   //   console.log(false);
   // }
+
+  return Object.values(wordObject).filter(value => value > 1).length === 0 ? true : false
 }
 
 console.log(isIsogram("Dermatoglyphics")); //, true );
@@ -92,3 +93,30 @@ console.log(isIsogram("aba")); //, false, "same chars may not be adjacent" );
 console.log(isIsogram("moOse")); //, false, "same chars may not be same case" );
 console.log(isIsogram("isIsogram")); //, false );
 console.log(isIsogram("") );//, true, "an empty string is a valid isogram" );
+
+
+// Graham's Solution in Python
+/*
+from collections import Counter as c
+
+isIsogram = lambda w: len(c(w.lower()).keys()) == len(w)
+#
+print("Solution:", "            isIsogram = lambda w: len(set(w.lower())) == len(w.lower())")
+print("Number of Characters:", len("isIsogram = lambda w: len(c(w.lower()).keys()) == len(w)"))
+print("Number of lines:", "     1")
+print("-------------------------------------------------------------------------------------")
+print()
+#
+print("1) Dermatoglyphics", isIsogram("Dermatoglyphics"))
+print()
+print("2) isogram", isIsogram("isogram"))
+print()
+print("3) aba", isIsogram("aba"))
+print()
+print("4) moOse", isIsogram("moOse"))
+print()
+print("5) isIsogram",isIsogram("isIsogram"))
+print()
+print("6) empty string",isIsogram(""))
+print()
+*/
