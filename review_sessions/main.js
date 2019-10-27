@@ -762,6 +762,7 @@ console.log(isIsogram("moOse")); //, false, "same chars may not be same case" );
 console.log(isIsogram("isIsogram")); //, false );
 console.log(isIsogram("")); //, true, "an empty string is a valid isogram" );
 */
+/*
 
 const isIsogram = (word) => {
 
@@ -784,3 +785,212 @@ console.log(isIsogram("aba")); //, false, "same chars may not be adjacent" );
 console.log(isIsogram("moOse")); //, false, "same chars may not be same case" );
 console.log(isIsogram("isIsogram")); //, false );
 console.log(isIsogram("")); //, true, "an empty string is a valid isogram" );
+*/
+/*
+function sockMerchant(n, ar) {
+     let sum = 0;
+    if (n >= 1 && n <= 100) {
+        for (let i=0; i<ar.length; i++) {
+          console.log('i', i);
+            for (let j=i+1; j<ar.length; j++) {
+              console.log('j', j);
+                if (ar[i] === ar[j]) {
+                    sum++
+                    console.log(`element: ${ar[i]} at index: ${i}`);
+                    console.log(`element: ${ar[j]} at index: ${j}`);
+                    ar.splice(i,1, NaN)
+                    ar.splice(j,1, NaN)
+                }
+            }
+        }
+    }
+    console.log('sum', sum);
+}
+
+sockMerchant(9, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3])
+*/
+/*
+function countingValleys(n, s) {
+    let count = 0;
+    let total = 0;
+
+    if (n >= 2 && n <= Math.pow(10, 6)) {
+        for (let i=0; i<s.length; i++) {
+            if (s[i] === 'D') {
+                count--;
+                console.log('cD', count);
+            } else if (s[i] === 'U') {
+                count++
+                console.log('cU', count);
+                if (count === 0) {
+                  total++;
+                }
+            }
+        }
+    }
+    console.log(total);
+}
+
+countingValleys(8, 'UDDDUDUU')
+*/
+/*
+function jumpingOnClouds(c) {
+
+  let steps = 0;
+
+  if (c.length >=2 && c.length <= 100) {
+    let i = 0;
+      while (i < c.length-1) {
+        console.log("III", i);
+        if (c[i] === 0) {
+          console.log('i', i);
+          if (c[i+2] === 0) {
+            console.log('i2', i);
+            i = i + 2;
+            // console.log('cB', c);
+            steps++;
+            // c.splice(i+2,1,NaN)
+            // console.log('cA', c);
+          } else if (c[i+1] === 0) {
+            console.log('i1', i);
+            // console.log('cB', c);
+            i = i + 1;
+            steps++;
+            // c.splice(i+1,1,NaN)
+            // console.log('cA', c);
+          }
+        }
+      }
+  }
+  console.log(steps);
+}
+
+jumpingOnClouds([0, 0, 0, 0, 1, 0])
+*/
+
+// function repeatedString(s, n) {
+
+  // let count = 0;
+  // let string = "";
+  //
+  // if (s.length >= 1 && s.length <= 100 && n >=1 && n <= Math.pow(10, 12)) {
+  //   while (string.length < n) {
+  //     string += s;
+  //   }
+  //   console.log(string);
+  //   string = string.substr(0, 10)
+  //   string = string.split("")
+  //   console.log(string);
+  //   string.forEach(function (element) {
+  //     if (element === 'a') {
+  //       count++;
+  //     }
+  //   });
+  // }
+  // console.log(count);
+
+//   let count = 0;
+//
+//   if (s.length >= 1 && s.length <= 100 && n >=1 && n <= Math.pow(10, 12)) {
+//     let string = new Array(n + 1).join(s)
+//     if (!string.length) {
+//       console.log(n);
+//     }
+//     console.log(string);
+//     console.log(string.length);
+//     string = string.substr(0, n)
+//     console.log('nw', string.length);
+//     string = string.split("")
+//     console.log(string);
+//     string.forEach(function (element) {
+//       if (element === 'a') {
+//         count++;
+//       }
+//     });
+//     console.log(count);
+//   }
+// }
+//
+// repeatedString ('a', 1000000000000)
+
+// process.stdin.resume();
+// process.stdin.setEncoding('utf-8');
+//
+// var __input_stdin = "";
+// var __input_stdin_array = "";
+// var __input_currentline = 0;
+//
+// process.stdin.on('data', function (data) {
+//     __input_stdin += data;
+// });
+
+
+/*
+ * Complete the function below.
+ */
+ /*
+const mergedStrings = (strings) => {
+    // let mergedString = '';
+
+    let mergedString = strings.join('');
+
+    // for(let i = 0; i < strings.length; i++) {
+    //     mergedString += strings[i];
+    // }
+    console.log(mergedString);
+
+    let alphabetsString = '';
+
+    for(let i = 0; i < mergedString.length; i++) {
+        const ansiCode = mergedString[i].charCodeAt(0);
+        if (ansiCode >= 97 && ansiCode <= 122) {
+            alphabetsString += mergedString[i];
+        }
+    }
+
+    let sortedString = alphabetsString.split('').sort().join('');
+
+    console.log(sortedString);
+}
+
+mergedStrings(["rsrsr", "jkhkjh", "ftetxvmguy"]);
+*/
+
+const scrabbleScore = {
+
+  letterValues: {
+    1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T" ],
+    2: ["D", "G"],
+    3: ["B", "C", "M", "P"],
+    4: ["F", "H", "V", "W", "Y"],
+    5: ["K"],
+    8: ["J", "X"],
+    10: ["Q", "Z"]
+  },
+
+  letterScore: function (letter) {
+    let points = 0;
+    for (let score in this.letterValues) {
+      if (this.letterValues[score].indexOf(letter) > -1) {
+        points += Number(score);
+      }
+    }
+    return points;
+  },
+
+  wordScore: function (word) {
+    word = word.toUpperCase();
+    let sum = 0;
+    for (let i = 0; i < word.length; i++) {
+      // for (let score in this.letterValues) {
+      //   if (this.letterValues[score].includes(word[i])) {
+      //     sum += Number(score)
+      //   }
+      // }
+      sum += this.letterScore(word[i])
+    }
+    console.log(sum);
+  }
+}
+
+scrabbleScore.wordScore('cabbage')
